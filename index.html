@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日免费大模型日报 · Free LLM Daily</title>
+<meta name="description" content="每日自动更新的免费大模型情报，覆盖 DeepSeek、智谱GLM、百度千帆、硅基流动、火山引擎、Groq、Cerebras 等 30+ 国内外平台的免费额度、限时活动、零成本组合方案。">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    min-height: 100vh;
+    color: #e8e8f0;
+    padding: 32px 20px 60px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 60px 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(139, 92, 246, 0.18), transparent 30%);
+    animation: rotate 14s linear infinite;
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .hero-inner { position: relative; z-index: 1; }
+  .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-size: 44px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #a8edea 50%, #fed6e3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
+  }
+  .tagline { color: #a0a0c0; font-size: 16px; max-width: 720px; margin: 0 auto 22px; }
+  .cta {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    margin: 4px;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(139, 92, 246, 0.6); }
+  .cta.ghost { background: transparent; border: 1.5px solid rgba(255, 255, 255, 0.3); box-shadow: none; }
+  .cta.ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 22px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+  .stat-card:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, 0.5); }
+  .stat-num {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #f093fb, #f5576c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+  .stat-label { color: #b0b0c8; font-size: 13px; }
+  .stat-icon { font-size: 24px; margin-bottom: 8px; }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-left: 14px;
+    border-left: 4px solid #8b5cf6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .ico { font-size: 26px; }
+
+  /* Report list */
+  .report-list { display: grid; gap: 14px; }
+  .report-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .report-item:hover {
+    transform: translateX(4px);
+    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(255, 255, 255, 0.07);
+  }
+  .report-date {
+    flex-shrink: 0;
+    width: 90px;
+    text-align: center;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    border-radius: 10px;
+    padding: 12px 8px;
+  }
+  .report-date .day { font-size: 22px; font-weight: 800; line-height: 1; }
+  .report-date .month { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+  .report-info { flex: 1; min-width: 0; }
+  .report-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .report-info p { color: #a0a0c0; font-size: 13px; }
+  .report-arrow { color: #8b5cf6; font-size: 22px; flex-shrink: 0; }
+
+  /* Category cards */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .cat-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 22px;
+    transition: all 0.3s;
+  }
+  .cat-card:hover { transform: translateY(-3px); border-color: rgba(139, 92, 246, 0.4); }
+  .cat-icon { font-size: 30px; margin-bottom: 10px; }
+  .cat-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #f093fb; }
+  .cat-card p { color: #b0b0c8; font-size: 13px; }
+
+  /* Features */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .feature {
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border-left: 3px solid #8b5cf6;
+  }
+  .feature h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: #c4b5fd; }
+  .feature p { color: #b0b0c8; font-size: 13px; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    color: #8080a0;
+    font-size: 12px;
+    margin-top: 50px;
+    padding: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .footer a { color: #8b5cf6; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 30px; }
+    .hero { padding: 40px 18px; }
+    .report-item { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .report-date { width: auto; padding: 8px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="badge">🤖 AI 每日免费情报</div>
+      <h1>每日免费大模型日报</h1>
+      <p class="tagline">每天 09:45 自动更新 · 覆盖 30+ 国内外平台 · 永久免费 / 大额免费 / 限时活动 / 零成本组合方案</p>
+      <a class="cta" href="daily-free-llm-2026-06-18.html">📅 查看最新日报</a>
+      <a class="cta ghost" href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">⭐ GitHub 仓库</a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-icon">🎁</div>
+      <div class="stat-num">30+</div>
+      <div class="stat-label">可免费使用平台</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💎</div>
+      <div class="stat-num">12</div>
+      <div class="stat-label">永久免费模型</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🆓</div>
+      <div class="stat-num">¥0</div>
+      <div class="stat-label">月均使用成本</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⏰</div>
+      <div class="stat-num">每日</div>
+      <div class="stat-label">09:45 自动更新</div>
+    </div>
+  </div>
+
+  <!-- Latest Reports -->
+  <div class="section">
+    <div class="section-title"><span class="ico">📅</span>历史日报</div>
+    <div class="report-list">
+      <a class="report-item" href="daily-free-llm-2026-06-18.html">
+        <div class="report-date">
+          <div class="day">18</div>
+          <div class="month">2026.06</div>
+        </div>
+        <div class="report-info">
+          <h3>Claude Team 计划上线 / Gemini 代码能力升级 / 12 款永久免费大模型</h3>
+          <p>本周热榜：DeepSeek V4-Flash 9B 以下 API 永久免费、智谱 GLM-4.7-Flash 200K 上下文、小米 MiMo Claw 免费时长 4 小时</p>
+        </div>
+        <div class="report-arrow">→</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="section">
+    <div class="section-title"><span class="ico">📂</span>内容板块</div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-icon">💎</div>
+        <h3>永久免费大模型</h3>
+        <p>DeepSeek V4-Flash、智谱 GLM-4.7-Flash、AGnes AI、百度千帆、硅基流动、OpenRouter 26+ 款等</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">🎁</div>
+        <h3>大额免费平台</h3>
+        <p>火山引擎 200万/日、阿里百炼 100万×N、MoMA 2500万、Groq、Mistral 10亿/月、Cerebras 100万/日</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">⚡</div>
+        <h3>限时 / 新发布</h3>
+        <p>小米 MiMo Claw、豆包 2.0 Pro、天工 SkyClaw、蚂蚁百灵 Ring-2.6-1T 等最新免费窗口</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">🎯</div>
+        <h3>零成本组合方案</h3>
+        <p>日常 / 编程 / 开发者 / 图像生成四大场景，月花费全部 ¥0</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">⚠️</div>
+        <h3>风险提醒</h3>
+        <p>即将下线模型、价格调整、平台关停倒计时，帮你避免踩坑</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">📰</div>
+        <h3>行业动态</h3>
+        <p>AI 厂商最新动作、限免活动、新模型发布一网打尽</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="section">
+    <div class="section-title"><span class="ico">✨</span>项目特色</div>
+    <div class="features">
+      <div class="feature">
+        <h4>🤖 自动化生产</h4>
+        <p>由 WorkBuddy 自动化任务每日 09:45 自动搜索、生成、推送</p>
+      </div>
+      <div class="feature">
+        <h4>🎨 精美排版</h4>
+        <p>深色渐变背景、卡片化布局、响应式设计，移动端友好</p>
+      </div>
+      <div class="feature">
+        <h4>🔍 多源交叉验证</h4>
+        <p>知乎、CSDN、博客园、自游人、各大模型官方平台综合</p>
+      </div>
+      <div class="feature">
+        <h4>🆓 零成本使用</h4>
+        <p>所有模型和平台均经过免费额度核验，无需付费订阅</p>
+      </div>
+      <div class="feature">
+        <h4>📦 完整历史归档</h4>
+        <p>每天的报告独立文件，可对比追踪免费策略变化</p>
+      </div>
+      <div class="feature">
+        <h4>🔗 直达官方链接</h4>
+        <p>每个模型都附官方/平台直达链接，点击即可使用</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>📅 下次更新：明日 09:45 · 数据来源：知乎、CSDN、博客园、自游人、各大模型官方</p>
+    <p style="margin-top: 8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准</p>
+    <p style="margin-top: 8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
+  </div>
+
+</div>
+</body>
+</html>
