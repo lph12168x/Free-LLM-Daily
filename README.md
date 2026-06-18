@@ -2,6 +2,8 @@
 
 > 每日免费大模型日报 · 自动更新
 
+🌐 **在线访问**：[https://lph12168x.github.io/Free-LLM-Daily/](https://lph12168x.github.io/Free-LLM-Daily/)
+
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
 ## 内容覆盖
@@ -14,9 +16,15 @@
 
 ## 文件列表
 
-| 日期 | 文件 |
-|------|------|
-| 2026-06-18 | [daily-free-llm-2026-06-18.html](daily-free-llm-2026-06-18.html) |
+| 日期 | 在线查看 | 源文件 |
+|------|---------|--------|
+| 2026-06-18 | [📝 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-06-18.html) | [HTML](daily-free-llm-2026-06-18.html) |
+
+## GitHub Pages 配置
+
+仓库根目录的 `index.html` 为 GitHub Pages 首页，自动展示最新日报导航。
+
+启用方式：Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)`
 
 ## 数据来源
 
