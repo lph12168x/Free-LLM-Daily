@@ -18,6 +18,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-06-23 | [📝 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-06-23.html) | [HTML](daily-free-llm-2026-06-23.html) |
 | 2026-06-22 | [📝 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-06-22.html) | [HTML](daily-free-llm-2026-06-22.html) |
 | 2026-06-18 | [📝 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-06-18.html) | [HTML](daily-free-llm-2026-06-18.html) |
 
