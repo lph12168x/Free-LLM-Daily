@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍎 2026-06-24 每日免费大模型日报</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 50px 20px 40px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,200,150,0.1), rgba(255,165,0,0.1));
+    border-radius: 24px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .header h1 { font-size: 2.4em; color: #FFD700; margin-bottom: 10px; }
+  .header .date { font-size: 1.1em; color: #aaa; margin-bottom: 18px; }
+  .header .subtitle { font-size: 1.05em; color: #ccc; line-height: 1.8; max-width: 700px; margin: 0 auto; }
+  
+  /* Section */
+  .section { margin-bottom: 32px; }
+  .section-title {
+    font-size: 1.5em;
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 4px solid #FFD700;
+    color: #fff;
+  }
+  .section-title.green { border-left-color: #00e676; }
+  .section-title.orange { border-left-color: #ff9100; }
+  .section-title.pink { border-left-color: #ff4081; }
+  
+  /* Cards Grid */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  
+  /* Card */
+  .card {
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.3s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.15); }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .card-icon { font-size: 1.8em; }
+  .card-title { font-size: 1.15em; font-weight: 700; color: #fff; }
+  .card-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: auto;
+  }
+  .tag-gold { background: linear-gradient(135deg, #FFD700, #FFA500); color: #1a1a2e; }
+  .tag-green { background: linear-gradient(135deg, #00e676, #00c853); color: #1a1a2e; }
+  .tag-orange { background: linear-gradient(135deg, #ff9100, #ff5722); color: #fff; }
+  .tag-blue { background: linear-gradient(135deg, #448aff, #2979ff); color: #fff; }
+  .tag-purple { background: linear-gradient(135deg, #e040fb, #aa00ff); color: #fff; }
+  .card-body { font-size: 0.92em; color: #bbb; line-height: 1.7; }
+  .card-body strong { color: #fff; }
+  .card-meta { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.78em;
+    background: rgba(255,255,255,0.1);
+    color: #ccc;
+  }
+  
+  /* Highlight Card */
+  .highlight-card {
+    background: linear-gradient(135deg, rgba(255,64,129,0.15), rgba(156,39,176,0.15));
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,64,129,0.3);
+  }
+  .highlight-card h3 { color: #ff80ab; font-size: 1.3em; margin-bottom: 14px; }
+  .highlight-item {
+    background: rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 3px solid #ff4081;
+  }
+  .highlight-item:last-child { margin-bottom: 0; }
+  .highlight-item .hi-title { color: #fff; font-weight: 700; font-size: 1.05em; margin-bottom: 6px; }
+  .highlight-item .hi-body { color: #ccc; font-size: 0.92em; line-height: 1.7; }
+  
+  /* Combo Section */
+  .combo-section {
+    background: rgba(255,255,255,0.04);
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .combo-section h3 { color: #82b1ff; font-size: 1.2em; margin-bottom: 16px; }
+  .combo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .combo-label {
+    background: rgba(255,215,0,0.2);
+    color: #FFD700;
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .combo-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .combo-chip {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    background: rgba(0,230,118,0.15);
+    color: #69f0ae;
+    border: 1px solid rgba(0,230,118,0.3);
+  }
+  
+  /* Warning Card */
+  .warning-card {
+    background: rgba(255,193,7,0.08);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,193,7,0.25);
+  }
+  .warning-card h3 { color: #ffd54f; font-size: 1.15em; margin-bottom: 14px; }
+  .warning-item {
+    color: #ccc;
+    font-size: 0.92em;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    line-height: 1.7;
+  }
+  .warning-item:last-child { border-bottom: none; }
+  .warning-item strong { color: #ffd54f; }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-size: 0.85em;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 40px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 700px) {
+    .header h1 { font-size: 1.6em; }
+    .cards { grid-template-columns: 1fr; }
+    .combo-row { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>🍎 每日免费大模型日报</h1>
+  <div class="date">📅 2026年6月24日（周二）· 第 175 期</div>
+  <div class="subtitle">追踪全球免费大模型 API 动态，助你零成本玩转 AI 开发。<br>今日无重大新发布，近期重磅更新持续汇总中 ↓</div>
+</div>
+
+<!-- 今日亮点 -->
+<div class="section">
+  <div class="section-title pink">🔥 近期亮点回顾（6月18日–24日）</div>
+  <div class="highlight-card">
+    <div class="highlight-item">
+      <div class="hi-title">🤖 美团 Tabbit 国际版：御三家免费打包</div>
+      <div class="hi-body">美团悄然上线 Tabbit，国际版免费集成 <strong>GPT-5.5、Claude Opus 4.8、Gemini 3.5 Flash</strong> 三大顶级模型，加上 Kimi-2.6、GLM-5.1、MiniMax-M2.7 等国产顶流，全部免费无需订阅。被称为"AI 自助餐"。</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-title">🌊 6月开源海啸：25+ 模型齐发</div>
+      <div class="hi-body">英伟达 Nemotron 3 Ultra 550B（混合 Mamba-MoE）、谷歌 Gemma 4 12B（Apache 2.0 全模态 256K）、Ideogram 4 9.3B（图像模型权重首次开源）、智谱 GLM-5.2（MIT 744B 1M 上下文）密集发布，开源生态进入爆发期。</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-title">🤗 Hugging Face 自掏腰包免费算力</div>
+      <div class="hi-body">Hugging Face 为 <strong>GLM-5.2</strong> 提供 6 小时全球免费算力，开发者可直接在 HF 平台零成本体验 744B 参数的顶级开源模型，无需自行部署。</div>
+    </div>
+    <div class="highlight-item">
+      <div class="hi-title">⚡ OpenAI GPT-5.5 Instant 全面免费开放</div>
+      <div class="hi-body">GPT-5.5 Instant 向 ChatGPT <strong>免费用户</strong>全面开放，HealthBench 事实性问题率下降 71%，成为目前最强免费可用的 OpenAI 模型。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 永久免费 -->
+<div class="section">
+  <div class="section-title">💎 永久免费大模型（金色优先）</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🇨🇳</span>
+        <span class="card-title">DeepSeek V4-Flash</span>
+        <span class="card-tag tag-gold">永久免费</span>
+      </div>
+      <div class="card-body">
+        284B 参数，<strong>1元/百万 Token</strong>，性价比天花板。1M 超长上下文，推理+代码能力国内顶尖。<br>
+        <strong>适用场景：</strong>日常开发、代码生成、长文档分析
+      </div>
+      <div class="card-meta">
+        <span class="chip">1M 上下文</span>
+        <span class="chip">¥1/百万Token</span>
+        <span class="chip">无限额</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🇨🇳</span>
+        <span class="card-title">智谱 GLM-4.7-Flash</span>
+        <span class="card-tag tag-gold">永久免费</span>
+      </div>
+      <div class="card-body">
+        智谱推出的永久免费 Flash 模型，<strong>限 30 并发</strong>，适合兜底使用。GLM-5.2 已 MIT 开源，可本地部署彻底免费。
+      </div>
+      <div class="card-meta">
+        <span class="chip">30并发</span>
+        <span class="chip">OpenClaw适配</span>
+        <span class="chip">国产顶尖</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🟢</span>
+        <span class="card-title">硅基流动 9B 以下</span>
+        <span class="card-tag tag-gold">永久免费</span>
+      </div>
+      <div class="card-body">
+        Qwen2.5-7B、GLM-4-9B-chat 等小模型<strong>永久免费</strong>，兼容 OpenAI SDK，国内直连，并发容量大。
+      </div>
+      <div class="card-meta">
+        <span class="chip">国内直连</span>
+        <span class="chip">OpenAI兼容</span>
+        <span class="chip">高频可用</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🇨🇳</span>
+        <span class="card-title">百度 ERNIE 系列</span>
+        <span class="card-tag tag-gold">永久不限量</span>
+      </div>
+      <div class="card-body">
+        ERNIE-Speed / Lite / Tiny <strong>永久不限量</strong>，ERNIE-4.5-Turbo 数理逻辑准确率 92%+，支持联网搜索。
+      </div>
+      <div class="card-meta">
+        <span class="chip">不限量</span>
+        <span class="chip">多模态</span>
+        <span class="chip">联网搜索</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🦞</span>
+        <span class="card-title">Cline 4款模型</span>
+        <span class="card-tag tag-gold">永久免费</span>
+      </div>
+      <div class="card-body">
+        Cline 官方提供 4 款模型<strong>永久免费</strong>调用，适合 AI 编程助手场景，与 VS Code 深度集成。
+      </div>
+      <div class="card-meta">
+        <span class="chip">编程专用</span>
+        <span class="chip">VS Code集成</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🌐</span>
+        <span class="card-title">OpenRouter 26+ 免费模型</span>
+        <span class="card-tag tag-gold">永久免费</span>
+      </div>
+      <div class="card-body">
+        聚合 30+ 模型，免费层含 DeepSeek、Llama、Qwen、Kimi 等。<strong>注意：</strong>未充值降至 50次/天，充值 $10 后 1000次/天。
+      </div>
+      <div class="card-meta">
+        <span class="chip">一键多模型</span>
+        <span class="chip">OpenAI兼容</span>
+        <span class="chip">国内可直连</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 大额免费平台 -->
+<div class="section">
+  <div class="section-title green">🚀 大额免费平台（绿色·新用户福利）</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🇨🇳</span>
+        <span class="card-title">中国移动 MoMA</span>
+        <span class="card-tag tag-green">9000万Token</span>
+      </div>
+      <div class="card-body">
+        新用户送 <strong>9000万 Token</strong> 体验包，整合 300+ 款模型（九天、DeepSeek、豆包、通义、GLM、MiniMax），独创模型联邦智能路由。
+      </div>
+      <div class="card-meta">
+        <span class="chip">300+模型</span>
+        <span class="chip">成本降30%</span>
+        <span class="chip">2026年5月发布</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🇨🇳</span>
+        <span class="card-title">阿里云百炼</span>
+        <span class="card-tag tag-green">7000万Token</span>
+      </div>
+      <div class="card-body">
+        新用户 7000万 Token（90天），单模型 100万 Token 永久有效。Qwen3.6-Plus 编程能力接近 Claude Sonnet，100万 Token 上下文。
+      </div>
+      <div class="card-meta">
+        <span class="chip">100万上下文</span>
+        <span class="chip">多模态原生</span>
+        <span class="chip">企业100亿</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🇨🇳</span>
+        <span class="card-title">美团 LongCat（龙猫）</span>
+        <span class="card-tag tag-green">500万/天</span>
+      </div>
+      <div class="card-body">
+        Chat/Thinking 系列 <strong>500万 Token/天</strong>，Flash-Lite 系列 <strong>5亿 Token/天</strong>，专为编程优化，额度完全用不完，支持 OpenClaw 自定义配置。<strong>每天自动刷新，长期免费无截止日期。</strong>
+      </div>
+      <div class="card-meta">
+        <span class="chip">每日刷新</span>
+        <span class="chip">编程优化</span>
+        <span class="chip">无截止日期</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🌐</span>
+        <span class="card-title">NVIDIA Build / NIM</span>
+        <span class="card-tag tag-green">100+模型免费</span>
+      </div>
+      <div class="card-body">
+        <strong>100+ 顶级模型完全免费</strong>，无需信用卡，验证国内手机号即可。含 DeepSeek V3.2、Kimi K2.5、GLM-5.1、MiniMax M2.7、Gemma 4 等，40 RPM。
+      </div>
+      <div class="card-meta">
+        <span class="chip">无需信用卡</span>
+        <span class="chip">100+模型</span>
+        <span class="chip">最被低估</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🔵</span>
+        <span class="card-title">Google Gemini</span>
+        <span class="card-tag tag-green">1500次/天</span>
+      </div>
+      <div class="card-body">
+        Gemini 2.5 Flash：<strong>1500次/天</strong>（30 RPM）；Gemini 3.5 Flash 已发布。百万级上下文窗口，多模态能力极强。
+      </div>
+      <div class="card-meta">
+        <span class="chip">1500次/天</span>
+        <span class="chip">百万上下文</span>
+        <span class="chip">多模态</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🇨🇳</span>
+        <span class="card-title">字节火山方舟（豆包）</span>
+        <span class="card-tag tag-green">200万/天</span>
+      </div>
+      <div class="card-body">
+        协作奖励：<strong>每天 200万 Token</strong>（按天重置）。Doubao-Pro-128k、Seed 2.0，中文理解优秀，推理成本极低。
+      </div>
+      <div class="card-meta">
+        <span class="chip">按天重置</span>
+        <span class="chip">中文优秀</span>
+        <span class="chip">低成本</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 限时免费 / 新发布 -->
+<div class="section">
+  <div class="section-title orange">⏰ 限时免费 & 近期新发布（橙色·注意截止日期）</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🆕</span>
+        <span class="card-title">GPT-5.5 Instant</span>
+        <span class="card-tag tag-orange">全用户免费</span>
+      </div>
+      <div class="card-body">
+        OpenAI 向 ChatGPT <strong>免费用户全面开放</strong> GPT-5.5 Instant，HealthBench 事实性问题率下降 71%，目前最强免费 OpenAI 模型。
+      </div>
+      <div class="card-meta">
+        <span class="chip">已开放免费层</span>
+        <span class="chip">事实性大幅提升</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🆕</span>
+        <span class="card-title">智谱 GLM-5.2</span>
+        <span class="card-tag tag-orange">MIT开源</span>
+      </div>
+      <div class="card-body">
+        744B 参数，<strong>MIT 开源</strong>，100万 Token 超长上下文。Hugging Face 提供 6 小时免费算力。可本地部署<strong>彻底免费</strong>。
+      </div>
+      <div class="card-meta">
+        <span class="chip">MIT开源</span>
+        <span class="chip">744B参数</span>
+        <span class="chip">HF免费算力</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🆕</span>
+        <span class="card-title">英伟达 Nemotron 3 Ultra</span>
+        <span class="card-tag tag-orange">免费</span>
+      </div>
+      <div class="card-body">
+        550B 参数，混合 Mamba-MoE 架构，<strong>免费可用</strong>（NVIDIA Build 平台）。企业级推理能力，6月4日发布。
+      </div>
+      <div class="card-meta">
+        <span class="chip">550B参数</span>
+        <span class="chip">Mamba-MoE</span>
+        <span class="chip">6月4日发布</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🆕</span>
+        <span class="card-title">谷歌 Gemma 4 12B</span>
+        <span class="card-tag tag-orange">Apache 2.0</span>
+      </div>
+      <div class="card-body">
+        Apache 2.0 全模态开源，<strong>256K 上下文</strong>，轻量但能力强，适合本地部署和二次开发。
+      </div>
+      <div class="card-meta">
+        <span class="chip">Apache 2.0</span>
+        <span class="chip">256K上下文</span>
+        <span class="chip">全模态</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🆕</span>
+        <span class="card-title">Kimi K2.7 Code</span>
+        <span class="card-tag tag-orange">新发布</span>
+      </div>
+      <div class="card-body">
+        Moonshot AI 发布的编程专用模型，Kimi K2 系列升级版，<strong>编程能力 +8 个百分点</strong>，256K 超长上下文。
+      </div>
+      <div class="card-meta">
+        <span class="chip">编程专用</span>
+        <span class="chip">256K上下文</span>
+        <span class="chip">6月12日发布</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🌐</span>
+        <span class="card-title">Ideogram 4 9.3B</span>
+        <span class="card-tag tag-orange">权重开源</span>
+      </div>
+      <div class="card-body">
+        图像生成模型权重<strong>首次开源</strong>，9.3B 参数，可本地部署免费生成 AI 图像，6月开源海啸重要成果之一。
+      </div>
+      <div class="card-meta">
+        <span class="chip">图像生成</span>
+        <span class="chip">权重开源</span>
+        <span class="chip">9.3B参数</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 零成本组合方案 -->
+<div class="section">
+  <div class="section-title blue">🧩 零成本组合方案（按场景推荐）</div>
+  <div class="combo-section">
+    <h3>💻 场景一：代码生成 & 编程辅助</h3>
+    <div class="combo-row">
+      <span class="combo-label">主力</span>
+      <div class="combo-chips">
+        <span class="combo-chip">DeepSeek V4-Flash</span>
+        <span class="combo-chip">美团 LongCat</span>
+        <span class="combo-chip">智谱 GLM-4.7-Flash</span>
+      </div>
+    </div>
+    <div class="combo-row">
+      <span class="combo-label">备用</span>
+      <div class="combo-chips">
+        <span class="combo-chip">NVIDIA Build</span>
+        <span class="combo-chip">GitHub Models</span>
+        <span class="combo-chip">硅基流动</span>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px;">📖 场景二：超长文本处理</h3>
+    <div class="combo-row">
+      <span class="combo-label">推荐</span>
+      <div class="combo-chips">
+        <span class="combo-chip">阿里云百炼 Qwen3.6-Plus</span>
+        <span class="combo-chip">Kimi K2.7（256K）</span>
+        <span class="combo-chip">Google Gemini（100万）</span>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px;">⚡ 场景三：极速推理 / 实时对话</h3>
+    <div class="combo-row">
+      <span class="combo-label">推荐</span>
+      <div class="combo-chips">
+        <span class="combo-chip">Groq（300+ tokens/s）</span>
+        <span class="combo-chip">Cerebras（2600+ tokens/s）</span>
+        <span class="combo-chip">DeepSeek V4-Flash</span>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px;">🖼️ 场景四：多模态（图文视频）</h3>
+    <div class="combo-row">
+      <span class="combo-label">推荐</span>
+      <div class="combo-chips">
+        <span class="combo-chip">Google Gemini</span>
+        <span class="combo-chip">百度千帆</span>
+        <span class="combo-chip">阿里云百炼</span>
+        <span class="combo-chip">ModelScope 魔搭</span>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px;">🌍 场景五：国际模型尝鲜</h3>
+    <div class="combo-row">
+      <span class="combo-label">推荐</span>
+      <div class="combo-chips">
+        <span class="combo-chip">美团 Tabbit（GPT-5.5/Claude/Gemini）</span>
+        <span class="combo-chip">NVIDIA Build（100+模型）</span>
+        <span class="combo-chip">OpenRouter（30+模型）</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 风险提醒 -->
+<div class="section">
+  <div class="section-title orange">⚠️ 风险提醒 & 重要变更</div>
+  <div class="warning-card">
+    <h3>🔴 紧急：即将停服/变更的模型</h3>
+    <div class="warning-item">
+      <strong>DeepSeek 旧模型 7月24日停用</strong> — 约1个月倒计时，请尽快迁移至 DeepSeek V4-Pro 或 V4-Flash。
+    </div>
+    <div class="warning-item">
+      <strong>腾讯混元原平台 9月30日全面停服</strong> — 需迁移至腾讯云 TokenHub（hy3-preview），原平台 6月22日已下线 30+ 旧模型。
+    </div>
+    <div class="warning-item">
+      <strong>Qwen3.7-Max 每日200次免费已于 6月22日截止</strong> — 半价优惠同步结束，新用户请转向 Qwen3.7 Plus 或 百炼平台。
+    </div>
+    <div class="warning-item">
+      <strong>智谱 GLM-5 已涨价约 50%</strong> — 但 GLM-5.2 已 MIT 开源，可通过本地部署或 HF 免费算力替代。
+    </div>
+    <div class="warning-item">
+      <strong>OpenRouter 免费层降级</strong> — 未充值用户降至 50次/天，充值 $10 以上恢复 1000次/天。
+    </div>
+    <div class="warning-item">
+      <strong>ChatGPT 免费用户被限速降级</strong> — 需注意使用频率，重要任务建议使用 API 或其他平台。
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>📌 数据来源：知乎、CSDN、自游人、LLM Market Cap、各平台官方公告</p>
+  <p>🤖 由 WorkBuddy AI 自动生成 · 2026-06-24 09:35 CST</p>
+  <p style="margin-top:10px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" style="color:#FFD700;">GitHub 仓库</a> · <a href="https://lph12168x.github.io/Free-LLM-Daily/" style="color:#FFD700;">在线查看</a></p>
+</div>
+
+</div>
+</body>
+</html>
