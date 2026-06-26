@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日免费大模型日报 · 2026-06-26</title>
+<meta name="description" content="2026年6月26日免费大模型日报：今日无重大新发布，本周亮点字节 Seed 2.1 Pro/Turbo 上线火山引擎，豆包宣布继续保持免费。覆盖 136+ 免费LLM模型永久免费/大额免费/限时活动。">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg-primary: #0f0c29;
+    --bg-secondary: rgba(255,255,255,0.04);
+    --text-primary: #e8e8f0;
+    --text-secondary: #a0a0c0;
+    --text-muted: #8080a0;
+    --accent: #8b5cf6;
+    --accent2: #ec4899;
+    --border: rgba(255,255,255,0.08);
+    --card-bg: rgba(255,255,255,0.04);
+    --warning-bg: rgba(251,191,36,0.1);
+    --warning-border: rgba(251,191,36,0.3);
+    --success-bg: rgba(16,185,129,0.1);
+    --success-border: rgba(16,185,129,0.3);
+  }
+  body.light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: rgba(0,0,0,0.03);
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --accent: #7c3aed;
+    --accent2: #db2777;
+    --border: rgba(0,0,0,0.08);
+    --card-bg: #ffffff;
+    --warning-bg: #fef3c7;
+    --warning-border: #f59e0b;
+    --success-bg: #d1fae5;
+    --success-border: #10b981;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #1e1b4b 50%, #312e81 100%);
+    min-height: 100vh;
+    color: var(--text-primary);
+    padding: 24px 16px 60px;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+  body.light { background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #ede9fe 100%); }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Header */
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  .date-badge { padding: 6px 16px; background: linear-gradient(90deg, #8b5cf6, #ec4899); border-radius: 20px; font-size: 13px; font-weight: 600; color: #fff; }
+  .theme-toggle {
+    padding: 8px 16px; border-radius: 20px; border: 1.5px solid var(--border);
+    background: var(--card-bg); color: var(--text-primary); cursor: pointer; font-size: 13px; font-weight: 600;
+    transition: all 0.3s;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    text-align: center; margin-bottom: 32px; padding: 48px 24px;
+    background: var(--card-bg); border-radius: 24px;
+    backdrop-filter: blur(20px); border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(139,92,246,0.12), transparent 30%);
+    animation: rotate 14s linear infinite;
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-block; padding: 6px 16px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 20px; font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 36px; font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #a8edea 50%, #fed6e3 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 12px; letter-spacing: -1px;
+  }
+  body.light .hero h1 { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%); -webkit-background-clip: text; background-clip: text; }
+  .hero p { color: var(--text-secondary); font-size: 15px; max-width: 680px; margin: 0 auto; }
+
+  /* Section */
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 20px; font-weight: 700; margin-bottom: 16px;
+    padding-left: 14px; border-left: 4px solid var(--accent);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .ico { font-size: 24px; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 28px; }
+  .stat-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 20px; text-align: center;
+    transition: all 0.3s;
+  }
+  .stat-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.4); }
+  .stat-num { font-size: 28px; font-weight: 800; background: linear-gradient(90deg, #f093fb, #f5576c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { color: var(--text-secondary); font-size: 13px; margin-top: 4px; }
+
+  /* Highlight cards */
+  .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .highlight-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px; transition: all 0.3s;
+  }
+  .highlight-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.4); }
+  .highlight-card .icon { font-size: 28px; margin-bottom: 10px; }
+  .highlight-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--accent2); }
+  .highlight-card p { color: var(--text-secondary); font-size: 13px; line-height: 1.7; }
+
+  /* Model table */
+  .table-wrap { overflow-x: auto; margin-bottom: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    padding: 12px 14px; text-align: left; font-weight: 700;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: #fff; white-space: nowrap;
+  }
+  th:first-child { border-radius: 12px 0 0 0; }
+  th:last-child { border-radius: 0 12px 0 0; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+  tr:hover td { background: rgba(139,92,246,0.05); }
+  .chip {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 11px; font-weight: 600; margin: 2px;
+  }
+  .chip-free { background: rgba(16,185,129,0.15); color: #10b981; }
+  .chip-new { background: rgba(139,92,246,0.15); color: #8b5cf6; }
+  .chip-hot { background: rgba(239,68,68,0.15); color: #ef4444; }
+  .chip-nvidia { background: rgba(16,185,129,0.15); color: #10b981; }
+
+  /* Platform cards */
+  .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .platform-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px; transition: all 0.3s;
+  }
+  .platform-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.4); }
+  .platform-card .name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .platform-card .quota { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+  .platform-card .desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Warning */
+  .warning-card {
+    background: var(--warning-bg); border: 1px solid var(--warning-border);
+    border-radius: 16px; padding: 20px; margin-bottom: 14px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .warning-icon { font-size: 28px; flex-shrink: 0; }
+  .warning-card h4 { font-size: 14px; font-weight: 700; color: #d97706; margin-bottom: 6px; }
+  .warning-card p { font-size: 13px; color: #92400e; line-height: 1.6; }
+  body.light .warning-card p { color: #78350f; }
+
+  /* Combo */
+  .combo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .combo-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px; transition: all 0.3s;
+    border-left: 4px solid var(--accent);
+  }
+  .combo-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.4); }
+  .combo-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+  .combo-card .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  /* Footer */
+  .footer {
+    text-align: center; color: var(--text-muted); font-size: 12px;
+    margin-top: 40px; padding: 24px; border-top: 1px solid var(--border);
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 26px; }
+    .hero { padding: 32px 16px; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .highlight-grid, .platform-grid, .combo-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="date-badge">📅 2026-06-26 · 每日免费大模型日报</div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 切换主题</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🤖 AI 每日免费情报</div>
+      <h1>免费大模型日报</h1>
+      <p>今日（6月26日）无重大新模型发布 · 本周亮点：字节 Seed 2.1 Pro/Turbo 上线火山引擎，豆包宣布继续免费 · 136+ 免费模型实时追踪</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num">136+</div>
+      <div class="stat-label">免费 LLM 模型</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">25+</div>
+      <div class="stat-label">免费平台</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">NVIDIA NIM 免费模型</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">¥0</div>
+      <div class="stat-label">月均使用成本</div>
+    </div>
+  </div>
+
+  <!-- 今日动态 -->
+  <div class="section">
+    <div class="section-title"><span class="ico">📊</span>今日动态（2026-06-26）</div>
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <div class="icon">📊</div>
+        <h3>今日无重大新发布</h3>
+        <p>截至今日 09:45，<strong>无重大新模型发布</strong>。报告基于 freellm.net 最新实测数据（136+ 免费LLM模型，均经过实时API可用性测试）及本周亮点回顾生成。<br><br>最近更新：6月24日 ByteDance Seed 2.1 Pro/Turbo 上线；6月23日 火山引擎FORCE大会发布 Seedance 2.5 / Seed 2.1 / Seeddream 5.0。</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">🔥</div>
+        <h3>本周亮点回顾</h3>
+        <p><strong>① 字节 Seed 2.1 Pro/Turbo</strong>（6/23-24）：面向 Coding 和 Agent 时代，Pro 版高复杂度任务，Turbo 版大规模应用，火山引擎官网已上线。<br><br><strong>② 豆包继续免费</strong>：火山引擎总裁谭待在 FORCE 大会表示"豆包还是会保持免费"。</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">⚡</div>
+        <h3>freellm.net 高分免费模型</h3>
+        <p>根据最新评分数据：<br>
+        🥇 MiniMax M3 — 95分（NVIDIA NIM）<br>
+        🥈 Kimi K2.6 — 91分（NVIDIA NIM）<br>
+        🥉 Gemini 3.5 Flash — 90分（Google，永久免费）<br>
+        ④ GLM-5.1 — 88分（NVIDIA NIM）<br>
+        ⑤ Nemotron 3 Ultra — 88分（OpenRouter 免费）<br>
+        ⑥ DeepSeek V4 Pro — 86分（NVIDIA NIM）</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 永久免费大模型 -->
+  <div class="section">
+    <div class="section-title"><span class="ico">💎</span>永久免费大模型（精选）</div>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>模型</th>
+          <th>提供方</th>
+          <th>免费额度</th>
+          <th>速率限制</th>
+          <th>特点</th>
+        </tr>
+        <tr>
+          <td><strong>Gemini 3.5 Flash</strong> <span class="chip chip-free">永久免费</span></td>
+          <td>Google</td>
+          <td>完全免费</td>
+          <td>15 RPM / 1500 RPD</td>
+          <td>1M 上下文，多模态</td>
+        </tr>
+        <tr>
+          <td><strong>GLM-4.7-Flash</strong> <span class="chip chip-free">永久免费</span></td>
+          <td>智谱 Z-AI</td>
+          <td>完全免费</td>
+          <td>1并发</td>
+          <td>国产，速度快</td>
+        </tr>
+        <tr>
+          <td><strong>DeepSeek V4-Flash</strong> <span class="chip chip-free">永久免费</span></td>
+          <td>DeepSeek / NVIDIA NIM</td>
+          <td>完全免费</td>
+          <td>最高 40 RPM</td>
+          <td>1M 上下文</td>
+        </tr>
+        <tr>
+          <td><strong>ERNIE-Speed / Lite / Tiny</strong> <span class="chip chip-free">永久不限量</span></td>
+          <td>百度千帆</td>
+          <td>完全免费</td>
+          <td>不限量</td>
+          <td>国产，无需信用卡</td>
+        </tr>
+        <tr>
+          <td><strong>硅基流动 9B 以下模型</strong> <span class="chip chip-free">永久免费</span></td>
+          <td>硅基流动</td>
+          <td>完全免费</td>
+          <td>按注册赠送额度</td>
+          <td>GLM-4-Flash 等</td>
+        </tr>
+        <tr>
+          <td><strong>NVIDIA NIM 100+ 模型</strong> <span class="chip chip-nvidia">完全免费</span></td>
+          <td>NVIDIA Build</td>
+          <td>完全免费</td>
+          <td>最高 40 RPM</td>
+          <td>无需信用卡，含 DeepSeek/Kimi/GLM</td>
+        </tr>
+        <tr>
+          <td><strong>OpenRouter 26+ 免费模型</strong> <span class="chip chip-free">免费额度</span></td>
+          <td>OpenRouter</td>
+          <td>200次/天（免费档）</td>
+          <td>200次/天</td>
+          <td>Nemotron Ultra、Gemma 4、GPT-OSS 等</td>
+        </tr>
+        <tr>
+          <td><strong>Cerebras 免费模型</strong> <span class="chip chip-free">免费额度</span></td>
+          <td>Cerebras</td>
+          <td>100万 token/天</td>
+          <td>10 RPM / 100 RPD</td>
+          <td>GLM-4.7、GPT-OSS-120B</td>
+        </tr>
+        <tr>
+          <td><strong>Cloudflare Workers AI</strong> <span class="chip chip-free">免费额度</span></td>
+          <td>Cloudflare</td>
+          <td>1万神经元/天</td>
+          <td>共享额度</td>
+          <td>Kimi K2.7 Code、Gemma 4</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 大额免费平台 -->
+  <div class="section">
+    <div class="section-title"><span class="ico">🎁</span>大额免费平台</div>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="name">🔥 火山引擎（豆包）</div>
+        <div class="quota">200万 token/日 · 企业500万 token/日</div>
+        <div class="desc">豆包 Seed 2.1 系列已上线，谭待宣布豆包继续保持免费。每款模型50万 token 免费额度，企业协作计划可获500万 token。</div>
+      </div>
+      <div class="platform-card">
+        <div class="name">🌩️ 阿里百炼</div>
+        <div class="quota">100万 token/模型 · 每季度重置</div>
+        <div class="desc">Qwen3.7 Plus、Qwen3 Coder 等旗舰模型均含免费额度，新用户额外赠送。</div>
+      </div>
+      <div class="platform-card">
+        <div class="name">⚡ Groq Cloud</div>
+        <div class="quota">免费 tier 每日大额额度</div>
+        <div class="desc">Llama 3.3 70B、Mixtral 等模型极速推理，免费档适合日常使用。</div>
+      </div>
+      <div class="platform-card">
+        <div class="name">🌊 Mistral AI</div>
+        <div class="quota">约500K TPM / 1 RPS</div>
+        <div class="desc">Mistral Small 4、Mistral Large 3 等，欧洲最强开源模型平台。</div>
+      </div>
+      <div class="platform-card">
+        <div class="name">🏢 MoMA（摩尔线程）</div>
+        <div class="quota">新用户 9000万 token</div>
+        <div class="desc">国产GPU平台，新用户赠送大额免费额度，支持多家主流模型。</div>
+      </div>
+      <div class="platform-card">
+        <div class="name">🧠 Hugging Face Inference</div>
+        <div class="quota">免费推理 API</div>
+        <div class="desc">为 GLM-5.2（MIT开源）提供6小时免费算力，支持绝大多数开源模型。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 限时免费 / 新发布 -->
+  <div class="section">
+    <div class="section-title"><span class="ico">⚡</span>限时免费 / 近期新发布</div>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>模型 / 平台</th>
+          <th>类型</th>
+          <th>免费情况</th>
+          <th>截止 / 说明</th>
+        </tr>
+        <tr>
+          <td><strong>字节 Seed 2.1 Pro/Turbo</strong> <span class="chip chip-new">新发布</span></td>
+          <td>国产旗舰</td>
+          <td>火山引擎免费额度</td>
+          <td>200万 token/日，豆包宣布继续免费</td>
+        </tr>
+        <tr>
+          <td><strong>DeepSeek-V3.2 Preview</strong> <span class="chip chip-new">SambaNova</span></td>
+          <td>预览版</td>
+          <td>SambaNova 免费 API</td>
+          <td>20 RPM / 20 RPD / 20万 TPD</td>
+        </tr>
+        <tr>
+          <td><strong>Kimi K2.7 Code</strong> <span class="chip chip-new">新发布</span></td>
+          <td>编程模型</td>
+          <td>Cloudflare Workers AI 免费</td>
+          <td>1万神经元/天（共享）</td>
+        </tr>
+        <tr>
+          <td><strong>GLM-5.2（MIT 开源）</strong> <span class="chip chip-new">开源</span></td>
+          <td>开源模型</td>
+          <td>Hugging Face 免费算力</td>
+          <td>6小时免费，744B 参数，1M 上下文</td>
+        </tr>
+        <tr>
+          <td><strong>Cohere Command A+ 218B</strong> <span class="chip chip-new">SambaNova</span></td>
+          <td>企业级</td>
+          <td>SambaNova 免费 API</td>
+          <td>20 RPM / 20 RPD / 20万 TPD</td>
+        </tr>
+        <tr>
+          <td><strong>Mistral Medium 3.5 (128B)</strong> <span class="chip chip-new">新发布</span></td>
+          <td>欧洲旗舰</td>
+          <td>Mistral AI 免费 tier</td>
+          <td>约1 RPS / 500K TPM</td>
+        </tr>
+        <tr>
+          <td><strong>GitHub Models</strong></td>
+          <td>多模型聚合</td>
+          <td>10-15 RPM / 50-150 RPD</td>
+          <td>GPT-5、GPT-4.1、o4-mini、Llama 4 等</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 零成本组合方案 -->
+  <div class="section">
+    <div class="section-title"><span class="ico">🎯</span>零成本组合方案（月花费 ¥0）</div>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <h4>💬 日常对话方案</h4>
+        <div class="chips">
+          <span class="chip chip-free">Gemini 3.5 Flash</span>
+          <span class="chip chip-free">DeepSeek V4-Flash</span>
+          <span class="chip chip-free">GLM-4.7-Flash</span>
+          <span class="chip chip-nvidia">NVIDIA NIM</span>
+        </div>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:10px;line-height:1.7;">Gemini 3.5 Flash 1M上下文处理长文档；DeepSeek V4-Flash 推理性价比最高；GLM-4.7-Flash 中文最佳；NVIDIA NIM 备用，全部 ¥0。</p>
+      </div>
+      <div class="combo-card">
+        <h4>👨‍💻 编程开发方案</h4>
+        <div class="chips">
+          <span class="chip chip-free">Kimi K2.7 Code</span>
+          <span class="chip chip-free">Qwen3 Coder 480B</span>
+          <span class="chip chip-free">North Mini Code</span>
+          <span class="chip chip-nvidia">NVIDIA NIM</span>
+        </div>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:10px;line-height:1.7;">Kimi K2.7 Code 是专为编程优化的开源模型；Qwen3 Coder 480B 通过 OpenRouter 免费使用；North Mini Code 轻量编程模型；NVIDIA NIM 托管版 Kimi/Kimi K2.6 编程能力强。</p>
+      </div>
+      <div class="combo-card">
+        <h4>🌐 全模态方案</h4>
+        <div class="chips">
+          <span class="chip chip-free">Gemini 3.5 Flash</span>
+          <span class="chip chip-free">MiniMax M3</span>
+          <span class="chip chip-nvidia">NVIDIA NIM</span>
+          <span class="chip chip-free">Gemma 4 31B</span>
+        </div>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:10px;line-height:1.7;">Gemini 3.5 Flash 支持文本+图像；MiniMax M3（NVIDIA NIM 免费）支持文本+图像，95分最高评分；Gemma 4 31B 多模态开源；全部免费。</p>
+      </div>
+      <div class="combo-card">
+        <h4>🚀 高性能备用方案</h4>
+        <div class="chips">
+          <span class="chip chip-free">Nemotron 3 Ultra</span>
+          <span class="chip chip-free">GPT-OSS-120B</span>
+          <span class="chip chip-free">Owl Alpha</span>
+          <span class="chip chip-free">OpenRouter</span>
+        </div>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:10px;line-height:1.7;">Nemotron 3 Ultra 744B 参数（OpenRouter 免费）；GPT-OSS-120B 开源旗舰（OpenRouter/Cerebras 免费）；Owl Alpha 2.4T 参数最大开源模型；全部通过 OpenRouter 免费调用，200次/天。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 风险提醒 -->
+  <div class="section">
+    <div class="section-title"><span class="ico">⚠️</span>风险提醒</div>
+    <div class="warning-card">
+      <div class="warning-icon">⏰</div>
+      <div>
+        <h4>DeepSeek 旧模型 7月24日停用（约28天后）</h4>
+        <p>DeepSeek-V2 系列等旧模型将于 2026年7月24日 正式停用，请尽快迁移至 DeepSeek V4-Flash / V4-Pro。V4-Flash 目前已永久免费，是最佳替代方案。</p>
+      </div>
+    </div>
+    <div class="warning-card">
+      <div class="warning-icon">🛑</div>
+      <div>
+        <h4>腾讯混元原平台 9月30日全面停服（约96天后）</h4>
+        <p>腾讯混元原 API 平台将于 2026年9月30日 全面停服，请迁移至腾讯云 TokenHub（HY 2.0 Think/Instruct）。注意：HY 2.0 Think/Instruct 已于 6月22日 下线，请使用 hy3-preview。</p>
+      </div>
+    </div>
+    <div class="warning-card">
+      <div class="warning-icon">📉</div>
+      <div>
+        <h4>OpenRouter 免费档限额 200次/天</h4>
+        <p>OpenRouter 未充值用户免费模型调用限制为 200次/天。如需 1000次/天，需充值 $10 以上。免费档已覆盖 Nemotron Ultra、Gemma 4、GPT-OSS 等26+款模型，对轻度用户足够。</p>
+      </div>
+    </div>
+    <div class="warning-card">
+      <div class="warning-icon">💡</div>
+      <div>
+        <h4>预览版模型可能转付费 / 额度调整</h4>
+        <p>DeepSeek-V3.2 Preview（SambaNova）、Gemma-4-31B Preview 等预览版模型在未来可能转为付费或调整免费额度。建议生产环境使用已正式发布的永久免费模型（Gemini 3.5 Flash、DeepSeek V4-Flash、GLM-4.7-Flash）。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 数据来源 -->
+  <div class="section">
+    <div class="section-title"><span class="ico">📚</span>数据来源与方法论</div>
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <div class="icon">🔍</div>
+        <h3>多源交叉验证</h3>
+        <p>freellm.net（136+ 免费模型实时API测试）、llm-stats.com（AI模型发布追踪）、lmmarketcap.com（LLM更新日志）、各大模型官方平台公告、知乎/CSDN技术社区。</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">✅</div>
+        <h3>免费额度核验</h3>
+        <p>所有模型和平台均经过免费额度核验，确认无需付费订阅或信用卡绑定（NVIDIA NIM、Google Gemini、OpenRouter免费档、智谱GLM-4.7-Flash等均无需信用卡）。</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">🔄</div>
+        <h3>每日自动更新</h3>
+        <p>由 WorkBuddy 自动化任务每日 09:45 自动搜索、生成、推送。数据尽可能实时，但免费额度可能随时调整，请以各平台官网最新政策为准。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>📅 下次更新：明日 09:45 · 数据来源：freellm.net / llm-stats.com / lmmarketcap.com / 各大模型官方</p>
+    <p style="margin-top:8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准</p>
+    <p style="margin-top:8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
+  </div>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('light');
+    localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  }
+  // Restore theme
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+  }
+</script>
+</body>
+</html>
