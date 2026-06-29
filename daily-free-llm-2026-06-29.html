@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日免费大模型日报 · 2026-06-29</title>
+<meta name="description" content="2026年6月29日免费大模型日报：覆盖30+国内外平台永久免费、大额免费、限时活动信息，零成本组合方案。">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg-primary: #0f0c29;
+    --bg-secondary: rgba(255,255,255,0.04);
+    --bg-card: rgba(255,255,255,0.06);
+    --text-primary: #e8e8f0;
+    --text-secondary: #a0a0c0;
+    --text-muted: #8080a0;
+    --accent: #8b5cf6;
+    --accent2: #ec4899;
+    --border: rgba(255,255,255,0.08);
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --gradient1: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(15,12,41,0.95), rgba(48,43,99,0.9));
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    --chip-bg: rgba(139,92,246,0.15);
+    --chip-text: #c4b5fd;
+  }
+  [data-theme="light"] {
+    --bg-primary: #f8fafc;
+    --bg-secondary: rgba(0,0,0,0.03);
+    --bg-card: rgba(255,255,255,0.9);
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --accent: #7c3aed;
+    --accent2: #db2777;
+    --border: rgba(0,0,0,0.08);
+    --gradient1: linear-gradient(135deg, #eef2ff 0%, #faf5ff 50%, #fdf2f8 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(238,242,255,0.95), rgba(250,245,255,0.9));
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --chip-bg: rgba(124,58,237,0.1);
+    --chip-text: #7c3aed;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--gradient1);
+    min-height: 100vh;
+    color: var(--text-primary);
+    padding: 0 20px 60px;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Theme Toggle */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .theme-toggle:hover { transform: scale(1.1); border-color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 70px 24px 50px;
+    background: var(--gradient-hero);
+    border-radius: 0 0 28px 28px;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+    margin: 0 -20px 40px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(139,92,246,0.12), transparent 30%);
+    animation: rotate 15s linear infinite;
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .hero-inner { position: relative; z-index: 1; }
+  .date-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-size: 38px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+  [data-theme="light"] h1 {
+    background: linear-gradient(135deg, #7c3aed, #db2777, #d97706);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .tagline { color: var(--text-secondary); font-size: 15px; max-width: 680px; margin: 0 auto 24px; }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .ico { font-size: 24px; }
+
+  /* Highlight Banner */
+  .highlight-banner {
+    background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(236,72,153,0.08));
+    border: 1px solid rgba(139,92,246,0.25);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .highlight-banner .icon { font-size: 36px; flex-shrink: 0; }
+  .highlight-banner h2 { font-size: 17px; font-weight: 700; margin-bottom: 6px; color: var(--accent); }
+  .highlight-banner p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
+
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.4); box-shadow: var(--card-shadow); }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .card-icon { font-size: 32px; }
+  .card-title { font-size: 16px; font-weight: 700; }
+  .card-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .card-body { color: var(--text-secondary); font-size: 13.5px; line-height: 1.7; }
+  .card-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .tag-free { background: rgba(16,185,129,0.15); color: #10b981; }
+  .tag-limited { background: rgba(245,158,11,0.15); color: #f59e0b; }
+  .tag-new { background: rgba(236,72,153,0.15); color: #ec4899; }
+  .tag-permanent { background: rgba(139,92,246,0.15); color: #8b5cf6; }
+
+  /* Model list inside card */
+  .model-list { margin-top: 12px; }
+  .model-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .model-name { font-weight: 600; color: var(--text-primary); }
+  .model-quota { color: var(--success); font-size: 12px; font-weight: 600; }
+
+  /* Combo chips */
+  .combo-section { margin-bottom: 32px; }
+  .combo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .combo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    transition: all 0.3s;
+  }
+  .combo-card:hover { border-color: rgba(139,92,246,0.4); }
+  .combo-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip {
+    display: inline-block;
+    padding: 3px 10px;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .combo-cost {
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: rgba(16,185,129,0.1);
+    border-radius: 10px;
+    color: #10b981;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Warning card */
+  .warning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .warning-card {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 14px;
+    padding: 20px;
+    transition: all 0.3s;
+  }
+  .warning-card:hover { border-color: rgba(245,158,11,0.5); }
+  .warning-icon { font-size: 28px; margin-bottom: 8px; }
+  .warning-card h3 { font-size: 14px; font-weight: 700; color: #f59e0b; margin-bottom: 6px; }
+  .warning-card p { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+  .stat-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.4); }
+  .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-label { color: var(--text-muted); font-size: 12px; margin-top: 4px; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 50px;
+    padding: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* Link button */
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: 10px;
+  }
+  .link-btn:hover { background: rgba(139,92,246,0.25); }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    h1 { font-size: 28px; }
+    .hero { padding: 50px 16px 36px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .combo-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .highlight-banner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="切换主题">🌙</button>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="date-badge">📅 2026年6月29日 · 星期日</div>
+      <h1>每日免费大模型日报</h1>
+      <p class="tagline">今日无重大新发布 · 免费生态稳定 · 30+ 平台永久/大额免费额度持续可用</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <a class="link-btn" style="padding:10px 22px;font-size:14px;" href="#permanent">💎 永久免费</a>
+        <a class="link-btn" style="padding:10px 22px;font-size:14px;" href="#large-free">🎁 大额免费</a>
+        <a class="link-btn" style="padding:10px 22px;font-size:14px;" href="#combo">🎯 零成本方案</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num">30+</div>
+      <div class="stat-label">可免费使用平台</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">12</div>
+      <div class="stat-label">永久免费模型</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">300万+</div>
+      <div class="stat-label">每日可白嫖Token</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">¥0</div>
+      <div class="stat-label">月均使用成本</div>
+    </div>
+  </div>
+
+  <!-- Today's Highlight -->
+  <div class="section">
+    <div class="section-title"><span class="ico">✨</span>今日亮点</div>
+    <div class="highlight-banner">
+      <div class="icon">😊</div>
+      <div>
+        <h2>今日无重大新发布，免费生态格局稳定</h2>
+        <p>截至 2026-06-29，主流平台免费额度政策无重大调整。智谱 GLM-4.7-Flash、硅基流动 9B 以下模型、百度 ERNIE-Speed 等永久免费模型持续可用。火山引擎每日 200 万 Token 自动刷新，Cerebras 每日 100 万 Token，组合使用可满足绝大多数开发需求。建议重点关注各平台免费额度有效期，阿里百炼 7000 万 Token 有效期仅 90 天。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Permanent Free -->
+  <div class="section" id="permanent">
+    <div class="section-title"><span class="ico">💎</span>永久免费大模型</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🧠</div>
+          <div>
+            <div class="card-title">智谱 AI · GLM-4.7-Flash</div>
+            <div class="card-subtitle">open.bigmodel.cn</div>
+          </div>
+        </div>
+        <div class="card-body">
+          128K 上下文，30 并发，中文与代码能力均衡。新用户另赠 2000 万 Token 永久有效。GLM-4.7-Flash 升级至 200K 上下文，编程能力显著提升。
+        </div>
+        <span class="card-tag tag-permanent">永久免费不限量</span>
+        <a class="link-btn" href="https://open.bigmodel.cn" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🌊</div>
+          <div>
+            <div class="card-title">硅基流动 · 9B以下模型</div>
+            <div class="card-subtitle">siliconflow.cn</div>
+          </div>
+        </div>
+        <div class="card-body">
+          9B 以下模型永久免费不限量（2026.6 确认）。覆盖 Qwen2.5-7B、GLM-4-9B、DeepSeek-R1-Distill-Llama-8B、Gemma-2-9B、Yi-9B 等，国内低延迟。
+        </div>
+        <span class="card-tag tag-permanent">永久免费不限量</span>
+        <a class="link-btn" href="https://siliconflow.cn" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🅱️</div>
+          <div>
+            <div class="card-title">百度千帆 · ERNIE-Speed</div>
+            <div class="card-subtitle">console.bce.baidu.com</div>
+          </div>
+        </div>
+        <div class="card-body">
+          ERNIE-Speed-128K、ERNIE-Lite-8K 永久免费不限量。适合知识库问答、内容分类等高频轻量场景。合规性强，企业项目友好。
+        </div>
+        <span class="card-tag tag-permanent">永久免费不限量</span>
+        <a class="link-btn" href="https://console.bce.baidu.com/qianfan/" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🐧</div>
+          <div>
+            <div class="card-title">腾讯混元 · 混元-Lite</div>
+            <div class="card-subtitle">hunyuan.tencent.com</div>
+          </div>
+        </div>
+        <div class="card-body">
+          256K 超长上下文，永久免费。另赠送 100 万 Token 一次性免费额度（有效期1年）。完美兼容 OpenAI 格式，Claude Code / OpenClaw 可直接接入。
+        </div>
+        <span class="card-tag tag-permanent">永久免费</span>
+        <a class="link-btn" href="https://hunyuan.tencent.com" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🎙️</div>
+          <div>
+            <div class="card-title">讯飞星火 · Spark Lite</div>
+            <div class="card-subtitle">xinghuo.xfyun.cn</div>
+          </div>
+        </div>
+        <div class="card-body">
+          Spark Lite 永久免费。平台同时提供多模态、图像理解、文本生成等多种模型限时免费体验，适合快速原型开发。
+        </div>
+        <span class="card-tag tag-permanent">永久免费</span>
+        <a class="link-btn" href="https://xinghuo.xfyun.cn" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <div>
+            <div class="card-title">AGnes AI · 全模态无限免费</div>
+            <div class="card-subtitle">platform.agnes-ai.com</div>
+          </div>
+        </div>
+        <div class="card-body">
+          2026 年新平台，文本/图像/视频全模态无限期免费，无需绑卡。适合多模态应用开发，是目前唯一的三方全模态免费平台。
+        </div>
+        <span class="card-tag tag-new">2026新平台</span>
+        <a class="link-btn" href="https://platform.agnes-ai.com" target="_blank">前往平台 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Large Free Tier -->
+  <div class="section" id="large-free">
+    <div class="section-title"><span class="ico">🎁</span>大额免费平台</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🌋</div>
+          <div>
+            <div class="card-title">火山引擎（豆包）</div>
+            <div class="card-subtitle">console.volcengine.com</div>
+          </div>
+        </div>
+        <div class="card-body">
+          安心体验：每模型 50 万 Token 一次性。协作奖励计划：每日自动刷新 200 万 Token。延迟低至 20ms，支持文本/图像/视频多模态。
+        </div>
+        <div class="model-list">
+          <div class="model-item"><span class="model-name">Doubao-lite</span><span class="model-quota">200万/天</span></div>
+          <div class="model-item"><span class="model-name">Seed-OSS-36B</span><span class="model-quota">开源免费</span></div>
+        </div>
+        <span class="card-tag tag-free">每日刷新</span>
+        <a class="link-btn" href="https://console.volcengine.com/ark" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">☁️</div>
+          <div>
+            <div class="card-title">阿里云百炼</div>
+            <div class="card-subtitle">dashscope.aliyun.com</div>
+          </div>
+        </div>
+        <div class="card-body">
+          每个模型 100 万 Token/3个月（可叠加多个模型）。覆盖通义千问全系、DeepSeek、Kimi、GLM、Baichuan、Llama 等，模型最全。
+        </div>
+        <div class="model-list">
+          <div class="model-item"><span class="model-name">Qwen3.5/Qwen3.6</span><span class="model-quota">100万×N</span></div>
+          <div class="model-item"><span class="model-name">DeepSeek V3.2</span><span class="model-quota">100万/3月</span></div>
+        </div>
+        <span class="card-tag tag-free">7000万可领</span>
+        <a class="link-btn" href="https://dashscope.aliyun.com" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🧠</div>
+          <div>
+            <div class="card-title">智谱 AI</div>
+            <div class="card-subtitle">open.bigmodel.cn</div>
+          </div>
+        </div>
+        <div class="card-body">
+          新用户注册送 2000 万 Token 永久有效。GLM-4-Flash / GLM-4.7-Flash 额外永久免费不限量。代码生成与长文本理解能力突出。
+        </div>
+        <div class="model-list">
+          <div class="model-item"><span class="model-name">GLM-4.7-Flash</span><span class="model-quota">永久免费</span></div>
+          <div class="model-item"><span class="model-name">GLM-5.1</span><span class="model-quota">2000万赠送</span></div>
+        </div>
+        <span class="card-tag tag-free">2000万赠送</span>
+        <a class="link-btn" href="https://open.bigmodel.cn" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🔥</div>
+          <div>
+            <div class="card-title">硅基流动</div>
+            <div class="card-subtitle">siliconflow.cn</div>
+          </div>
+        </div>
+        <div class="card-body">
+          实名送 16 元，9B 以下模型永久免费不限量。平台汇集各家王牌模型，成本低，服务稳定，被誉为"模型精品超市"。
+        </div>
+        <div class="model-list">
+          <div class="model-item"><span class="model-name">DeepSeek-V3</span><span class="model-quota">限时免费</span></div>
+          <div class="model-item"><span class="model-name">Qwen2.5-7B 等</span><span class="model-quota">永久免费</span></div>
+        </div>
+        <span class="card-tag tag-free">实名送16元</span>
+        <a class="link-btn" href="https://siliconflow.cn" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">💚</div>
+          <div>
+            <div class="card-title">Groq（海外）</div>
+            <div class="card-subtitle">console.groq.com</div>
+          </div>
+        </div>
+        <div class="card-body">
+          每天约 14,400 次免费调用。Llama 4、DeepSeek R1 免费使用，推理速度极快（每秒 2000+ token）。需海外网络。
+        </div>
+        <div class="model-list">
+          <div class="model-item"><span class="model-name">Llama 4 Scout</span><span class="model-quota">~14400次/天</span></div>
+          <div class="model-item"><span class="model-name">DeepSeek R1</span><span class="model-quota">免费</span></div>
+        </div>
+        <span class="card-tag tag-free">每日刷新</span>
+        <a class="link-btn" href="https://console.groq.com" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">⚡</div>
+          <div>
+            <div class="card-title">Cerebras（海外）</div>
+            <div class="card-subtitle">cloud.cerebras.ai</div>
+          </div>
+        </div>
+        <div class="card-body">
+          每日 100 万 Token 免费，推理速度极快（2000+ tok/s）。支持 Llama 4、DeepSeek R1 等顶级开源模型。需海外网络。
+        </div>
+        <div class="model-list">
+          <div class="model-item"><span class="model-name">Llama 4 全系</span><span class="model-quota">100万/天</span></div>
+          <div class="model-item"><span class="model-name">DeepSeek R1</span><span class="model-quota">100万/天</span></div>
+        </div>
+        <span class="card-tag tag-free">每日100万</span>
+        <a class="link-btn" href="https://cloud.cerebras.ai" target="_blank">前往平台 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Limited Time / New Models -->
+  <div class="section">
+    <div class="section-title"><span class="ico">⚡</span>限时免费 / 新发布</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🆕</div>
+          <div>
+            <div class="card-title">Kimi K2.6 / K2.5</div>
+            <div class="card-subtitle">platform.moonshot.cn</div>
+          </div>
+        </div>
+        <div class="card-body">
+          256K 上下文，PDF 理解能力强，长文档/RAG 场景第一梯队。新用户送 500-1000 万 Token，K2.5-Lite 有日常免费额度。
+        </div>
+        <span class="card-tag tag-limited">限时免费额度</span>
+        <a class="link-btn" href="https://platform.moonshot.cn" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🖼️</div>
+          <div>
+            <div class="card-title">MiniMax M3</div>
+            <div class="card-subtitle">platform.minimaxi.com</div>
+          </div>
+        </div>
+        <div class="card-body">
+          M3 得分 95 分（freellm.net 实测），登顶免费模型排行榜。全模态支持，注册送 15 元代金券。图像、视频生成能力突出。
+        </div>
+        <span class="card-tag tag-new">95分免费模型</span>
+        <a class="link-btn" href="https://platform.minimaxi.com" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🌐</div>
+          <div>
+            <div class="card-title">OpenRouter · 26+ 免费模型</div>
+            <div class="card-subtitle">openrouter.ai</div>
+          </div>
+        </div>
+        <div class="card-body">
+          全球最大模型聚合平台，29 个免费模型，50 次/天。覆盖 GPT-4o free、Claude 3.5 Haiku free、Gemini Flash 等。需海外网络。
+        </div>
+        <span class="card-tag tag-free">29款免费模型</span>
+        <a class="link-btn" href="https://openrouter.ai" target="_blank">前往平台 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🇫🇷</div>
+          <div>
+            <div class="card-title">Mistral AI</div>
+            <div class="card-subtitle">console.mistral.ai</div>
+          </div>
+        </div>
+        <div class="card-body">
+          每月 10 亿 Token 免费额度。Mistral Large 2、Codestral（编程专用）免费使用。欧洲数据合规，适合隐私敏感场景。
+        </div>
+        <span class="card-tag tag-free">10亿/月</span>
+        <a class="link-btn" href="https://console.mistral.ai" target="_blank">前往平台 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zero-Cost Combo -->
+  <div class="section combo-section" id="combo">
+    <div class="section-title"><span class="ico">🎯</span>零成本组合方案</div>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <h3>💬 日常对话 / 内容生成</h3>
+        <div class="chips">
+          <span class="chip">智谱 GLM-4.7-Flash</span>
+          <span class="chip">硅基流动 Qwen2.5-7B</span>
+          <span class="chip">百度 ERNIE-Speed</span>
+          <span class="chip">腾讯混元-Lite</span>
+        </div>
+        <div class="combo-cost">💰 月花费：¥0</div>
+      </div>
+      <div class="combo-card">
+        <h3>💻 编程 / 代码审查</h3>
+        <div class="chips">
+          <span class="chip">DeepSeek V4-Flash</span>
+          <span class="chip">GLM-4.7-Flash</span>
+          <span class="chip">硅基流动 DeepSeek-R1-8B</span>
+          <span class="chip">火山引擎 200万/天</span>
+        </div>
+        <div class="combo-cost">💰 月花费：¥0</div>
+      </div>
+      <div class="combo-card">
+        <h3>📄 长文档 / RAG</h3>
+        <div class="chips">
+          <span class="chip">Kimi K2.6 (256K)</span>
+          <span class="chip">GLM-4.7-Flash (200K)</span>
+          <span class="chip">腾讯混元-Lite (256K)</span>
+        </div>
+        <div class="combo-cost">💰 月花费：¥0</div>
+      </div>
+      <div class="combo-card">
+        <h3>🎨 多模态 / 图像生成</h3>
+        <div class="chips">
+          <span class="chip">AGnes AI 全模态</span>
+          <span class="chip">硅基流动 Qwen-Image</span>
+          <span class="chip">DMXAPI 视频生成</span>
+          <span class="chip">豆包 Seedream 5.0</span>
+        </div>
+        <div class="combo-cost">💰 月花费：¥0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk Warnings -->
+  <div class="section">
+    <div class="section-title"><span class="ico">⚠️</span>风险提醒</div>
+    <div class="warning-grid">
+      <div class="warning-card">
+        <div class="warning-icon">⏰</div>
+        <h3>阿里百炼额度有效期 90 天</h3>
+        <p>阿里百炼每个模型 100 万 Token 有效期仅 90 天，过期自动清零。建议按需注册，不要一次性注册所有模型导致浪费。可叠加多个不同模型额度。</p>
+      </div>
+      <div class="warning-card">
+        <div class="warning-icon">🔒</div>
+        <h3>实名认证要求</h3>
+        <p>几乎所有国内平台（硅基流动、智谱、火山引擎、百度、腾讯）均需实名认证。准备好身份证，部分平台需人脸验证。</p>
+      </div>
+      <div class="warning-card">
+        <div class="warning-icon">💸</div>
+        <h3>自动续费 / 欠费风险</h3>
+        <p>免费额度用完后，部分平台会自动从绑定的支付方式扣费。务必设置用量警报，或开启"安心体验"模式（火山引擎支持）。</p>
+      </div>
+      <div class="warning-card">
+        <div class="warning-icon">🚨</div>
+        <h3>中转站掺水风险</h3>
+        <p>CISPA 2026 报告指出 45.83% 的中转站存在模型掉包问题。优先选择有社群口碑的站（CatRouter、诗云API），不要大额充值。</p>
+      </div>
+      <div class="warning-card">
+        <div class="warning-icon">📉</div>
+        <h3>免费政策随时可能调整</h3>
+        <p>大厂免费额度政策说变就变，本报告数据截至 2026-06-29。使用前请务必前往各平台官网确认最新政策。</p>
+      </div>
+      <div class="warning-card">
+        <div class="warning-icon">🛡️</div>
+        <h3>数据隐私提醒</h3>
+        <p>中转站可以看到你的所有 API 请求内容。敏感项目、生产环境请直接使用厂商官方 API，不要走中转站。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Industry News -->
+  <div class="section">
+    <div class="section-title"><span class="ico">📰</span>近期行业动态回顾</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📊</div>
+          <div>
+            <div class="card-title">freellm.net 136+ 免费模型实测</div>
+          </div>
+        </div>
+        <div class="card-body">
+          全球最大免费 LLM 实时测试平台，136+ 模型经过实时 API 测试。MiniMax M3 95分登顶，Kimi K2.6、Gemini 3.5 Flash、DeepSeek V4 Pro 高分免费。每周更新。
+        </div>
+        <a class="link-btn" href="https://freellm.net" target="_blank">查看实测 →</a>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🔧</div>
+          <div>
+            <div class="card-title">One-API / New-API 聚合网关</div>
+          </div>
+        </div>
+        <div class="card-body">
+          把所有平台的免费 API Key 统一管理，自动负载均衡和故障转移。New-API（29.2K Stars）是最推荐的开源方案，一行 Docker 命令启动。
+        </div>
+        <span class="card-tag tag-free">开源免费</span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🌊</div>
+          <div>
+            <div class="card-title">6月开源海啸 25+ 模型</div>
+          </div>
+        </div>
+        <div class="card-body">
+          2026 年 6 月，国内外开源模型大爆发。GLM-5.2 MIT 开源、DeepSeek V4 开放 API、Qwen3.5 开源版发布，开源生态达到历史最丰富时期。
+        </div>
+        <span class="card-tag tag-new">2026.6 回顾</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>📅 下次更新：明日 09:45 · 数据来源：知乎、CSDN、技术栈、UU AI Hub、各平台官网</p>
+    <p style="margin-top: 8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准。本报告仅供参考。</p>
+    <p style="margin-top: 8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">GitHub: lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成 · 2026-06-29</p>
+  </div>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    if (html.getAttribute('data-theme') === 'dark') {
+      html.setAttribute('data-theme', 'light');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+  // Load saved theme
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const btn = document.getElementById('themeBtn');
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (btn) btn.textContent = '☀️';
+    }
+  })();
+</script>
+</body>
+</html>
