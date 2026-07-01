@@ -6,15 +6,17 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-06-30）
+## 📰 今日摘要（2026-07-01）
 
-😊 **今日动态**：今日（6月30日）无重大新模型发布，免费生态格局稳定。主流平台免费额度政策无重大调整，永久免费模型持续可用。
+🆕 **7月首日动态**：免费生态格局稳定，无重大新模型发布。今日重点梳理「量大能用的先进模型」免费体验途径。
 
-💎 **永久免费稳定格局**：智谱 GLM-4.7-Flash（200K 上下文）、硅基流动 9B 以下模型、百度 ERNIE-Speed-128K、腾讯混元-Lite（256K）、讯飞 Spark Lite、AGnes AI 全模态无限免费。
+💎 **永久免费12款**：DeepSeek V4-Flash、GLM-4.7-Flash、百度 ERNIE-Speed/Lite、腾讯混元-Lite、讯飞 Spark Lite、硅基流动 <9B、AGnes AI、OpenRouter 26+、NVIDIA NIM 100+、Cerebras、Groq。
 
-🎁 **大额每日刷新**：火山引擎 200 万 Token/天、Cerebras 100 万 Token/天、Groq ~14400 次/天、Mistral 10 亿/月。
+🎁 **大额每日刷新**：火山引擎 200万Token/天 + Cerebras 100万Token/天 = 每日至少300万Token，轻度开发完全零成本。
 
-⚠️ **风险提醒**：DeepSeek 旧模型 7月24日停用（约24天）；腾讯混元原平台 9月30日停服（约92天）；阿里百炼 7000 万 Token 有效期仅 90 天；中转站掺水风险。
+🏆 **先进模型免费体验**：MiniMax M3（95分/freellm.net实测）、Kimi K2.6（91分）、Gemini 3.5 Flash（90分）均可通过 NVIDIA NIM 等平台免费体验。
+
+⚠️ **风险提醒**：DeepSeek 旧模型 7月24日停用（倒计时23天）；腾讯混元原平台 9月30日停服（约91天）；阿里百炼 7000万Token 有效期仅90天。
 
 ## 内容覆盖
 
@@ -28,6 +30,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-07-01 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-01.html) | [HTML](daily-free-llm-2026-07-01.html) |
 | 2026-06-30 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-06-30.html) | [HTML](daily-free-llm-2026-06-30.html) |
 | 2026-06-29 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-06-29.html) | [HTML](daily-free-llm-2026-06-29.html) |
 | 2026-06-26 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-06-26.html) | [HTML](daily-free-llm-2026-06-26.html) |
