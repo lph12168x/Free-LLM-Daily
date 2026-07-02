@@ -1,31 +1,108 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>每日免费大模型日报 · Free LLM Daily</title>
 <meta name="description" content="每日自动更新的免费大模型情报，覆盖 DeepSeek、智谱GLM、百度千帆、硅基流动、火山引擎、Groq、Cerebras 等 30+ 国内外平台的免费额度、限时活动、零成本组合方案。">
 <style>
+  /* ===== CSS Variables ===== */
+  :root {
+    --bg-primary: #0f0c29;
+    --bg-secondary: #1a1740;
+    --bg-card: rgba(255,255,255,0.04);
+    --bg-card-hover: rgba(255,255,255,0.08);
+    --border-card: rgba(255,255,255,0.08);
+    --border-accent: rgba(139,92,246,0.4);
+    --text-primary: #e8e8f0;
+    --text-secondary: #b0b0c8;
+    --text-muted: #8080a0;
+    --accent-1: #8b5cf6;
+    --accent-2: #ec4899;
+    --accent-3: #f093fb;
+    --accent-4: #f5576c;
+    --gradient-hero: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --gradient-badge: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    --gradient-title: linear-gradient(135deg, #fff 0%, #a8edea 50%, #fed6e3 100%);
+    --gradient-cta: linear-gradient(90deg, #8b5cf6, #ec4899);
+    --gradient-date: linear-gradient(135deg, #8b5cf6, #ec4899);
+    --shadow-cta: 0 4px 20px rgba(139,92,246,0.4);
+    --shadow-cta-hover: 0 8px 28px rgba(139,92,246,0.6);
+    --hero-overlay: conic-gradient(from 0deg, transparent, rgba(139,92,246,0.18), transparent 30%);
+    --stat-num-gradient: linear-gradient(90deg, #f093fb, #f5576c);
+    --tag-bg: rgba(139,92,246,0.15);
+    --tag-text: #c4b5fd;
+    --tag-border: rgba(139,92,246,0.25);
+    --footer-border: rgba(255,255,255,0.08);
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #f5f3ff;
+    --bg-secondary: #ede9fe;
+    --bg-card: rgba(255,255,255,0.75);
+    --bg-card-hover: rgba(255,255,255,0.95);
+    --border-card: rgba(139,92,246,0.12);
+    --border-accent: rgba(139,92,246,0.35);
+    --text-primary: #1e1b4b;
+    --text-secondary: #4c4a6e;
+    --text-muted: #7876a0;
+    --gradient-hero: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #e0e7ff 100%);
+    --gradient-title: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #db2777 100%);
+    --gradient-cta: linear-gradient(90deg, #7c3aed, #db2777);
+    --gradient-date: linear-gradient(135deg, #7c3aed, #db2777);
+    --hero-overlay: conic-gradient(from 0deg, transparent, rgba(124,58,237,0.08), transparent 30%);
+    --stat-num-gradient: linear-gradient(90deg, #7c3aed, #db2777);
+    --tag-bg: rgba(124,58,237,0.1);
+    --tag-text: #6d28d9;
+    --tag-border: rgba(124,58,237,0.2);
+    --footer-border: rgba(139,92,246,0.12);
+    --shadow-cta: 0 4px 20px rgba(124,58,237,0.3);
+    --shadow-cta-hover: 0 8px 28px rgba(124,58,237,0.5);
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    background: var(--gradient-hero);
     min-height: 100vh;
-    color: #e8e8f0;
+    color: var(--text-primary);
     padding: 32px 20px 60px;
-    line-height: 1.6;
+    line-height: 1.7;
+    transition: background 0.4s, color 0.4s;
   }
   .container { max-width: 1200px; margin: 0 auto; }
+
+  /* Theme Toggle */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-card);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .theme-toggle:hover { border-color: var(--accent-1); transform: scale(1.1); box-shadow: 0 4px 20px rgba(139,92,246,0.3); }
 
   /* Hero */
   .hero {
     text-align: center;
-    margin-bottom: 40px;
-    padding: 60px 24px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 24px;
+    margin-bottom: 48px;
+    padding: 70px 32px 60px;
+    background: var(--bg-card);
+    border-radius: 28px;
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-card);
     position: relative;
     overflow: hidden;
   }
@@ -34,85 +111,92 @@
     position: absolute;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(139, 92, 246, 0.18), transparent 30%);
+    background: var(--hero-overlay);
     animation: rotate 14s linear infinite;
   }
   @keyframes rotate { to { transform: rotate(360deg); } }
   .hero-inner { position: relative; z-index: 1; }
   .badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    padding: 7px 18px;
+    background: var(--gradient-badge);
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     letter-spacing: 0.5px;
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(240,147,251,0.3);
   }
   h1 {
-    font-size: 44px;
+    font-size: 48px;
     font-weight: 800;
-    background: linear-gradient(135deg, #fff 0%, #a8edea 50%, #fed6e3 100%);
+    background: var(--gradient-title);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 14px;
-    letter-spacing: -1px;
+    margin-bottom: 16px;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
   }
-  .tagline { color: #a0a0c0; font-size: 16px; max-width: 720px; margin: 0 auto 22px; }
+  .tagline { color: var(--text-secondary); font-size: 16px; max-width: 740px; margin: 0 auto 28px; }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .cta {
-    display: inline-block;
-    padding: 12px 28px;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 30px;
+    background: var(--gradient-cta);
     color: #fff;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
     font-size: 15px;
     transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
-    margin: 4px;
+    box-shadow: var(--shadow-cta);
   }
-  .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(139, 92, 246, 0.6); }
-  .cta.ghost { background: transparent; border: 1.5px solid rgba(255, 255, 255, 0.3); box-shadow: none; }
-  .cta.ghost:hover { background: rgba(255, 255, 255, 0.08); }
+  .cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-cta-hover); }
+  .cta.ghost { background: transparent; border: 1.5px solid var(--border-card); box-shadow: none; color: var(--text-primary); }
+  .cta.ghost:hover { background: var(--bg-card-hover); border-color: var(--accent-1); }
 
   /* Stats */
   .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-bottom: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-bottom: 48px;
   }
   .stat-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 18px;
+    padding: 26px 24px;
     backdrop-filter: blur(10px);
     transition: all 0.3s;
+    text-align: center;
   }
-  .stat-card:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, 0.5); }
+  .stat-card:hover { transform: translateY(-5px); border-color: var(--border-accent); box-shadow: 0 8px 30px rgba(139,92,246,0.15); }
   .stat-num {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 800;
-    background: linear-gradient(90deg, #f093fb, #f5576c);
+    background: var(--stat-num-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    line-height: 1.1;
   }
-  .stat-label { color: #b0b0c8; font-size: 13px; }
-  .stat-icon { font-size: 24px; margin-bottom: 8px; }
+  .stat-label { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+  .stat-icon { font-size: 28px; margin-bottom: 10px; }
 
   /* Section */
-  .section { margin-bottom: 40px; }
+  .section { margin-bottom: 48px; }
   .section-title {
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 18px;
-    padding-left: 14px;
-    border-left: 4px solid #8b5cf6;
+    margin-bottom: 20px;
+    padding-left: 16px;
+    border-left: 4px solid var(--accent-1);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -122,91 +206,165 @@
   /* Report list */
   .report-list { display: grid; gap: 14px; }
   .report-item {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 22px 24px;
     display: flex;
     align-items: center;
     gap: 20px;
     transition: all 0.3s;
     text-decoration: none;
     color: inherit;
+    backdrop-filter: blur(10px);
   }
   .report-item:hover {
-    transform: translateX(4px);
-    border-color: rgba(139, 92, 246, 0.4);
-    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(5px);
+    border-color: var(--border-accent);
+    background: var(--bg-card-hover);
+    box-shadow: 0 4px 20px rgba(139,92,246,0.12);
   }
   .report-date {
     flex-shrink: 0;
-    width: 90px;
+    width: 96px;
     text-align: center;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    border-radius: 10px;
-    padding: 12px 8px;
+    background: var(--gradient-date);
+    border-radius: 12px;
+    padding: 14px 10px;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(139,92,246,0.3);
   }
-  .report-date .day { font-size: 22px; font-weight: 800; line-height: 1; }
-  .report-date .month { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+  .report-date .day { font-size: 26px; font-weight: 800; line-height: 1; }
+  .report-date .month { font-size: 12px; opacity: 0.9; margin-top: 5px; }
   .report-info { flex: 1; min-width: 0; }
-  .report-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-  .report-info p { color: #a0a0c0; font-size: 13px; }
-  .report-arrow { color: #8b5cf6; font-size: 22px; flex-shrink: 0; }
+  .report-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--accent-3); line-height: 1.4; }
+  .report-info p { color: var(--text-secondary); font-size: 13px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .report-arrow { color: var(--accent-1); font-size: 24px; flex-shrink: 0; transition: transform 0.2s; }
+  .report-item:hover .report-arrow { transform: translateX(4px); }
 
   /* Category cards */
   .cat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 16px;
   }
   .cat-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 24px;
     transition: all 0.3s;
+    backdrop-filter: blur(10px);
   }
-  .cat-card:hover { transform: translateY(-3px); border-color: rgba(139, 92, 246, 0.4); }
-  .cat-icon { font-size: 30px; margin-bottom: 10px; }
-  .cat-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #f093fb; }
-  .cat-card p { color: #b0b0c8; font-size: 13px; }
+  .cat-card:hover { transform: translateY(-4px); border-color: var(--border-accent); box-shadow: 0 8px 30px rgba(139,92,246,0.12); }
+  .cat-icon { font-size: 32px; margin-bottom: 12px; }
+  .cat-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--accent-3); }
+  .cat-card p { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
 
   /* Features */
   .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 16px;
   }
   .feature {
-    padding: 18px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 12px;
-    border-left: 3px solid #8b5cf6;
+    padding: 20px 22px;
+    background: var(--bg-card);
+    border-radius: 14px;
+    border-left: 4px solid var(--accent-1);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--accent-1);
+    transition: all 0.3s;
   }
-  .feature h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: #c4b5fd; }
-  .feature p { color: #b0b0c8; font-size: 13px; }
+  .feature:hover { transform: translateX(3px); border-color: var(--border-accent); }
+  .feature h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--tag-text); }
+  .feature p { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
+
+  /* Tag pills for feature list */
+  .tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid var(--tag-border);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 3px;
+  }
+
+  /* Platform highlights strip */
+  .platform-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
 
   /* Footer */
   .footer {
     text-align: center;
-    color: #8080a0;
-    font-size: 12px;
-    margin-top: 50px;
-    padding: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 60px;
+    padding: 28px 20px;
+    border-top: 1px solid var(--footer-border);
   }
-  .footer a { color: #8b5cf6; text-decoration: none; }
+  .footer a { color: var(--accent-1); text-decoration: none; font-weight: 600; }
   .footer a:hover { text-decoration: underline; }
+  .footer p { margin-bottom: 6px; }
+
+  /* Scroll to top */
+  .scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-card);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { border-color: var(--accent-1); transform: scale(1.1); }
 
   @media (max-width: 640px) {
-    h1 { font-size: 30px; }
-    .hero { padding: 40px 18px; }
+    h1 { font-size: 32px; }
+    .hero { padding: 50px 18px 40px; }
     .report-item { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .report-date { width: auto; padding: 8px 16px; }
+    .report-date { width: auto; padding: 10px 20px; display: flex; gap: 8px; align-items: center; }
+    .report-date .day { font-size: 20px; }
+    .report-date .month { margin-top: 0; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .cta-row { flex-direction: column; align-items: center; }
+  }
+  @media (max-width: 400px) {
+    .stats { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" onclick="toggleTheme()" title="切换亮色/暗色主题" aria-label="主题切换">
+  <span id="theme-icon">☀️</span>
+</button>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+
 <div class="container">
 
   <!-- Hero -->
@@ -215,8 +373,11 @@
       <div class="badge">🤖 AI 每日免费情报</div>
       <h1>每日免费大模型日报</h1>
       <p class="tagline">每天 09:45 自动更新 · 覆盖 30+ 国内外平台 · 永久免费 / 大额免费 / 限时活动 / 零成本组合方案</p>
-      <a class="cta" href="daily-free-llm-2026-07-02.html">📅 查看最新日报</a>
-      <a class="cta ghost" href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">⭐ GitHub 仓库</a>
+      <div class="cta-row">
+        <a class="cta" href="daily-free-llm-2026-07-02.html">📅 查看最新日报</a>
+        <a class="cta ghost" href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">⭐ GitHub 仓库</a>
+        <a class="cta ghost" href="https://freellm.net/models/" target="_blank">🔍 freellm.net 实测</a>
+      </div>
     </div>
   </div>
 
@@ -324,32 +485,70 @@
       <div class="cat-card">
         <div class="cat-icon">💎</div>
         <h3>永久免费大模型</h3>
-        <p>DeepSeek V4-Flash、智谱 GLM-4.7-Flash、AGnes AI、百度千帆、硅基流动、OpenRouter 26+ 款等</p>
+        <p>DeepSeek V4-Flash、智谱 GLM-4.7-Flash、AGnes AI、百度千帆、硅基流动、OpenRouter 25+ 款等</p>
+        <div class="platform-strip">
+          <span class="tag">DeepSeek</span>
+          <span class="tag">智谱 GLM</span>
+          <span class="tag">百度千帆</span>
+          <span class="tag">腾讯混元</span>
+          <span class="tag">硅基流动</span>
+          <span class="tag">Agnes AI</span>
+        </div>
       </div>
       <div class="cat-card">
         <div class="cat-icon">🎁</div>
         <h3>大额免费平台</h3>
-        <p>火山引擎 200万/日、阿里百炼 100万×N、MoMA 2500万、Groq、Mistral 10亿/月、Cerebras 100万/日</p>
+        <p>火山引擎 200万/日、阿里百炼 100万×N、Groq、Mistral 10亿/月、Cerebras 100万/日</p>
+        <div class="platform-strip">
+          <span class="tag">火山引擎</span>
+          <span class="tag">阿里百炼</span>
+          <span class="tag">Groq</span>
+          <span class="tag">Mistral</span>
+          <span class="tag">Cerebras</span>
+        </div>
       </div>
       <div class="cat-card">
         <div class="cat-icon">⚡</div>
         <h3>限时 / 新发布</h3>
         <p>小米 MiMo Claw、豆包 2.0 Pro、天工 SkyClaw、蚂蚁百灵 Ring-2.6-1T 等最新免费窗口</p>
+        <div class="platform-strip">
+          <span class="tag">MiniMax M3</span>
+          <span class="tag">Kimi K2.6</span>
+          <span class="tag">GLM-5.1</span>
+          <span class="tag">DeepSeek V4</span>
+        </div>
       </div>
       <div class="cat-card">
         <div class="cat-icon">🎯</div>
         <h3>零成本组合方案</h3>
         <p>日常 / 编程 / 开发者 / 图像生成四大场景，月花费全部 ¥0</p>
+        <div class="platform-strip">
+          <span class="tag">日常开发</span>
+          <span class="tag">编程 Agent</span>
+          <span class="tag">重度使用</span>
+          <span class="tag">多模态创作</span>
+        </div>
       </div>
       <div class="cat-card">
         <div class="cat-icon">⚠️</div>
         <h3>风险提醒</h3>
         <p>即将下线模型、价格调整、平台关停倒计时，帮你避免踩坑</p>
+        <div class="platform-strip">
+          <span class="tag">DeepSeek 旧模型</span>
+          <span class="tag">腾讯混元停服</span>
+          <span class="tag">阿里百炼 90天</span>
+        </div>
       </div>
       <div class="cat-card">
         <div class="cat-icon">📰</div>
         <h3>行业动态</h3>
         <p>AI 厂商最新动作、限免活动、新模型发布一网打尽</p>
+        <div class="platform-strip">
+          <span class="tag">NVIDIA NIM</span>
+          <span class="tag">OpenRouter</span>
+          <span class="tag">字节火山</span>
+          <span class="tag">美团 LongCat</span>
+        </div>
       </div>
     </div>
   </div>
@@ -360,15 +559,15 @@
     <div class="features">
       <div class="feature">
         <h4>🤖 自动化生产</h4>
-        <p>由 WorkBuddy 自动化任务每日 09:45 自动搜索、生成、推送</p>
+        <p>由 WorkBuddy 自动化任务每日 09:45 自动搜索、生成、推送，零人工干预</p>
       </div>
       <div class="feature">
         <h4>🎨 精美排版</h4>
-        <p>深色渐变背景、卡片化布局、响应式设计，移动端友好</p>
+        <p>玻璃拟态设计、渐变配色、响应式布局，支持亮色/暗色主题切换</p>
       </div>
       <div class="feature">
         <h4>🔍 多源交叉验证</h4>
-        <p>知乎、CSDN、博客园、自游人、各大模型官方平台综合</p>
+        <p>freellm.net 实测数据、知乎、CSDN、官方公告综合交叉验证</p>
       </div>
       <div class="feature">
         <h4>🆓 零成本使用</h4>
@@ -386,11 +585,46 @@
   </div>
 
   <div class="footer">
-    <p>📅 下次更新：明日 09:45 · 数据来源：知乎、CSDN、博客园、自游人、各大模型官方</p>
-    <p style="margin-top: 8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准</p>
-    <p style="margin-top: 8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
+    <p>📅 下次更新：明日 09:45 · 数据来源：freellm.net、知乎、CSDN、博客园、各大模型官方</p>
+    <p style="margin-top:8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准 | 评分数据来自 freellm.net 实测</p>
+    <p style="margin-top:8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
   </div>
 
 </div>
+
+<script>
+  // Theme toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+    const current = html.getAttribute('data-theme');
+    if (current === 'dark') {
+      html.setAttribute('data-theme', 'light');
+      icon.textContent = '🌙';
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      icon.textContent = '☀️';
+    }
+    localStorage.setItem('free-llm-theme', html.getAttribute('data-theme'));
+  }
+  // Load saved theme
+  (function() {
+    const saved = localStorage.getItem('free-llm-theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.getElementById('theme-icon').textContent = saved === 'dark' ? '☀️' : '🌙';
+    }
+  })();
+
+  // Scroll to top button
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
 </body>
 </html>
