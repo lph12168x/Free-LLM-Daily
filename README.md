@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-07-21）
+## 📰 今日摘要（2026-07-22）
 
-📊 **Hy3 无限免费窗今日正式截止**：freellm.net 实时追踪 800+ 模型（其中 382+ 免费 AI API、30 家供应商、258 款经实时 API 验证，7/18 刷新）。OpenRouter 模型页已标注腾讯混元 <b>Hy3 无限免费活动今日（7/21）正式截止</b>（"Going away July 21, 2026"）——该 295B 旗舰实测 91 分居免费模型第 2、OpenRouter 周调用 52.6 万亿 Token 登顶，是过去两周「最香却最短暂」的先进免费用量入口，今天是 OpenRouter 上免费调用它的最后完整一天；替代免费入口：WorkBuddy/元宝内嵌限免到 7/22（剩1天）、微信「成长计划」另送 10 亿 Token（6个月有效）。
+📊 **Hy3 限免延长至 8/5 · 免费先进模型续命**：freellm.net 实时追踪 800+ 模型（其中 384+ 免费 AI API、30 家供应商、261 款经实时 API 验证，7/20 刷新）。腾讯 7/20 宣布面向 <b>WorkBuddy / CodeBuddy 用户将 Hy3 限时免费活动延长至 8 月 5 日</b>（再加推两周）——昨日预警的「今日截止」并未真正关闭免费先进模型大门，Hy3（295B、实测 91 居免费模型第 2、在 WorkBuddy 自选模型用户中占比超 60%）可免费用到 8/5；⚠️ 但 OpenRouter 上 NovitaAI 的无限免费窗已于 7/21 截止，WorkBuddy/CodeBuddy 内嵌限免繁忙时会排队、且 Hy3 暂不支持多模态。
 
-💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、Tencent Hy3（91分/OpenRouter 限时无限免费<b>今日 7/21 截止</b>）、MiniMax M3（89分/NVIDIA NIM 免费多模态）。
+💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5）、MiniMax M3（89分/NVIDIA NIM 免费多模态）。
 
 🎁 **大额每日刷新**：美团 LongCat 500万Token/天（最高1.2亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 140+ 模型免费 12 个月。
 
-⚠️ **风险提醒（密集窗口期）**：腾讯 Hy3 无限免费窗 7/21 今日截止；WorkBuddy/元宝内嵌限免 7/22（剩1天）；DeepSeek 旧别名 7/24 停用（剩3天）；Kimi K3 权重 7/27 开源（剩6天·重点关注）；GitHub Models 7/30 关停（剩9天）；豆包/千问智能体 7/15 已下线（API 不受影响）；Meta Llama 官方 API 7/6 已关停。
+⚠️ **风险提醒（密集窗口期）**：OpenRouter 上 Hy3 无限窗 7/21 已截止（WorkBuddy/CodeBuddy 内嵌限免延长至 8/5）；Kimi K3 权重 7/27 开源（剩5天·重点关注，但 C 端新订阅已暂停）；DeepSeek 旧别名 7/24 停用（剩2天）；GitHub Models 7/30 关停（剩8天）；豆包/千问智能体 7/15 已下线（API 不受影响）；Meta Llama 官方 API 7/6 已关停。
 
 ## 内容覆盖
 
