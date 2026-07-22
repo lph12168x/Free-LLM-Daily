@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-07-22）
+## 📰 今日摘要（2026-07-23）
 
-📊 **Hy3 限免延长至 8/5 · 免费先进模型续命**：freellm.net 实时追踪 800+ 模型（其中 384+ 免费 AI API、30 家供应商、261 款经实时 API 验证，7/20 刷新）。腾讯 7/20 宣布面向 <b>WorkBuddy / CodeBuddy 用户将 Hy3 限时免费活动延长至 8 月 5 日</b>（再加推两周）——昨日预警的「今日截止」并未真正关闭免费先进模型大门，Hy3（295B、实测 91 居免费模型第 2、在 WorkBuddy 自选模型用户中占比超 60%）可免费用到 8/5；⚠️ 但 OpenRouter 上 NovitaAI 的无限免费窗已于 7/21 截止，WorkBuddy/CodeBuddy 内嵌限免繁忙时会排队、且 Hy3 暂不支持多模态。
+🔥 **48 小时双硬截止 · 免费天花板稳**：freellm.net 实时追踪 800+ 模型（其中 384+ 免费 AI API、30 家供应商、261 款经实时 API 验证，7/20 刷新）。今日进入本周最紧张的「截止日窗口」——<b>GitHub Models 第二次 brownout（演练性中断）就在今天 7/23</b>，任何还挂在 models.github.ai/inference 的代码/CI 大概率会看到请求报错（7/30 全量关停前的最后一次强制「消防演习」）；紧接着 <b>DeepSeek 旧别名 deepseek-chat / deepseek-reasoner 将于明天 7/24 15:59 UTC 永久停用，今天是最后完整的迁移窗口（仅剩 1 天）</b>。好消息：免费先进模型天花板依旧稳如磐石——GLM-5.2（96分·NVIDIA NIM 无限免费 + 开源，仍居全部免费模型第一）；Hy3（91分·WorkBuddy/CodeBuddy 限免至 8/5，剩13天）；MiniMax M3（89分·NVIDIA NIM 免费多模态）；<b>Kimi K3 完整权重 7/27 开源倒计时 4 天</b>，是免费先进模型最值得期待的下一个红利窗口。
 
 💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5）、MiniMax M3（89分/NVIDIA NIM 免费多模态）。
 
 🎁 **大额每日刷新**：美团 LongCat 500万Token/天（最高1.2亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 140+ 模型免费 12 个月。
 
-⚠️ **风险提醒（密集窗口期）**：OpenRouter 上 Hy3 无限窗 7/21 已截止（WorkBuddy/CodeBuddy 内嵌限免延长至 8/5）；Kimi K3 权重 7/27 开源（剩5天·重点关注，但 C 端新订阅已暂停）；DeepSeek 旧别名 7/24 停用（剩2天）；GitHub Models 7/30 关停（剩8天）；豆包/千问智能体 7/15 已下线（API 不受影响）；Meta Llama 官方 API 7/6 已关停。
+⚠️ **风险提醒（密集窗口期）**：GitHub Models 今日(7/23)二次 brownout、7/30 全停（剩7天·今日最紧迫）；DeepSeek 旧别名 7/24 停用（剩1天·明日最紧迫）；Kimi K3 权重 7/27 开源（剩4天·重点关注，但 C 端新订阅已暂停）；OpenRouter 上 Hy3 无限窗 7/21 已截止（WorkBuddy/CodeBuddy 内嵌限免延长至 8/5）；豆包/千问智能体 7/15 已下线（API 不受影响）；Meta Llama 官方 API 7/6 已关停。
 
 ## 内容覆盖
 
