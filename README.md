@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-07-23）
+## 📰 今日摘要（2026-07-24）
 
-🔥 **48 小时双硬截止 · 免费天花板稳**：freellm.net 实时追踪 800+ 模型（其中 384+ 免费 AI API、30 家供应商、261 款经实时 API 验证，7/20 刷新）。今日进入本周最紧张的「截止日窗口」——<b>GitHub Models 第二次 brownout（演练性中断）就在今天 7/23</b>，任何还挂在 models.github.ai/inference 的代码/CI 大概率会看到请求报错（7/30 全量关停前的最后一次强制「消防演习」）；紧接着 <b>DeepSeek 旧别名 deepseek-chat / deepseek-reasoner 将于明天 7/24 15:59 UTC 永久停用，今天是最后完整的迁移窗口（仅剩 1 天）</b>。好消息：免费先进模型天花板依旧稳如磐石——GLM-5.2（96分·NVIDIA NIM 无限免费 + 开源，仍居全部免费模型第一）；Hy3（91分·WorkBuddy/CodeBuddy 限免至 8/5，剩13天）；MiniMax M3（89分·NVIDIA NIM 免费多模态）；<b>Kimi K3 完整权重 7/27 开源倒计时 4 天</b>，是免费先进模型最值得期待的下一个红利窗口。
+🔴 **DeepSeek 旧别名今日死线 · Gemini 3.6 Flash 新进免费 Top10**：<b>deepseek-chat / deepseek-reasoner 于今天 15:59 UTC（北京时间今晚 23:59）永久停用、之后不可访问</b>——生产代码请立即改用 deepseek-v4-flash / deepseek-v4-pro 并显式设置思考模式（免费的 V4 本体与 NVIDIA NIM 托管不受影响）。新变量：<b>Google 7/21 三连发 Gemini 3.6 Flash / 3.5 Flash-Lite / 3.5 Flash Cyber</b>——3.6 Flash 输出 token 消耗降 17%（DeepSWE 最多省 65%）、SWE-Bench Pro 58.7% 反超 3.1 Pro，AI Studio 免费层可用，以 <b>84 分新进 freellm.net 免费 Top10</b>；同日 Google Cloud 弃用 16 个开源模型 MaaS 端点（10/21 退役）。免费天花板稳定：GLM-5.2（96分·NIM 无限免费 + 开源）仍居全部免费模型第一；<b>Kimi K3（2.8T）完整权重 7/27 开源仅剩 3 天</b>——下一个免费先进模型红利窗口近在眼前。
 
-💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5）、MiniMax M3（89分/NVIDIA NIM 免费多模态）。
+💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、MiniMax M3（89分/NVIDIA NIM 免费多模态）、Gemini 3.5 Flash（88分/官方免费层全模态）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩12天）。
 
 🎁 **大额每日刷新**：美团 LongCat 500万Token/天（最高1.2亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 140+ 模型免费 12 个月。
 
-⚠️ **风险提醒（密集窗口期）**：GitHub Models 今日(7/23)二次 brownout、7/30 全停（剩7天·今日最紧迫）；DeepSeek 旧别名 7/24 停用（剩1天·明日最紧迫）；Kimi K3 权重 7/27 开源（剩4天·重点关注，但 C 端新订阅已暂停）；OpenRouter 上 Hy3 无限窗 7/21 已截止（WorkBuddy/CodeBuddy 内嵌限免延长至 8/5）；豆包/千问智能体 7/15 已下线（API 不受影响）；Meta Llama 官方 API 7/6 已关停。
+⚠️ **风险提醒（密集窗口期）**：DeepSeek 旧别名今晚 23:59 停用（今日死线）；GitHub Models 7/30 全停（剩6天，两次 brownout 演练已结束）；Kimi K3 权重 7/27 开源（剩3天·重点关注）；Google Cloud 16 个开源模型端点 10/21 退役（🆕）；Hy3 限免至 8/5（OpenRouter 无限窗已 7/21 截止）；豆包/千问智能体 7/15 已下线（API 不受影响）。
 
 ## 内容覆盖
 
