@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-07-24）
+## 📰 今日摘要（2026-07-25）
 
-🔴 **DeepSeek 旧别名今日死线 · Gemini 3.6 Flash 新进免费 Top10**：<b>deepseek-chat / deepseek-reasoner 于今天 15:59 UTC（北京时间今晚 23:59）永久停用、之后不可访问</b>——生产代码请立即改用 deepseek-v4-flash / deepseek-v4-pro 并显式设置思考模式（免费的 V4 本体与 NVIDIA NIM 托管不受影响）。新变量：<b>Google 7/21 三连发 Gemini 3.6 Flash / 3.5 Flash-Lite / 3.5 Flash Cyber</b>——3.6 Flash 输出 token 消耗降 17%（DeepSWE 最多省 65%）、SWE-Bench Pro 58.7% 反超 3.1 Pro，AI Studio 免费层可用，以 <b>84 分新进 freellm.net 免费 Top10</b>；同日 Google Cloud 弃用 16 个开源模型 MaaS 端点（10/21 退役）。免费天花板稳定：GLM-5.2（96分·NIM 无限免费 + 开源）仍居全部免费模型第一；<b>Kimi K3（2.8T）完整权重 7/27 开源仅剩 3 天</b>——下一个免费先进模型红利窗口近在眼前。
+🔥 **Kimi K3（2.8T）权重 7/27 全量开源仅剩 2 天 · DeepSeek 旧别名昨日已停用 · GLM-5.2（96）免费第一稳固**：<b>Kimi K3 完整权重 7/27 前一次性全量开放</b>（全球首个开源 3T 级、896 专家激活 16、KDA 混合线性注意力、原生视觉、1M 上下文），个人与企业可免费下载 / 自部署 / 二次微调 / 开放商用，是继 GLM-5.2、DeepSeek V4 之后开源阵营最重量级跃迁。<b>DeepSeek 旧别名 deepseek-chat / deepseek-reasoner 已于 7/24 23:59 永久停用</b>——若服务报错，请改 deepseek-v4-flash / deepseek-v4-pro 并显式设置 thinking（免费的 V4 本体与 NVIDIA NIM 托管不受影响）。免费天花板稳定：<b>GLM-5.2（96分·NIM 无限免费 + MIT 开源）仍居全部免费模型第一</b>；Kimi K3 权重开放是下一个免费先进模型红利窗口。
 
-💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、MiniMax M3（89分/NVIDIA NIM 免费多模态）、Gemini 3.5 Flash（88分/官方免费层全模态）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩12天）。
+💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、MiniMax M3（89分/NVIDIA NIM 免费多模态）、Gemini 3.5 Flash（88分/官方免费层全模态）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩11天）。
 
-🎁 **大额每日刷新**：美团 LongCat 500万Token/天（最高1.2亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 140+ 模型免费 12 个月。
+🎁 **大额每日刷新**：美团 LongCat 500万Token/天（最高1.2亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 141 模型（77 款永久免费端点）。
 
-⚠️ **风险提醒（密集窗口期）**：DeepSeek 旧别名今晚 23:59 停用（今日死线）；GitHub Models 7/30 全停（剩6天，两次 brownout 演练已结束）；Kimi K3 权重 7/27 开源（剩3天·重点关注）；Google Cloud 16 个开源模型端点 10/21 退役（🆕）；Hy3 限免至 8/5（OpenRouter 无限窗已 7/21 截止）；豆包/千问智能体 7/15 已下线（API 不受影响）。
+⚠️ **风险提醒（密集窗口期）**：Kimi K3 权重 7/27 开源（剩2天·重点关注）；GitHub Models 7/30 全停（剩5天，两次 brownout 演练已结束）；DeepSeek 旧别名已 7/24 停用（迁移收尾）；Google Cloud 16 个开源模型端点 10/21 退役；Hy3 限免至 8/5（剩11天，OpenRouter 无限窗已 7/21 截止）；豆包/千问智能体 7/15 已下线（API 不受影响）。
 
 ## 内容覆盖
 
