@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-07-27）
+## 📰 今日摘要（2026-07-28）
 
-🔥 **Kimi K3（2.8T）完整权重今日（7/27）正式开源落地 Hugging Face · 全球最大开源模型免费可下 · 免费目录回落至 382+ · GLM-5.2（96）免费第一稳固**：<b>Kimi K3 完整权重今日（7/27）正式开源落地 Hugging Face（huggingface.co/moonshotai）</b>——全球首个开源 3T 级、MIT 类许可、约 594GB MXFP4 权重、vLLM KDA 适配同步发布，可免费下载 / 自部署 / 二次微调 / 开放商用；但需数据中心级硬件（8×H100 起步、推荐 64+ 加速卡超节点），且实测在事实类任务上幻觉率偏高，落地需配套校验。AA 综合 57 全球第三、Code Arena 1679 登顶（开源首超全部闭源）。<b>freellm.net 免费目录回落至 382+</b>（OpenRouter 7/25 批量扩容暂歇）。<b>GLM-5.2（96分·NIM 无限免费 + MIT 开源）仍居全部免费模型第一</b>。
+🔥 **Kimi K3（2.8T）权重 7/27 晚全量开源落地 · 三平台 + 三项 Infra 开源 · Gemini 3.6 Flash 实测跃升 91 居免费第 2 · GLM-5.2（95）仍居免费第一 · 免费目录 340+**：<b>Kimi K3 完整权重于 7/27 晚在 Hugging Face / GitHub / ModelScope 三平台全量开源</b>，同步放出技术报告与 MoonEP / FlashKDA / AgentEnv 三项 Infra 开源；国内腾讯云、华为云、阿里云与国家超算互联网已率先上线 K3，OpenRouter / Together 免费层接入进行中。K3 为全球首个开源 3T 级、约 594GB MXFP4、MIT 类许可，但需数据中心级硬件且事实类幻觉率偏高。<b>Gemini 3.6 Flash 实测从 84 跃升至 91，升至全部免费模型第 2</b>（AI Studio 免费层限量可用，输出省 17%）。<b>freellm.net 实测 340+ 免费大模型（30 家供应商）</b>。<b>GLM-5.2（95分·NVIDIA NIM 无限免费 + MIT 开源）仍居免费第一</b>。
 
-💎 **高分免费模型 Top 3**：GLM-5.2（96分/NVIDIA NIM 无限免费 + 开源，仍居第一）、MiniMax M3（89分/NVIDIA NIM 免费多模态）、Gemini 3.5 Flash（88分/官方免费层全模态）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩9天）。
+💎 **高分免费模型 Top 3**：GLM-5.2（95分/NVIDIA NIM 无限免费 + 开源，仍居第一）、Gemini 3.6 Flash（91分/AI Studio 免费层，本日跃升第 2）、MiniMax M3（88分/NVIDIA NIM 免费多模态）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩 8 天）。
 
-🎁 **大额每日刷新**：美团 LongCat 500万Token/天（最高1.2亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 141 模型（77 款永久免费端点）+ 智谱 GLM-4.7-Flash 永久免费。
+🎁 **大额每日刷新**：腾讯云 TokenHub 每模型 100万 Token（1 年有效）+ 美团 LongCat 500万Token/天（最高 1.2 亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 141 模型（77 款永久免费端点）+ 硅基流动 2000万Token。
 
-⚠️ **风险提醒（密集窗口期）**：GitHub Models 7/30 全停（剩3天·无付费兜底）；Google Cloud 16 个开源模型端点 10/21 退役；Hy3 限免至 8/5（剩9天）；Kimi K3 已开源但官方 API 仍付费（零成本路径 = kimi.com 免费对话 或等 NIM/OpenRouter 托管）；DeepSeek 旧别名已 7/24 停用。
+⚠️ **风险提醒（密集窗口期）**：GitHub Models 7/30 全停（仅剩 2 天·无付费兜底）；Kimi K3 已开源但官方 API 仍付费（零成本路径 = kimi.com 免费对话 或等 NIM/OpenRouter 托管）；Hy3 限免至 8/5（剩 8 天）；腾讯混元旧平台 9/30 停服 + HY2.0 涨价 463% 请迁移 TokenHub；DeepSeek 旧别名已 7/24 停用；Google Cloud 16 个开源模型端点 10/21 退役；开源免费 vs API 付费需区分。
 
 ## 内容覆盖
 
@@ -28,6 +28,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-07-28 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-28.html) | [HTML](daily-free-llm-2026-07-28.html) |
 | 2026-07-27 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-27.html) | [HTML](daily-free-llm-2026-07-27.html) |
 | 2026-07-26 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-26.html) | [HTML](daily-free-llm-2026-07-26.html) |
 | 2026-07-25 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-25.html) | [HTML](daily-free-llm-2026-07-25.html) |
