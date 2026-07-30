@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-07-30）
+## 📰 今日摘要（2026-07-31）
 
-🔴 **GitHub Models 今日（7/30）15:59 UTC / 北京 23:59 正式全量关停——免费推理「零摩擦」时代落幕 · 零成本先进模型主阵地毫发无损，仍在 NVIDIA NIM / OpenRouter / AI Studio · freellm.net 实测 338+ 免费大模型**：<b>GitHub Models 于 7/30 15:59 UTC 永久关停</b>——playground / 模型目录 / 推理 API / BYOK / actions(ai-inference) / gh models CLI 全部同时下线，<b>无宽限期、无付费兜底、不可回滚</b>，多源（GitHub Changelog、byteiota、nocode.tech 等）一致确认是硬性关停；两次 brownout（7/16、7/23）已结束，今天起任何仍指向 models.github.ai 的代码直接断。核心结论：<b>它对免费先进模型格局零影响</b>——我们 Top10 主阵地本就是 NIM / OpenRouter / AI Studio，GitHub Models 当年只是「用 token 调 GPT-4o」的低摩擦玩具；但它是响亮警钟——<b>任何免费 AI 通道都是你控制不了的基础设施，把端点抽象成环境变量</b>，迁移首选 OpenRouter（换 base_url 即可，免费层 50 次/天、充 $10 永久升 1000）/ NVIDIA NIM（真免费、约 40 RPM）。<b>freellm.net 实测 338+ 免费大模型（30 家供应商）</b>（较昨日 341+ 微降）。<b>GLM-5.2（95分·NVIDIA NIM 无限免费 + MIT 开源）仍居免费第一</b>。
+🔥 **Kimi K3 终于有了「真·零成本 API 入口」——阿里云百炼 / 千问 AI 平台今日上线 K3（新人每模型 100 万 Token 白嫖）· 同日 Thinking Machines 开源 Inkling-Small（276B-A12B、Apache 2.0、ARC-AGI 开源第一、单台 Mac Studio 可跑）· freellm.net 实测 338+ 免费大模型**：K3 发布以来首个可零成本调用的官方 API 渠道落地，配合国内云厂商与 kimi.com 免费对话，零成本路径进一步拓宽；Inkling-Small 把 ARC-AGI 开源第一的模型压到单台 Mac Studio 可跑，个人开发者福音。<b>榜单变化</b>：<b>GLM-5.2（95分·NVIDIA NIM 无限免费 + MIT 开源）仍居全部免费模型第一</b>；<b>MiniMax M3 在 OpenRouter 免费层实测从 88 升至 91，与 Gemini 3.6 Flash 并列第 2</b>；Nex-N2-Pro（88）新进 Top10；场外腾讯 Hy3（91分）经 WorkBuddy/CodeBuddy 限免<b>仅剩 5 天</b>。
 
-💎 **高分免费模型 Top 3**：GLM-5.2（95分/NVIDIA NIM 无限免费 + 开源，仍居第一）、Gemini 3.6 Flash（91分/AI Studio 免费层，居免费第 2、稳居第 2）、MiniMax M3（88分/NVIDIA NIM 免费多模态）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩 6 天）。
+💎 **高分免费模型 Top 3**：GLM-5.2（95分/NVIDIA NIM 无限免费 + 开源，仍居第一）、Gemini 3.6 Flash（91分/AI Studio 免费层，并列第 2）、MiniMax M3（91分/OpenRouter 免费层实测升 91，并列第 2）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩 5 天）。
 
-🎁 **大额每日刷新**：腾讯云 TokenHub 每模型 100万 Token（1 年有效）+ 美团 LongCat 500万Token/天（最高 1.2 亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 141 模型（77 款永久免费端点，GitHub Models 关停后最稳主阵地）+ 硅基流动 2000万Token。
+🎁 **大额每日刷新**：腾讯云 TokenHub 每模型 100万 Token（1 年有效）+ 美团 LongCat 500万Token/天（最高 1.2 亿）+ 火山引擎 200万Token/天 + 阿里百炼 7000万Token（新用户）+ Groq 14400次/天 + NVIDIA NIM 141 模型（77 款永久免费端点）+ 硅基流动 2000万Token。
 
-⚠️ **风险提醒（密集窗口期）**：GitHub Models 今日（7/30）已全停（无付费兜底·代码需迁移 OpenRouter/NIM）；任何免费 AI 通道都是你控制不了的基础设施（端点抽象成环境变量）；OpenRouter 免费层实为 50 次/天（充 $10 永久升至 1000 次/天）；Kimi K3 已开源但官方 API 仍付费（零成本路径 = kimi.com 或国内云厂商）；Hy3 限免至 8/5（剩 6 天）；腾讯混元旧平台 9/30 停服 + HY2.0 涨价 463% 请迁移 TokenHub；DeepSeek 旧别名已 7/24 停用；Google Cloud 16 个开源模型端点 10/21 退役 + Copilot 7/31 弃用 Gemini。
+⚠️ **风险提醒（密集窗口期）**：Hy3 限免至 8/5（剩 5 天，WorkBuddy/CodeBuddy 内嵌繁忙时排队、暂不支持多模态）；Kimi K3 已开源但官方 API 仍付费（零成本路径 = 阿里云百炼/千问AI平台新人额度 或 kimi.com/国内云厂商）；任何免费 AI 通道都是你控制不了的基础设施（端点抽象成环境变量）；OpenRouter 免费层实为 50 次/天（充 $10 永久升至 1000 次/天）；腾讯混元旧平台 9/30 停服 + HY2.0 涨价 463% 请迁移 TokenHub；DeepSeek 旧别名已 7/24 停用；Google Cloud 16 个开源模型端点 10/21 退役 + Copilot 7/31 弃用 Gemini。
 
 ## 内容覆盖
 
@@ -28,6 +28,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-07-31 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-31.html) | [HTML](daily-free-llm-2026-07-31.html) |
 | 2026-07-30 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-30.html) | [HTML](daily-free-llm-2026-07-30.html) |
 | 2026-07-29 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-29.html) | [HTML](daily-free-llm-2026-07-29.html) |
 | 2026-07-28 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-28.html) | [HTML](daily-free-llm-2026-07-28.html) |
