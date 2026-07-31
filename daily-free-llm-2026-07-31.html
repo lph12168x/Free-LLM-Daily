@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>免费大模型日报 · 2026-07-31 · Free LLM Daily</title>
-<meta name="description" content="2026年7月31日免费大模型日报：聚焦量大能用的先进模型。🔥 今日头号：Kimi K3 官方 API 上线阿里云百炼与千问AI平台，新人每模型100万Token，K3 首个零成本 API 入口落地；同日 Thinking Machines 开源 Inkling-Small（276B-A12B、Apache 2.0、ARC-AGI 开源第一、单台 Mac Studio 可跑）。GLM-5.2（95）居免费第一，MiniMax M3 升至 91 并列第 2，Nex-N2-Pro 新进 Top10。">
+<meta name="description" content="2026年7月31日免费大模型日报：聚焦量大能用的先进模型。🔥 今日头号：Kimi K3 官方 API 上线阿里云百炼与千问AI平台，新人每模型100万Token，K3 首个零成本 API 入口落地；同日 Thinking Machines 开源 Inkling-Small（276B-A12B、Apache 2.0、ARC-AGI 开源第一、单台 Mac Studio 可跑）。GLM-5.2（95）居免费第一，MiniMax M3（OpenRouter 实测 91、200 次/天免费额度）并列第 2，Nex-N2-Pro 新进 Top10。">
 <style>
   :root {
     --bg-primary: #0f0c29;
@@ -324,7 +324,7 @@
     <p>
       <b>今日头号（对「免费」最有实操价值）</b>：我们连追 5 天的问题——「K3 开源了，可到底怎么零成本调 API」——今天有了正式答案。<span class="hl">Kimi K3 官方 API 已上线阿里云百炼「模型广场」与千问 AI 平台「模型市场」</span>，而百炼的新人政策是<b>平台内 70+ 款模型每款各赠 100 万 Token（输入 / 输出分开计）、总额度 7000 万</b>——这意味着开发者<b>无需自建 8×H100 集群，也不用付 $3/$15 的官方 API 费，就能拿到一份可编程的 K3 免费额度</b>。国家超算互联网 AI 社区亦同步上线 K3 API 服务（因请求量爆表已紧急加推 Token Plan 包月）。到今天为止，这颗 2.8 万亿参数、AA 智能指数 57（全球第三 / 开源第一）的模型，终于从「能下载」变成了「能免费调」。<br><br>
       <b>今日次条（技术范式）</b>：Mira Murati 的 Thinking Machines 于 7/30 发布第二款开源模型 <span class="hl">Inkling-Small</span>——276B 总参 / <b>仅 12B 激活</b>的 MoE，Apache 2.0 全量开放权重，1M 上下文、原生文 / 图 / 音三模态、思考强度可调。它以 Inkling 四分之一的体积做到相当甚至更好的成绩（SWE-Bench Verified 80.2%、Terminal-Bench 2.1 64.7%、HLE 31.6%），并被 ARC Prize 官方验证为 <b>ARC-AGI-1 / ARC-AGI-2 得分最高的开放权重模型</b>（单次推理成本仅 $0.23）。最关键的是<b>门槛</b>：nvfp4 检查点约 150GB，<span class="hl">单台 Mac Studio（MLX）即可运行</span>，甚至能跨两台 128GB 笔记本跑，单张 B300 也够。与 K3 的「数据中心级 3T 巨兽」正好构成两条路线：<b>一条堆规模，一条抠效率</b>——而对个人开发者，后者才是真能落地的零成本方案。<br><br>
-      <b>榜单变化</b>：<span class="hl">GLM-5.2（95）仍是全部免费模型第一</span>；<b>MiniMax M3 在 OpenRouter 免费层实测从 88 升至 91</b>，与 Gemini 3.6 Flash 并列第 2；<b>Nex-N2-Pro（88）新进 Top10</b>。场外腾讯 Hy3（91）经 WorkBuddy / CodeBuddy 限免<b>仅剩 5 天</b>。<br><br>
+      <b>榜单变化</b>：<span class="hl">GLM-5.2（95）仍是全部免费模型第一</span>；<b>MiniMax M3 在 OpenRouter 免费层实测 91 分（200 次/天免费额度）</b>，与 Gemini 3.6 Flash 并列第 2；<b>Nex-N2-Pro（88）新进 Top10</b>。场外腾讯 Hy3（91）经 WorkBuddy / CodeBuddy 限免<b>仅剩 5 天</b>。<br><br>
       倒计时：<span class="countdown">今日 7/31 Copilot 弃用 Gemini 2.5 Pro / 3 Flash</span> · <span class="countdown">8/5 Hy3 限免(剩 5 天)</span> · 9/30 腾讯混元旧平台停服 · 10/21 Google Cloud 16 端点退役 · 7/30 GitHub Models 已关停。
     </p>
   </div>
@@ -395,7 +395,7 @@
       </div>
 
       <div class="model-card top">
-        <div class="rank-badge rank-other">🥈 并列第 2 · ↑3</div>
+        <div class="rank-badge rank-other">🥈 并列第 2</div>
         <div class="model-head">
           <div class="score"><div class="num">91</div><div class="unit">SCORE</div></div>
           <div>
@@ -409,7 +409,7 @@
           <span class="meta-pill">文/图/视频</span>
           <span class="meta-pill">周调用 2.1T</span>
         </div>
-        <div class="model-desc">📈 <b>今日实测从 88 升至 91</b>，并列全部免费模型第 2 名。支持文本 / 图像 / 视频理解，1M 上下文，OpenRouter 免费层（周调用量高达 2.1T，为全榜最活跃模型之一）+ NVIDIA NIM 免费托管（NIM 侧实测 88、约 40 RPM 无日限额）双入口。是 Gemini Flash 系之外最均衡的多模态免费选择。传闻中的 2.7 万亿参数「M3 Pro」据报将上线即开源，值得持续关注。</div>
+        <div class="model-desc">📈 OpenRouter 实测 <b>91 分</b>（200 次/天免费额度），并列全部免费模型第 2 名。支持文本 / 图像 / 视频理解，1M 上下文，OpenRouter 免费层（周调用量高达 2.1T，为全榜最活跃模型之一）+ NVIDIA NIM 免费托管（NIM 侧实测 88、约 40 RPM 无日限额）双入口。是 Gemini Flash 系之外最均衡的多模态免费选择。传闻中的 2.7 万亿参数「M3 Pro」据报将上线即开源，值得持续关注。</div>
         <a class="model-link" href="https://openrouter.ai" target="_blank">前往 OpenRouter →</a>
       </div>
 
@@ -586,7 +586,7 @@
 
     </div>
     <div class="tag-row">
-      <span class="tag">GLM-5.2</span><span class="tag">Gemini 3.6 Flash</span><span class="tag">MiniMax M3(↑91)</span>
+      <span class="tag">GLM-5.2</span><span class="tag">Gemini 3.6 Flash</span><span class="tag">MiniMax M3(91)</span>
       <span class="tag">Nex-N2-Pro(新)</span><span class="tag">Gemini 3.5 Flash</span><span class="tag">DeepSeek V4</span>
       <span class="tag">Nemotron 3 Ultra</span><span class="tag">Kimi K3(百炼可免费调)</span><span class="tag">Kimi K2.6</span>
       <span class="tag">Inkling-Small(新开源)</span><span class="tag">Tencent Hy3(限免至8/5)</span><span class="tag">Agnes 2.0</span>
