@@ -306,7 +306,7 @@
       <div class="badge">🤖 AI 每日免费情报</div>
       <h1>免费大模型日报</h1>
       <div class="date-chip">📅 2026 年 8 月 3 日 · 周一</div>
-      <p class="tagline">聚焦「量大能用的先进模型」· 覆盖 30+ 国内外平台 · 本期含 7/31–8/3 周末三天累计变化 · 评分数据来自 freellm.net 实时实测（8/2 刷新：424+ 免费模型、30 家供应商、255 款经实时 API 验证），并经 Ollama 官方定价页、月之暗面官方博客、DeepSeek 官方公告、MiniMax 官方发布、NVIDIA 官方基准卡、Artificial Analysis、腾讯云 TokenHub、阿里云百炼多源交叉验证</p>
+      <p class="tagline">聚焦「量大能用的先进模型」· 覆盖 30+ 国内外平台 · 本期含 7/31–8/3 周末三天累计变化 · 评分数据来自 freellm.net 实时实测（8/2 刷新：424+ 免费模型、30 家供应商、255 款经实时 API 验证），并经蚂蚁百灵官方发布、Ollama 官方定价页、月之暗面官方博客、DeepSeek 官方公告、MiniMax 官方发布、NVIDIA 官方基准卡、Artificial Analysis、腾讯云 TokenHub、阿里云百炼多源交叉验证</p>
     </div>
   </div>
 
@@ -325,7 +325,8 @@
       <b>今日头号（对「免费」最有实操价值）</b>：过去一周我们反复追问的问题是「K3 开源了，但普通人到底怎么零成本用上它」。7/31 的答案是阿里云百炼新人额度，而这个周末出现了更直接的一条路——<span class="hl">freellm.net 8/2 刷新的实测目录里，<code>kimi-k3</code> 以 98 分空降全部免费模型第一名，供应商是 Ollama Cloud，标记为「Free tier / Verified」</span>。这意味着只要注册一个 Ollama 账号（官方明确写着「Cloud models included free with an Ollama account」），就能用 OpenAI 兼容格式的 <code>https://api.ollama.com</code> 调用这颗 2.8 万亿参数的模型，128K 上下文、支持文本 / 图像 / 视频输入、推理与工具调用全开。<b>GLM-5.2 自 6 月中旬以来连续霸榜一个半月的免费第一，今天正式易主</b>（它仍以 95 分稳居第二，且 NVIDIA NIM 侧周调用量高达 3.0T，是可用性最稳的一档）。<br><br>
       <b>周末第二条主线</b>：<span class="hl">DeepSeek 于 7/31 开源 V4-Flash 0731 版</span>——284B 总参 / 13B 激活、MIT 许可、FP4/FP8 混合精度约 167GB，Artificial Analysis 智能指数 50 分位列<b>开源模型前三</b>；官方 API 同步公测上线，Agent 能力基准分数大幅超越 V4-Pro-Preview，并<b>原生支持 Responses API 格式、已完全适配 Codex</b>。它在 freellm.net 上同时出现在 Ollama Cloud（90 分，1M 上下文）与 NVIDIA NIM（88 分）两个免费入口，直接顶进免费榜第 4。<br><br>
       <b>周末第三条主线</b>：8/2 月之暗面把 <span class="hl">K3 的全套底层框架也开源了</span>——训练引擎 MoonTrain、微调工具集 MoonTune、智能体框架 MoonAgent，全部 Apache 2.0。开源的重心正从「给模型权重」转向「连灶台和火候表一起给」。同期 MiniMax 发布多模态生成模型 H3（2K 分辨率 / 15 秒带原生立体声、AA 视频编辑榜全球第一、0.8 元/秒约为同类三分之一，官方称近日开源），阿布扎比 TII 发布 Falcon H1R 7B（Mamba + Transformer 混合头，以 7B 挑战 14B/32B/47B）。<br><br>
-      倒计时：<span class="countdown">8/5 腾讯 Hy3 限免截止（仅剩 2 天）</span> · 9/30 腾讯混元旧平台停服 · 10/21 Google Cloud 16 个开源模型端点退役 · 已发生：7/30 GitHub Models 全量关停、7/24 DeepSeek 旧别名永久停用。
+      <b>今日必须今天做的一件事</b>：<span class="hl" style="color:var(--accent-4);font-weight:800;">蚂蚁百灵 Ling-3.0-flash 的限时免费 API 今晚 23:00（北京时间）准点关闭</span>。这颗 7/24 发布的模型总参 124B、单 Token 仅激活 5.1B，却在 34 个评测维度拿下 15 个第一、19 个第二，<b>综合均分与 DeepSeek-V4-Flash 并列第一</b>，领先自家万亿旗舰 Ring-2.6-1T（59.7 分）近 8 分，SWE-Bench Pro 56.6% 为参测模型第一；原生 256K 上下文、最高可扩至 1M，支持思考 / 非思考双模式。发布 5 天内它在 OpenRouter 的 Token 调用量就从第 9 冲到第 6，7/29 单日调用量仅比 DeepSeek V4-Pro 低 0.5%——这是本周被低估得最厉害的一档免费额度。<b>免费期结束后官方将正式开源权重</b>，所以今天该做两件事：白天把要跑的评测 / 对比一次性跑完，之后转为等权重开源本地部署。<br><br>
+      倒计时：<span class="countdown">今晚 23:00 蚂蚁百灵 Ling-3.0-flash 限免截止（今日最后窗口）</span> · <span class="countdown">8/5 腾讯 Hy3 限免截止（仅剩 2 天）</span> · 9/30 腾讯混元旧平台停服 · 10/21 Google Cloud 16 个开源模型端点退役 · 已发生：7/30 GitHub Models 全量关停、7/24 DeepSeek 旧别名永久停用。
     </p>
   </div>
 
@@ -547,6 +548,25 @@
       </div>
 
       <div class="model-card">
+        <div class="rank-badge rank-other">⏰ 场外 · 今晚 23:00 截止</div>
+        <div class="model-head">
+          <div class="score"><div class="num">⏰</div><div class="unit">今日最后</div></div>
+          <div>
+            <div class="model-name">Ling-3.0-flash</div>
+            <div class="model-provider">蚂蚁百灵 · OpenRouter</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">124B / 5.1B 激活</span>
+          <span class="meta-pill">256K 可扩 1M</span>
+          <span class="meta-pill">限免至今晚 23:00</span>
+          <span class="meta-pill">之后开源权重</span>
+        </div>
+        <div class="model-desc">⏰ <span class="hl" style="color:var(--accent-4);font-weight:800;">限时免费今晚 23:00（北京时间）截止，是今天最紧急的一个窗口</span>：蚂蚁集团百灵大模型 7/24 发布的原生混合推理模型，总参 124B、单 Token 激活仅 5.1B（分别为上一代万亿旗舰 Ring-2.6-1T 的 12.4% 和 8.1%），采用 5:1 交替堆叠 KDA 与 MLA 的原生混合线性注意力 + 1/64 稀疏 MoE。<b>34 个评测维度拿下 15 个第一、19 个第二，综合均分与 DeepSeek-V4-Flash 并列第一</b>，12 项基准中 11 项优于 Ring-2.6-1T；<b>SWE-Bench Pro 56.6% 位居参测模型第一</b>；智能密度 0.5、智效比 13.2 双双登顶。接入 SGLang HiCache + Mooncake 分级缓存后，长输入首 Token 时间降低 60%–80%。发布 5 天内 OpenRouter Token 调用量从第 9 升至第 6。<b>免费期结束后官方将正式开源权重</b>，届时零成本路径转为自部署。⚠️ 今晚 23:00 后 OpenRouter 与百灵官方平台的免费调用同时关闭。</div>
+        <a class="model-link" href="https://openrouter.ai/models?q=ling-3.0-flash" target="_blank">前往 OpenRouter 抢用最后几小时 →</a>
+      </div>
+
+      <div class="model-card">
         <div class="rank-badge rank-other">场外 · 限免</div>
         <div class="model-head">
           <div class="score"><div class="num">91</div><div class="unit">SCORE</div></div>
@@ -590,7 +610,7 @@
       <span class="tag">DeepSeek V4-Flash 0731(开源)</span><span class="tag">MiniMax M3</span><span class="tag">Gemini 3.5 Flash</span>
       <span class="tag">DeepSeek V4-Pro</span><span class="tag">Nemotron 3 Ultra</span><span class="tag">Kimi K2.6</span>
       <span class="tag">Agnes 2.0</span><span class="tag">Flash-Lite</span><span class="tag">Tencent Hy3(限免剩2天)</span>
-      <span class="tag">MiniMax H3(待开源)</span><span class="tag">Falcon H1R 7B</span><span class="tag">LongCat-2.0</span>
+      <span class="tag">Ling-3.0-flash(今晚23:00截止)</span><span class="tag">MiniMax H3(待开源)</span><span class="tag">Falcon H1R 7B</span><span class="tag">LongCat-2.0</span>
       <span class="tag">MoonTrain/MoonTune/MoonAgent</span>
     </div>
   </div>
@@ -690,6 +710,13 @@
     <div class="section-title"><span class="ico">⚠️</span>风险提醒 · 避免踩坑</div>
     <div class="risk-list">
       <div class="risk-item">
+        <span class="icon">⏰</span>
+        <div>
+          <h4>【今晚 23:00 死线】蚂蚁百灵 Ling-3.0-flash 限时免费 API 今天到点关闭 — 今日最紧急的一个窗口</h4>
+          <p>官方口径明确：<b>OpenRouter 与百灵官方平台的 Ling-3.0-flash 免费调用，免费期截至 2026 年 8 月 3 日 23:00（北京时间）</b>，也就是今晚。这不是「大概率会延长」的那类活动——官方同时说明<b>免费期结束后即正式开源权重</b>，说明这是一次有明确交接安排的限时开放。它的实力不该被忽略：124B 总参 / 5.1B 激活，34 个评测维度 15 个第一、19 个第二，综合均分与 DeepSeek-V4-Flash 并列第一，SWE-Bench Pro 56.6% 参测第一，原生 256K 上下文可扩至 1M。<b>今天要做的：</b>① 把想跑的评测、对比、Agent 流程在 23:00 前一次性跑完并存好结果；② 不要把线上服务临时切到它上面——今晚断供后会直接失败；③ 之后关注权重开源，转为本地或第三方托管部署。</p>
+        </div>
+      </div>
+      <div class="risk-item">
         <span class="icon">🦙</span>
         <div>
           <h4>【今日头号】Ollama Cloud 的 K3 免费层是真的，但「免费额度」官方从未公开数值——别拿它做生产主力</h4>
@@ -742,7 +769,7 @@
   </div>
 
   <div class="footer">
-    <p>📅 下次更新：明日 06:30 · 数据来源：freellm.net 实时实测目录（8/2 刷新：424+ 免费大模型、30 家供应商、255 款经实时 API 验证、284+ 无需信用卡；Top10 评分 Kimi K3 98 / GLM-5.2 95 / Gemini 3.6 Flash 91 / DeepSeek V4-Flash 90 / MiniMax M3 90 / Gemini 3.5 Flash 88 / DeepSeek V4-Pro 85 / Nemotron 3 Ultra 85 / Kimi K2.6 83 / Agnes 2.0 Flash 81 / Gemini 3.5 Flash-Lite 81）、Ollama 官方定价与云服务页（免费账户含 cloud models、5 小时会话额度 + 7 天周额度、Max 订阅暂停）、月之暗面官方博客（K3 权重 + MoonTrain / MoonTune / MoonAgent Apache 2.0 全栈开源）、DeepSeek 官方公告与 Artificial Analysis（V4-Flash 0731 开源、284B/13B、MIT、AA 50 开源前三、适配 Codex）、MiniMax 官方发布（H3 多模态生成、2K/15 秒、AA 视频编辑榜第一、近日开源）、TII Falcon H1R 7B、NVIDIA 官方 GLM-5.2 基准卡与 build.nvidia.com（141 模型 77 永久免费）、腾讯云 TokenHub 官方文档、腾讯张军微博（Hy3 限免延至 8/5）、阿里云百炼官方公告、美团 LongCat / CatPaw、火山引擎、Groq 官方限额表、OpenRouter 官方定价页、国家发展改革委 7/31 发布会</p>
+    <p>📅 下次更新：明日 06:30 · 数据来源：freellm.net 实时实测目录（8/2 刷新：424+ 免费大模型、30 家供应商、255 款经实时 API 验证、284+ 无需信用卡；Top10 评分 Kimi K3 98 / GLM-5.2 95 / Gemini 3.6 Flash 91 / DeepSeek V4-Flash 90 / MiniMax M3 90 / Gemini 3.5 Flash 88 / DeepSeek V4-Pro 85 / Nemotron 3 Ultra 85 / Kimi K2.6 83 / Agnes 2.0 Flash 81 / Gemini 3.5 Flash-Lite 81）、Ollama 官方定价与云服务页（免费账户含 cloud models、5 小时会话额度 + 7 天周额度、Max 订阅暂停）、月之暗面官方博客（K3 权重 + MoonTrain / MoonTune / MoonAgent Apache 2.0 全栈开源）、DeepSeek 官方公告与 Artificial Analysis（V4-Flash 0731 开源、284B/13B、MIT、AA 50 开源前三、适配 Codex）、MiniMax 官方发布（H3 多模态生成、2K/15 秒、AA 视频编辑榜第一、近日开源）、TII Falcon H1R 7B、蚂蚁百灵官方发布与 OpenRouter 模型页（Ling-3.0-flash 124B/5.1B、限时免费至 8/3 23:00、期满开源权重）、NVIDIA 官方 GLM-5.2 基准卡与 build.nvidia.com（141 模型 77 永久免费）、腾讯云 TokenHub 官方文档、腾讯张军微博（Hy3 限免延至 8/5）、阿里云百炼官方公告、美团 LongCat / CatPaw、火山引擎、Groq 官方限额表、OpenRouter 官方定价页、国家发展改革委 7/31 发布会</p>
     <p style="margin-top:8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准 | 评分数据来自 freellm.net 实时实测 | 本期含 7/31–8/3 周末三天累计变化</p>
     <p style="margin-top:8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
   </div>
