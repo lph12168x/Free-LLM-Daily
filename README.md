@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-08-03）
+## 📰 今日摘要（2026-08-04）
 
-🔥 **免费榜换王了——Kimi K3 以 98 分首次登顶 freellm.net 全部免费模型第一，结束了 GLM-5.2 长达一个半月的霸榜· 经 Ollama Cloud 免费账户（OpenAI 兼容端点、按 GPU 时间计量）即可直接调用· 128K 上下文、文/图/视频输入· AA 智能指数 57 全球第三· freellm.net 实测 424+ 免费大模型 / 30 家供应商**：K3 从「下载得到、跑不起」终于走到「注册就能调」，Ollama Cloud 免费层把这套 2.8T 旗舰首次做成可直接调用的零摩擦入口（额度未公开、Max 订阅因容量暂停新注册）；同日 <b>DeepSeek V4-Flash 0731（284B/13B·MIT·7/31 开源）进免费第 4</b>，MiniMax M3 并列 90 分。<b>榜单变化</b>：<b>GLM-5.2（95分·NVIDIA NIM 无限免费 + MIT 开源）退居第二</b>；Gemini 3.6 Flash（91分/AI Studio）稳第 3；场外腾讯 Hy3（91分）经 WorkBuddy/CodeBuddy 限免<b>仅剩 2 天（截止 8/5）</b>。⏰ **今日最紧急窗口**：蚂蚁百灵 **Ling-3.0-flash**（7/24 发布、124B 总参 / 5.1B 激活、原生 256K 可扩 1M、34 个评测维度 15 个第一 19 个第二、综合均分与 DeepSeek-V4-Flash 并列第一、SWE-Bench Pro 56.6% 参测第一）在 OpenRouter 与百灵官方平台的**限时免费今晚 23:00（北京时间）准点关闭，免费期结束后正式开源权重**——想评测的今天务必跑完。
+🔥 **开源万亿时代白热化——阿里 Qwen3.8-Max（2.4T）8/3 发布、下周开源权重，国产开源大模型集体冲进万亿俱乐部· 同期 MiniMax H3 与蚂蚁百灵 Ling-3.0-flash 权重已开源· Kimi K3（98分）蝉联 freellm.net 全部免费模型第一· freellm.net 实测 388+ 免费大模型 / 30 家供应商、242 款经实时 API 验证（7/30 刷新）**：Qwen3.8-Max 总参 2.4 万亿、约 95B 激活、MoE、1M 上下文、全模态输入，第三方盲测 Arena 1496 分（国产最高、仅次于 Claude Fable 5），API 已上线（国内 12/36 元每百万、缓存命中 1.5 元），下周开源权重 + Qwen3.8-27B——是继 K3（2.8T）、LongCat-2.0（1.6T）之后又一万亿级开源候选。<b>免费榜格局不变</b>：Kimi K3（Ollama Cloud·98）蝉联第一、GLM-5.2（NVIDIA NIM·95）第二、Gemini 3.6 Flash（AI Studio·91）第三、MiniMax M3（Ollama·90）第四；场外腾讯 Hy3（91分）经 WorkBuddy/CodeBuddy 限免<b>仅剩 1 天（8/5 零点截止）</b>。⏰ **今日最紧急窗口**：Hy3 限免 8/5 关闭——今天是唯一完整的评估日，唯一稳定免费入口为 WorkBuddy / CodeBuddy 内嵌限免。
 
-💎 **高分免费模型 Top 3**：Kimi K3（98分/Ollama Cloud 免费层 + 开源，新晋第一）、GLM-5.2（95分/NVIDIA NIM 无限免费 + 开源，退居第二）、Gemini 3.6 Flash（91分/AI Studio 免费层，并列第 3）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩 2 天）。
+💎 **高分免费模型 Top 3**：Kimi K3（98分/Ollama Cloud 免费层 + 开源，蝉联第一）、GLM-5.2（95分/NVIDIA NIM 无限免费 + 开源，第二）、Gemini 3.6 Flash（91分/AI Studio 免费层，第三）；场外：Tencent Hy3（91分/WorkBuddy·CodeBuddy 限免至 8/5，剩 1 天）。
 
-🎁 **大额每日刷新（8 家量大平台）**：Ollama Cloud（新进·免费账户含 cloud models、额度未公开）、NVIDIA NIM（141 模型、77 款永久免费端点）、阿里云百炼/千问（每模型 100 万 Token、总额 7000 万、K3 国内首发入口）、美团 LongCat（500 万/天起）、火山引擎（200 万/天）、Groq（14400 次/天）、腾讯云 TokenHub（每模型 100 万）、OpenRouter（50 次/天、充 $10 升 1000）。
+🎁 **大额每日刷新（8 家量大平台）**：Ollama Cloud（免费账户含 cloud models、K3/M3/V4 在免费层、额度未公开）、NVIDIA NIM（141 模型、77 款永久免费端点）、阿里云百炼/千问（每模型 100 万 Token、总额 7000 万、K3 国内首发入口、Qwen3.8-Max API 已上线）、美团 LongCat（500 万/天起）、火山引擎（200 万/天）、Groq（14400 次/天）、腾讯云 TokenHub（每模型 100 万）、OpenRouter（50 次/天、充 $10 升 1000）。
 
-🆕 **今日新增关注**：MiniMax H3（7/31 发布、待开源，与 M3 同代）、Falcon H1R 7B（TII、7B 混合架构、可本地跑）。⚠️ **风险提醒**：⏰ Ling-3.0-flash 限免今晚 23:00 截止、Ollama 免费额度数值未公开、Hy3 限免 8/5 截止、K3 全栈开源≠API 免费、H3/Falcon 暂无免费层、OpenRouter 仅 50 次/天、腾讯混元旧平台 9/30 停服、GCP 16 个端点 10/21 退役。
+🆕 **今日新增关注**：Qwen3.8-Max（2.4T、8/3 发布、下周开源权重）。✅ **已开源观察**：MiniMax H3（8/3 权重开源）、蚂蚁百灵 Ling-3.0-flash（8/3 限免关闭后开源权重）。⚠️ **风险提醒**：⏰ Hy3 限免 8/5 截止（剩 1 天）、Ollama 免费额度数值未公开、Qwen3.8-Max/H3/Ling 的 API 当前付费或暂无 :free 层、MiniMax M3 与 Hy3 在 OpenRouter 已转 Paid 档、OpenRouter 仅 50 次/天、腾讯混元旧平台 9/30 停服、GCP 16 个端点 10/21 退役。
 
 ## 内容覆盖
 
@@ -28,6 +28,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-08-04 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-04.html) | [HTML](daily-free-llm-2026-08-04.html) |
 | 2026-08-03 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-03.html) | [HTML](daily-free-llm-2026-08-03.html) |
 | 2026-07-31 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-31.html) | [HTML](daily-free-llm-2026-07-31.html) |
 | 2026-07-30 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-07-30.html) | [HTML](daily-free-llm-2026-07-30.html) |
