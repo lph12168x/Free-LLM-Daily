@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>免费大模型日报 · 2026-08-06 · Free LLM Daily</title>
-<meta name="description" content="2026年8月6日免费大模型日报：聚焦量大能用的先进模型。🔥 今日主线——免费先进模型的「容量陷阱」：DeepSeek V4-Flash 官方 API 因流量爆炸一天数次 503 崩溃（并发上限 2500、单日调用数万亿 Token、周调用 70.22 万亿），提醒别把生产链路压在单一免费端点；同期限免续命的腾讯 Hy3 仍可免费用到 8/31；智谱 GLM-5.3 曝光（新用户 300 万 Token/天免费额度）预告下一波红利；AirLLM 让 4GB 显卡跑 2.8T 的 Kimi K3。">
+<title>免费大模型日报 · 2026-08-07 · Free LLM Daily</title>
+<meta name="description" content="2026年8月7日免费大模型日报：聚焦量大能用的先进模型。🔥 今日双响炮——智谱 GLM-5.3 官宣「发布在即」（万亿参数·史诗级 plus·业内推算有望追平 Kimi K3），Qwen3.8-Max 2.4T 权重 8/10 当周开源倒计时；叠加中国开源模型累计下载破 100 亿次（HuggingFace 占比 41% 首超美国）的生态里程碑。同期限免续命的腾讯 Hy3 仍可免费用到 8/31；AirLLM 让 4GB 显卡跑 2.8T 的 Kimi K3。">
 <style>
   :root {
     --bg-primary: #0f0c29;
@@ -295,7 +295,7 @@
 <body>
 
 <button class="theme-toggle" onclick="toggleTheme()" title="切换亮色/暗色主题" aria-label="主题切换"><span id="theme-icon">☀️</span></button>
-<div class="page-nav"><a href="daily-free-llm-2026-08-05.html" title="上一篇日报">← 上一个</a><a class="nav-home" href="index.html" title="返回首页">🏠 主页</a><a class="nav-latest" href="daily-free-llm-2026-08-07.html" title="最新日报">⭐ 最新</a><a href="daily-free-llm-2026-08-07.html" title="下一篇日报">下一个 →</a></div>
+<div class="page-nav"><a href="daily-free-llm-2026-08-06.html" title="上一篇日报">← 上一个</a><a class="nav-home" href="index.html" title="返回首页">🏠 主页</a><a class="nav-latest" href="daily-free-llm-2026-08-07.html" title="最新日报">⭐ 最新</a><span class="nav-disabled">下一个 →</span></div>
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 
 <div class="container">
@@ -305,8 +305,8 @@
     <div class="hero-inner">
       <div class="badge">🤖 AI 每日免费情报</div>
       <h1>免费大模型日报</h1>
-      <div class="date-chip">📅 2026 年 8 月 6 日 · 周四</div>
-      <p class="tagline">聚焦「量大能用的先进模型」· 覆盖 30+ 国内外平台 · 本期主线：<b>免费先进模型的「容量陷阱」——DeepSeek V4-Flash 官方 API 8/4 因流量爆炸一天数次 503 崩溃，提醒别把生产链路压在单一免费端点</b>，多入口分流才是正解；同时预告两条利好：<b>智谱 GLM-5.3 曝光（新用户 300 万 Token/天免费额度）、AirLLM 让 4GB 显卡跑 2.8T Kimi K3</b>；评分数据来自 freellm.net 实时实测（首页 424+ 免费模型、30 家供应商、248 款经实时 API 验证、284+ 无需信用卡，8/5 刷新），并经 DeepSeek 官方状态页、OpenCode 披露数据、腾讯 WorkBuddy / CodeBuddy 公告、智谱 ZCode 泄露页面、Ollama 官方文档、NVIDIA 官方基准卡、OpenRouter 官方定价页、腾讯云 TokenHub、中国移动云帮助中心、国家超算互联网 SCNet 多源交叉验证</p>
+      <div class="date-chip">📅 2026 年 8 月 7 日 · 周五</div>
+      <p class="tagline">聚焦「量大能用的先进模型」· 覆盖 30+ 国内外平台 · 本期主线：<b>国产开源「双响炮」——智谱 GLM-5.3 官宣「发布在即」（万亿参数·史诗级 plus·有望追平 Kimi K3）、Qwen3.8-Max 2.4T 权重 8/10 当周开源倒计时</b>；叠加<b>中国开源模型累计下载破 100 亿次（HF 占比 41% 首超美国）</b>的生态里程碑；评分数据来自 freellm.net 实时实测（首页 424+ 免费模型、30 家供应商、248 款经实时 API 验证、284+ 无需信用卡，8/6 刷新），并经智谱官方 8/7 确认、唐杰社交平台回应、阿里通义千问官方发布、Hugging Face 2026 春季报告、工信部数据、央视财经报道、Ollama 官方文档、NVIDIA 官方基准卡、OpenRouter 官方定价页、腾讯云 TokenHub、中国移动云帮助中心、国家超算互联网 SCNet、智谱 ZCode 泄露页面、AirLLM 开源仓库多源交叉验证</p>
     </div>
   </div>
 
@@ -320,39 +320,37 @@
 
   <!-- Focus banner -->
   <div class="focus">
-    <h2>📌 本期焦点：免费先进模型的「容量陷阱」——DeepSeek V4-Flash 一天数次 503 崩溃，结论是「多入口分流，别把生产压在单一免费端点」</h2>
+    <h2>📌 本期焦点：国产开源「双响炮」——智谱 GLM-5.3 官宣「发布在即」（万亿参数·史诗级 plus）、Qwen3.8-Max 2.4T 权重 8/10 当周开源；叠加中国开源模型累计下载破 100 亿次（HF 占比 41% 首超美国）</h2>
     <p>
-      <b>今日头号（对「量大能用」最有警示价值）</b>：8 月 4 日，<span class="hl">DeepSeek V4-Flash 官方 API 因前所未有的访问量出现性能下降，用户侧多次遇到 503 / 报错，上午几乎不可用</span>，与 Kimi K3 刚发布时的过载高度相似。规模有多大？OpenCode 披露 V4-Flash 单日 Token 调用量达<b>数万亿</b>、周调用 <b>70.22 万亿 Token</b>；官方端点并发上限为 <b>2500（Flash）</b>。DeepSeek 官方当日确认并已修复、服务恢复正常。但<span class="hl">这件事暴露了一个结构性现实：越是「量大、免费/低价」的先进模型，越容易在爆火后被容量拖垮</span>，免费先进模型的可用性不是理所当然的。<br><br>
-      <b>对免费用户的实操结论——三句话</b>：① <span class="hl">不要只依赖一个官方端点</span>——同一模型在 NVIDIA NIM（约 40 RPM、无固定日额度）、腾讯云 TokenHub（每模型 100 万 Token）、Ollama Cloud、阿里云百炼都能跑，把其中一个当主、其余当备；② <b>生产链路把模型名抽象成环境变量</b>，哪边 429 就切哪边，5 分钟搞定；③ <b>把对延迟/可用性敏感的实时服务，留给付费档或 NIM 这类有 SLA 的免费托管</b>，免费层只承接批处理与评估。<br><br>
-      <b>两条仍在发酵的利好（今日预告）</b>：① <span class="hl">智谱 GLM-5.3 意外曝光</span>——8/3 ZCode 页面闪现约一小时、Bing 收录、Java SDK 新增 glm-5.3，泄露的「首发权益」写明<b>新用户 5 天免费体验、GLM-5.3 300 万 Token/天 + GLM-5-turbo 200 万/天、订阅用户「闲时任务免费执行」</b>，能力对标 Fable、仍在训练中，是下一波可白嫖的先进模型；② <span class="hl">AirLLM 开源</span>——用「逐层加载 + MoE expert streaming」把 2.8T 的 Kimi K3 压进 <b>3.72GB 显存</b>（4GB 显卡即可跑），个人开发者自部署顶级开源模型的门槛大幅降低。<br><br>
-      倒计时：<span class="countdown">8/31 腾讯 Hy3 限免截止（还有 25 天）</span> · 本周待兑现：Qwen3.8-Max 权重开源（8/3 发布·下周开源） · 已发生：8/4 DeepSeek V4-Flash 容量崩溃（已恢复）、8/3 Ling-3.0-flash 限免关闭并开源、MiniMax H3 权重开源 · 远期：9/30 腾讯混元旧平台停服、10/21 Google Cloud 16 个开源模型端点退役、12/31 腾讯云 TokenHub 与移动云 MoMA 新人活动结束。
+      <b>今日头号（对「量大能用」最有引爆力）</b>：8 月 7 日，智谱创始人唐杰在社交平台回应确认 <span class="hl">GLM-5.3「发布在即」</span>——虽未给具体日期，但时间节点已临近。关键信息：参数从 GLM-5.2 的 7400 亿级<b>跃升至万亿以上</b>，官方将此次升级定义为「<b>史诗级 plus</b>」，业内按 artificialanalysis（GLM-5.2 得 52 分）推算若综合提升约 5 分，<b>有望追平 Kimi K3</b>、冲击 60 分大关。命名曾传 GLM-5.5，最终落定 GLM-5.3。这是国产先进模型继 Kimi K3、DeepSeek V4-Flash 之后又一枚「量大能用」的重磅棋子。<br><br>
+      <b>第二响：Qwen3.8-Max 开源倒计时</b>：阿里 8/3 发布的 <span class="hl">Qwen3.8-Max（2.4T / 95B 激活 / 1M 上下文）计划 8/10 当周开源完整权重</span>，同步开源 Qwen3.8-27B——这是 Qwen-Max 级旗舰首次开源。对免费用户而言，<b>27B 版本才是个人机器真正跑得动的那一个</b>，值得提前把本地部署环境备好。<br><br>
+      <b>第三重背景：中国开源模型累计下载破 100 亿次</b>：工信部披露我国开源大模型全球累计下载量<b>突破 100 亿次</b>；Hugging Face 2026 春季报告显示<b>中国研发开源模型占平台下载量 41%，超越美国居全球第一</b>（全球每 10 次开源下载约 4 次指向中国模型）。Kimi K3（2.8T）7/27 发布一小时登顶 HF 趋势榜、Qwen 系列累计超 10 亿次居国产榜首。⚠️ 但请始终记住：<b>下载量高 ≠ 你能免费调</b>——权重开源、工具链开源、免费 API 是三件不同的事。<br><br>
+      倒计时：<span class="countdown">8/31 腾讯 Hy3 限免截止（还有 24 天）</span> · 本周待兑现：Qwen3.8-Max 权重开源（8/10 当周） · 已发生：8/7 GLM-5.3 官宣在即、8/4 DeepSeek V4-Flash 容量崩溃（已恢复）、8/3 Ling-3.0-flash 限免关闭并开源、MiniMax H3 权重开源 · 远期：9/30 腾讯混元旧平台停服、10/21 Google Cloud 16 个开源模型端点退役、12/31 腾讯云 TokenHub 与移动云 MoMA 新人活动结束。
     </p>
   </div>
-
   <!-- Hot featured -->
   <div class="hot">
-    <span class="flag">🔥 今日重磅 · 免费先进模型的「容量警告」：DeepSeek V4-Flash 一天数次 503，爆火的另一面</span>
-    <h2>数万亿 Token/日的免费先进模型，上午几乎跑不动——容量规划仍是低价前沿端点的硬约束</h2>
-    <div class="sub">DeepSeek 官方状态页 + OpenCode 披露（8/4）· V4-Flash 并发上限 2500（Flash）· 单日调用数万亿 Token · 周调用 70.22 万亿 · 官方已恢复</div>
+    <span class="flag">🔥 今日重磅 · 智谱 GLM-5.3 官宣「发布在即」：万亿参数 + 史诗级 plus，国产先进模型再添一员大将</span>
+    <h2>从 7400 亿到万亿参数，唐杰 8/7 确认 GLM-5.3 临近发布——业内推算有望追平 Kimi K3</h2>
+    <div class="sub">智谱创始人唐杰社交平台回应（8/7）· 参数 7400 亿 → 万亿以上 · 官方定义「史诗级 plus」· artificialanalysis GLM-5.2 52 分 · 命名落定 GLM-5.3（曾传 5.5）</div>
     <p>
-      <b>① 发生了什么</b>：8 月 4 日上午，大量开发者反馈 <span class="hl">DeepSeek V4-Flash 官方 API 可用性极差、大部分时段无法正常调用</span>，报错集中在 503 / 限流。海外开源 AI 编码 Agent 平台 OpenCode 率先披露：V4-Flash 因「前所未有的访问量」出现容量不足；DeepSeek 官方随后确认「今日上午 V4-Flash API 确实发生性能下降」并已修复、服务恢复正常。社区普遍认为<b>这与 Kimi K3 刚发布时的过载如出一辙</b>——国产先进模型的能力追上了，但算力储备与高并发稳定性还差一口气。<br><br>
-      <b>② 规模有多大</b>：V4-Flash-0731 构建于 7/31 发布（后训练强化 Agent 能力、架构不变，284B 总参 / 13B 激活、1M 上下文、缓存未命中 $0.14 / 输出 $0.28 每百万 Token）。OpenCode 数据显示，更新后几天 V4-Flash 单日 Token 量达<b>数万亿</b>，在 OpenCode 观测流量中拿下多数份额；整体周调用约 <b>70.22 万亿 Token</b>。官方端点 Flash 并发上限 <b>2500</b>，峰值时仍会临时不可用。<br><br>
-      <b>③ 对免费用户的真正教训（也是本期主线）</b>：DeepSeek V4-Flash 在 freellm.net 免费榜排第 4（90 分·Ollama / 88 分·NIM），是性价比最高的编程 / Agent 主力之一，<span class="hl">但它的「官方免费/低价端点」会在爆火时塌方</span>。所以策略不是「别用」，而是「<b>别只用一个端点</b>」：<b>NVIDIA NIM 的 V4-Flash（88 分、约 40 RPM、393K 输出、无需信用卡）</b>、<b>腾讯云 TokenHub（每模型 100 万 Token）</b>、<b>Ollama Cloud（90 分）</b> 都能跑同一模型，互为备份；生产链路把模型名抽成环境变量，哪里 429 切哪里；实时敏感服务留给 NIM 这类有容量保障的托管，免费层只接批处理。DeepSeek 的快速恢复说明 API 仍是可用的——只是别把鸡蛋放一个篮子。
+      <b>① 发生了什么</b>：8 月 7 日，智谱 AI 创始人<b>唐杰在社交平台回应网友，明确确认 GLM-5.3「发布在即」</b>，虽未给出精确日期，但时间节点已临近。此前 8/3 GLM-5.3 曾短暂出现在 GitHub 与智谱官网，随即被下架——侧面证实核心研发与内部验证已完成，只待敲定正式发布窗口。<br><br>
+      <b>② 升级幅度有多大</b>：GLM-5.2（6/13 发布）是智谱迄今最强开源模型、国内首个编程能力比肩美国前沿者，在 artificialanalysis 得 <b>52 分</b>（略高于 DeepSeek V4-Flash、低于 Kimi K3）。GLM-5.3 参数从 7400 亿级<b>跃升至万亿以上</b>，官方将升级形容为「<span class="hl">史诗级 plus</span>」。业内按此推算：若综合提升约 5 分，则<b>有望追平 Kimi K3</b>；若提升更大，可狙击 GPT-5.6 / Opus 5。冲击 60 分大关具备现实基础。<br><br>
+      <b>③ 对免费用户的真正价值（也是本期主线）</b>：GLM-5.3 尚未公布模型卡、价格、API 与权重，<span class="hl">「能免费调」要等正式发布</span>。但 8/3 泄露的「首发权益」写明<b>新用户 300 万 Token/天 + GLM-5-turbo 200 万/天、订阅用户「闲时任务免费执行」</b>——这是泄露口径、非官方承诺，若正式版延续，它将是下一波<b>量大能用的免费先进模型</b>。策略：先把它加入「待发布观察」，正式发布后第一时间蹲守免费额度；当下能立即白嫖的旗舰仍是 GLM-5.2（95 分·NVIDIA NIM 永久免费）。
     </p>
     <div class="hot-grid">
-      <div class="hot-item"><div class="k">事件</div><div class="v">8/4 上午 503 频发</div></div>
-      <div class="hot-item"><div class="k">并发上限</div><div class="v">2500 (Flash)</div></div>
-      <div class="hot-item"><div class="k">单日调用</div><div class="v">数万亿 Token</div></div>
-      <div class="hot-item"><div class="k">周调用</div><div class="v">70.22 万亿</div></div>
-      <div class="hot-item"><div class="k">状态</div><div class="v">官方已恢复</div></div>
-      <div class="hot-item"><div class="k">对策</div><div class="v">多入口分流</div></div>
+      <div class="hot-item"><div class="k">确认时间</div><div class="v">8/7 唐杰回应</div></div>
+      <div class="hot-item"><div class="k">参数跃升</div><div class="v">7400亿 → 万亿+</div></div>
+      <div class="hot-item"><div class="k">官方定义</div><div class="v">史诗级 plus</div></div>
+      <div class="hot-item"><div class="k">对标推算</div><div class="v">有望追平 K3</div></div>
+      <div class="hot-item"><div class="k">当前状态</div><div class="v">未发布·无 API</div></div>
+      <div class="hot-item"><div class="k">泄露免费额度</div><div class="v">300万/天(待定)</div></div>
     </div>
-    <a class="hot-link" href="https://status.deepseek.com" target="_blank">查看 DeepSeek 服务状态 →</a>
+    <a class="hot-link" href="https://www.zhipuai.cn" target="_blank">查看智谱官网 →</a>
   </div>
-
   <!-- Top advanced free models -->
   <div class="section">
-    <div class="section-title"><span class="ico">🏆</span>量大能用的先进模型 · Top 10（freellm.net 8/5 刷新实测）+ 场外限免 + 待发布 / 待开源观察</div>
+    <div class="section-title"><span class="ico">🏆</span>量大能用的先进模型 · Top 10（freellm.net 8/6 刷新实测）+ 场外限免 + 待发布 / 待开源观察</div>
     <div class="model-grid">
 
       <div class="model-card top">
@@ -565,31 +563,31 @@
       </div>
 
       <div class="model-card">
-        <div class="rank-badge rank-other">🆕 待发布观察 · 免费额度已曝光</div>
+        <div class="rank-badge rank-other">🆕 官宣在即 · 万亿参数旗舰</div>
         <div class="model-head">
           <div class="score"><div class="num">300万</div><div class="unit">TOKEN/天</div></div>
           <div>
             <div class="model-name">智谱 GLM-5.3</div>
-            <div class="model-provider">ZCode 泄露 · 尚未正式发布</div>
+            <div class="model-provider">智谱官方 8/7 确认 · 发布在即</div>
           </div>
         </div>
         <div class="model-meta">
-          <span class="meta-pill">对标 Fable</span>
-          <span class="meta-pill">仍在训练</span>
+          <span class="meta-pill">有望追平 K3</span>
+          <span class="meta-pill">万亿参数</span>
           <span class="meta-pill">新用户 5 天免费</span>
           <span class="meta-pill">300万/天 免费额度</span>
         </div>
-        <div class="model-desc">8/3 意外曝光（ZCode 页面闪现约 1 小时、Bing 收录、Java SDK 新增 glm-5.3）。泄露的「首发权益」写明：<b>新用户 5 天免费体验、GLM-5.3 300 万 Token/天 + GLM-5-turbo 200 万/天</b>，订阅用户还能「闲时任务免费执行」（算力富余时段排队免费跑，不消耗套餐额度）。爆料称其「还在训练中、能力对标 Fable」。⚠️ <b>模型尚未正式发布、API 也未必开放</b>，当前属于「下一波免费红利预告」，正式上线后大概率走 ZCode / 智谱开放平台，值得持续盯。同门 GLM-5.2（95 分·NIM 免费）仍是当下可立即使用的免费旗舰。</div>
+        <div class="model-desc">🔥 <b>8/7 重大更新：智谱创始人唐杰在社交平台回应确认 GLM-5.3「发布在即」</b>，虽未给具体日期，但时间节点已临近。要点：① 参数从 GLM-5.2 的 7400 亿级<b>跃升至万亿以上</b>，官方将此次升级定义为「<b>史诗级 plus</b>」；② 业内按此推算若综合提升约 5 分（GLM-5.2 在 artificialanalysis 得 52 分），<b>有望追平 Kimi K3</b>，冲击 60 分大关；③ 命名曾传 GLM-5.5，最终落定 GLM-5.3，延续 5 系列编号。⚠️ 仍需冷静：<b>官方尚未公布模型卡、价格、API 与权重</b>，8/3 短暂现身 GitHub 与官网后已下架，「能免费调」要等正式发布。若延续 8/3 泄露的「新用户 300 万 Token/天 + GLM-5-turbo 200 万/天」首发权益，将是下一波量大能用的免费先进模型——值得蹲守。同门 GLM-5.2（95 分·NIM 永久免费）当下即可用。</div>
         <a class="model-link" href="https://www.zhipuai.cn" target="_blank">查看智谱官网 →</a>
       </div>
 
       <div class="model-card">
-        <div class="rank-badge rank-other">🆕 待开源观察 · 本周兑现</div>
+        <div class="rank-badge rank-other">🆕 即将开源 · 8/10 当周</div>
         <div class="model-head">
           <div class="score"><div class="num">2.4T</div><div class="unit">PARAMS</div></div>
           <div>
             <div class="model-name">Qwen3.8-Max</div>
-            <div class="model-provider">阿里通义千问 · 权重「下周开源」</div>
+            <div class="model-provider">阿里通义千问 · 权重「8/10 当周开源」</div>
           </div>
         </div>
         <div class="model-meta">
@@ -598,7 +596,7 @@
           <span class="meta-pill">原生多模态</span>
           <span class="meta-pill">API 现为付费</span>
         </div>
-        <div class="model-desc">8/3 发布的千问史上最强模型：<b>2.4 万亿总参 / 约 95B 激活 MoE</b>、1M 上下文、原生视觉能力。官方基准（内部自测，独立复核待进行）：PaperBench 93.0 超 Fable 5 的 88.8、IFBench 82.8、OSWorld-Verified 86.1。<b>关键点是「下周开源完整权重」——这是 Qwen-Max 级旗舰首次开源</b>，同步开源 Qwen3.8-27B。⚠️ 当前 API 付费（国内 12 元 / 36 元每百万 Token，缓存命中 1.5 元），<b>暂无免费层</b>；真实工程编程（SWE-bench Pro 67.7）仍落后 Fable 5 的 80.0。<b>27B 版本才是个人开发者真正跑得动的那个</b>，值得重点等待。</div>
+        <div class="model-desc">8/3 发布的千问史上最强模型：<b>2.4 万亿总参 / 约 95B 激活 MoE</b>、1M 上下文、原生视觉能力。官方基准（内部自测，独立复核待进行）：PaperBench 93.0 超 Fable 5 的 88.8、IFBench 82.8、OSWorld-Verified 86.1。<b>关键点是「8/10 当周开源完整权重」——这是 Qwen-Max 级旗舰首次开源</b>，同步开源 Qwen3.8-27B。⚠️ 当前 API 付费（国内 12 元 / 36 元每百万 Token，缓存命中 1.5 元），<b>暂无免费层</b>；真实工程编程（SWE-bench Pro 67.7）仍落后 Fable 5 的 80.0。<b>27B 版本才是个人开发者真正跑得动的那个</b>，值得重点等待。</div>
         <a class="model-link" href="https://qwen.ai/blog?id=qwen3.8" target="_blank">查看千问官方技术博客 →</a>
       </div>
 
@@ -608,8 +606,8 @@
       <span class="tag">DeepSeek V4-Flash(90/88)</span><span class="tag">MiniMax M3(89/88)</span><span class="tag">Gemini 3.5 Flash(88)</span>
       <span class="tag">DeepSeek V4-Pro(85)</span><span class="tag">Nemotron 3 Ultra(85)</span><span class="tag">Kimi K2.6(83)</span>
       <span class="tag">Agnes 2.0(81)</span><span class="tag">Flash-Lite(81)</span><span class="tag">🎉 Tencent Hy3(限免延至8/31)</span>
-      <span class="tag">Qwen3.8-Max(下周开源)</span><span class="tag">Qwen3.8-27B(下周开源)</span><span class="tag">MiniMax H3(已开源)</span>
-      <span class="tag">Ling-3.0-flash(已开源)</span><span class="tag">🆕 GLM-5.3(300万/天免费·待发布)</span><span class="tag">🆕 AirLLM(4GB跑K3)</span>
+      <span class="tag">Qwen3.8-Max(8/10当周开源)</span><span class="tag">Qwen3.8-27B(8/10当周开源)</span><span class="tag">MiniMax H3(已开源)</span>
+      <span class="tag">Ling-3.0-flash(已开源)</span><span class="tag">🆕 GLM-5.3(官宣在即·300万/天)</span><span class="tag">🆕 AirLLM(4GB跑K3)</span>
     </div>
   </div>
 
@@ -736,6 +734,13 @@
         </div>
       </div>
       <div class="risk-item">
+        <span class="icon">🔮</span>
+        <div>
+          <h4>【今日头号 · 利好但要冷静】GLM-5.3 官宣「发布在即」——但「能免费调」要等正式发布，别把生产赌在它上面</h4>
+          <p>8/7 智谱创始人唐杰在社交平台回应确认 GLM-5.3「发布在即」（万亿参数、官方称「史诗级 plus」、业内推算有望追平 Kimi K3），是今日最大利好。但必须分清三件事：① <b>截至今日，GLM-5.3 没有模型卡、没有价格、没有公开 API、没有权重</b>——8/3 短暂现身 GitHub 与官网后已下架，真正「能免费调」要等正式发布；② 若延续 8/3 泄露的「新用户 300 万 Token/天 + GLM-5-turbo 200 万/天」首发权益，它将是下一波量大能用的免费先进模型，但这是<b>泄露口径、非官方承诺</b>；③ 同期的「中国开源模型累计下载破 100 亿次、HF 占比 41% 首超美国」是生态里程碑，<b>下载量高 ≠ 你能免费调</b>——权重开源、工具链开源、免费 API 是三件不同的事（详见 Qwen3.8 / H3 / Ling 提醒）。当下能立即白嫖的旗舰仍是 GLM-5.2（95 分·NVIDIA NIM 永久免费）。</p>
+        </div>
+      </div>
+      <div class="risk-item">
         <span class="icon">🦙</span>
         <div>
           <h4>Ollama Cloud 的 K3 免费层是真的，但「免费额度」官方从未公开数值——别拿它做生产主力</h4>
@@ -781,8 +786,8 @@
   </div>
 
   <div class="footer">
-    <p>📅 下次更新：明日 09:30 · 数据来源：freellm.net 实时实测目录（首页 424+ 免费模型、30 家供应商、248 款经实时 API 验证、284+ 无需信用卡，8/5 刷新；本期读数 Kimi K3 98（Ollama Cloud）/ GLM-5.2 95（NVIDIA NIM·周调用 2.9T）/ Gemini 3.6 Flash 91（AI Studio）/ DeepSeek V4-Flash 90（Ollama）·88（NIM）/ MiniMax M3 89（Ollama）·88（NIM）/ Gemini 3.5 Flash 88 / DeepSeek V4-Pro 85（Ollama·NIM）/ Nemotron 3 Ultra 85（OpenRouter）/ Kimi K2.6 83（NIM）/ Agnes 2.0 Flash 81 / Gemini 3.5 Flash-Lite 81）、腾讯 CodeBuddy 与 WorkBuddy 官方公告（8/4 Hy3 限免延长至 8/31、非多模态说明、每日额度分配与排队机制、23:00–次日 8:00 错峰建议）、腾讯云开发者社区（Hy3 MoE 295B / 激活 21B / 256K、办公任务成功率 72%→90%、平均耗时降 34%）、阿里通义千问官方发布与技术博客（Qwen3.8-Max 2.4T / 95B 激活 / 1M 上下文 / 下周开源权重 + Qwen3.8-27B / 国内 12 元·36 元每百万、缓存 1.5 元 / PaperBench 93.0 / SWE-bench Pro 67.7）、Ollama 官方文档（免费账户含 cloud models、5 小时会话额度 + 7 天周额度、level 1–4 消耗分级、Max 订阅暂停）、NVIDIA 官方 GLM-5.2 基准卡与 build.nvidia.com（141 模型 77 永久免费）、OpenRouter 官方定价页与供应商页（8/4 更新、50 次/天账户级、充 $10 升 1000 次/天、免费层在线模型清单）、腾讯云 TokenHub 官方文档（每语言模型 100 万 Token / 1 年、活动至 12/31）、中国移动云帮助中心（MoMA 2500 万 Token / 30 天 / 3000 Token 每分钟限流 / 活动至 12/31）、国家超算互联网 SCNet（基础 1000 万 + 审核追加 5000 万 / 90 天）、阿里云百炼、美团 LongCat、火山引擎、硅基流动、魔搭 ModelScope、DeepSeek 官方状态页与 OpenCode 披露数据（8/4 V4-Flash 容量崩溃与恢复、并发上限 2500）、智谱 ZCode 泄露页面（GLM-5.3 曝光·新用户 300 万 Token/天免费）、AirLLM 开源仓库（4GB 显存跑 2.8T Kimi K3）</p>
-    <p style="margin-top:8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准 | 评分数据来自 freellm.net 实时实测，不同供应商托管同一模型分数不同，已分别标注平台 | 本期主线：免费先进模型的容量陷阱（DeepSeek V4-Flash 崩溃）+ 多入口分流策略 + 智谱 GLM-5.3 免费额度曝光 + AirLLM 部署突破</p>
+    <p>📅 下次更新：明日 09:30 · 数据来源：freellm.net 实时实测目录（首页 424+ 免费模型、30 家供应商、248 款经实时 API 验证、284+ 无需信用卡，8/6 刷新；本期读数 Kimi K3 98（Ollama Cloud）/ GLM-5.2 95（NVIDIA NIM·周调用 2.9T）/ Gemini 3.6 Flash 91（AI Studio）/ DeepSeek V4-Flash 90（Ollama）·88（NIM）/ MiniMax M3 89（Ollama）·88（NIM）/ Gemini 3.5 Flash 88 / DeepSeek V4-Pro 85（Ollama·NIM）/ Nemotron 3 Ultra 85（OpenRouter）/ Kimi K2.6 83（NIM）/ Agnes 2.0 Flash 81 / Gemini 3.5 Flash-Lite 81）、腾讯 CodeBuddy 与 WorkBuddy 官方公告（8/4 Hy3 限免延长至 8/31、非多模态说明、每日额度分配与排队机制、23:00–次日 8:00 错峰建议）、腾讯云开发者社区（Hy3 MoE 295B / 激活 21B / 256K、办公任务成功率 72%→90%、平均耗时降 34%）、阿里通义千问官方发布与技术博客（Qwen3.8-Max 2.4T / 95B 激活 / 1M 上下文 / 下周开源权重 + Qwen3.8-27B / 国内 12 元·36 元每百万、缓存 1.5 元 / PaperBench 93.0 / SWE-bench Pro 67.7）、Ollama 官方文档（免费账户含 cloud models、5 小时会话额度 + 7 天周额度、level 1–4 消耗分级、Max 订阅暂停）、NVIDIA 官方 GLM-5.2 基准卡与 build.nvidia.com（141 模型 77 永久免费）、OpenRouter 官方定价页与供应商页（8/4 更新、50 次/天账户级、充 $10 升 1000 次/天、免费层在线模型清单）、腾讯云 TokenHub 官方文档（每语言模型 100 万 Token / 1 年、活动至 12/31）、中国移动云帮助中心（MoMA 2500 万 Token / 30 天 / 3000 Token 每分钟限流 / 活动至 12/31）、国家超算互联网 SCNet（基础 1000 万 + 审核追加 5000 万 / 90 天）、阿里云百炼、美团 LongCat、火山引擎、硅基流动、魔搭 ModelScope、DeepSeek 官方状态页与 OpenCode 披露数据（8/4 V4-Flash 容量崩溃与恢复、并发上限 2500）、智谱官方 8/7 确认（GLM-5.3 发布在即·万亿参数·史诗级 plus·有望追平 Kimi K3）、智谱 ZCode 泄露页面（GLM-5.3 曝光·新用户 300 万 Token/天免费）、AirLLM 开源仓库（4GB 显存跑 2.8T Kimi K3）、Hugging Face 2026 春季报告（中国开源模型下载占比 41% 首超美国）、工信部数据（国产开源大模型累计下载破 100 亿次）、央视财经报道（中国开源模型全球下载破百亿·Kimi K3 2.8T 一小时登顶 HF 趋势榜）</p>
+    <p style="margin-top:8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准 | 评分数据来自 freellm.net 实时实测，不同供应商托管同一模型分数不同，已分别标注平台 | 本期主线：智谱 GLM-5.3 官方确认「发布在即」（万亿参数·史诗级 plus·有望追平 Kimi K3）+ Qwen3.8-Max 2.4T 权重 8/10 当周开源倒计时 + 中国开源模型累计下载破 100 亿次（HF 占比 41% 首超美国）+ AirLLM 部署突破</p>
     <p style="margin-top:8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
   </div>
 

@@ -6,15 +6,15 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-08-06）
+## 📰 今日摘要（2026-08-07）
 
-🔥 **免费先进模型的「容量陷阱」——DeepSeek V4-Flash 8/4 因流量爆发单日数万亿次调用、并发上限 2500、一天数度 503 崩溃（周调用约 70.22 万亿、现已恢复）· 智谱 GLM-5.3 曝光（新用户 300 万 Token/天免费额度）· AirLLM 开源（4GB 显存跑 2.8T Kimi K3）· freellm.net 8/5 实测 248 款经实时 API 验证**：DeepSeek V4-Flash 的 503 风暴揭示了免费先进模型的真实容量瓶颈——<b>别把生产压在单一免费端点，NIM / TokenHub / Ollama 多入口分流</b>。同期 <b>智谱 GLM-5.3 曝光</b>（新用户 5 天免费、300 万 Token/天 + 200 万/天、对标 Fable、仍在训练待发布），是继 K3、GLM-5.2 后又一高分候选；<b>AirLLM 开源</b>让 4GB 显存也能跑 2.8T 的 Kimi K3（约 3.72GB VRAM、1.6TB 硬盘分片）。<b>免费榜格局稳定</b>：Kimi K3（Ollama·98）蝉联第一、GLM-5.2（NIM·95）第二、Gemini 3.6 Flash（91）第三、DeepSeek V4-Flash（90）第四。
+🔥 **国产开源「双响炮」——智谱 GLM-5.3 官宣「发布在即」（万亿参数·史诗级 plus·有望追平 Kimi K3）+ Qwen3.8-Max 2.4T 权重 8/10 当周开源倒计时 + 中国开源模型累计下载破 100 亿次（HF 占比 41% 首超美国）**：8/7 智谱创始人唐杰在社交平台确认 <b>GLM-5.3「发布在即」</b>，参数从 7400 亿跃升至<b>万亿以上</b>、官方称「史诗级 plus」、业内推算有望<b>追平 Kimi K3</b>（GLM-5.2 在 artificialanalysis 得 52 分）；但<b>截至今日无模型卡/价格/API/权重</b>，「能免费调」要等正式发布。同期 <b>Qwen3.8-Max 2.4T 权重 8/10 当周开源</b>（同步开源 27B），是 Qwen-Max 级旗舰首次开源。<b>中国开源模型累计下载破 100 亿次</b>、HuggingFace 占比 41% 首超美国，但请记住「下载量高 ≠ 你能免费调」。
 
-💎 **高分免费模型 Top 3**：Kimi K3（98分/Ollama Cloud 免费层 + 开源，蝉联第一）、GLM-5.2（95分/NVIDIA NIM 无限免费 + 开源，第二）、Gemini 3.6 Flash（91分/AI Studio 免费层，第三）；场外：智谱 GLM-5.3（待发布，新用户 300 万 Token/天免费）。
+💎 **高分免费模型 Top 3**：Kimi K3（98分/Ollama Cloud 免费层 + 开源，蝉联第一）、GLM-5.2（95分/NVIDIA NIM 永久免费 + 开源，第二）、Gemini 3.6 Flash（91分/AI Studio 免费层，第三）；场外：智谱 GLM-5.3（官宣在即，泄露 300 万 Token/天免费待定）。
 
-🎁 **大额每日刷新（8 家量大平台）**：Ollama Cloud（免费账户含 cloud models、K3/M3/V4 在免费层、额度未公开）、NVIDIA NIM（141 模型、77 款永久免费端点）、阿里云百炼/千问（每模型 100 万 Token、总额 7000 万、K3 国内首发入口）、美团 LongCat（500 万/天起）、火山引擎（200 万/天）、Groq（14400 次/天）、腾讯云 TokenHub（每模型 100 万）、OpenRouter（50 次/天、充 $10 升 1000）。⚠️ **容量提醒**：DeepSeek V4-Flash 官方 API 并发上限仅 2500、单日数万亿调用、易 503，生产请用多入口分流。
+🎁 **大额每日刷新（8 家量大平台）**：Ollama Cloud（免费账户含 cloud models、K3/M3/V4 在免费层、额度未公开）、NVIDIA NIM（141 模型、77 款永久免费端点）、阿里云百炼/千问（每模型 100 万 Token、K3 国内首发入口）、美团 LongCat（500 万/天起）、火山引擎（200 万/天）、Groq（14400 次/天）、腾讯云 TokenHub（每模型 100 万）、OpenRouter（50 次/天、充 $10 升 1000）。⚠️ **容量提醒**：DeepSeek V4-Flash 官方 API 并发上限仅 2500、单日数万亿调用、易 503，生产请用多入口分流。
 
-🆕 **今日新增关注**：智谱 GLM-5.3（新用户 300 万 Token/天免费、待发布）、AirLLM（4GB 显存跑 2.8T Kimi K3 的开源推理框架）。✅ **已开源观察**：Kimi K3（2.8T）、GLM-5.2、MiniMax H3、蚂蚁百灵 Ling-3.0-flash 权重均已开源。⚠️ **风险提醒**：⚠️ DeepSeek V4-Flash 容量陷阱（并发 2500、易 503、需多入口分流）、Ollama 免费额度数值未公开、Qwen3.8-Max/H3/Ling 的 API 当前付费或暂无 :free 层、MiniMax M3 与 Hy3 在 OpenRouter 已转 Paid 档、OpenRouter 仅 50 次/天、腾讯混元旧平台 9/30 停服、GCP 16 个端点 10/21 退役。
+🆕 **今日新增关注**：智谱 GLM-5.3（唐杰 8/7 确认发布在即、万亿参数、泄露 300 万 Token/天免费待定）、中国开源模型下载破百亿里程碑。✅ **已开源观察**：Kimi K3（2.8T）、GLM-5.2、MiniMax H3、蚂蚁百灵 Ling-3.0-flash 权重均已开源；⏳ **即将开源**：Qwen3.8-Max（8/10 当周）。⚠️ **风险提醒**：DeepSeek V4-Flash 容量陷阱（并发 2500、易 503、需多入口分流）、GLM-5.3 官宣但 API 未开放别赌生产、Ollama 免费额度数值未公开、Qwen3.8-Max/H3/Ling 的 API 当前付费或暂无 :free 层、OpenRouter 仅 50 次/天、腾讯混元旧平台 9/30 停服、GCP 16 个端点 10/21 退役。
 
 ## 内容覆盖
 
@@ -28,6 +28,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-08-07 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-07.html) | [HTML](daily-free-llm-2026-08-07.html) |
 | 2026-08-06 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-06.html) | [HTML](daily-free-llm-2026-08-06.html) |
 | 2026-08-04 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-04.html) | [HTML](daily-free-llm-2026-08-04.html) |
 | 2026-08-03 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-03.html) | [HTML](daily-free-llm-2026-08-03.html) |
