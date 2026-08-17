@@ -6,17 +6,17 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-08-14）
+## 📰 今日摘要（2026-08-17）
 
-🔥 **Qwen3.8 开源周收官（8/10–8/16）——Max 2.4T 权重已落地（8/12），27B 本周内放出**：Max 2.4T-A95B 已于 8/12 深夜上线 HF+ModelScope（千问首次开放 Max 级旗舰权重，2.4T 总参 / 95B 激活 / 512 专家 MoE，文本-only + 强制思考、262K→1M 上下文），走自定义 Qwen3.8-Max License（非 Apache 2.0）。最受期待的 **Qwen3.8-27B**（4-bit 14–16GB 显存、单张 RTX 4090 可跑、FP8 27GB L40S）官方承诺同期开源，**截至 8/14 仓库仍未正式上传、模型卡与许可证均未现身，预计 8/15–8/16 放出**——蹲守最后两天。⚠️ 商用前读 LICENSE：>1 亿 MAU 或月营收 >2000 万美元需 UI 标注、MaaS/>5000 万美元 TTM 需授权、内部使用豁免。
+🔥 **阿里 Qwen3.8-27B 8/14 正式开源——Apache 2.0、原生多模态稠密、消费级显卡可跑**：27B 参数原生视觉语言模型，以最宽松的 Apache 2.0 开放权重，所有人可免费下载、部署、商用；支持 262K 原生上下文、YaRN 扩至 1M，新增 reasoning_effort 动态调节思考深度；Agentic terminal coding 73.0、SWE-bench Pro 61.7、JobBench 33.4，编程/办公超 Qwen3.6-27B 甚至 Qwen3.7-Plus；4-bit 约 17GB，24GB 显卡或 32GB Mac 即可本地跑，llama.cpp 首日支持。⚠️ 同门旗舰 Qwen3.8-Max（2.4T MoE）虽开源权重但走自定义 License（非 Apache 2.0、纯文本、思考锁定、含商业收入分成）——「小模型全开放、大模型走商业」双轨成型，想本地部署先读 LICENSE。
 
-💰 **DeepSeek V4 Pro 正式版（DeepSeek-V4-Pro-0813）8/13 上线 API——涨价已落地**：支持 Responses API 与 Codex 接入，Terminal-Bench 2.1 87.9 逼近 Fable 5 的 88.0，CyberGym / AutomationBench 反超；定价 3/6 元每百万（缓存命中 0.025），较 V4-Flash（1/2 元）贵约 3 倍——8/6 预告的涨价正式落地。⚠️ 免费入口仍是 V4-Flash，V4-Pro 已非「免费」定位。
+💎 **高分免费模型 Top 3**：kimi-k3（98 分 / Ollama Cloud 免费层 + 开源，登顶第一，但 session/weekly 限额）、GLM-5.2（95 分 / NVIDIA NIM 永久免费 + 开源，量大能用最稳冠军）、Gemini 3.6 Flash（91 分 / AI Studio 免费层，第三）；场外：DeepSeek V4 Flash（90·多入口免费）、MiniMax M3（89·多模态多入口）、Nemotron 3 Ultra（85）、Ling-3.0-flash（87）。⚠️ Tencent Hy3（90）限免已于 8/5 结束、OpenRouter 转 Paid，免费主入口关闭。
 
-💎 **高分免费模型 Top 3**：Kimi K3（98 分 / Ollama Cloud 免费层 + 开源，蝉联第一）、GLM-5.2（94 分 / NVIDIA NIM 永久免费 + 开源，第二）、Gemini 3.6 Flash（91 分 / AI Studio 免费层，第三）；场外：腾讯 Hy3（90 分 / 限免至 8/31，还剩 17 天）、DeepSeek V4-Flash（91·OpenRouter 免费层）、智谱 GLM-5.3（万亿参数「发布在即」、API 未开放）。🆕 OpenRouter 免费层新晋 **Google Gemma 4 31B**（262K、全模态、开放权重）。
+⌨️ **新入口 OpenCode Zen 限时免费模型**：OpenCode 官方模型网关，GitHub/Google 免信用卡即领 Key，OpenAI 兼容（Base URL https://opencode.ai/zen/v1）；带「Free」标签的 DeepSeek V4 Flash Free（1M 上下文 / 384K 输出）、MiniMax M2.5 Free、Nemotron 3 Ultra Free、Big Pickle、MiMo-V2.5 Free、North Mini Code Free、Hy3 preview 限时免费。⚠️ 限时免费、数据可能用于改进模型，敏感数据勿走免费档；早前 qwen3.6-plus-free 已下架，用前先 `opencode models` 看当前可用。
 
-🎁 **大额每日刷新（10 家量大平台）**：国家超算互联网 SCNet、移动云 MoMA、Ollama Cloud、NVIDIA NIM（141 模型、77 款永久免费端点）、阿里云百炼、美团 LongCat、火山引擎、硅基流动 / 魔搭、腾讯云 TokenHub、OpenRouter（免费层 16 款 :free、充 $10 升 1000）。⚠️ 容量提醒：DeepSeek V4-Flash 官方 API 并发上限 2500、易 503，生产用多入口分流；DeepSeek 8/6 起大幅涨价（高峰翻倍）。
+🎁 **大额每日刷新（9 家量大平台）**：阿里云百炼（70+ 模型每款 100 万 Token、总额 7000 万）、NVIDIA NIM（125 模型、77 款永久免费、40 RPM 无日限额）、OpenCode Zen（多款 -Free 限时免费）、美团 LongCat（500 万/天起、最高 1.2 亿）、火山引擎（200 万/天）、Groq（14400 次/天）、硅基流动（新用户 2000 万）、腾讯云 TokenHub（每模型 100 万）、OpenRouter（25+ 免费、50 次/天、充 $10 升 1000）。
 
-🆕 **今日新增关注**：Qwen3.8-27B 开源进入倒计时（预计 8/15–8/16 放出，4-bit 14–16GB 消费级显卡可跑）、OpenRouter 免费层新晋 Google Gemma 4 31B。✅ 已开源：Kimi K3、GLM-5.2、MiniMax H3、Ling-3.0-flash、Muse Glimmer、Nemotron 3.5 Lightning、Qwen3.8-2.4T-A95B。⏳ 即将开源：Qwen3.8-27B（本周内）。⚠️ 风险提醒：DeepSeek V4-Pro 涨价、Hy3 限免仅剩 17 天（8/31 截止）、Qwen3.8-Max License 非 Apache 2.0 大规模商用需授权、本地开源≠API 免费、Ollama 额度未公开、GLM-5.3 未开放、OpenRouter 免费层收紧（16 款 :free）、腾讯混元旧平台 9/30 停服、GCP 16 个端点 10/21 退役。
+🆕 **今日新增关注**：Qwen3.8-27B（Apache 2.0 本地免费部署）、OpenCode Zen 限时免费模型。✅ 已开源：Kimi K3、GLM-5.2、MiniMax H3/M3、Ling-3.0-flash、Muse Glimmer、Nemotron 3.5 Lightning、Qwen3.8-2.4T-A95B、Qwen3.8-27B。⚠️ 风险提醒：Qwen3.8-Max License 非 Apache 2.0 大规模商用需授权、OpenCode Zen 限时免费+数据用于训练、Hy3 限免 8/5 已结束、LobsterAI 网易 5000 积分 8/20 截止、腾讯混元旧平台 9/30 停服、GCP 16 个端点 10/21 退役、OpenRouter 免费层 50 次/天账户级。
 
 
 ## 内容覆盖
@@ -31,6 +31,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-08-17 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-17.html) | [HTML](daily-free-llm-2026-08-17.html) |
 | 2026-08-14 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-14.html) | [HTML](daily-free-llm-2026-08-14.html) |
 | 2026-08-13 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-13.html) | [HTML](daily-free-llm-2026-08-13.html) |
 | 2026-08-12 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-12.html) | [HTML](daily-free-llm-2026-08-12.html) |
