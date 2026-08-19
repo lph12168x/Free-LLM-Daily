@@ -6,6 +6,20 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
+## 📰 今日摘要（2026-08-19）
+
+🔥 **智谱 GLM-5.3 API 8/19 凌晨上线——743B、AA Index 60 并列开源第一，付费 API 但权重 8/28 开源进 NIM 免费层**：GLM-5.3 沿用 GLM-5.2 底座、全部提升来自后训练缩放，在 Artificial Analysis Intelligence Index 取得 60 分，与 Kimi K3 并列开源模型第一、与 Claude Fable 5 / GPT-5.6 Sol 同档。Terminal-Bench 3.0 由 4.6 升至 28.3、DeepSWE v1.1 66.9、Agents' Last Exam 28.5、白盒漏洞发现 CyberGym 84.5%（高于 Mythos 5 的 83.8%）。API 定价与 GLM-5.2 持平（腾讯云 输入 8 / 输出 28 / 缓存命中 2 元每百万），权重计划下周五（8/28）开源——届时进 NVIDIA NIM 永久免费层。⚠️ 当下免费入口仍是 GLM-5.2（NVIDIA NIM 94 分、1M 上下文、40 RPM 无日限额、永久免费）。
+
+🌏 **中国开源 AI 成美国大模型「底座」：Qwen3.8-27B 登顶 HF 趋势榜、两天下载破百万、衍生 15 万+**：Hugging Face《开源模型现状：2026 夏季观察》显示中国实验室月度最大开源模型规模（7540 亿–2.78 万亿）持续领先美国，部分美国千亿级模型以中国模型为底座。Qwen3.8-27B（Apache 2.0、24GB 显卡可跑）开源两天下载破 100 万次、衍生模型超 15 万个居全球第一。DeepSeek Harness（DSH）8/13 开放预览，三天 GitHub Star 超 13 万。
+
+💎 **高分免费模型 Top 3**：kimi-k3（98 分 / Ollama Cloud 免费层 + 开源，登顶第一，但 session/weekly 限额）、GLM-5.2（94 分 / NVIDIA NIM 永久免费 + 开源，量大能用最稳冠军）、Gemini 3.6 Flash（91 分 / AI Studio 免费层，第三）；场外：DeepSeek V4 Flash（90·多入口免费）、MiniMax M3（89·多模态多入口）、Nemotron 3 Ultra（85）、Ling-3.0-flash（87）。⚠️ Tencent Hy3（90）经 WorkBuddy/CodeBuddy 限免至 8/31（剩 13 天）仍可用、OpenRouter 已转 Paid；GLM-5.3 为付费 API、权重 8/28 开源后才进免费层。
+
+⌨️ **新入口 / 免费 API 提供商（不止 FreeLLM 类网站）**：OpenCode Zen（DeepSeek V4 Flash Free、MiniMax M3 Free、Nemotron 3 Ultra Free、Big Pickle、MiMo-V2.5 Free 等限时免费，Base URL https://opencode.ai/zen/v1）；OpenRouter（Nemotron 3 Ultra、Gemma 4、gpt-oss、Ling-3.0-flash 等 25+，50 次/天、充 $10 升 1000）；Nous Portal（Step-3.7-Flash / Nemotron-3-Ultra / Owl-Alpha 3 款免费，OAuth device-code 登录）；火山引擎方舟（每日 200 万 Token 免费含 V4 Pro）；NVIDIA NIM（77 款永久免费端点、40 RPM 无日限额）。
+
+🎁 **大额每日刷新（10 家量大平台）**：火山引擎方舟（200 万/天、含 V4 Pro）、阿里云百炼（70+ 模型每款 100 万 Token）、NVIDIA NIM（125 模型、77 款永久免费、40 RPM 无日限额）、OpenCode Zen（多款 -Free 限时免费）、美团 LongCat（500 万/天起）、Groq（14400 次/天）、硅基流动（新用户 2000 万）、腾讯云 TokenHub（每模型 100 万）、OpenRouter（25+ 免费、50 次/天、充 $10 升 1000）、Nous Portal（3 款新免费）。
+
+🆕 **今日新增关注**：智谱 GLM-5.3 API 上线（AA Index 60 并列开源第一，付费但权重 8/28 开源）、中国开源成美国「底座」（Qwen3.8-27B 登顶 HF 趋势榜）。✅ 已开源：Kimi K3、GLM-5.2、MiniMax M3、Ling-3.0-flash、Nemotron 3 Ultra、Qwen3.8-27B、DeepSeek V4 系列。⏳ 即将开源：GLM-5.3 权重（8/28）。⚠️ 风险提醒：DeepSeek 官方 API 8/17 峰谷涨价（免费党转火山/NIM/Zen/Nous）、GLM-5.3 当前付费（等 8/28 权重）、Qwen3.8-Max License 非 Apache 2.0 大规模商用需授权、OpenCode Zen 限时免费+数据用于训练、腾讯混元旧平台 9/30 停服、GCP 16 个端点 10/21 退役、OpenRouter 免费层 50 次/天账户级、Hy3 限免至 8/31（剩 13 天）。
+
 ## 📰 今日摘要（2026-08-18）
 
 🔥 **DeepSeek 官方 API 8/17 峰谷涨价 + 火山引擎方舟 8/18 每日 200 万 Token 免费含 V4 Pro**：DeepSeek 官方 API 分时定价 8/17 生效——V4 Pro 高峰缓存命中输入 0.025→0.30 元/百万（+1100%）、输出 6→27 元/百万（+350%），低谷半价；纯 API 免费党受冲击。补偿方案：火山引擎方舟 8/18 起开放每日 200 万 Token 免费额度（含 V4 Pro），需手动设 190 万 Token 熔断防超额；另有 OpenCode Zen 的 DeepSeek V4 Flash Free（1M 上下文）、NVIDIA NIM 永久免费模型。🆕 Nous Portal 新提供 3 款免费模型（Step-3.7-Flash / Nemotron-3-Ultra / Owl-Alpha），OpenAI 兼容、OAuth device-code 登录。
@@ -31,6 +45,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-08-19 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-19.html) | [HTML](daily-free-llm-2026-08-19.html) |
 | 2026-08-18 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-18.html) | [HTML](daily-free-llm-2026-08-18.html) |
 | 2026-08-17 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-17.html) | [HTML](daily-free-llm-2026-08-17.html) |
 | 2026-08-14 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-14.html) | [HTML](daily-free-llm-2026-08-14.html) |
