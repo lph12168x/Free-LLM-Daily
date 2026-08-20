@@ -6,6 +6,20 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
+## 📰 今日摘要（2026-08-20）
+
+🔥 **百度文心快码 Comate 限免第二弹（不限量 Token·新发现）+ LobsterAI 延长至 8/31 + 千问下载 30 亿登顶全球**：🔵 8/19 百度开发者中心悄然上线文心快码 Comate 测试版限免第二弹——主打「不限量 Token」，覆盖 Ernie 4.5T/X1T/DeepSeek 等 9 款模型，注册登录立得 7 天、每邀请 1 好友再得 3 天（最高叠 37 天），活动截止 2026-09-24，目前少有博主写、属「小漏网」级白嫖窗口（注意它是 IDE 编程助手形态、非裸 API）。🟢 LobsterAI 5000 积分活动「反转」：原 8/20 截止延长至 8/31 并加码（邀请最高 4000+每日签到 100+上线 DeepSeek Harness），顺手登录领取即可。
+
+🌏 **千问全球下载破 30 亿登顶第一（Google 7×、Meta 13×）+ Qwen3.8-27B 本地部署提速 + DeepSeek Harness 开源**：阿里千问系列全球累计下载超 30 亿次（Google 4.18 亿、Meta 2.27 亿），累计开源 460+ 模型、衍生超 30 万；Qwen3.8-27B（Apache 2.0）两天下载破百万、衍生 15 万+，社区让本地门槛再降——Unsloth 高精度 GGUF（8GB RAM 可跑）、M5 Max 达 70 tok/s，被称「本地 Opus 4.6」。🐙 DeepSeek 开源 Harness v0.1（MIT，模型/工具/沙箱/编排全插件化 Agent 框架）。
+
+💎 **高分免费模型 Top 3**：kimi-k3（98 分 / Ollama Cloud 免费层 + 全球最大开源权重 2.8T，蝉联第一，但 session/weekly 限额）、GLM-5.2（93 分 / NVIDIA NIM 永久免费 + 开源，量大能用最稳冠军）、Gemini 3.6 Flash（90 分 / AI Studio 免费层）；场外：DeepSeek V4 Flash（88·多入口免费）、MiniMax M3（88·多模态）、Gemini 3.5 Flash（88）、Ling-3.0-flash（85）、Nemotron 3 Ultra（84）、Kimi K2.6（82）、Step-3.7-Flash（75）。⚠️ 🆕 Gemini 3.7 Flash（8/16 上线）实测仅 45 分偏弱、暂不建议当主力；GLM-5.3（8/19 API 上线·AA Index 60）当下付费、权重 8/28 才开源；Tencent Hy3 限免 8/31 截止（剩 11 天）、OpenRouter 已转 Paid。
+
+⌨️ **新入口 / 免费 API 提供商（不止 FreeLLM 类网站）**：OpenCode Zen（DeepSeek V4 Flash Free、MiniMax M3 Free、Nemotron 3 Ultra Free、Big Pickle、MiMo-V2.5 Free、North Mini Code Free、🆕 Nemotron 3.5 Lightning Free，Base URL https://opencode.ai/zen/v1）；OpenRouter（Nemotron 3 Ultra、Gemma 4、Step-3.7-Flash、Ling-3.0-flash 等 25+，50 次/天、充 $10 升 1000）；Nous Portal（Solar Pro 4 / Hy3 / Step-3.7-Flash / Laguna S·XS 免费，20% off 延长）；火山引擎方舟（每日 200 万 Token 免费含 V4 Pro）；NVIDIA NIM（77 款永久免费、40 RPM 无日限额）；🆕 百度文心快码 Comate（IDE 内不限量 Token 限免第二弹）；CommandCode（免费档含 Laguna S 2.1 FREE、GOAT $10→$70 额度覆盖 33+ 模型）。
+
+🎁 **大额每日刷新（11 家量大平台）**：阿里云百炼（70+ 模型每款 100 万 Token）、NVIDIA NIM（125 模型、77 款永久免费）、OpenCode Zen（多款 -Free 限时免费）、百度文心快码 Comate（不限量 Token·9 款模型·9/24 截止）、美团 LongCat（500 万/天）、火山引擎（200 万/天）、Groq（14400 次/天）、硅基流动（新用户 2000 万）、腾讯云 TokenHub（每模型 100 万）、OpenRouter（25+ 免费、50 次/天、充 $10 升 1000）、Nous Portal（多款免费）、网易 LobsterAI（5000 积分·8/31）。
+
+🆕 **今日新增关注**：百度文心快码 Comate 限免第二弹（不限量 Token）、LobsterAI 延长至 8/31、Gemini 3.7 Flash 上线（实测 45 偏弱）、OpenCode Zen Nemotron 3.5 Lightning Free、DeepSeek Harness v0.1 开源。✅ 已开源：Kimi K3、GLM-5.2、MiniMax M3、Ling-3.0-flash、Nemotron 3 Ultra、Qwen3.8-27B、DeepSeek V4 系列。⏳ 即将开源：GLM-5.3 权重（8/28）。⚠️ 风险提醒：Comate 是 IDE 助手非裸 API、LobsterAI 延长至 8/31、GLM-5.3 当下付费（等 8/28 权重）、Qwen3.8-Max License 非 Apache 2.0、OpenCode Zen 限时免费+数据用于训练、OpenRouter 免费层 50 次/天账户级、腾讯混元旧平台 9/30 停服、GCP 16 端点 10/21 退役、Hy3 限免 8/31 截止（剩 11 天）。
+
 ## 📰 今日摘要（2026-08-19）
 
 🔥 **智谱 GLM-5.3 API 8/19 凌晨上线——743B、AA Index 60 并列开源第一，付费 API 但权重 8/28 开源进 NIM 免费层**：GLM-5.3 沿用 GLM-5.2 底座、全部提升来自后训练缩放，在 Artificial Analysis Intelligence Index 取得 60 分，与 Kimi K3 并列开源模型第一、与 Claude Fable 5 / GPT-5.6 Sol 同档。Terminal-Bench 3.0 由 4.6 升至 28.3、DeepSWE v1.1 66.9、Agents' Last Exam 28.5、白盒漏洞发现 CyberGym 84.5%（高于 Mythos 5 的 83.8%）。API 定价与 GLM-5.2 持平（腾讯云 输入 8 / 输出 28 / 缓存命中 2 元每百万），权重计划下周五（8/28）开源——届时进 NVIDIA NIM 永久免费层。⚠️ 当下免费入口仍是 GLM-5.2（NVIDIA NIM 94 分、1M 上下文、40 RPM 无日限额、永久免费）。
@@ -45,6 +59,7 @@
 
 | 日期 | 在线查看 | 源文件 |
 |------|---------|--------|
+| 2026-08-20 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-20.html) | [HTML](daily-free-llm-2026-08-20.html) |
 | 2026-08-19 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-19.html) | [HTML](daily-free-llm-2026-08-19.html) |
 | 2026-08-18 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-18.html) | [HTML](daily-free-llm-2026-08-18.html) |
 | 2026-08-17 | [📖 查看日报](https://lph12168x.github.io/Free-LLM-Daily/daily-free-llm-2026-08-17.html) | [HTML](daily-free-llm-2026-08-17.html) |
