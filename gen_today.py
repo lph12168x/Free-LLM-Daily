@@ -1,0 +1,668 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# Generate today's (2026-08-21) Free LLM Daily report by reusing the verified
+# CSS + JS from the latest existing report and injecting freshly researched content.
+import os, re
+
+base = os.path.dirname(os.path.abspath(__file__))
+src = os.path.join(base, "daily-free-llm-2026-08-20.html")
+out = os.path.join(base, "daily-free-llm-2026-08-21.html")
+with open(src, encoding="utf-8") as fh:
+    src_html = fh.read()
+
+# Extract the <style>...</style> block verbatim (CSS with light/dark themes)
+m_style = re.search(r"<style>(.*?)</style>", src_html, re.S)
+style_css = m_style.group(1)
+# Extract the trailing <script>...</script> block
+m_script = re.search(r"<script>(.*?)</script>", src_html, re.S)
+script_js = m_script.group(1)
+
+DATE = "2026 年 8 月 21 日 · 周五"
+
+TITLE = "免费大模型日报 · 2026-08-21 · Free LLM Daily"
+DESC = ("2026年8月21日免费大模型日报：聚焦量大能用的先进模型。🔥 今日头号新发现——亚马逊 Kiro 免费档含 Claude Sonnet 4.5 + Qwen3 Coder Next / DeepSeek v3.2 / MiniMax 2.1 等开源模型（无需信用卡，GitHub Models 关停后的正经免费 Claude 入口）；Pollinations 零鉴权无限免费（Flux 图像永久不限、文本免 key、OpenAI 兼容）；freellm.net 目录更新至 516+ 免费模型 / 323 免信用卡；持续倒计时（Comate 9/24、LobsterAI 8/31、GLM-5.3 权重 8/28、Hy3 8/31、SambaNova 每模型 20万 token/天、Cohere Command 免费层）；免费先进榜稳定（kimi-k3 98 蝉联第一）。")
+
+# ---------------------------------------------------------------------------
+# BODY
+# ---------------------------------------------------------------------------
+body = f"""
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="badge">🤖 AI 每日免费情报</div>
+      <h1>免费大模型日报</h1>
+      <div class="date-chip">📅 {DATE}</div>
+      <p class="tagline">聚焦「量大能用的先进模型」· 覆盖 31 家国内外平台 · 本期主线：<b>亚马逊 Kiro 免费档含 Claude Sonnet 4.5 + Qwen3 Coder Next / DeepSeek v3.2 / MiniMax 2.1（无需信用卡，GitHub Models 关停后的正经免费 Claude 入口）</b>；<b>Pollinations 零鉴权无限免费（Flux 图像永久不限、文本免 key、OpenAI 兼容）</b>；<b>freellm.net 目录更新至 516+ 免费模型 / 323 免信用卡</b>；<b>免费先进榜稳定（kimi-k3 98 蝉联第一）</b>；<b>持续倒计时：百度文心快码 Comate 限免（9/24）、LobsterAI 积分（8/31）、智谱 GLM-5.3 权重开源（8/28）、腾讯 Hy3 限免（8/31）</b>。</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card"><div class="stat-icon">🎁</div><div class="stat-num">31+</div><div class="stat-label">可免费使用平台（29 家免信用卡）</div></div>
+    <div class="stat-card"><div class="stat-icon">💎</div><div class="stat-num">516+</div><div class="stat-label">免费大模型（freellm.net 实测 · 8/17 更新 · 323 免信用卡）</div></div>
+    <div class="stat-card"><div class="stat-icon">🏆</div><div class="stat-num">98</div><div class="stat-label">最高实测评分 (kimi-k3) · GLM-5.2 稳居 93</div></div>
+    <div class="stat-card"><div class="stat-icon">🆓</div><div class="stat-num">¥0</div><div class="stat-label">月均使用成本</div></div>
+  </div>
+
+  <!-- Focus banner -->
+  <div class="focus">
+    <h2>📌 本期焦点：Kiro（AWS）免费档含 Claude Sonnet 4.5（无需信用卡）· Pollinations 零鉴权无限免费 · freellm.net 目录升至 516+ 模型 · 免费先进榜稳定（kimi-k3 98 蝉联第一）· 倒计时齐发（Comate 9/24 · LobsterAI 8/31 · GLM-5.3 权重 8/28 · Hy3 8/31）</h2>
+    <p>
+      <b>今日头号新发现（免费 Claude 新入口）</b>：GitHub Models 已于 7/30 永久关停，想免费用 Claude 的开发者一度只能绕路。今日确认亚马逊 <b>Kiro 免费档（$0、无需信用卡）</b>直接提供 <b>Claude Sonnet 4.5</b> + 一组强开源模型（<b>Qwen3 Coder Next、DeepSeek v3.2、MiniMax 2.1</b>，Qwen3 Coder Next 在 SWE-Bench Verified 上超 70%）。免费档按周配额限速、低倍率，足够小项目与轻量使用；<span class="hl">Claude Opus 4.5~5 系列及 GPT-5.6 等前沿模型仅付费档可用</span>。注意它是 <b>Kiro（基于 Code OSS 的 AI IDE / Agent）</b>形态，不是裸 API 端点——要「写代码 / 跑 Spec / 做 Agent」最划算，纯程序调用 Claude 仍建议走其他付费渠道。这是当下最正经的「免费摸到 Claude」入口。<br><br>
+      <b>第二大新发现（零摩擦无限免费）</b>：<b>Pollinations</b> 提供<b>零鉴权、无限免费</b>生成——Flux 图像<b>永久免费且无限</b>，文本模型（GPT-5 / Claude / Gemini / DeepSeek / Llama / Mistral / Qwen）免 API key、OpenAI 兼容、无注册、<b>不留存用户数据</b>。匿名约 1 请求/15 秒，注册 Spore 档 1.5 Pollen/周。是原型 / Demo / 社区项目最省事的免费生成 API。⚠️ 无 SLA，生产负载需谨慎。<br><br>
+      <b>目录刷新</b>：freellm.net 实测目录已更新至 <b>2026-8-17</b>——<b>516+ 免费模型、31 家供应商、323 款免信用卡</b>（此前为 441+ / 320 在线），覆盖面进一步扩张；OpenCode Zen 现已索引 <b>DeepSeek V4 Flash（1.0M 上下文、免信用卡）</b>。<br><br>
+      <b>量大补充（今日一并盘点）</b>：<b>SambaNova Cloud</b> 免费层按<b>每模型</b>独立限额（20 RPM / 20 RPD / 20 万 tokens/天），可跑 Llama 3.1 405B 等超大开源模型，另送 $5 信用（30 天）；<b>Cohere</b> 免费层含 Command A / R+（20 RPM / 1000 次/月、无需信用卡，但 Trial key 非商用许可）。<b>Cerebras</b> 晶圆级芯片约 2100 tok/s、<b>100 万 tokens/天</b>免费；<b>Groq</b> LPU 约 320~800+ tok/s。<br><br>
+      <b>榜单</b>：<span class="hl">kimi-k3（Ollama Cloud）以 98 分蝉联 freellm.net 全部免费模型第一</span>（session/weekly 限额）；<b>GLM-5.2（NVIDIA NIM 93 / 1M / 40 RPM 无日限额）仍是「量大能用」最稳冠军</b>；Gemini 3.6 Flash（90）、DeepSeek V4 Flash（88）、MiniMax M3（88）、Gemini 3.5 Flash（88）、Ling-3.0-flash（85）、Nemotron 3 Ultra（84）紧随。<br><br>
+      倒计时：<span class="countdown">8/28 智谱 GLM-5.3 权重开源（剩 7 天）</span> · <span class="countdown">8/31 LobsterAI 积分活动截止 + 腾讯 Hy3 限免截止（剩 10 天）</span> · <span class="countdown">9/24 文心快码 Comate 限免第二弹截止</span> · <span class="countdown">9/30 腾讯混元旧平台停服</span> · <span class="countdown">10/21 Google Cloud 16 个 MaaS 端点退役</span>。
+    </p>
+  </div>
+
+  <!-- Hot featured 1: Kiro free Claude -->
+  <div class="hot">
+    <span class="flag">🔥 新发现（8/21）· 亚马逊 Kiro 免费档含 Claude Sonnet 4.5 + 开源模型（无需信用卡）· GitHub Models 关停后的正经免费 Claude 入口</span>
+    <h2>Kiro（AWS）免费档：白嫖 Claude Sonnet 4.5 + Qwen3 Coder Next / DeepSeek v3.2 / MiniMax 2.1，无需信用卡</h2>
+    <div class="sub">亚马逊 Kiro · $0 免费档 · 无需信用卡 · 基于 Code OSS 的 AI IDE / Agent · 免费档含 Claude Sonnet 4.5 + 强开源模型 · 周配额限速</div>
+    <p>
+      <b>① 发生了什么</b>：GitHub Models 7/30 永久关停后，免费用 Claude 的「正经入口」骤减。今日确认 <b>亚马逊 Kiro 免费档（Free Tier，$0、无需信用卡）</b>直接提供 <b>Claude Sonnet 4.5</b>，外加一组真正能打的开源模型——<b>Qwen3 Coder Next（256K、SWE-Bench Verified 超 70%）、DeepSeek v3.2、MiniMax 2.1、GLM-5</b> 等，低积分倍率下免费档能跑出相当可用的效果。<br><br>
+      <b>② 限额与形态（看清楚）</b>：免费档<b>按周配额限速</b>（低倍率模型如 Qwen3 Coder Next 仅 0.05x），适合小项目与轻量日常；<b>Claude Opus 4.5~5、Claude Sonnet 5、GPT-5.6 等前沿模型仅在付费档</b>（Pro $20/月含 1000 积分）。关键：Kiro 是 <b>AI IDE / Agent（Spec 驱动开发、Hooks、Steering）</b>形态，<b>不是裸 API 端点</b>——要「写代码、跑 Agent、做规格化开发」最划算；想在自己程序里直连 Claude API 仍须走 Anthropic 付费或第三方中转。<br><br>
+      <b>③ 适用场景</b>：需要「免费摸到 Claude」用于<b>编码辅助 / 规格驱动开发 / 多模型对比</b>的个人开发者。配合 Kiro 的 Auto 路由与 Spec 工作流，免费档即可完成不小的工作量。⚠️ 免费档无 SLA、有周限额，生产级编码流水线请评估付费档或分流到 NVIDIA NIM / OpenCode Zen。<br><br>
+      <b>④ 策略</b>：把 Kiro 当「免费 Claude 编码入口」，日常零成本对话 / 长文档仍用 GLM-5.2（NIM）/ kimi.com（K3）/ Gemini Flash；多模态用 Gemini / MiniMax；高频批处理用 LongCat / 阿里百炼 / Groq / NIM。月度成本仍可压到 ¥0。
+    </p>
+    <div class="hot-grid">
+      <div class="hot-item"><div class="k">形态</div><div class="v">AI IDE / Agent（Code OSS）</div></div>
+      <div class="hot-item"><div class="k">免费模型</div><div class="v">Claude Sonnet 4.5 + 开源</div></div>
+      <div class="hot-item"><div class="k">信用卡</div><div class="v">无需</div></div>
+      <div class="hot-item"><div class="k">限速</div><div class="v">周配额 · 低倍率</div></div>
+      <div class="hot-item"><div class="k">前沿模型</div><div class="v">仅付费档</div></div>
+      <div class="hot-item"><div class="k">定位</div><div class="v">免费 Claude 入口</div></div>
+    </div>
+    <a class="hot-link" href="https://kiro.dev" target="_blank">前往 Kiro 免费档 →</a>
+  </div>
+
+  <!-- Hot featured 2: Pollinations unlimited -->
+  <div class="hot">
+    <span class="flag">🌐 新发现（8/21）· Pollinations 零鉴权无限免费——Flux 图像永久不限 + 文本免 key + OpenAI 兼容 + 无注册不留存数据</span>
+    <h2>Pollinations：最零摩擦的免费生成 API——图像无限免费、文本免 key、OpenAI 兼容</h2>
+    <div class="sub">柏林开源平台 · 零注册零 key · Flux 图像永久免费无限 · 文本含 GPT-5/Claude/Gemini/DeepSeek 等 · OpenAI 兼容端点 gen.pollinations.ai/v1 · 不留存用户数据</div>
+    <p>
+      <b>① 为什么值得关注</b>：在所有「量大能用」的免费入口里，<b>Pollinations</b> 是最省事的——<b>不需要注册、不需要 API key、不留存用户数据</b>。图像生成（Flux 默认模型）<b>永久免费且无限</b>；文本模型覆盖 GPT-5、Claude、Gemini、DeepSeek V3.2、Llama、Mistral、Qwen3 等，统一走 OpenAI 兼容端点 <code>gen.pollinations.ai/v1</code>，换 base_url 即可接入现有 SDK。<br><br>
+      <b>② 限额（看清楚形态）</b>：<span class="hl">匿名约 1 请求/15 秒</span>（图像为主）；注册 Spore 档 1.5 Pollen/周（1 Pollen≈$1 算力），Publishable key 1 Pollen/小时/IP。免费档<b>无 SLA、无 uptime 保证</b>，高峰响应可能波动——适合原型、Demo、bot、社区开源项目，不适合对可用性有硬要求的生产负载。<br><br>
+      <b>③ 多模态覆盖</b>：除文本 / 图像，还支持音频（30+ 语音 TTS，OpenAI 兼容 <code>/v1/audio/speech</code>）、视频（Seedance / Veo alpha）。是「一个端点搞定图文音视频」的免费试验场。⚠️ 部分前沿模型走 Pollen 付费信用，免费档以默认开源/基础模型为主。<br><br>
+      <b>④ 策略</b>：把 Pollinations 当「零成本原型 / 快速验证」通道——免 key 直接 <code>curl</code> 或构造 URL 即可出图出文；正式服务再迁到 NVIDIA NIM / OpenCode Zen / 火山等有 SLA 的免费层。两者互补，月度成本仍 ¥0。
+    </p>
+    <div class="hot-grid">
+      <div class="hot-item"><div class="k">图像</div><div class="v">Flux 永久无限</div></div>
+      <div class="hot-item"><div class="k">文本</div><div class="v">免 key · 多模型</div></div>
+      <div class="hot-item"><div class="k">兼容</div><div class="v">OpenAI 兼容</div></div>
+      <div class="hot-item"><div class="k">注册</div><div class="v">零注册零 key</div></div>
+      <div class="hot-item"><div class="k">限速</div><div class="v">匿名 1 req/15s</div></div>
+      <div class="hot-item"><div class="k">风险</div><div class="v">无 SLA</div></div>
+    </div>
+    <a class="hot-link" href="https://pollinations.ai" target="_blank">前往 Pollinations →</a>
+  </div>
+
+  <!-- Top advanced free models -->
+  <div class="section">
+    <div class="section-title"><span class="ico">🏆</span>量大能用的先进模型 · Top 10（按 freellm.net 实测评分）+ 今日新增关注</div>
+    <div class="model-grid">
+
+      <div class="model-card top">
+        <div class="rank-badge rank-1">🥇 第 1 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">98</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">kimi-k3</div>
+            <div class="model-provider">Ollama Cloud · 月之暗面</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">128K 上下文</span>
+          <span class="meta-pill">session/weekly 限额</span>
+          <span class="meta-pill">文本/图像/视频</span>
+          <span class="meta-pill">免费对话即 K3</span>
+        </div>
+        <div class="model-desc">📈 全部免费模型实测<b>最高分 98</b>（Ollama Cloud），2.8 万亿参数、全球最大开源权重模型、AA 智能指数 57（全球第三 / 开源第一）。但 Ollama Cloud 为 <b>session / weekly unpublished 限额</b>，不是常驻大额度；最干净的零成本用法是 <span class="hl">kimi.com / App 登录后默认即 K3 免费对话</span>（「+」→ 插件唤起图 / 音 / 视频）。编程 / Agent 能力开源第一梯队，适合「对话 + 偶发高难任务」，不适合高频 API 批处理。</div>
+        <a class="model-link" href="https://kimi.com" target="_blank">前往 kimi.com 免费对话 →</a>
+      </div>
+
+      <div class="model-card top">
+        <div class="rank-badge rank-other">🥈 量大冠军</div>
+        <div class="model-head">
+          <div class="score"><div class="num">93</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">z-ai / GLM-5.2</div>
+            <div class="model-provider">NVIDIA NIM · 智谱</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">1.0M 上下文</span>
+          <span class="meta-pill">≤40 RPM 无日限额</span>
+          <span class="meta-pill">无需信用卡</span>
+          <span class="meta-pill">周调用 3.0T</span>
+        </div>
+        <div class="model-desc">「量大能用」最稳的冠军：freellm.net 实测 93（NVIDIA NIM 在线验证），长期稳居前列，周调用量 3.0T。约 744B MoE、MIT 开源、1M 长上下文。NVIDIA 官方基准卡：HLE 40.5、AIME 2026 99.2、GPQA-Diamond 91.2、SWE-bench Pro 62.1。经 NVIDIA NIM（国内手机号可注册、无需信用卡、约 40 RPM、无固定日额度）稳定可用。⚠️ Google Cloud MaaS 端点上的 GLM 家族 10/21 退役，请优先走 NIM。💡 GLM-5.3 权重 8/28 才开源，免费入口仍是 GLM-5.2。</div>
+        <a class="model-link" href="https://build.nvidia.com/z-ai/glm-5.2" target="_blank">前往 NVIDIA NIM 使用 →</a>
+      </div>
+
+      <div class="model-card top">
+        <div class="rank-badge rank-other">🥉 第 3 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">90</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Gemini 3.6 Flash</div>
+            <div class="model-provider">Google AI Studio</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">1.0M 上下文</span>
+          <span class="meta-pill">15 RPM · 1500 RPD</span>
+          <span class="meta-pill">全模态输入</span>
+          <span class="meta-pill">省 token 17%</span>
+        </div>
+        <div class="model-desc">免费第一梯队的多模态标杆：文本 / 图像 / 视频 / 音频 / PDF 输入、64K 输出，模型 ID <code>gemini-3.6-flash</code>；SWE-Bench Pro 58.7%、OSWorld 83%，输出 token 较前代降 17%。AI Studio 免费层限量可用。⚠️ <b>免费层提示词会被用于改进 Google 产品</b>，NDA / 客户数据请勿走免费档。同门 Gemini 3.7 Flash 实测仅 45 分（评测未充分），暂不建议当主力。</div>
+        <a class="model-link" href="https://aistudio.google.com" target="_blank">前往 Google AI Studio →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">第 4 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">88</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">DeepSeek V4 Flash</div>
+            <div class="model-provider">NVIDIA NIM · Ollama · OpenCode Zen · OpenRouter</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">1.0M 上下文</span>
+          <span class="meta-pill">多入口免费</span>
+          <span class="meta-pill">高速推理</span>
+          <span class="meta-pill">周调用 7.0T</span>
+        </div>
+        <div class="model-desc">V4 系列轻量高速版（284B 总参 / 13B 激活），推理逼近 V4-Pro、速度更快。<b>免费入口最多</b>：NVIDIA NIM（实测 88、40 RPM 无日限额）、Ollama Cloud（90）、<span class="hl">OpenCode Zen 的 DeepSeek V4 Flash Free（1M 上下文 / 384K 输出，限时免费，freellm.net 已索引、免信用卡）</span>、OpenRouter 免费层。💡 注意：DeepSeek <b>官方</b> API 已改分时定价（空闲 4.5 元/百万输出、高峰 9 元/百万），免费请走 NIM / Zen / 火山，别走官方付费档。</div>
+        <a class="model-link" href="https://opencode.ai/zen" target="_blank">前往 OpenCode Zen →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">第 5 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">88</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">MiniMax M3</div>
+            <div class="model-provider">Ollama · NVIDIA NIM · OpenRouter</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">1.0M 上下文</span>
+          <span class="meta-pill">文/图/视频</span>
+          <span class="meta-pill">多入口免费</span>
+          <span class="meta-pill">周调用 2.1T</span>
+        </div>
+        <div class="model-desc">最均衡的多模态免费选择之一：支持文本 / 图像 / 视频理解，1M 上下文。Ollama Cloud 实测 88、NVIDIA NIM 86（约 40 RPM 无日限额）、OpenRouter 付费档 89（200 次/天免费额度）。是 Gemini Flash 系之外最稳的多模态免费备份。传闻的 2.7 万亿参数「M3 Pro」据报将上线即开源，值得持续关注。</div>
+        <a class="model-link" href="https://www.minimax.io" target="_blank">前往 MiniMax →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">第 6 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">88</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Gemini 3.5 Flash</div>
+            <div class="model-provider">Google AI Studio</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">1.0M 上下文</span>
+          <span class="meta-pill">15 RPM · 1500 RPD</span>
+          <span class="meta-pill">全模态</span>
+          <span class="meta-pill">无需信用卡</span>
+        </div>
+        <div class="model-desc">官方免费层多模态能力最全：文本 / 图像 / 视频 / 音频 / PDF 全支持，1M 上下文，1500 RPD，无需信用卡，实测 88。同门 3.6 Flash 已升至 90，Flash 线换代进行中——新项目建议直接上 3.6；3.5 Pro 仍走付费档、未进免费层。配额按项目（而非 API Key）计算，日计数按太平洋时间零点重置。</div>
+        <a class="model-link" href="https://aistudio.google.com" target="_blank">前往 Google AI Studio →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">第 7 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">85</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Ling-3.0-flash</div>
+            <div class="model-provider">Kilo Code · OpenRouter · inclusionAI</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">262K 上下文</span>
+          <span class="meta-pill">免费层可用</span>
+          <span class="meta-pill">文本+推理</span>
+          <span class="meta-pill">~200 req/hr</span>
+        </div>
+        <div class="model-desc">inclusionAI 推出的高速推理模型，Kilo Code 免费层实测 85（约 200 req/hr）、OpenRouter 付费档 87（200 次/天免费额度），262K 上下文。是 DeepSeek V4 Flash 之外另一个高频编码场景的免费备选，适合做多模型冗余中的轻量一路。</div>
+        <a class="model-link" href="https://openrouter.ai" target="_blank">前往 OpenRouter →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">第 8 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">84</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Nemotron 3 Ultra</div>
+            <div class="model-provider">OpenRouter · NVIDIA NIM · OpenCode Zen · Nous</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">1.0M 上下文</span>
+          <span class="meta-pill">免费层可用</span>
+          <span class="meta-pill">文本+推理</span>
+          <span class="meta-pill">周调用 2.4T</span>
+        </div>
+        <div class="model-desc">NVIDIA 旗舰开源模型，免费入口最多：OpenRouter 免费层（未充值 200 次/天、20 次/分；充 $10 永久升 1000 次/天）、NVIDIA NIM（约 40 RPM 无日限额）、<span class="hl">OpenCode Zen 的 Nemotron 3 Ultra Free</span> 限时免费、Nous Portal 也列入免费目录。🆕 OpenCode Zen 新上线 Nemotron 3.5 Lightning Free（262K 上下文/262K 输出、工具调用、推理、开放权重）。</div>
+        <a class="model-link" href="https://openrouter.ai" target="_blank">前往 OpenRouter →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">第 9 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">82</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Kimi K2.6</div>
+            <div class="model-provider">NVIDIA NIM · OpenRouter · 月之暗面</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">262K 上下文</span>
+          <span class="meta-pill">免费层可用</span>
+          <span class="meta-pill">多模态</span>
+          <span class="meta-pill">K3 已可免费聊</span>
+        </div>
+        <div class="model-desc">月之暗面上代旗舰，文本 / 图像 / 视频理解、长文与 Agent 能力强，OpenRouter 免费层实测 82、NVIDIA NIM 侧 82。🔥 同门新旗舰 <span class="hl" style="color:var(--accent-4);font-weight:800;">Kimi K3 已在 Ollama Cloud 以 98 分登顶</span>（session/weekly 限额），或走 kimi.com 免费对话；OpenRouter / Fireworks / Together / Cursor 接入的为付费档。</div>
+        <a class="model-link" href="https://openrouter.ai" target="_blank">前往 OpenRouter →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">第 10 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">75</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Step-3.7-Flash</div>
+            <div class="model-provider">NVIDIA NIM · OpenRouter · Kilo Code · Nous</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">262K 上下文</span>
+          <span class="meta-pill">免费层可用</span>
+          <span class="meta-pill">文本+图像+视频</span>
+          <span class="meta-pill">多入口免费</span>
+        </div>
+        <div class="model-desc">阶跃星辰（StepFun）高速多模态模型，NVIDIA NIM 实测 75（约 40 RPM 无日限额）、Kilo Code 免费层 75（~200 req/hr）、Nous Portal 列入免费目录。是 Gemini / MiniMax 之外又一个多模态免费备份，适合做多模型冗余。</div>
+        <a class="model-link" href="https://openrouter.ai" target="_blank">前往 OpenRouter →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">🆕 今日新增关注</div>
+        <div class="model-head">
+          <div class="score"><div class="num">FREE</div><div class="unit">Claude</div></div>
+          <div>
+            <div class="model-name">Claude Sonnet 4.5（Kiro 免费档）</div>
+            <div class="model-provider">亚马逊 Kiro · Anthropic</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">200K 上下文</span>
+          <span class="meta-pill">免费档含</span>
+          <span class="meta-pill">无需信用卡</span>
+          <span class="meta-pill">周配额限速</span>
+        </div>
+        <div class="model-desc">🆕 GitHub Models 关停后，<b>Kiro 免费档是当下最正经的「免费摸到 Claude」入口</b>——直接含 Claude Sonnet 4.5，外加 Qwen3 Coder Next / DeepSeek v3.2 / MiniMax 2.1 等开源模型，无需信用卡。⚠️ 形态是 Kiro（Code OSS AI IDE / Agent），<b>非裸 API</b>；Claude Opus 4.5~5、Sonnet 5、GPT-5.6 等前沿模型仅付费档。适合免费编码 / Spec 驱动开发，纯程序调 Claude 仍须付费渠道。</div>
+        <a class="model-link" href="https://kiro.dev" target="_blank">前往 Kiro 免费档 →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">🆕 今日新增关注</div>
+        <div class="model-head">
+          <div class="score"><div class="num">∞</div><div class="unit">FREE</div></div>
+          <div>
+            <div class="model-name">Pollinations（Flux 图像 / 多文本模型）</div>
+            <div class="model-provider">Pollinations.ai · 柏林开源</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">图像永久无限</span>
+          <span class="meta-pill">文本免 key</span>
+          <span class="meta-pill">OpenAI 兼容</span>
+          <span class="meta-pill">零注册零留存</span>
+        </div>
+        <div class="model-desc">🆕 最零摩擦的免费生成 API：<b>Flux 图像永久免费无限</b>，文本模型（GPT-5 / Claude / Gemini / DeepSeek 等）免 API key、OpenAI 兼容（<code>gen.pollinations.ai/v1</code>）、无注册、不留存用户数据。匿名 ~1 req/15s，注册 Spore 档 1.5 Pollen/周。⚠️ 无 SLA，适合原型 / Demo / 社区项目，生产负载需谨慎。</div>
+        <a class="model-link" href="https://pollinations.ai" target="_blank">前往 Pollinations →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">⚠️ 新发布偏弱</div>
+        <div class="model-head">
+          <div class="score"><div class="num">45</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Gemini 3.7 Flash</div>
+            <div class="model-provider">Google AI Studio（8/16 上线）</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">1.0M 上下文</span>
+          <span class="meta-pill">66K 输出</span>
+          <span class="meta-pill">vision/audio/reasoning</span>
+          <span class="meta-pill">评测未充分</span>
+        </div>
+        <div class="model-desc">🆕 Google 8/16 上线的 Gemini 3.7 Flash，freellm.net 实测仅 <b>45 分</b>——刚发布、评测尚未充分，分数明显低于 3.6 Flash（90）。建议先观望，主力仍用 3.6 Flash；待后续评测稳定再评估是否替换。模型 ID <code>gemini-3.7-flash</code>。</div>
+        <a class="model-link" href="https://aistudio.google.com" target="_blank">前往 Google AI Studio →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">⚠️ 已过期</div>
+        <div class="model-head">
+          <div class="score"><div class="num">90</div><div class="unit">PAID</div></div>
+          <div>
+            <div class="model-name">Tencent Hy3</div>
+            <div class="model-provider">OpenRouter（已转 Paid）</div>
+          </div>
+        </div>
+        <div class="model-meta">
+          <span class="meta-pill">262K 上下文</span>
+          <span class="meta-pill">限免 8/31 截止</span>
+          <span class="meta-pill">纯 LLM</span>
+          <span class="meta-pill">无常驻免费层</span>
+        </div>
+        <div class="model-desc">⚠️ WorkBuddy / CodeBuddy 限免将于 <span class="hl" style="color:var(--accent-4);font-weight:800;">8/31 截止（剩 10 天）</span>，OpenRouter 现标记为 Paid（90），<b>免费主入口已关闭</b>。剩余零成本路径仅 TokenHub 新人每模型 100 万 Token 体验包（活动至 12/31）与微信「成长计划」10 亿 Token（6 个月有效）——均非常驻免费层。Hy3 纯 LLM、暂不支持多模态、繁忙时段会排队，评估需求请趁早。</div>
+        <a class="model-link" href="https://console.cloud.tencent.com/tokenhub" target="_blank">前往腾讯云 TokenHub →</a>
+      </div>
+
+    </div>
+    <div class="tag-row">
+      <span class="tag">kimi-k3(98·限额)</span><span class="tag">GLM-5.2(93)</span><span class="tag">Gemini 3.6 Flash(90)</span>
+      <span class="tag">DeepSeek V4 Flash(88)</span><span class="tag">MiniMax M3(88)</span><span class="tag">Gemini 3.5 Flash(88)</span>
+      <span class="tag">Ling-3.0-flash(85)</span><span class="tag">Nemotron 3 Ultra(84)</span><span class="tag">Kimi K2.6(82)</span>
+      <span class="tag">Step-3.7-Flash(75)</span><span class="tag">Claude Sonnet 4.5(Kiro免费)</span><span class="tag">Pollinations(∞图像)</span>
+      <span class="tag">OpenCode Zen Free</span><span class="tag">文心快码 Comate(9/24)</span><span class="tag">LobsterAI(8/31)</span>
+    </div>
+  </div>
+
+  <!-- Big-quota platforms -->
+  <div class="section">
+    <div class="section-title"><span class="ico">🎁</span>量大免费平台 · 额度最豪横的 15 家（含今日新挖掘）</div>
+    <div class="plat-grid">
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟣</span><span class="plat-name">阿里云百炼 / 千问 AI 平台</span></div>
+        <div class="quota">70+ 模型 · 每款 <span class="big">100 万 Token</span> · 总额 7000 万</div>
+        <div class="plat-desc">百炼模型广场与千问 AI 平台已上线 Kimi K3 官方 API，新用户开通即自动到账，平台内 70+ 款模型<b>每款各赠 100 万 Token</b>（输入 / 输出分开计算）、总额度超 7000 万、90 天有效。已覆盖 Qwen3.7 / Qwen3.8 全系。是国产大模型最稳的免费编程 / 调用入口之一。</div>
+        <a class="plat-link" href="https://bailian.console.aliyun.com" target="_blank">bailian.console.aliyun.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟩</span><span class="plat-name">NVIDIA NIM</span></div>
+        <div class="quota">免费 12 个月 · <span class="big">125 模型（77 永久免费）</span></div>
+        <div class="plat-desc">覆盖文本 / 多模态 / 视频 / 语音 / 嵌入全品类，注册起可选一年有效或永久 Key，约 40 RPM、<b>无固定日额度</b>，国内手机号可注册、无需信用卡、可直连。GLM-5.2（93）、DeepSeek V4 双模型、Kimi K2.6、MiniMax M3 等顶级模型均免费。GitHub Models 关停后，NIM 是免费先进模型最稳的主阵地。</div>
+        <a class="plat-link" href="https://build.nvidia.com" target="_blank">build.nvidia.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">⌨️</span><span class="plat-name">OpenCode Zen</span></div>
+        <div class="quota">多款 <span class="big">-Free 模型限时免费</span> · GitHub/Google 免信用卡</div>
+        <div class="plat-desc">🔥 编码 Agent 首选网关，OpenAI 兼容（Base URL <code>https://opencode.ai/zen/v1</code>），登录免信用卡即领 Key。限时免费模型含 <b>DeepSeek V4 Flash Free（1M 上下文 / 384K 输出，freellm.net 已索引、免信用卡）</b>、MiniMax M3 Free、Nemotron 3 Ultra Free、Big Pickle、MiMo-V2.5 Free、North Mini Code Free、Hy3 preview。🆕 新上线 <b>Nemotron 3.5 Lightning Free</b>（262K 上下文 / 262K 输出、工具调用、推理、开放权重）。⚠️ 限时免费、数据可能用于改进模型，敏感数据勿走免费档。</div>
+        <a class="plat-link" href="https://opencode.ai/zen" target="_blank">opencode.ai/zen →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔵</span><span class="plat-name">亚马逊 Kiro（免费 Claude 入口）</span></div>
+        <div class="quota">免费档 <span class="big">Claude Sonnet 4.5 + 开源模型</span> · 无需信用卡</div>
+        <div class="plat-desc">🆕 <b>今日新发现</b>：GitHub Models 关停后最正经的「免费摸到 Claude」入口——免费档（$0、无需信用卡）含 <b>Claude Sonnet 4.5</b> + Qwen3 Coder Next / DeepSeek v3.2 / MiniMax 2.1 等开源模型，基于 Code OSS 的 AI IDE / Agent（Spec 驱动开发）。⚠️ 周配额限速、低倍率；Claude Opus 4.5~5 / Sonnet 5 / GPT-5.6 仅付费档；形态非裸 API。</div>
+        <a class="plat-link" href="https://kiro.dev" target="_blank">kiro.dev →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🌐</span><span class="plat-name">Pollinations（零鉴权无限免费）</span></div>
+        <div class="quota"><span class="big">Flux 图像永久无限</span> · 文本免 key · 零注册</div>
+        <div class="plat-desc">🆕 <b>今日新发现</b>：柏林开源平台，<b>零注册零 API key、不留存用户数据</b>。Flux 图像永久免费无限；文本模型（GPT-5 / Claude / Gemini / DeepSeek 等）OpenAI 兼容（<code>gen.pollinations.ai/v1</code>）。匿名 ~1 req/15s，注册 Spore 档 1.5 Pollen/周。⚠️ 无 SLA，适合原型 / Demo / 社区项目。</div>
+        <a class="plat-link" href="https://pollinations.ai" target="_blank">pollinations.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔴</span><span class="plat-name">SambaNova Cloud</span></div>
+        <div class="quota">每模型 <span class="big">20 万 Token/天</span> · 20 RPM / 20 RPD · 免信用卡</div>
+        <div class="plat-desc">🆕 <b>今日新挖掘</b>：免费层按<b>每模型独立</b>限额（20 RPM / 20 RPD / 20 万 tokens/天，非账户共享），可跑 <b>Llama 3.1 405B</b>、Llama 4 Scout、DeepSeek V3.1/V3.2、Qwen3-235B、MiniMax、GPT-OSS-120B 等超大开源模型；另送 $5 信用（30 天）。OpenAI 兼容。⚠️ Preview 模型容量有限、可能随时下架，作实验性使用。</div>
+        <a class="plat-link" href="https://cloud.sambanova.ai" target="_blank">cloud.sambanova.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟤</span><span class="plat-name">Cohere</span></div>
+        <div class="quota">免费层 <span class="big">Command A / R+</span> · 20 RPM / 1000 次/月</div>
+        <div class="plat-desc">🆕 <b>今日新挖掘</b>：Command A / Command R+ / Aya Expanse 32B 等永久免费层，20 RPM、1000 次/月、无需信用卡、OpenAI 兼容。Command A 上下文 256K，适合 RAG / Agent 场景。⚠️ Trial key 标注「非商用许可」，生产商用请确认授权；免费层模型轮换需注意。</div>
+        <a class="plat-link" href="https://cohere.com" target="_blank">cohere.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔵</span><span class="plat-name">百度文心快码 Comate（限免第二弹）</span></div>
+        <div class="quota">测试版 <span class="big">不限量 Token</span> · 基础 7 天 / 最高 37 天</div>
+        <div class="plat-desc">🆕 <b>8/19 新发现</b>：百度开发者中心上线 Comate 测试版限免第二弹，主打「不限量 Token」——覆盖 Ernie 4.5T / X1T / DeepSeek 等 9 款模型，注册登录立得 7 天，邀请好友叠至 37 天，截止 2026-09-24。注意它是 <b>AI 编程助手（IDE 插件 / CLI）</b>，不是裸 API 端点；写代码 / 跑 Agent 党趁早兑换。</div>
+        <a class="plat-link" href="https://comate.baidu.com/activity0729" target="_blank">comate.baidu.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟠</span><span class="plat-name">美团 LongCat</span></div>
+        <div class="quota">每日 <span class="big">500 万 Token 起</span>（最高 1.2 亿）</div>
+        <div class="plat-desc">LongCat-2.0-Preview 初始每日 500 万 Token，提交模型反馈每日最多刷新至 1.2 亿 Token；1M 上下文，MIT 开源权重已上 Hugging Face，OpenAI / Anthropic 双兼容 API。独立 API 平台新人另有 1000 万 Token 礼包。按天刷新，是重度批处理场景性价比最高的国内入口。</div>
+        <a class="plat-link" href="https://longcat.chat/platform/docs/zh/" target="_blank">longcat.chat →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔥</span><span class="plat-name">火山引擎（豆包）</span></div>
+        <div class="quota">每日 <span class="big">200 万 Token</span></div>
+        <div class="plat-desc">协作奖励计划每日 200 万 Token（部分用户最高 500 万）按天自动刷新，真正的「白嫖永动机」；另每个新开通模型赠 50 万 Token 新人包。⚠️ 需在控制台<b>手动开通模型</b>后才生效。7/30 新发布豆包·图像编辑 3.0（SeedEdit 3.0）与同传 2.0（延迟降至 2–3 秒）；Doubao-Seed-1.6-flash 首 Token 低至 10ms。</div>
+        <a class="plat-link" href="https://www.volcengine.com/product/ark" target="_blank">volcengine.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">⚡</span><span class="plat-name">Groq</span></div>
+        <div class="quota"><span class="big">14400 次/天</span> · 500K Token/天（8B 档）</div>
+        <div class="plat-desc">自研 LPU 推理芯片，业界最快 AI 推理（500–800+ tokens/s）。官方公开限额：<code>llama-3.1-8b-instant</code> 30 RPM / 14400 次每天 / 50 万 Token 每天；<code>llama-3.3-70b</code> 与 <code>gpt-oss-120b</code> 各 1000 次每天。⚠️ 真正的瓶颈是 TPM（70B 档仅 12K TPM），长上下文会被限速。默认不留存推理输入输出，短提示高频场景（分类 / 抽取 / webhook）最划算。</div>
+        <a class="plat-link" href="https://console.groq.com" target="_blank">console.groq.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🧠</span><span class="plat-name">Cerebras</span></div>
+        <div class="quota"><span class="big">100 万 Token/天</span> · 约 2100 tok/s</div>
+        <div class="plat-desc">晶圆级引擎（WSE）推理，约 2100 tokens/s、免费层 <b>100 万 tokens/天</b>、30 RPM、60K–100K TPM。免费模型含 Llama 3.3 70B、Llama 3.1 8B、GPT-OSS 120B。⚠️ 免费档上下文上限 8K tokens，适合高吞吐短上下文（分类 / 生成流水线 / 日报自动化），长文档请走 Google AI Studio / NIM。</div>
+        <a class="plat-link" href="https://cloud.cerebras.ai" target="_blank">cloud.cerebras.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔵</span><span class="plat-name">硅基流动 SiliconFlow</span></div>
+        <div class="quota">新用户 <span class="big">2000 万 Token</span></div>
+        <div class="plat-desc">国内开发者首选中转平台。9B 以下开源模型永久免费不限量，DeepSeek、Qwen、GLM 全系覆盖，50+ 模型一个 Key 调用全家，OpenAI 兼容端点直连，国内专线延迟 200ms 以内。适合「多模型都想试试」的开发者。</div>
+        <a class="plat-link" href="https://siliconflow.cn" target="_blank">siliconflow.cn →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟢</span><span class="plat-name">腾讯云 TokenHub</span></div>
+        <div class="quota">每个语言模型 <span class="big">100 万 Token</span> · 90 天</div>
+        <div class="plat-desc">新人免费体验包（活动至 12/31）：所有语言模型 / 多模态理解模型每个 100 万 Token（90 天有效），另有图像生成 50 次、视频 / 3D 生成积分（365 天）；hy3-preview 可用。<b>Hy3 限免 8/31 截止，此处为付费档之外仅剩的体验包</b>。⚠️ 原混元旧平台 9/30 全面停服，请迁移到 TokenHub。微信小程序「成长计划」另可申领 10 亿混元 Token（6 个月有效）。</div>
+        <a class="plat-link" href="https://console.cloud.tencent.com/tokenhub" target="_blank">console.cloud.tencent.com/tokenhub →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟡</span><span class="plat-name">OpenRouter</span></div>
+        <div class="quota">25+ 免费模型 · <span class="big">50 次/天</span>（充 $10 → 1000 次/天）</div>
+        <div class="plat-desc">统一聚合 60+ 供应商 400+ 模型，:free 模型免费调用，<b>GitHub Models 关停后最贴近原体验的替代品</b>——一个 key + 一个 OpenAI 兼容端点，base_url 一换即可。📌 官方口径：未充值 50 次/天、20 次/分（账户级共享）；<b>一次性充值 $10 即永久升至 1000 次/天</b>。MiniMax M3、Nemotron 3 Ultra、DeepSeek V4-Flash、Kimi K2.6、Ling-3.0-flash、Step-3.7-Flash、Gemma 4 均在免费层。🔥 K3 已上线但为付费档，暂无 :free。</div>
+        <a class="plat-link" href="https://openrouter.ai" target="_blank">openrouter.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟤</span><span class="plat-name">Nous Portal</span></div>
+        <div class="quota">免费档 $0/mo · <span class="big">多款免费模型</span></div>
+        <div class="plat-desc">Hermes Agent 官方服务商，免费计划（FREE PLAN）含 <b>Solar Pro 4、Hy3、Step-3.7-Flash、Laguna S / XS</b> 等免费模型，OpenAI 兼容、OAuth device-code 登录（需绑卡但不扣费）。20% off 全场折扣延长两周。自有模型（Hermes 4.x）走 nousresearch 后端，第三方模型本质是 OpenRouter 前置。适合体验 Hermes Agent 生态。</div>
+        <a class="plat-link" href="https://portal.nousresearch.com" target="_blank">portal.nousresearch.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟢</span><span class="plat-name">网易有道 LobsterAI</span></div>
+        <div class="quota">登录领 <span class="big">5000 积分</span> · 延长至 8/31</div>
+        <div class="plat-desc">🔄 活动<b>延长至 8/31</b>（原 8/20 截止）并加码：登录即领 5000 积分、邀请好友最高再得 4000、每日签到 100；同期上线 DeepSeek Harness（DSH）。国内大厂首个 100% 开源桌面级 Agent，支持飞书 / 钉钉 / 企业微信接入，可私有化部署。积分可用于文档处理、数据分析、PPT、代码、多 Agent 协作、Sites 站点。</div>
+        <a class="plat-link" href="https://lobsterai.youdao.com" target="_blank">lobsterai.youdao.com →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zero-cost combos -->
+  <div class="section">
+    <div class="section-title"><span class="ico">🎯</span>零成本组合方案 · 月花费全部 ¥0</div>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <h4>💬 日常对话 / 长文档</h4>
+        <p>GLM-5.2（NVIDIA NIM 免费 12 个月，实测 93）+ 火山引擎豆包 200 万/天 + <b>kimi.com 免费对话（默认即 K3，98 分）</b> + <b>Qwen3.8-27B 本地部署</b>（Apache 2.0，32GB Mac 可跑）。中文长文、知识问答首选，多入口互为冗余。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+      <div class="combo-card">
+        <h4>🧑‍💻 编程 / 开发 Agent</h4>
+        <p><b>文心快码 Comate 测试版（不限量 Token，9 款模型，截止 9/24）</b> + <b>Kiro 免费档（Claude Sonnet 4.5 + 开源模型，无需信用卡）</b> + DeepSeek V4 Flash（OpenCode Zen Free / NIM，永久免费）+ GLM-5.2（NIM，SWE-bench 开源领先）+ Nemotron 3 Ultra（OpenRouter 免费层）+ <b>Qwen3.8-27B 本地（SWE-bench Pro 61.7）</b>做离线编码助手。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+      <div class="combo-card">
+        <h4>🖼️ 多模态创作</h4>
+        <p>Gemini 3.6 Flash（90·免费第一梯队，省 token 17%）+ Gemini 3.5 Flash（免费层全模态，88）+ MiniMax M3（88·文/图/视频）+ <b>Qwen3.8-27B（原生视觉语言，本地免费）</b> + Step-3.7-Flash（75·多模态免费）。<b>Pollinations 用于零成本快速出图 / 出文原型</b>（Flux 图像无限）。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+      <div class="combo-card">
+        <h4>🚀 高频 / 重度调用</h4>
+        <p>美团 LongCat 500 万/天（最高 1.2 亿）+ 阿里百炼 7000 万 + Groq 14400 次/天（8B 档）+ NVIDIA NIM 无固定日额度 + <b>SambaNova 每模型 20 万/天（可跑 405B）</b> + OpenCode Zen Free（1M 上下文）。⚠️ OpenRouter 免费层仅 50 次/天，重度用户建议一次性充 $10 换 20 倍日额度。具备 64+ 加速卡的团队可自部署 K3（vLLM / SGLang Day-0 适配）。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk reminders -->
+  <div class="section">
+    <div class="section-title"><span class="ico">⚠️</span>风险提醒 · 避免踩坑</div>
+    <div class="risk-list">
+      <div class="risk-item">
+        <span class="icon">🔵</span>
+        <div>
+          <h4>【新发现】Kiro 免费档能免费用 Claude Sonnet 4.5，但它是「AI IDE / Agent」而非裸 API，且周限额、前沿模型仅付费档</h4>
+          <p>GitHub Models 7/30 关停后，<b>Kiro 免费档（$0、无需信用卡）是当下最正经的「免费摸到 Claude」入口</b>——直接含 Claude Sonnet 4.5 及 Qwen3 Coder Next / DeepSeek v3.2 / MiniMax 2.1 等开源模型。但务必看清：① 形态是 <b>Kiro（基于 Code OSS 的 AI IDE / Agent，Spec 驱动开发）</b>，<b>不是可直接 curl 的 API 端点</b>；② 免费档<b>按周配额限速、低倍率</b>，小项目够用、重负载不够；③ <b>Claude Opus 4.5~5、Claude Sonnet 5、GPT-5.6 等前沿模型仅在付费档</b>（Pro $20/月含 1000 积分）。纯程序内调 Claude API 仍须走 Anthropic 付费或第三方中转，别把 Kiro 当「免费 Claude API」。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🌐</span>
+        <div>
+          <h4>【新发现】Pollinations 图像无限免费真香，但免费档无 SLA、文本有限额（匿名 1 req/15s / Spore 1.5 Pollen/周）</h4>
+          <p>Pollinations 的 <b>Flux 图像永久免费无限</b>、文本免 key、OpenAI 兼容、零注册零留存，是最省事的免费生成 API。两点务必注意：① 免费档<b>无 SLA / uptime 保证</b>，高峰响应可能波动，<b>不适合对可用性有硬要求的生产负载</b>；② 文本限速明显——匿名约 1 请求/15 秒，注册 Spore 档仅 1.5 Pollen/周（1 Pollen≈$1 算力）。建议定位为「零成本原型 / 快速验证 / Demo」通道，正式服务迁到 NVIDIA NIM / OpenCode Zen / 火山等有 SLA 的免费层。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🔴</span>
+        <div>
+          <h4>【新挖掘】SambaNova 免费层按「每模型」独立限额（20 万 token/天），Preview 模型可能随时下架</h4>
+          <p>SambaNova Cloud 免费层限额是<b>每模型独立</b>的 20 RPM / 20 RPD / 20 万 tokens/天（非账户共享，换 key 不叠加），可跑 Llama 3.1 405B 等超大开源模型，另送 $5 信用（30 天）。⚠️ 官方明确 <b>Preview 模型容量有限、可能短期下架</b>，应作实验性使用；免费层非商用场景也需注意其速率远低于付费档。重度批处理推荐 LongCat / 阿里百炼 / NIM 等更稳通道。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🟤</span>
+        <div>
+          <h4>【新挖掘】Cohere 免费层含 Command A / R+，但 Trial key 标注「非商用许可」</h4>
+          <p>Cohere 免费层（20 RPM / 1000 次/月、无需信用卡、OpenAI 兼容）含 Command A（256K 上下文，适合 RAG / Agent）、Command R+、Aya Expanse 32B 等。⚠️ 其 Trial key 文档明确<b>「非商用许可（non-commercial only）」</b>——生产或商业用途须确认授权或升级付费；免费层模型也可能随政策轮换，接入前请核对当前可用模型。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🔵</span>
+        <div>
+          <h4>【新发现】百度文心快码 Comate 限免第二弹是「IDE 编程助手」而非裸 API——且需测试版 + 仅 7 天基础额度</h4>
+          <p>8/19 上线的 Comate 测试版限免主打「不限量 Token」，但形态是 <b>Comate（IDE 插件 / 客户端 / CLI）内的不限量</b>，不是可直接 <code>curl</code> 的 API 端点——需要「写代码、跑 Agent、改 Bug」才划算，纯程序调用请走 DeepSeek 官方 / NVIDIA NIM / OpenCode Zen。另外必须下「Comate Auto 邀测版」（正式版无此活动），基础额度 7 天、靠邀请叠到 37 天，<b>活动截止 2026-09-24</b>。别把它和「长期免费 API」混淆。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🟢</span>
+        <div>
+          <h4>【截止反转】LobsterAI 5000 积分活动延长至 8/31（原 8/20 截止），并加码邀请 4000 + 每日签到 100</h4>
+          <p>此前盘点把网易有道 LobsterAI「登录领 5000 积分」标为 8/20 截止，<b>官方确认延长至 8 月 31 日</b> 并加码：登录即领 5000 积分（延长至 8/31）、邀请好友最高再得 4000 积分、每日签到还能拿 100 积分，同期上线 DeepSeek Harness（DSH）。⚠️ 虽多 11 天仍属限时，顺手登录领取即可，别再当「今天最后一天」赶末班车。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🟣</span>
+        <div>
+          <h4>【等待中】智谱 GLM-5.3 权重 8/28 才开源（剩 7 天），当下是付费 API——免费入口仍是 GLM-5.2</h4>
+          <p>GLM-5.3（8/19 API 上线、743B、AA Index 60 并列开源第一）当前是<b>付费 API</b>（腾讯云 输入8/输出28/缓存2 元每百万），<b>完整权重计划 8/28 才开源</b>，届时进 NVIDIA NIM 永久免费层。⚠️ 今天要白嫖先进模型，<span class="hl">首选仍是 GLM-5.2（NVIDIA NIM 93 分、1M 上下文、40 RPM 无日限额、永久免费）</span>；GLM-5.3 标为「即将免费」，等 8/28 权重落地再切。同系列 GLM-5.5 尚未正式发布。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">⌨️</span>
+        <div>
+          <h4>【新入口】OpenCode Zen 的 Free 模型是「限时免费」，且数据可能用于改进模型</h4>
+          <p>OpenCode Zen 的 <code>DeepSeek V4 Flash Free</code> 等多款带「Free」标签的模型<b>限时免费</b>，GitHub / Google 登录免信用卡即领 Key，OpenAI 兼容（Base URL <code>https://opencode.ai/zen/v1</code>）。两点务必注意：① <b>免费模型会随活动结束</b>（早前的 <code>qwen3.6-plus-free</code> 已下架），用前请先 <code>opencode models</code> 看当前可用；② <b>数据可能用于改进模型</b>——敏感 / 客户 / NDA 内容勿走免费档，正式业务请充值走付费模型或换 NVIDIA NIM。🆕 Nemotron 3.5 Lightning Free 已上新（262K 上下文/输出、工具调用、推理、开放权重）。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🟡</span>
+        <div>
+          <h4>OpenRouter 免费层是 50 次/天（账户级），不是每模型 200 次——充 $10 可永久升 1000 次/天</h4>
+          <p>OpenRouter 官方现行规则：<b>:free 模型未充值账户 50 次/天、20 次/分，且为账户级共享（不是每个模型各 50 次）</b>；<b>一次性累计充值满 $10 后永久升至 1000 次/天</b>（余额之后低于 $10 也保留）。失败请求同样计入日配额，高峰时段免费模型可能被上游限流（429）。另注意：免费模型流量按上游供应商政策路由，<b>默认并不屏蔽会用你的输入做训练的供应商</b>，需在隐私设置里单独关闭（免费 / 付费分开开关）。依赖免费层做工具或服务的用户，建议充一次 $10 或分流到 NVIDIA NIM（约 40 RPM、无固定日额度）。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🟠</span>
+        <div>
+          <h4>【已过期】Tencent Hy3 限免将于 8/31 截止（剩 10 天） — OpenRouter 现标记 Paid（90），免费主入口关闭</h4>
+          <p>WorkBuddy / CodeBuddy 的 Hy3 限免窗口将于 <b>8/31 截止</b>（剩 10 天），OpenRouter 上 NovitaAI 的 Hy3 无限免费窗也早已截止（现为 Paid 档，90 分）。当前免费主入口已不再，仅剩 TokenHub 新人体验包（每模型 100 万 Token，活动至 12/31）与微信「成长计划」10 亿 Token（6 个月有效）——均非常驻免费层。Hy3 是纯 LLM、暂不支持多模态，繁忙时段会排队。<b>8/31 后这款 295B 国产旗舰将无低成本常驻入口，评估需求请趁早或走付费档</b>。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🟠</span>
+        <div>
+          <h4>腾讯混元旧平台 9/30 全面停服 + HY2.0 已涨价 463% — 请迁移 TokenHub</h4>
+          <p>原腾讯混元大模型平台将于 <b>9/30 全面停服</b>；HY 2.0 Think / Instruct 等 9 个旧模型已于 6/26 下线；混元 HY2.0 输入价格已从 0.0008 元/千 Token 涨至 0.004505 元/千 Token（+463%），第三方模型免费公测已结束。还在旧平台调用混元的项目请尽快迁移到 <b>TokenHub（hy3-preview）</b>，新人有每模型 100 万 Token 免费体验包（活动至 12/31）。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">☁️</span>
+        <div>
+          <h4>Google Cloud 弃用 16 个开源模型 MaaS 端点 — 10/21 退役；Gemini 免费层数据会被用于训练</h4>
+          <p>Google Cloud 于 7/21 启动三个月弃用窗口，涉及 <b>DeepSeek、GLM、GPT-OSS、Kimi、Llama、MiniMax、E5、Qwen</b> 等家族的 16 个托管端点，现有端点弃用期内仍可用，<b>10/21 正式退役</b>，官方建议改用 Model Garden 自部署。另一条容易被忽略的红线：<b>Gemini 免费层的每一行都标注「用于改进我们的产品：是」</b>，付费流量才是「否」——涉及客户数据或 NDA 内容时，免费额度再大也不能用；图像生成也不在免费层覆盖范围内。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🐙</span>
+        <div>
+          <h4>GitHub Models 已于 7/30 永久关停 — 迁移参考：OpenRouter（换 base_url）或 NVIDIA NIM；免费 Claude 可走 Kiro</h4>
+          <p>GitHub Models 已于 <b>7/30 15:59 UTC 永久关停</b>（playground / 模型目录 / 推理 API / BYOK / <code>actions/ai-inference</code> / <code>gh models</code> CLI 全部下线，无宽限期、无付费兜底）。历史提醒：若代码库或 <code>.github/workflows</code> 中仍残留 <code>models.github.ai</code> / <code>models.inference.ai.azure.com</code>，请改指向 OpenRouter（换 base_url 即可）或 NVIDIA NIM。需要免费 Claude 的开发者，今日新增可走 <b>亚马逊 Kiro 免费档（Claude Sonnet 4.5）</b>。这是 7 月底已发生的变更，今天一并保留为迁移参考。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>📅 下次更新：明日 09:30 · 数据来源：freellm.net 实时实测目录（516+ 免费模型、31 家供应商、323 免信用卡，目录更新于 2026-8-17；Top 评分 kimi-k3 98 / GLM-5.2 93 / Gemini 3.6 Flash 90 / DeepSeek V4 Flash 88 / MiniMax M3 88 / Gemini 3.5 Flash 88 / Ling-3.0-flash 85 / Nemotron 3 Ultra 84 / Kimi K2.6 82 / Step-3.7-Flash 75，Gemini 3.7 Flash 45）、亚马逊 Kiro 官方（kiro.dev 免费档含 Claude Sonnet 4.5 + Qwen3 Coder Next / DeepSeek v3.2 / MiniMax 2.1、无需信用卡、周配额限速）、Pollinations 官方（零鉴权无限免费、Flux 图像永久无限、文本免 key、OpenAI 兼容 gen.pollinations.ai/v1）、SambaNova Cloud 官方（每模型 20 RPM / 20 RPD / 20 万 token/天、可跑 405B、送 $5 信用）、Cohere 官方（Command A / R+ 免费层 20 RPM / 1000 次月、Trial key 非商用）、百度开发者中心（文心快码 Comate 测试版限免第二弹·不限量 Token·9 款模型·截止 2026-09-24）、网易有道 LobsterAI（积分活动延长至 8/31 + DSH）、智谱 Z.ai 官方（GLM-5.3 权重 8/28 开源）、NVIDIA 官方 build.nvidia.com（125 模型、77 永久免费）、OpenCode Zen 官方文档（Base URL https://opencode.ai/zen/v1、DeepSeek V4 Flash Free 已索引免信用卡、Nemotron 3.5 Lightning Free 新上线）、OpenRouter 官方定价页（免费层 50 / 1000 次每天）、Nous Portal（Solar Pro 4 / Hy3 / Step-3.7-Flash / Laguna S·XS 免费）、火山引擎方舟（每日 200 万 Token）、Cerebras（100 万 token/天、约 2100 tok/s）、Groq 官方限额页（14400 次/天）、Google AI Studio、Artificial Analysis、free-model.com（138 模型 / 18 家实测）</p>
+    <p style="margin-top:8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准 | 评分数据来自 freellm.net 实时实测，不同供应商托管同一模型分数不同，已分别标注平台 | 本期主线：Kiro（AWS）免费档含 Claude Sonnet 4.5（无需信用卡）+ Pollinations 零鉴权无限免费 + freellm.net 目录升至 516+ 模型 + 量大补充（SambaNova 每模型 20 万/天、Cohere Command 免费层、Cerebras 100 万/天）+ 免费先进榜稳定（kimi-k3 98 蝉联第一）</p>
+    <p style="margin-top:8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
+  </div>
+"""
+
+html = f"""<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{TITLE}</title>
+<meta name="description" content="{DESC}">
+<style>{style_css}</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" title="切换亮色/暗色主题" aria-label="主题切换"><span id="theme-icon">☀️</span></button>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({{top:0,behavior:'smooth'}})" aria-label="回到顶部">↑</button>
+
+<div class="container">
+{body}
+</div>
+
+<script>{script_js}</script>
+</body>
+</html>
+"""
+
+with open(out, "w", encoding="utf-8") as fh:
+    fh.write(html)
+print("Wrote", out, "size", len(html))
