@@ -4,7 +4,7 @@
 Uses the fine-grained PAT stored in ~/.git-credentials.
 Git push approach — simpler and faster than Contents API.
 """
-import os, re, subprocess, datetime
+import os, re, subprocess, datetime, sys
 
 # ── Config ──
 cred_path = os.path.expanduser("~/.git-credentials")
@@ -20,6 +20,13 @@ base = os.path.dirname(os.path.abspath(__file__))
 os.chdir(base)
 
 today = datetime.date.today().isoformat()
+
+# 0. Always regenerate the prev/next/latest navigation bar on every daily page
+#    BEFORE staging. This self-heals the "previous page's Next button not updated"
+#    bug: add_nav.py recomputes nav from the actual sorted file list, so adding a
+#    new newest report automatically fixes the previous one's "next" link.
+print("Regenerating page navigation bars (add_nav.py)...")
+subprocess.run([sys.executable, "add_nav.py"], capture_output=True)
 
 def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
