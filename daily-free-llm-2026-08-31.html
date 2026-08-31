@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>免费大模型日报 · 2026-08-31 · Free LLM Daily</title>
+<meta name="description" content="2026年8月31日免费大模型日报：聚焦量大能用的先进模型。本期主线——🔥 腾讯 Hy4 Preview 开源（770B/49B 激活、1M 上下文、盲评 2.99/4.00 小胜 GLM-5.3 与 Kimi K3、WorkBuddy/CodeBuddy 免费两周）；🔥 智谱 GLM-5.3 权重已落地开源（753B/40B、Intelligence 60 并列 Kimi K3、CyberGym 84.5%、License 只卡百亿美元巨头）；🆕 OpenRouter 免费池更新（Ling 3.0 Flash Fin 262K、Dots3-Note 512K 免费 9/30 下线）；⏰ Hy3 限免口径冲突、GLM-5.3-Flash 半价到 9/9。">
+<style>
+  :root {
+    --bg-primary: #0f0c29;
+    --bg-secondary: #1a1740;
+    --bg-card: rgba(255,255,255,0.04);
+    --bg-card-hover: rgba(255,255,255,0.08);
+    --border-card: rgba(255,255,255, 0.08);
+    --border-accent: rgba(139,92,246,0.4);
+    --text-primary: #e8e8f0;
+    --text-secondary: #b0b0c8;
+    --text-muted: #8080a0;
+    --accent-1: #8b5cf6;
+    --accent-2: #ec4899;
+    --accent-3: #f093fb;
+    --accent-4: #f5576c;
+    --gradient-hero: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --gradient-badge: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    --gradient-title: linear-gradient(135deg, #fff 0%, #a8edea 50%, #fed6e3 100%);
+    --gradient-cta: linear-gradient(90deg, #8b5cf6, #ec4899);
+    --gradient-date: linear-gradient(135deg, #8b5cf6, #ec4899);
+    --shadow-cta: 0 4px 20px rgba(139,92,246,0.4);
+    --shadow-cta-hover: 0 8px 28px rgba(139,92,246,0.6);
+    --hero-overlay: conic-gradient(from 0deg, transparent, rgba(139,92,246,0.18), transparent 30%);
+    --stat-num-gradient: linear-gradient(90deg, #f093fb, #f5576c);
+    --tag-bg: rgba(139,92,246,0.15);
+    --tag-text: #c4b5fd;
+    --tag-border: rgba(139,92,246,0.25);
+    --footer-border: rgba(255,255,255,0.08);
+    --score-gradient: linear-gradient(135deg, #34d399, #10b981);
+    --score-bg: rgba(16,185,129,0.12);
+    --gold: linear-gradient(135deg, #fbd34d, #f59e0b);
+    --hot-bg: linear-gradient(120deg, rgba(245,87,108,0.16), rgba(240,147,251,0.1));
+    --hot-border: rgba(245,87,108,0.45);
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #f5f3ff;
+    --bg-secondary: #ede9fe;
+    --bg-card: rgba(255,255,255,0.75);
+    --bg-card-hover: rgba( 255,255,255,0.95);
+    --border-card: rgba(139,92,246,0.12);
+    --border-accent: rgba(139,92,246,0.35);
+    --text-primary: #1e1b4b;
+    --text-secondary: #4c4a6e;
+    --text-muted: #7876a0;
+    --gradient-hero: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #e0e7ff 100%);
+    --gradient-title: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #db2777 100%);
+    --gradient-cta: linear-gradient(90deg, #7c3aed, #db2777);
+    --gradient-date: linear-gradient(135deg, #7c3aed, #db2777);
+    --hero-overlay: conic-gradient(from 0deg, transparent, rgba(124,58,237,0.08), transparent      30%);
+    --stat-num-gradient: linear-gradient(90deg, #7c3aed, #db2777);
+    --tag-bg: rgba(124,58,237,0.1);
+    --tag-text: #6d28d9;
+    --tag-border: rgba(124,58,237,0.2);
+    --footer-border: rgba(139,92,246,0.12);
+    --score-gradient: linear-gradient(135deg, #059669, #047857);
+    --score-bg: rgba(5,150,105,0.1);
+    --gold: linear-gradient(135deg, #d97706, #b45309);
+    --hot-bg: linear-gradient(120deg, rgba(220,38,38,0.1), rgba(124,58,237,0.08));
+    --hot-border: rgba(220,38,38,0.35);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+    color: var(--text-primary);
+    padding: 32px 20px 60px;
+    line-height: 1.7;
+    transition: background 0.4s, color 0.4s;
+  }
+  .container { max-width: 1180px; margin: 0 auto; }
+
+  .theme-toggle {
+    position: fixed; top: 20px; right: 20px; z-index: 1000;
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1.5px solid var(--border-card); background: var(--bg-card);
+    backdrop-filter: blur(10px); cursor: pointer; font-size: 20px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .theme-toggle:hover { border-color: var(--accent-1); transform: scale(1.1); box-shadow: 0 4px 20px rgba(139,92,246,0.3); }
+
+  .back-home {
+    position: fixed; top: 20px; left: 20px; z-index: 1000;
+    padding: 9px 16px; border-radius: 30px; font-size: 13px; font-weight: 600;
+    text-decoration: none; color: var(--text-primary);
+    background: var(--bg-card); border: 1.5px solid var(--border-card);
+    backdrop-filter: blur(10px); transition: all 0.3s;
+  }
+  .back-home:hover { border-color: var(--accent-1); background: var(--bg-card-hover); }
+
+  .hero {
+    text-align: center; margin-bottom: 40px; padding: 64px 32px 54px;
+    background: var(--bg-card); border-radius: 28px; backdrop-filter: blur(20px);
+    border: 1px solid var(--border-card); position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: var(--hero-overlay); animation: rotate 14s linear infinite;
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .hero-inner { position: relative; z-index: 1; }
+  .badge {
+    display: inline-block; padding: 7px 18px; background: var(--gradient-badge);
+    border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 18px;
+    letter-spacing: 0.5px; color: #fff; box-shadow: 0 2px 12px rgba(240,147,251,0.3);
+  }
+  .hero h1 {
+    font-size: 44px; font-weight: 800; background: var(--gradient-title);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 12px; letter-spacing: -1px; line-height: 1.2;
+  }
+  .date-chip {
+    display: inline-block; padding: 8px 22px; border-radius: 16px;
+    background: var(--gradient-date); color: #fff; font-weight: 700; font-size: 18px;
+    margin-bottom: 16px; box-shadow: 0 4px 16px rgba(139,92,246,0.35);
+  }
+  .tagline { color: var(--text-secondary); font-size: 15px; max-width: 760px; margin: 0 auto; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .stat-card {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 18px;
+    padding: 22px 20px; backdrop-filter: blur(10px); transition: all 0.3s; text-align: center;
+  }
+  .stat-card:hover { transform: translateY(-5px); border-color: var(--border-accent); box-shadow: 0 8px 30px rgba(139,92,246, 0.15); }
+  .stat-icon { font-size: 26px; margin-bottom: 8px; }
+  .stat-num { font-size: 32px; font-weight: 800; background: var(--stat-num-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.1; }
+  .stat-label { color: var(--text-secondary); font-size: 13px; font-weight: 500; margin-top: 4px; }
+
+  .section { margin-bottom: 42px; }
+  .section-title {
+    font-size: 22px; font-weight: 700; margin-bottom: 18px; padding-left: 16px;
+    border-left: 4px solid var(--accent-1); display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .ico { font-size: 26px; }
+
+  .focus {
+    background: linear-gradient(120deg, rgba(139,92,246,0.14), rgba(236,72,153,0.1));
+    border: 1px solid var(--border-accent); border-radius: 20px; padding: 26px 28px;
+    margin-bottom: 26px; backdrop-filter: blur(10px);
+  }
+  .focus h2 { font-size: 19px; font-weight: 800; margin-bottom: 12px; color: var(--accent-3); display: flex; align-items: center; gap: 10px; }
+  .focus p { color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+  .focus .hl { color: var(--text-primary); font-weight: 700; }
+  .focus .countdown { color: var(--accent-4); font-weight: 800; }
+
+  .hot {
+    background: var(--hot-bg);
+    border: 1px solid var(--hot-border); border-radius: 20px; padding: 26px 28px;
+    margin-bottom: 40px; backdrop-filter: blur(10px); position: relative; overflow: hidden;
+  }
+  .hot .flag {
+    display: inline-block; padding: 5px 14px; border-radius: 12px; font-size: 12px; font-weight: 800;
+    background: var(--gradient-badge); color: #fff; margin-bottom: 12px; letter-spacing: 0.5px;
+  }
+  .hot h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+  .hot .sub { color: var(--accent-3); font-size: 14px; font-weight: 700; margin-bottom: 14px; }
+  .hot p { color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+  .hot .hl { color: var(--text-primary); font-weight: 700; }
+  .hot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; margin-top: 16px; }
+  .hot-item { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 12px; padding: 14px 16px; }
+  .hot-item .k { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  .hot-item .v { font-size: 16px; font-weight: 800; color: var(--tag-text); }
+  .hot-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 13px; font-weight: 700; color: var(--accent-1); text-decoration: none; }
+  .hot-link:hover { text-decoration: underline; }
+
+  .model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; }
+  .model-card {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 18px;
+    padding: 20px 22px; backdrop-filter: blur(10px); transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .model-card:hover { transform: translateY(-4px); border-color: var(--border-accent); box-shadow: 0 8px 30px rgba(139,92,246,0.12); }
+  .model-card.top { border-color: rgba(245,158,11,0.4); background: linear-gradient(160deg, rgba(245,158,11,0.08), var(--bg-card)); }
+  .rank-badge {
+    position: absolute; top: 0; right: 0; padding: 5px 14px; font-size: 12px; font-weight: 800;
+    border-bottom-left-radius: 14px; color: #fff;
+  }
+  .rank-1 { background: var(--gold); color: #1e1b4b; }
+  .rank-other { background: rgba(139,92,246,0.55); }
+  .model-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .score {
+    flex-shrink: 0; width: 58px; height: 58px; border-radius: 14px;
+    background: var(--score-bg); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 1px solid rgba(16,185,129,0.3);
+  }
+  .score .num { font-size: 22px; font-weight: 800; background: var(--score-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+  .score .unit { font-size: 9px; color: var(--text-muted); margin-top: 2px; }
+  .model-name { font-size: 16px; font-weight: 700; color: var(--text-primary); line-height: 1.35; }
+  .model-provider { font-size: 12px; color: var(--tag-text); font-weight: 600; margin-top: 3px; }
+  .model-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .meta-pill { font-size: 11.5px; padding: 4px 10px; border-radius: 10px; background: var(--tag-bg); color: var(--tag-text); border: 1px solid var(--tag-border); font-weight: 600; }
+  .model-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+  .model-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--accent-1); text-decoration: none; transition: gap 0.2s; }
+  .model-link:hover { gap: 10px; text-decoration: underline; }
+
+  .plat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .plat-card {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px;
+    padding: 20px 22px; backdrop-filter: blur(10px); transition: all 0.3s;
+  }
+  .plat-card:hover { transform: translateY(-4px); border-color: var(--border-accent); box-shadow: 0 8px 30px rgba(139,92,246,0.12); }
+  .plat-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .plat-emoji { font-size: 24px; }
+  .plat-name { font-size: 15px; font-weight: 700; color: var(--accent-3); }
+  .quota { font-size: 13px; color: var(--text-primary); font-weight: 700; margin-bottom: 6px; }
+  .quota .big { font-size: 17px; background: var(--stat-num-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .plat-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+  .plat-link { font-size: 12px; color: var(--accent-1); text-decoration: none; font-weight: 600; }
+  .plat-link:hover { text-decoration: underline; }
+
+  .combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
+  .combo-card {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px;
+    padding: 20px; backdrop-filter: blur(10px); border-left: 4px solid var(--accent-1); transition: all 0.3s;
+  }
+  .combo-card:hover { transform: translateX(3px); border-color: var(--border-accent); }
+  .combo-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--tag-text); }
+  .combo-card p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; }
+  .combo-card .cost { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 800; color: #34d399; background: rgba(52,211,153,0.12); padding: 3px 12px; border-radius: 10px; }
+
+  .risk-list { display: grid; gap: 12px; }
+  .risk-item {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-left: 4px solid var(--accent-4);
+    border-radius: 12px; padding: 16px 20px; backdrop-filter: blur(10px); display: flex; gap: 14px; align-items: flex-start;
+  }
+  .risk-item .icon { font-size: 20px; flex-shrink: 0; }
+  .risk-item h4 { font-size: 14px; font-weight: 700; color: var(--accent-4); margin-bottom: 4px; }
+  .risk-item p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  .tag { display: inline-block; padding: 4px 12px; background: var(--tag-bg); color: var(--tag-text); border: 1px solid var(--tag-border); border-radius: 12px; font-size: 12px; font-weight: 600; margin: 3px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 8px; }
+
+  .footer { text-align: center; color: var(--text-muted); font-size: 13px; margin-top: 56px; padding: 28px 20px; border-top: 1px solid var(--footer-border); }
+  .footer a { color: var(--accent-1); text-decoration: none; font-weight: 600; }
+  .footer a:hover { text-decoration: underline; }
+  .footer p { margin-bottom: 6px; }
+
+  .scroll-top {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%;
+    border: 1.5px solid var(--border-card); background: var(--bg-card); backdrop-filter: blur(10px); cursor: pointer;
+    font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+    opacity: 0; pointer-events: none; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { border-color: var(--accent-1); transform: scale(1.1); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 44px 18px 36px; }
+    .hero h1 { font-size: 30px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .model-grid, .plat-grid, .combo-grid { grid-template-columns: 1fr; }
+  }
+
+  .page-nav {
+    position: fixed; top: 16px; left: 12px; z-index: 1000;
+    display: flex; gap: 6px; padding: 6px; border-radius: 30px;
+    background: var(--bg-card); border: 1.5px solid var(--border-card);
+    backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    max-width: calc(100vw - 90px); flex-wrap: wrap; align-items: center;
+  }
+  .page-nav a, .page-nav span.nav-disabled {
+    padding: 7px 13px; border-radius: 20px; font-size: 13px; font-weight: 600;
+    text-decoration: none; color: var(--text-primary); white-space: nowrap;
+    border: 1px solid var(--border-card); transition: all 0.25s; line-height: 1.3;
+  }
+  .page-nav a:hover { border-color: var(--accent-1); background: var(--bg-card-hover); color: var(--accent-1); }
+  .page-nav a.nav-home { color: var(--accent-2); }
+  .page-nav a.nav-latest { color: var(--accent-1); }
+  .page-nav span.nav-disabled { color: var(--text-muted); opacity: 0.4; cursor: not-allowed; }
+  @media (max-width: 640px) {
+    .page-nav { top: 10px; left: 8px; gap: 4px; padding: 5px; max-width: calc(100vw - 70px); }
+    .page-nav a, .page-nav span.nav-disabled { padding: 5px 9px; font-size: 11.5px; }
+  }
+
+  /* Page navigation bar (prev / home / latest / next) */
+  .page-nav {
+    position: fixed; top: 16px; left: 12px; z-index: 1000;
+    display: flex; gap: 6px; padding: 6px; border-radius: 30px;
+    background: var(--bg-card); border: 1.5px solid var(--border-card);
+    backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    max-width: calc(100vw - 90px); flex-wrap: wrap; align-items: center;
+  }
+  .page-nav a, .page-nav span.nav-disabled {
+    padding: 7px 13px; border-radius: 20px; font-size: 13px; font-weight: 600;
+    text-decoration: none; color: var(--text-primary); white-space: nowrap;
+    border: 1px solid var(--border-card); transition: all 0.25s; line-height: 1.3;
+  }
+  .page-nav a:hover { border-color: var(--accent-1); background: var(--bg-card-hover); color: var(--accent-1); }
+  .page-nav a.nav-home { color: var(--accent-2); }
+  .page-nav a.nav-latest { color: var(--accent-1); }
+  .page-nav span.nav-disabled { color: var(--text-muted); opacity: 0.4; cursor: not-allowed; }
+  @media (max-width: 640px) {
+    .page-nav { top: 10px; left: 8px; gap: 4px; padding: 5px; max-width: calc(100vw - 70px); }
+    .page-nav a, .page-nav span.nav-disabled { padding: 5px 9px; font-size: 11.5px; }
+  }
+
+  /* Comparison tables (added 2026-08-31) */
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 4px; border-radius: 12px; border: 1px solid var(--border-card); }
+  .tbl-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+  .tbl-wrap th {
+    text-align: left; padding: 11px 14px; font-size: 12px; font-weight: 800;
+    color: var(--tag-text); background: var(--tag-bg); letter-spacing: .3px;
+    border-bottom: 1px solid var(--border-card); white-space: nowrap;
+  }
+  .tbl-wrap td { padding: 11px 14px; color: var(--text-secondary); line-height: 1.65; border-bottom: 1px solid var(--border-card); vertical-align: top; }
+  .tbl-wrap tbody tr:last-child td { border-bottom: none; }
+  .tbl-wrap tbody tr:hover { background: var(--bg-card-hover); }
+  .tbl-wrap td:first-child { color: var(--text-primary); font-weight: 700; white-space: nowrap; }
+  .tbl-wrap code { font-size: 12px; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 5px; }
+  .pill { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 11.5px; font-weight: 800; white-space: nowrap; }
+  .pill.green { background: var(--score-bg); color: var(--text-primary); }
+  .pill.orange { background: rgba(245,158,11,0.16); color: #f59e0b; }
+  .pill.red { background: rgba(245,87,108,0.16); color: #f5576c; }
+  .hot p code, .focus p code, .section p code {
+    background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 5px; font-size: 12.5px;
+  }
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" title="切换亮色/暗色主题" aria-label="主题切换"><span id="theme-icon">☀️</span></button>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+
+<div class="page-nav"><a href="daily-free-llm-2026-08-28.html" title="上一篇日报">← 上一个</a><a class="nav-home" href="index.html" title="返回首页">🏠 主页</a><a class="nav-latest" href="daily-free-llm-2026-08-31.html" title="最新日报">⭐ 最新</a><span class="nav-disabled">下一个 →</span></div>
+<div class="container">
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="badge">🤖 AI 每日免费情报</div>
+      <h1>免费大模型日报</h1>
+      <div class="date-chip">📅 2026 年 8 月 31 日 · 周一</div>
+      <p class="tagline">聚焦「量大能用的先进模型」· 覆盖 31+ 国内外平台 · 本期主线：🔥 <b>腾讯 Hy4 Preview 开源（770B/49B 激活·1M 上下文·盲评 2.99/4.00 小胜 GLM-5.3 与 Kimi K3·WorkBuddy/CodeBuddy 免费两周）</b>；🔥 <b>智谱 GLM-5.3 权重已落地（753B·Intelligence 60 并列 Kimi K3·CyberGym 84.5%·License 只卡百亿美元巨头）</b>；🆕 <b>OpenRouter 免费池更新（Ling 3.0 Flash Fin 262K / Dots3-Note 512K·9/30 下线）</b>；⏰ <b>Hy3 限免口径冲突（8/31 vs 9 月底）</b>。</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card"><div class="stat-icon">🎁</div><div class="stat-num">451+</div><div class="stat-label">可免费使用模型（freellm.net 目录 · 更新至 8/29）</div></div>
+    <div class="stat-card"><div class="stat-icon">💎</div><div class="stat-num">31</div><div class="stat-label">提供免费模型的平台（跨国内外）</div></div>
+    <div class="stat-card"><div class="stat-icon">🏆</div><div class="stat-num">770B</div><div class="stat-label">今日开源最大模型（腾讯 Hy4 Preview · 1M 上下文）</div></div>
+    <div class="stat-card"><div class="stat-icon">🆓</div><div class="stat-num">¥0</div><div class="stat-label">月均使用成本</div></div>
+  </div>
+
+  <div class="focus">
+    <h2>📌 本期焦点：腾讯 Hy4 Preview 开源 · GLM-5.3 权重落地 · 免费池换新 · 限免口径冲突</h2>
+    <p>
+      <b>🔥 头号大新闻：腾讯 Hy4 Preview 开源（8/29）</b>：总参数 <b>770B</b>、激活 <b>49B</b>、上下文 <b>1M</b>，
+      Hugging Face 权重 1.56TB。腾讯内部盲评（163 位专家 × 203 项工程任务）得分 <b>2.99/4.00</b>，
+      略高于 GLM-5.3（2.92）与 Kimi K3（2.94）。<span class="hl">WorkBuddy / CodeBuddy 免费试用两周</span>，
+      元宝、ima 同步可用。这是本周期<b>唯一能白嫖的 770B 级模型</b>——但它是纯文本，没有视觉能力。<br><br>
+      <b>🔥 GLM-5.3 权重已落地（8/29）</b>：753B 总参 / 40B 激活 / 1M 上下文，<b>FP8 主仓 756GB</b>（141 分片，BF16 另开仓）。
+      Artificial Analysis Intelligence Index <b>60</b>（与 Kimi K3 并列，超 Claude Opus 4.8）、Agentic Index <b>59</b>
+      （超 GPT-5.6 Sol 与 Grok 4.6）、Terminal-Bench 3.0 从 4.6 跃至 <b>28.3</b>、CyberGym <b>84.5%</b>。
+      <b>License 从 MIT 换成自定义 GLM-5.3 License</b>——只卡「做 MaaS 且连续 12 个月营收 &gt; 100 亿美元」的巨头，
+      个人开发者与创业公司仍是 MIT 式自由。Unsloth 量化版 <span class="hl">24GB 显存 + 256GB 内存可跑</span>。<br><br>
+      <b>🆕 OpenRouter 免费池换新</b>：<code>inclusionai/ling-3.0-flash-fin:free</code>（262K·金融向 MoE·Novita 托管·
+      已吃掉 223B tokens）、<code>dots-studio/dots-3-note-preview:free</code>（<b>512K 上下文</b>·280B/16B·
+      <span class="countdown">9/30 下线</span>）、<code>liquid/lfm-2.5-embedding-350m:free</code>（1024 维 embedding 免费）。
+      老的 <code>stealth/ox-alpha</code> 免费预览已收尾，改走 GLM-5.3-Flash 付费（半价到 9/9）。<br><br>
+      <b>⏰ 限免倒计时与口径冲突</b>：<span class="countdown">8/31（今天）腾讯 Hy3 限免</span>——但两个信源打架：
+      腾讯云 8/4 公告写「延长至 8 月 31 日」，8/28 实测稿却写「Hy3 继续免费到 9 月底」，
+      <b>今天务必打开控制台确认一次</b>。<span class="countdown">9/9 GLM-5.3-Flash 半价结束</span> ·
+      <span class="countdown">9/30 Dots3-Note Preview 下线</span> ·
+      <span class="countdown">9/24 文心快码 Comate 限免第二弹截止</span> ·
+      <span class="countdown">9/30 腾讯混元旧平台停服</span>。
+    </p>
+  </div>
+
+  <div class="hot">
+    <span class="flag">🔥 今日头条 · 腾讯 Hy4 Preview 开源：770B / 49B 激活 / 1M 上下文，盲评 2.99/4.00 小胜 GLM-5.3 与 Kimi K3</span>
+    <h2>腾讯 Hy4 Preview 开源：770B 参数、1M 上下文，官方客户端免费两周</h2>
+    <div class="sub">腾讯 · 770B 总参 / 49B 激活 · 1M 上下文 · HF 权重 1.56TB · 纯文本（无视觉）· WorkBuddy/CodeBuddy 免费两周</div>
+    <p>
+      <b>① 发生了什么</b>：腾讯在 8 月 29 日发布并开源下一代大语言模型 <b>Tencent Hy4 Preview</b>，
+      总参数 <b>770B</b>、激活参数 <b>49B</b>、上下文窗口超过 <b>1M tokens</b>，Hugging Face 上权重体积 <b>1.56TB</b>。
+      对比 7 月的 Hy3（295B 总参 / 21B 激活 / 256K / 598GB），这是一次全面放大。腾讯定位为「编程、办公、科研等真实生产力任务」。<br><br>
+      <b>② 关键能力（看清楚）</b>：内部盲评 <b>163 位专家 × 203 项工程任务</b>，Hy4 preview 平均 <b>2.99/4.00</b>，
+      略高于 Kimi K3（2.94）与 GLM-5.3（2.92）。推理配置<b>只支持 <code>high</code>（默认）与 <code>no_think</code> 两档</b>，
+      没有 low/medium。<b>纯文本输入，无视觉能力</b>——这条很关键，读图读视频请另找模型。
+      有意思的细节：Simon Willison 实测发现它「思考」时用<b>破碎的、半语法的英文</b>写内部笔记
+      （比如纠结要不要给鹈鹕加头盔，最后因为喙会挡住而放弃）——说明隐藏推理是为压缩效率服务的，不是为人类可读服务的。<br><br>
+      <b>③ 免费怎么用</b>：<span class="hl">WorkBuddy / CodeBuddy 里直接选 Hy4 preview，免费试用两周</span>；
+      元宝、ima 同步上线。API 走腾讯云 TokenHub 与 OpenRouter——<b>但这两条按量计费，免费额度只在 Buddy 客户端内</b>。
+      1.56TB 权重自部署不现实，所以客户端是唯一现实的白嫖路径。<br><br>
+      <b>④ 策略</b>：把长文档分析、代码库整体理解、批量报告生成这类<b>重活</b>压到这两周窗口里跑完。
+      同窗口内的 Hy3（295B / 256K / 快慢思考融合）也别浪费——两者叠加，腾讯系这两个月的免费额度相当可观。
+    </p>
+    <div class="hot-grid">
+      <div class="hot-item"><div class="k">发布时间</div><div class="v">2026-08-29</div></div>
+      <div class="hot-item"><div class="k">参数</div><div class="v">770B / 49B 激活</div></div>
+      <div class="hot-item"><div class="k">上下文</div><div class="v">1M tokens</div></div>
+      <div class="hot-item"><div class="k">盲评得分</div><div class="v">2.99 / 4.00</div></div>
+      <div class="hot-item"><div class="k">模态</div><div class="v">纯文本</div></div>
+      <div class="hot-item"><div class="k">免费窗口</div><div class="v">两周</div></div>
+    </div>
+    <a class="hot-link" href="https://huggingface.co/tencent" target="_blank">前往 HuggingFace tencent →</a>
+  </div>
+
+  <div class="hot">
+    <span class="flag">🔥 权重落地 · 智谱 GLM-5.3（753B）正式开源：Intelligence 60 并列 Kimi K3，License 从 MIT 换成自定义协议</span>
+    <h2>GLM-5.3 权重落地：FP8 主仓 756GB，只卡百亿美元巨头，个人开发者等同 MIT</h2>
+    <div class="sub">智谱 Z.ai · 753B 总参 / 40B 激活 · 1M 上下文 · FP8 756GB（141 分片）+ BF16 另仓 · GLM-5.3 License</div>
+    <p>
+      <b>① 发生了什么</b>：8 月 29 日凌晨，智谱（Z.ai）在 Hugging Face 与 ModelScope 放出 <b>GLM-5.3</b> 权重，
+      兑现了「安全评估完成后开放」的承诺。模型沿用 GLM-5.2 的基座，<b>能力提升全部来自后训练</b>——
+      不是万亿参数，万亿大概率留给 GLM-5.5。官方称因「网络安全能力增长超出预期」而多做了两周安全评估。<br><br>
+      <b>② 关键指标</b>：见下方对比表。最亮眼的是 <b>CyberGym 84.5%</b>，以及实测扫描 <b>269 个开源项目、
+      累计 2436 个漏洞</b>（其中 Linux / WebKit / FreeBSD 内核关键漏洞 1097 个）。
+      Terminal-Bench 3.0 从 GLM-5.2 的 4.6 直接跳到 <b>28.3</b>，DeepSWE v1.1 从 46.2 到 <b>66.9</b>。
+      chat template 从 5.08KB 涨到 10.5KB，新增代码集中在<b>工具结果处理</b>（识别 tool_call_id、去重补缺、
+      按原调用顺序重排异步返回的 Tool Results）——对写 Agent 工作流比跑分更实在。<br><br>
+      <b>③ License 变化（务必看）</b>：GLM-5.2 用 MIT，GLM-5.3 换成自定义 <b>GLM-5.3 License</b>。
+      核心条款：企业及其关联方若经营 MaaS，且<b>连续 12 个月合计营收 &gt; 100 亿美元</b>，商业使用前须先通过智谱安全审查。
+      实际只影响微软、Google、NVIDIA、阿里、腾讯这一档；<span class="hl">个人开发者、创业公司、绝大多数企业仍是 MIT 式自由</span>
+      ——免费使用、复制、修改、分发、再许可、销售、部署、微调、商用全部允许。
+      顺带一提：许可证<b>没有 acceptable-use 条款</b>，也没提网络安全限制，「安全」更像延后放权重的理由而非协议约束。
+      想要更干净的协议，<b>Qwen3.8-Flash-Next 是 Apache 2.0，无任何营收门槛</b>。<br><br>
+      <b>④ 免费怎么用</b>：权重自部署永久免费（vLLM / SGLang / KTransformers / Transformers 均已支持，
+      海光 DCU 已 Day 0 适配）。Unsloth 量化版 <b>UD-IQ2_M 可在 24GB 显存 + 256GB 内存的机器上跑</b>，
+      社区另有 239GB 2-bit 量化（据说保留约 81% 精度）。官方把 <b>FP8 作为主仓默认</b>——
+      对比 GLM-5.2 主仓 BF16 超 1TB，开箱门槛明显更低。NIM 免费层的 GLM-5.3 还在路上，
+      <b>过渡期继续用 GLM-5.2（NIM 93-94、1M、40 RPM 无日限额、永久免费）</b>。
+    </p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>维度</th><th>GLM-5.3</th><th>对比 / 说明</th></tr></thead>
+        <tbody>
+          <tr><td>参数</td><td>753B 总参 / 40B 激活，MoE</td><td>与 GLM-5.2 同基座，非万亿参数（部分口径 743B）</td></tr>
+          <tr><td>上下文</td><td>1M / 最大输出 128K</td><td>FP8 权重 756GB（141 分片），BF16 另开仓</td></tr>
+          <tr><td>Intelligence Index</td><td><b>60</b></td><td>Artificial Analysis，与 Kimi K3 并列，超 Claude Opus 4.8</td></tr>
+          <tr><td>Agentic Index</td><td><b>59</b></td><td>超 GPT-5.6 Sol 与 Grok 4.6</td></tr>
+          <tr><td>Terminal-Bench 3.0</td><td><b>28.3</b></td><td>GLM-5.2 为 4.6，开源第一</td></tr>
+          <tr><td>DeepSWE v1.1</td><td><b>66.9</b></td><td>GLM-5.2 为 46.2</td></tr>
+          <tr><td>CyberGym</td><td><b>84.5%</b></td><td>已公开最佳；实测挖出 2436 个漏洞 / 269 个项目</td></tr>
+          <tr><td>推理框架</td><td>vLLM / SGLang / KTransformers / Transformers</td><td>海光 DCU Day 0 适配（累计 400+ 模型首发适配）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hot-grid">
+      <div class="hot-item"><div class="k">权重开源</div><div class="v">2026-08-29</div></div>
+      <div class="hot-item"><div class="k">FP8 主仓</div><div class="v">756GB / 141 分片</div></div>
+      <div class="hot-item"><div class="k">Intelligence</div><div class="v">60（并列第一）</div></div>
+      <div class="hot-item"><div class="k">CyberGym</div><div class="v">84.5%</div></div>
+      <div class="hot-item"><div class="k">挖掘漏洞</div><div class="v">2436 个 / 269 项目</div></div>
+      <div class="hot-item"><div class="k">License</div><div class="v">自定义（卡百亿巨头）</div></div>
+    </div>
+    <a class="hot-link" href="https://huggingface.co/zai-org/GLM-5.3" target="_blank">前往 HuggingFace zai-org/GLM-5.3 →</a>
+  </div>
+
+  <div class="hot">
+    <span class="flag">🆕 免费池更新 · OpenRouter 新增 3 款免费模型，Ox Alpha 隐身窗口已收尾</span>
+    <h2>OpenRouter 免费池进出：Ling 3.0 Flash Fin / Dots3-Note 512K / LFM2.5-Embedding</h2>
+    <div class="sub">openrouter.ai/models?max_price=0 · 8/31 抓取 · freellm.net 目录更新至 8/29（451+ 模型 / 31 家 / 235 款活体验证）</div>
+    <p>
+      <b>① 新上的三款</b>：<code>inclusionai/ling-3.0-flash-fin:free</code>——124B 总参 / 5.1B 激活的金融向 MoE，
+      262K 上下文，Novita 托管，吞吐 92 tps、延迟 1.05s、三日可用率 99.85%，8/27 上线已吃掉 <b>223B tokens</b>。
+      <code>dots-studio/dots-3-note-preview:free</code>——<b>512K 上下文</b>，280B 总参 / 16B 激活，Dots 3 系列最轻量款，
+      推理+编码+多模态+Agent 通吃，页面已明确标注 <span class="countdown">Going away September 30, 2026</span>。
+      <code>liquid/lfm-2.5-embedding-350m:free</code>——1024 维文本 embedding，检索 / RAG 免费，
+      ⚠️ 但明确写了<b>成功请求会被保留并用于训练 Liquid 模型</b>。<br><br>
+      <b>② Ox Alpha 已收尾</b>：那个 20 万亿 token、OpenRouter 史上最大匿名发布的 <code>stealth/ox-alpha</code>，
+      身份已揭晓为 <b>GLM-5.3-Flash</b>，免费预览约 8/27 结束，现在走付费：常规 $0.15/$0.50，
+      <b>半价 $0.075/$0.25 至 9/9</b>。MIT 权重可自部署永久免费。常驻老兵 Nemotron-3-Ultra、Laguna S 2.1、
+      north-mini-code、gpt-oss-20b 继续在免费池里稳着。<br><br>
+      <b>③ 免费档速率</b>：未充值账号约 <b>50 次/天</b>、约 20 次/分钟；曾累计充值 <b>≥ $10</b> 的账号提升到
+      <b>1000 次/天</b>——这是 20 倍差距，重度用户一次性充 $10 是最划算的「买路钱」。
+      用 <code>openrouter/free</code> 这个 ID 可以自动路由到当前可用免费模型，最省事。<br><br>
+      <b>④ 隐私教训（重要）</b>：OpenRouter 的条款写的是「<b>不用于训练</b>」，但<b>没有承诺不保留</b>你的 prompt 与 completion。
+      同期 OpenCode 宣传的「零数据保留」说的是它自己客户端这一层，盖不到匿名供应商那一层。
+      隐身模型本质上是厂商收集反馈的诱饵，窗口一过就撤——<span class="hl">别把生产密钥、隐私数据送进匿名端点</span>。
+    </p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>模型 ID</th><th>上下文</th><th>规格 / 特点</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td><code>inclusionai/ling-3.0-flash-fin:free</code></td><td>262K</td><td>124B/5.1B 激活，金融向 MoE，Novita 托管，92 tps · 1.05s · 99.85%</td><td><span class="pill green">8/27 新增</span></td></tr>
+          <tr><td><code>dots-studio/dots-3-note-preview:free</code></td><td><b>512K</b></td><td>280B/16B 激活，推理+编码+多模态+Agent，已吃 155B tokens</td><td><span class="pill orange">9/30 下线</span></td></tr>
+          <tr><td><code>liquid/lfm-2.5-embedding-350m:free</code></td><td>512</td><td>1024 维 embedding，检索/RAG；⚠️ 请求会保留并用于训练</td><td><span class="pill green">8/18 新增</span></td></tr>
+          <tr><td><code>nvidia/nemotron-3-ultra-550b-a55b:free</code></td><td>—</td><td>推理 + 编程，免费池用量最高之一</td><td><span class="pill green">常驻</span></td></tr>
+          <tr><td><code>poolside/laguna-s-2.1:free</code></td><td>—</td><td>编程 / Agent，编码能力较强</td><td><span class="pill green">常驻</span></td></tr>
+          <tr><td><code>cohere/north-mini-code:free</code></td><td>—</td><td>专门面向代码</td><td><span class="pill green">常驻</span></td></tr>
+          <tr><td><code>openai/gpt-oss-20b:free</code></td><td>—</td><td>通用 / 编程，性价比稳定</td><td><span class="pill green">常驻</span></td></tr>
+          <tr><td><code>stealth/ox-alpha</code></td><td>1M</td><td>已揭晓 = GLM-5.3-Flash，6 天吃 20+ 万亿 tokens</td><td><span class="pill red">免费预览已收尾</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a class="hot-link" href="https://openrouter.ai/models?max_price=0" target="_blank">查看 OpenRouter 全部免费模型 →</a>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="ico">🏆</span>量大能用的先进模型 · Top 10（实测评分 + 今日开源）</div>
+    <div class="model-grid">
+
+      <div class="model-card top">
+        <div class="rank-badge rank-1">🥇 第 1 名</div>
+        <div class="model-head">
+          <div class="score"><div class="num">98</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Kimi K3</div>
+            <div class="model-provider">Moonshot · 开源权重</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">2.8T 参数</span><span class="meta-pill">Intelligence 60</span><span class="meta-pill">开源第一梯队</span><span class="meta-pill">免费对话即 K3</span></div>
+        <div class="model-desc">免费榜蝉联第一。2.8 万亿参数，全球最大开源权重模型，Artificial Analysis Intelligence Index <b>60</b> 与 GLM-5.3 并列。协议要求：MaaS 提供商若月活 &gt; 1 亿或月营收 &gt; $2000 万，须在 UI 显著标注「Kimi K3」——对终端用户无影响。最干净的零成本用法是 <span class="hl">kimi.com 登录后默认即 K3 免费对话</span>。</div>
+        <a class="model-link" href="https://kimi.com" target="_blank">前往 kimi.com 免费对话 →</a>
+      </div>
+
+      <div class="model-card top">
+        <div class="rank-badge rank-1">🥈 量大冠军</div>
+        <div class="model-head">
+          <div class="score"><div class="num">93</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">GLM-5.2</div>
+            <div class="model-provider">智谱 Z.ai · NVIDIA NIM</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">1M 上下文</span><span class="meta-pill">40 RPM</span><span class="meta-pill">无日限额</span><span class="meta-pill">永久免费</span></div>
+        <div class="model-desc">免费档里最稳的高性能底座。NIM 上 <b>40 RPM 且无日请求上限</b>，永久免费、免信用卡（需手机号）。旗舰 GLM-5.3 权重虽已开源，但 NIM 免费层落地还需时间——<span class="hl">这段窗口期 GLM-5.2 依然是过渡期首选</span>。注意：同一模型不同供应商分数能差 10 分以上，NIM 托管的 93-94 是目前最高的一档。</div>
+        <a class="model-link" href="https://build.nvidia.com" target="_blank">前往 build.nvidia.com →</a>
+      </div>
+
+      <div class="model-card top">
+        <div class="rank-badge rank-1">🔥 今日开源</div>
+        <div class="model-head">
+          <div class="score"><div class="num">770B</div><div class="unit">49B 激活</div></div>
+          <div>
+            <div class="model-name">Tencent Hy4 Preview</div>
+            <div class="model-provider">腾讯 · 8/29 开源 · WorkBuddy/CodeBuddy 免费两周</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">1M 上下文</span><span class="meta-pill">盲评 2.99/4.00</span><span class="meta-pill">纯文本无视觉</span><span class="meta-pill">HF 1.56TB</span></div>
+        <div class="model-desc">今日最强开源新兵。内部盲评 163 专家 × 203 工程任务得分 2.99/4.00，<b>略胜 GLM-5.3（2.92）与 Kimi K3（2.94）</b>。1.56TB 权重自部署不现实，但 <span class="hl">WorkBuddy / CodeBuddy 免费两周</span> 是唯一能白嫖 770B 的路径。只支持 high / no_think 两档推理。⚠️ 纯文本——读图读视频请回退到 GLM-5.3-Flash 或 Gemini 系。</div>
+        <a class="model-link" href="https://www.workbuddy.cn/" target="_blank">前往 WorkBuddy 体验 →</a>
+      </div>
+
+      <div class="model-card top">
+        <div class="rank-badge rank-1">🔥 今日开源</div>
+        <div class="model-head">
+          <div class="score"><div class="num">753B</div><div class="unit">40B 激活</div></div>
+          <div>
+            <div class="model-name">GLM-5.3</div>
+            <div class="model-provider">智谱 Z.ai · 8/29 权重开源 · GLM-5.3 License</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">1M 上下文</span><span class="meta-pill">Intelligence 60</span><span class="meta-pill">CyberGym 84.5%</span><span class="meta-pill">FP8 756GB</span></div>
+        <div class="model-desc">开源界新旗舰。Terminal-Bench 3.0 <b>28.3</b>（前代 4.6）、DeepSWE v1.1 <b>66.9</b>、Agentic Index <b>59</b>（超 GPT-5.6 Sol 与 Grok 4.6）。自定义 License 只卡「MaaS + 营收 &gt; 100 亿美元」的巨头，个人与创业公司等同 MIT。Unsloth UD-IQ2_M 量化版 <span class="hl">24GB 显存 + 256GB 内存可跑</span>，社区 239GB 2-bit 保留约 81% 精度。</div>
+        <a class="model-link" href="https://huggingface.co/zai-org/GLM-5.3" target="_blank">前往 HuggingFace 下载 →</a>
+      </div>
+
+      <div class="model-card top">
+        <div class="rank-badge rank-other">5 · 半价中</div>
+        <div class="model-head">
+          <div class="score"><div class="num">90</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">GLM-5.3-Flash</div>
+            <div class="model-provider">智谱 Z.ai · MIT 开源 · 前「Ox Alpha」</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">320B / 18B 激活</span><span class="meta-pill">1M 多模态</span><span class="meta-pill">图+视频+文本</span><span class="meta-pill">半价至 9/9</span></div>
+        <div class="model-desc">原生文本+图像+视频输入，混合线性+稀疏注意力使注意力计算量降 3×、KV 缓存缩 4.4×，全程跑国产 AI 加速卡集群。<b>免费预览已收尾</b>，现走付费：常规 $0.15/$0.50，<span class="hl">半价 $0.075/$0.25 至 9/9</span>（约为 Claude Opus 4.8 输入价的 1/40）。MIT 权重可自部署永久免费——这是它最值钱的地方。</div>
+        <a class="model-link" href="https://huggingface.co/zai-org/GLM-5.3-Flash" target="_blank">前往 HuggingFace 下载 →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">6</div>
+        <div class="model-head">
+          <div class="score"><div class="num">90</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Gemini 3.6 Flash</div>
+            <div class="model-provider">Google AI Studio · 永久免费</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">1M 上下文</span><span class="meta-pill">多模态</span><span class="meta-pill">免信用卡</span><span class="meta-pill">250K tok/min</span></div>
+        <div class="model-desc">永久免费层里的「全能选手」：1M 上下文、工具调用、视觉理解全都有。Google AI Studio 免费档按模型 <b>20–500 请求/天</b>不等，Gemini 2.5 Flash 系列约 <b>1440 次/天</b>。另有 Gemma 4 系列（33K 上下文、1000 RPD）可选，适合高频小请求。12 款 Gemini/Gemma 模型全在免费层。</div>
+        <a class="model-link" href="https://aistudio.google.com" target="_blank">前往 aistudio.google.com →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">7</div>
+        <div class="model-head">
+          <div class="score"><div class="num">88</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">DeepSeek V4 Flash</div>
+            <div class="model-provider">DeepSeek / OpenCode Zen / 商汤 SenseNova</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">1M 上下文</span><span class="meta-pill">每 5h 回血</span><span class="meta-pill">IP 级限流</span><span class="meta-pill">分布最广</span></div>
+        <div class="model-desc">免费档分布最广的模型之一。OpenCode Zen 上 <code>deepseek-v4-flash-free</code> 每 5 小时、每 12 小时各有一档刷新；实测限流<b>基于 IP 而非账号</b>，换出口 IP 即可续杯。前端默认限制在 200K+，改配置文件可解锁到 1M。商汤 SenseNova 公测期同样每 5h 回血。</div>
+        <a class="model-link" href="https://opencode.ai/zen" target="_blank">前往 OpenCode Zen →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">8</div>
+        <div class="model-head">
+          <div class="score"><div class="num">88</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">MiniMax M3</div>
+            <div class="model-provider">MiniMax · Ollama Cloud</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">2T 参数级</span><span class="meta-pill">多模态生成</span><span class="meta-pill">已入港股通</span><span class="meta-pill">开源传闻</span></div>
+        <div class="model-desc">2 万亿参数级别，多模态生成能力突出。Ollama Cloud 上 <code>minimax-m3</code> 已通过 freellm.net 活体验证（Session / weekly 限制，官方未公开具体数字）。本周 HF 上 <code>Qwen/Qwen3.8-27B</code> 才是最热下载（13267 分），本地部署可替代方案之一。</div>
+        <a class="model-link" href="https://ollama.com" target="_blank">前往 Ollama Cloud →</a>
+      </div>
+
+      <div class="model-card">
+        <div class="rank-badge rank-other">9</div>
+        <div class="model-head">
+          <div class="score"><div class="num">86</div><div class="unit">SCORE</div></div>
+          <div>
+            <div class="model-name">Nemotron-3-Ultra-550B</div>
+            <div class="model-provider">NVIDIA · OpenRouter 免费池</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">550B / A55B</span><span class="meta-pill">推理+编程</span><span class="meta-pill">用量最高</span><span class="meta-pill">免卡</span></div>
+        <div class="model-desc">OpenRouter 免费池当前用量最高的模型之一，推理与编程都能打。同系列 <code>nemotron-3-super-120b-a12b:free</code> 也在免费档。NVIDIA NIM 本站另有 <b>126 个模型，其中 77 个永久免费</b>——NIM 才是量大场景的主场，OpenRouter 只当补充。</div>
+        <a class="model-link" href="https://build.nvidia.com" target="_blank">前往 build.nvidia.com →</a>
+      </div>
+
+      <div class="model-card top">
+        <div class="rank-badge rank-other">10 · Apache 2.0</div>
+        <div class="model-head">
+          <div class="score"><div class="num">125B</div><div class="unit">6B 激活</div></div>
+          <div>
+            <div class="model-name">Qwen3.8-Flash-Next</div>
+            <div class="model-provider">阿里 Qwen · Apache 2.0 · 8/26 发布</div>
+          </div>
+        </div>
+        <div class="model-meta"><span class="meta-pill">262K → 1M (YaRN)</span><span class="meta-pill">SWE-bench Pro 62.5</span><span class="meta-pill">LCB v6 91.9</span><span class="meta-pill">无营收门槛</span></div>
+        <div class="model-desc">与 GLM-5.3-Flash 同日发布。SWE-bench Pro 62.5（对比 Claude Opus 4.6 Max 的 53.4）、LiveCodeBench v6 91.9、IFBench 81.3。定价 <b>$0.16 / $0.47</b>，HF 周下载量 121,976。<span class="hl">Apache 2.0 无任何营收门槛</span>，比 GLM-5.3 License 更干净。⚠️ 跑分均为实验室自报、对比对象自选，第三方复现 Qwen 3.8 Max 时排名掉到第十。</div>
+        <a class="model-link" href="https://bailian.console.aliyun.com" target="_blank">前往阿里云百炼（每模型 100 万 token）→</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="ico">🎁</span>量大免费平台 · 额度最豪横的 20 家</div>
+    <div class="plat-grid">
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟩</span><span class="plat-name">NVIDIA NIM</span></div>
+        <div class="quota">126 模型 · <span class="big">77 个永久免费</span> · 40 RPM 无日限额</div>
+        <div class="plat-desc">免费档里的<b>量大之王</b>。国内手机号可注册、<b>无需信用卡</b>。GLM-5.2（1M 上下文、实测 93-94）在此最稳，社区已在官方论坛请愿上架 GLM-5.3-Flash。覆盖 DeepSeek、Llama、Nemotron、Gemma、MiniMax 全系，另有化学/生物领域模型。</div>
+        <a class="plat-link" href="https://build.nvidia.com" target="_blank">build.nvidia.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔀</span><span class="plat-name">OpenRouter</span></div>
+        <div class="quota">35+ 免费模型 · <span class="big">50 次/天</span>（累计充值 $10 → 1000 次/天）</div>
+        <div class="plat-desc">一个 key 打通全部，用 <code>openrouter/free</code> 自动路由到当前可用免费模型。本周新增 Ling 3.0 Flash Fin（262K）、Dots3-Note（512K）、LFM2.5-Embedding。⚠️ 正被 Stripe 以约 80 亿美元收购，短期无影响，长期关注免费层与隐私策略。</div>
+        <a class="plat-link" href="https://openrouter.ai" target="_blank">openrouter.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔵</span><span class="plat-name">Google AI Studio</span></div>
+        <div class="quota">12 款免费模型 · <span class="big">250K tokens/分钟</span></div>
+        <div class="plat-desc">永久免费、免信用卡。Gemini 3.6 / 3.5 Flash 与 Gemma 4 系列全部在列，多数为 1M 上下文（Gemma 4 系 33K）。按模型 20–500 请求/天，Gemini 2.5 Flash 约 1440 次/天。多模态免卡入口里最省心的一个。</div>
+        <a class="plat-link" href="https://aistudio.google.com" target="_blank">aistudio.google.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">⚡</span><span class="plat-name">Groq</span></div>
+        <div class="quota">约 <span class="big">1000 次/天</span> · 30 RPM · 免卡</div>
+        <div class="plat-desc">LPU 硬件 <b>300–800 tokens/s</b>，实时场景（语音助手、即时摘要）无敌。免费档含 GPT-OSS 120B/20B、Llama、Qwen，外加 Whisper 语音转写。永久免费层，无需信用卡。</div>
+        <a class="plat-link" href="https://console.groq.com" target="_blank">console.groq.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🧠</span><span class="plat-name">Cerebras</span></div>
+        <div class="quota">约 <span class="big">100 万 tokens/天</span> · 8 款免费模型</div>
+        <div class="plat-desc">晶圆级芯片 <b>~2100 tokens/s</b>，全球最快推理。freellm.net 8 月目录确认其为 <b>No Card Permanent Free</b>（此前一度改为 $5 试用 + 绑卡，现已复位）。⚠️ 口径历史上反复过，以控制台当前页面为准。</div>
+        <a class="plat-link" href="https://cloud.cerebras.ai" target="_blank">cloud.cerebras.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">⌨️</span><span class="plat-name">OpenCode Zen</span></div>
+        <div class="quota">9 款 <span class="big">-Free 模型</span> · 每 5h / 12h 多级刷新</div>
+        <div class="plat-desc">编码 Agent 首选网关，OpenAI 兼容（Base URL <code>https://opencode.ai/zen/v1</code>）。当前免费：Muse Spark 1.2、Big Pickle、DeepSeek V4 Flash、MiMo V2.5、Hy3 等。<span class="hl">限流基于 IP 不基于账号</span>，换出口 IP 即可续杯。VSCode 里报 429 的话，加 requestHeaders（<code>User-Agent: opencode</code> + <code>x-opencode-*</code> 系列）可绕过更严限流。</div>
+        <a class="plat-link" href="https://opencode.ai/zen" target="_blank">opencode.ai/zen →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🇨🇳</span><span class="plat-name">智谱开放平台（国内版）</span></div>
+        <div class="quota">GLM-4.7-Flash · <span class="big">永久免费 · 无 Token 上限</span></div>
+        <div class="plat-desc">六条免费通道里唯一敢同时写「永久」和「无上限」的，200K 上下文。需<b>国内手机号单独注册</b>（与国际版不互通），open.bigmodel.cn 五分钟搞定。日常摘要 / 抽取 / 分类的默认底座，长期保底首选。</div>
+        <a class="plat-link" href="https://open.bigmodel.cn" target="_blank">open.bigmodel.cn →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🌋</span><span class="plat-name">火山引擎方舟</span></div>
+        <div class="quota">豆包系列 · <span class="big">每日 200 万 token</span></div>
+        <div class="plat-desc">覆盖文本与多模态，<b>每日刷新</b>。中低频调用基本能 cover 住，超出再走计费。国内直连低延迟，适合做高频小任务的日常增量额度。</div>
+        <a class="plat-link" href="https://console.volcengine.com/ark" target="_blank">console.volcengine.com/ark →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🟣</span><span class="plat-name">阿里云百炼</span></div>
+        <div class="quota">每模型 <span class="big">100 万 token</span> · 有效期 90 天</div>
+        <div class="plat-desc"><b>隐藏技巧</b>：模型市场标「新模型自动享 90 天免费」的，免费期从<b>首次调用</b>起算而非注册日——可以先把感兴趣的模型全点一遍试用，把 90 天窗口全部激活，攒出半年「模型自由」。已上线 Kimi K3、GLM-5.3、DeepSeek-V4-Pro 官方版与 Qwen3.8 全系。</div>
+        <a class="plat-link" href="https://bailian.console.aliyun.com" target="_blank">bailian.console.aliyun.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">💧</span><span class="plat-name">硅基流动 SiliconFlow</span></div>
+        <div class="quota">实名领 16 元券 · 新用户 <span class="big">2000 万 tokens</span></div>
+        <div class="plat-desc">国内直连、OpenAI 兼容。另有 Qwen2.5-7B、DeepSeek-V2-Lite、GLM-4-9B 等<b>完全免费常驻款</b>。邀请好友每人再送 2000 万，封顶 2 亿。小模型流式响应默认开启，设 <code>max_tokens</code> 可省算力。1.5B 档响应仅 120ms，适合前端实时辅助与 IoT 边缘推理。</div>
+        <a class="plat-link" href="https://cloud.siliconflow.cn" target="_blank">cloud.siliconflow.cn →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">☁️</span><span class="plat-name">Cloudflare Workers AI</span></div>
+        <div class="quota">每日 <span class="big">10,000 Neurons</span> · 永久免费</div>
+        <div class="plat-desc">边缘推理，300+ 节点。含 Llama、Qwen、Mistral、GLM 与图像生成模型，适合把轻推理直接塞进现有边缘逻辑，小流量场景基本白用。</div>
+        <a class="plat-link" href="https://developers.cloudflare.com/workers-ai/" target="_blank">Cloudflare Workers AI 文档 →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🤗</span><span class="plat-name">Hugging Face Serverless</span></div>
+        <div class="quota">7 款模型 · <span class="big">每月 100K credits</span></div>
+        <div class="plat-desc">开源模型直跑，不用自己部署。做 demo、基准对比最快，量上来再迁自托管。⚠️ 正被 NVIDIA 以约 129 亿美元收购（HF 托管 300 万+ 模型），长期关注开源中立性。</div>
+        <a class="plat-link" href="https://huggingface.co" target="_blank">huggingface.co →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🦙</span><span class="plat-name">Ollama（本地 + Cloud）</span></div>
+        <div class="quota">本地 <span class="big">无限免费</span> · Cloud 为 session/weekly 限制</div>
+        <div class="plat-desc">本地 Ollama 是<b>真正的无限免费</b>——只跑在你的硬件上，没有请求数限制。GLM-5.3 量化版 24GB 显存 + 256GB 内存可跑；本周 HF 下载第一的 <code>Qwen3.8-27B</code> 约 19GB 显存。Cloud 端 <code>minimax-m3</code> 已通过活体验证。</div>
+        <a class="plat-link" href="https://ollama.com" target="_blank">ollama.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🇫🇷</span><span class="plat-name">Mistral La Plateforme</span></div>
+        <div class="quota">Experiment 免费档 · <span class="big">免卡</span></div>
+        <div class="plat-desc">覆盖 Large / Medium / Small / Codestral / Devstral 全系。12+ 语言能力强，欧洲合规与多语言场景友好。⚠️ 需手机号验证。</div>
+        <a class="plat-link" href="https://console.mistral.ai" target="_blank">console.mistral.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🧩</span><span class="plat-name">Cohere</span></div>
+        <div class="quota">试用 key · 约 <span class="big">1000 次/月</span></div>
+        <div class="plat-desc">Command A/R、Aya、rerank、embed 全在列。免卡，但<b>仅限开发与评估用途，不可商用</b>。RAG 场景的 rerank 免费额度值得单独开一个。</div>
+        <a class="plat-link" href="https://dashboard.cohere.com" target="_blank">dashboard.cohere.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">👁️</span><span class="plat-name">商汤 SenseNova</span></div>
+        <div class="quota">公测免费 · <span class="big">DeepSeek V4 Flash 每 5h 回血</span></div>
+        <div class="plat-desc">本周期新进免费层。多模态是卖点，公测期内额度宽松。作为 DeepSeek V4 Flash 的第二条通道，和 OpenCode Zen 互为备份。</div>
+        <a class="plat-link" href="https://platform.sensenova.cn" target="_blank">platform.sensenova.cn →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">7️⃣</span><span class="plat-name">LLM7.io</span></div>
+        <div class="quota">16 款模型 <span class="big">常驻免费 · 免卡</span></div>
+        <div class="plat-desc">本周期目录中新增的聚合站，无需注册即可调用。适合作为 failover 备份通道——主力额度跑光时顶上去。</div>
+        <a class="plat-link" href="https://llm7.io" target="_blank">llm7.io →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔗</span><span class="plat-name">Chutes.ai</span></div>
+        <div class="quota">开源模型 <span class="big">免费推理层</span></div>
+        <div class="plat-desc">去中心化推理网络，覆盖大量开源权重模型。吞吐随网络波动，适合做备份而非主力。</div>
+        <a class="plat-link" href="https://chutes.ai" target="_blank">chutes.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🚀</span><span class="plat-name">Novita AI</span></div>
+        <div class="quota">部分模型 <span class="big">$0 输入 / $0 输出</span> · 常驻</div>
+        <div class="plat-desc">本次 Ling 3.0 Flash Fin 的托管方，吞吐 92 tps、延迟 1.05s、三日可用率 99.85%。<code>inclusionai/ling-3.0-tiny</code>（7.9B/1.3B 激活、262K、可切换 Thinking/Instant）在 Requesty 目录上同样是 free/free。</div>
+        <a class="plat-link" href="https://novita.ai" target="_blank">novita.ai →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔮</span><span class="plat-name">Nous Research</span></div>
+        <div class="quota">Hermes Agent · <span class="big">开源 · 40+ 工具</span></div>
+        <div class="plat-desc">开源自改进 Agent，跨会话记忆 + 可复用技能，支持 Web 搜索、浏览器自动化与视觉，另有定时任务与子 Agent。<span class="hl">它是 OpenRouter 上 Ling 3.0 Flash Fin 的第一大流量方</span>（963M tokens），可作为免费模型的现成消费端。</div>
+        <a class="plat-link" href="https://nousresearch.com" target="_blank">nousresearch.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🇪🇺</span><span class="plat-name">Hetzner 实验推理 API</span></div>
+        <div class="quota">experiments.hetzner.com · <span class="big">免卡 · 欧盟驻留</span></div>
+        <div class="plat-desc">OpenAI 兼容，欧盟数据驻留（GDPR），托管 DeepSeek-V4-Flash-0731（512K）、GLM-5.2-NVFP4（512K）、Kimi-K2.7-Code、Qwen3.8-27B。⚠️ 实验性质<b>无 SLA</b>，合规轻量推理可用，重负载仍走 NIM / 百炼。</div>
+        <a class="plat-link" href="https://experiments.hetzner.com" target="_blank">experiments.hetzner.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🇨🇳</span><span class="plat-name">腾讯云 TokenHub</span></div>
+        <div class="quota">新人体验包 · 每模型 <span class="big">100 万 Token</span>（至 12/31）</div>
+        <div class="plat-desc"><span class="hl">Hy4 Preview 的 API 通道在此</span>。虽然 Buddy 客户端内的两周免费更划算，但 TokenHub 新人包也是一条路。另有微信「成长计划」10 亿 Token（6 个月有效）。⚠️ 均非常驻免费层。</div>
+        <a class="plat-link" href="https://cloud.tencent.com" target="_blank">cloud.tencent.com →</a>
+      </div>
+
+      <div class="plat-card">
+        <div class="plat-head"><span class="plat-emoji">🔧</span><span class="plat-name">FreeLLMAPI（开源路由器）</span></div>
+        <div class="quota">自托管 · 聚合 <span class="big">10+ 免费层</span> 到一个 key</div>
+        <div class="plat-desc">开源自托管路由器，把 Google AI Studio、Groq、Cerebras、OpenRouter、NIM、Cloudflare、Mistral、Cohere、Z.ai、Reka 等全部免费层聚合成一个 OpenAI 兼容端点，<b>自动跟踪各家配额并在限流时故障转移</b>。10 个小额度合成一个可靠额度，是目前最省心的「免费额度放大器」。</div>
+        <a class="plat-link" href="https://freellmapi.co" target="_blank">freellmapi.co →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="ico">🎯</span>零成本组合方案 · 月花费全部 ¥0</div>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <h4>🇨🇳 国内直连稳妥流</h4>
+        <p><b>日常底座</b>：智谱国内版 GLM-4.7-Flash（永久免费无上限·200K）+ <b>长文档</b>：火山方舟豆包（每日 200 万 token）+ <b>突发大活</b>：WorkBuddy Hy4 preview（免费两周·770B·1M）+ <b>对比验证</b>：阿里云百炼（每模型 100 万 / 90 天，按首次调用起算）。全程国内直连，无需代理。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+      <div class="combo-card">
+        <h4>🌍 国际免卡性能流</h4>
+        <p><b>主力</b>：NVIDIA NIM GLM-5.2（40 RPM·无日限额·1M 上下文）+ <b>极速</b>：Groq（1000 次/天·300-800 t/s）与 Cerebras（100 万 token/天·2100 t/s）+ <b>多模态</b>：Google AI Studio Gemini 3.6 Flash（1M·1440 次/天）+ <b>兜底</b>：OpenRouter <code>openrouter/free</code>（50 次/天自动路由）。全部免信用卡。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+      <div class="combo-card">
+        <h4>🧑‍💻 编码 Agent 专用流</h4>
+        <p><b>Claude Code 后端</b>：设 <code>ANTHROPIC_BASE_URL</code> 指向 NIM / OpenRouter / Groq，配 <code>ANTHROPIC_AUTH_TOKEN</code>，你的 skills、CLAUDE.md、subagents、MCP 全部照常工作。免费池主力 <code>nemotron-3-ultra-550b-a55b:free</code> 与 <code>poolside/laguna-s-2.1:free</code>；超长上下文走 <code>dots-3-note-preview:free</code>（512K，9/30 下线，抓紧）；Zen 9 款免费模型做 IP 级备份。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+      <div class="combo-card">
+        <h4>🔒 隐私优先本地流</h4>
+        <p><b>自部署</b>：GLM-5.3 Unsloth UD-IQ2_M（24GB 显存 + 256GB 内存）或社区 239GB 2-bit 量化；<b>轻量本地</b>：Ollama 跑 Qwen3.8-27B（本周 HF 下载第一，19GB 显存）；<b>合规云端</b>：Hetzner 实验推理 API（欧盟驻留·GDPR·免卡）。HN 调研显示 68% 独立开发者月云 API 支出超 $500、72% 遭遇过数据隐私惊吓——一次性硬件投入基本能抵消。</p>
+        <span class="cost">月成本 ¥0（硬件折旧另算）</span>
+      </div>
+      <div class="combo-card">
+        <h4>🔀 一 key 聚合懒人流</h4>
+        <p>用 <b>FreeLLMAPI</b>（开源自托管）把 10+ 免费层聚成一个 OpenAI 兼容端点，某家限流自动切下一家；用 <b>freellm.net Vault</b> 加密存放所有 key，不再翻 txt；用 freellm.net 的<b>一键配置生成器</b>直接产出 Claude Code / Cursor / Codex 的配置片段，30 秒接好。一次配好，之后只改 model 名。</p>
+        <span class="cost">月成本 ¥0</span>
+      </div>
+      <div class="combo-card">
+        <h4>⏰ 限免窗口冲刺流（本周限定）</h4>
+        <p><b>770B 重活</b>：WorkBuddy Hy4 preview（免费两周，长文档/代码库理解/批量报告）；<b>Hy3 兜底</b>：295B / 256K / 快慢思考融合，约 1 亿 token/日（<b>今天务必确认控制台是否还在免费期内</b>）；<b>长上下文免费档</b>：Dots3-Note（512K，9/30 下线）；<b>半价算力</b>：GLM-5.3-Flash $0.075/$0.25（至 9/9）。窗口一过就没了，先把重活排进去。</p>
+        <span class="cost">月成本 ¥0（窗口内）</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="ico">⚠️</span>风险提醒 · 避免踩坑</div>
+    <div class="risk-list">
+      <div class="risk-item">
+        <span class="icon">🎭</span>
+        <div>
+          <h4>隐身模型 = 数据诱饵：OpenRouter 只承诺「不训练」，没承诺「不保留」</h4>
+          <p>Ox Alpha 那轮留下的最大教训：OpenRouter 模型页写的是「provider does not train on your prompts or completions」，
+            但<b>保留（retention）与训练（training）是两个独立承诺，只有一个被豁免</b>。同期 OpenCode 宣传的「零数据保留」说的是它客户端这一层，
+            盖不到匿名供应商那一层。隐身模型本质上是厂商收集反馈的诱饵，窗口一过就撤——
+            <span class="hl">别把生产密钥、客户数据、NDA 内容送进匿名端点</span>。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">📅</span>
+        <div>
+          <h4>【今天确认】Hy3 限免口径打架：8/31 还是 9 月底？</h4>
+          <p>腾讯云 8/4 公告写「CodeBuddy / WorkBuddy 中 Hy3 调用限时免费<b>延长至 8 月 31 日</b>」（这已是第二次延期，7 月曾延到 8/5）；
+            但 8/28 的实测稿写「Hy3 也继续免费，一直持续到 <b>9 月底</b>」。两个信源冲突，
+            <span class="hl">以控制台实际显示为准——今天就打开看一眼</span>，别等下周一发现已恢复计费。
+            Hy3 = 295B 总参 / 21B 激活 / 256K 上下文 / 快慢思考融合。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">⚖️</span>
+        <div>
+          <h4>License 不等于 MIT：GLM-5.3 换成自定义协议，Qwen3.8-Flash-Next 才是干净的 Apache 2.0</h4>
+          <p>GLM-5.3 从 MIT 换成 <b>GLM-5.3 License</b>：做 MaaS 且连续 12 个月营收 &gt; 100 亿美元的主体，商业使用前须过智谱安全审查。
+            个人开发者与创业公司等同 MIT，<b>但若你所在主体接近这条线，务必先过法务</b>。
+            横向对比：Moonshot 对 Kimi K3 要求「月活 &gt;1 亿或月营收 &gt;$2000 万须显著标注」，DeepSeek 仍是纯 MIT，
+            <span class="hl">Qwen3.8-Flash-Next 是 Apache 2.0、零营收门槛</span>。另外 GLM-5.3 许可证<b>没有 acceptable-use 条款</b>，
+            「安全」更像延后放权重的理由而非协议约束。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">📊</span>
+        <div>
+          <h4>跑分要打折看：对比对象是实验室自己挑的</h4>
+          <p>Qwen 拿 SWE-bench Pro 62.5 对标的是 <b>Claude Opus 4.6</b>——那已经是两代之前的型号，Anthropic 当前旗舰自 7/24 起是 Opus 5。
+            Z.ai 同理。<span class="hl">第三方独立复现 Qwen 3.8 Max 时排名掉到第十</span>。
+            好消息是 DeepMind 已启动首个<b>双盲评测试点</b>，配合 Microsoft AutoSaddler 结果与新兴的 Harness Card 标准，
+            行业终于承认「不公开 harness 的跑分基本没意义」。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🚫</span>
+        <div>
+          <h4>【已确认】GitHub Models 已于 7/30 永久关停，检查你的代码库</h4>
+          <p>playground / 模型目录 / 推理 API / BYOK / actions/ai-inference / gh models CLI <b>全部下线</b>，
+            15:59 UTC 执行，无宽限期、无付费兜底，端点现返回 HTTP 410。
+            若代码库或 .github/workflows 里仍残留 <code>models.github.ai</code> / <code>models.inference.ai.azure.com</code>，
+            请改指 <b>OpenRouter</b>（换 base_url 即可）或 <b>NVIDIA NIM</b>。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🔒</span>
+        <div>
+          <h4>免费 ≠ 不保留：调用前先看 Data retention / Used for training 两栏</h4>
+          <p>部分免费端点明确写了会保留请求用于训练，例如 <code>liquid/lfm-2.5-embedding-350m:free</code>
+            的页面直接标注「Successful OpenRouter requests and embeddings may be retained and used to train Liquid models」。
+            OpenRouter 隐私设置里也需要<b>手动关闭</b>「允许会用你输入训练的供应商」，默认并不屏蔽。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🌐</span>
+        <div>
+          <h4>两大收购带来的长期不确定性</h4>
+          <p><b>NVIDIA 收购 Hugging Face</b>（约 129 亿美元，HF 托管 300 万+ 模型）与
+            <b>Stripe 收购 OpenRouter</b>（约 80 亿美元，较 5 月 13 亿估值溢价 5 倍+）。
+            短期免费层不变；长期关注开源中立性、免费额度与隐私策略调整。
+            <span class="hl">建议把关键链路分散到 NIM / 阿里百炼 / 本地部署，避免单点依赖</span>。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🧩</span>
+        <div>
+          <h4>429 不一定是额度用尽：OpenCode Zen 在 VSCode 里是请求头缺失</h4>
+          <p>CLI 正常但 IDE 报 429，通常是 VSCode 没发 Zen 期望的 HTTP 头导致走了更严的限流。
+            在 <code>~/.config/Code/User/chatLanguageModels.json</code> 里给每个模型加
+            <code>requestHeaders</code>：<code>x-opencode-project</code> / <code>x-opencode-session</code> /
+            <code>x-opencode-request</code> / <code>x-opencode-client</code> / <code>User-Agent: opencode</code>。
+            全部输入输出上限为 112000 / 16000。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">📏</span>
+        <div>
+          <h4>同模型不同分：选平台比选模型更重要</h4>
+          <p>同一模型托管在不同供应商手上分数能差 <b>10 分以上</b>——GLM-5.2 在 NIM 是 93-94，换别家可能只有 80+。
+            同理 Gemini 3.7 Flash 复测后从高分回落到 86。<span class="hl">榜单是「模型 × 平台」的组合分，不是模型分</span>，
+            抄作业时务必连同平台一起抄。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🔄</span>
+        <div>
+          <h4>免费模型轮换极快，重要业务请备两条通道</h4>
+          <p>Dots3-Note 已公告 9/30 下线，Ox Alpha 免费预览 8/27 收尾，Hy3 限免今日到期。
+            <span class="hl">任何「免费」都可能随时消失</span>。建议至少准备一条永久免费（NIM / 智谱国内版 / Google AI Studio）
+            + 一条限免冲刺（Hy4 / Hy3 / Dots3），并用开源路由器做自动故障转移。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🖼️</span>
+        <div>
+          <h4>模态能力别想当然：Hy4 Preview 是纯文本，没有视觉</h4>
+          <p>Simon Willison 实测确认 Hy4 Preview <b>不支持图像输入</b>。
+            需要读图 / 读视频的场景请走 GLM-5.3-Flash（原生图+视频+文本）、Gemini 系，
+            或 OpenCode Zen 上的 <code>mimo-v2.5-free</code>（该系列里少数带 vision 的免费项）。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🛠️</span>
+        <div>
+          <h4>自部署门槛看清楚：能跑起来 ≠ 能打</h4>
+          <p>GLM-5.3 FP8 权重 <b>756GB</b>、Hy4 更是 <b>1.56TB</b>。量化版虽能跑（UD-IQ2_M：24GB 显存 + 256GB 内存），
+            但 2-bit 量化据说只保留约 81% 精度。另外 OpenAI 已公布自研 Jalapeño 推理芯片首批跑分
+            （对比 GB200/GB300 能效 1.5–1.9×、延迟 1.7–3.6×，700W TDP 实际 &lt;550W），
+            <span class="hl">建议按「前沿能力每 token 价格继续下探 30–50%」做成本规划</span>，而非按当前价格线性外推。</p>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="icon">🔑</span>
+        <div>
+          <h4>共享 key 会过期，花几分钟注册自己的</h4>
+          <p>网上流传的共享 API key 通常<b>几小时内失效</b>，且有泄露风险。
+            freellm.net 每个条目都直链各平台注册页，Google AI Studio、NVIDIA NIM、OpenRouter、Groq、Cerebras
+            这几家都不需要信用卡，几分钟就能拿到属于自己的长期 key。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>📅 下次更新：明日 09:30 · 数据来源：freellm.net / freellm.cc 实时实测目录（451+ 免费模型、31 家供应商、
+      235 款经活体 API 验证，更新至 2026-8-29）、Hacker News + Simon Willison 博客 + 腾讯网实测
+      （Tencent Hy4 Preview 8/29 开源 · 770B/49B · 1M 上下文 · HF 1.56TB · 盲评 2.99/4.00 · WorkBuddy/CodeBuddy 免费两周）、
+      GIGAZINE / cnBeta / 稀土掘金 / 腾讯搜一搜 / worldprogramming / Fruition 08-31 刊
+      （GLM-5.3 权重 8/29 开源 · 753B/40B · FP8 756GB · Intelligence 60 · Agentic 59 · Terminal-Bench 3.0 28.3 ·
+      DeepSWE 66.9 · CyberGym 84.5% · 2436 漏洞 · GLM-5.3 License）、OpenRouter 模型页（max_price=0 免费池 ·
+      Ling 3.0 Flash Fin 262K · Dots3-Note 512K 9/30 下线 · LFM2.5-Embedding · Ox Alpha 收尾）、
+      pick-right.com / genaidaily / techmash（GLM-5.3-Flash = Ox Alpha · 320B/18B · MIT · 半价 $0.075/$0.25 至 9/9 ·
+      Qwen3.8-Flash-Next 125B/6B Apache 2.0 $0.16/$0.47）、汽研 Agent 中文社区日报
+      （腾讯 Hy3 限免 8/31 · 火山方舟 200 万 token/日 · 百炼每模型 100 万/90 天 · 智谱 GLM-4.7-Flash 永久免费 ·
+      Gemini 2.5 Flash 1440 次/日 · Groq 1000 次/日 · Cloudflare 10000 Neurons/日）、
+      ra0.cn / 51CTO / hqwc.cn（硅基流动 16 元券 · 2000 万 tokens · 小模型常驻免费）、
+      GitHub Gist NeiP4n（OpenCode Zen 9 款免费模型与 429 请求头修复，actual 26.08.2026）、
+      omidsaffari.com（OpenCode 75+ 供应商 · Go $10/月上限 $12/5h · $30/周 · $60/月）、
+      NVIDIA NIM、Google AI Studio、Groq、Cerebras、Cloudflare Workers AI、Ollama Cloud、商汤 SenseNova、
+      LLM7.io、Chutes.ai、Novita AI、Requesty、Nous Research、Hetzner 实验推理 API、Mistral、Cohere、FreeLLMAPI</p>
+    <p style="margin-top:8px;">⚠️ 免费额度可能随时间调整，请以各平台官网最新政策为准 | 评分数据来自 freellm.net 实时实测，
+      不同供应商托管同一模型分数不同，已分别标注平台 | 本期主线：🔥 腾讯 Hy4 Preview 开源（770B/49B·1M·免费两周）+
+      🔥 智谱 GLM-5.3 权重落地（753B·Intelligence 60·License 只卡百亿美元巨头）+ 🆕 免费池更新
+      （Ling 3.0 Flash Fin 262K / Dots3-Note 512K / LFM2.5-Embedding）+ ⏰ 限免窗口
+      （Hy3 口径冲突 · GLM-5.3-Flash 半价到 9/9 · Dots3 9/30 下线）</p>
+    <p style="margin-top:8px;">⭐ <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成</p>
+  </div>
+</div>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+    const current = html.getAttribute('data-theme');
+    if (current === 'dark') { html.setAttribute('data-theme', 'light'); icon.textContent = '🌙'; }
+    else { html.setAttribute('data-theme', 'dark'); icon.textContent = '☀️'; }
+    localStorage.setItem('free-llm-theme', html.getAttribute('data-theme'));
+  }
+  (function() {
+    const saved = localStorage.getItem('free-llm-theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.getElementById('theme-icon').textContent = saved === 'dark' ? '☀️' : '🌙';
+    }
+  })();
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) scrollBtn.classList.add('visible'); else scrollBtn.classList.remove('visible');
+  });
+</script>
+</body>
+</html>
