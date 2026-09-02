@@ -48,6 +48,11 @@ for f in os.listdir(base):
     if f.startswith("daily-free-llm-") and f.endswith(".html"):
         subprocess.run(["git", "add", f], capture_output=True)
 
+# Add all daily Markdown files (HTML + MD 双格式同步推送)
+for f in os.listdir(base):
+    if f.startswith("daily-free-llm-") and f.endswith(".md"):
+        subprocess.run(["git", "add", f], capture_output=True)
+
 # 3. Check if there's anything to commit
 r = subprocess.run(["git", "diff", "--cached", "--name-only"], capture_output=True, text=True)
 staged = r.stdout.strip()
