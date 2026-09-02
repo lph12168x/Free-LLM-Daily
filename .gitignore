@@ -1,3 +1,12 @@
 .workbuddy/
 *.tmp
 *.log
+
+# 抓取的中间数据（OpenRouter / OpenCode Zen 模型清单等）
+or_models*.json
+zen_models.json
+
+# 每日生成脚本（日报正文已入库，脚本不必进提交历史）
+gen_*.py
+update_index_*.py
+update_readme_*.py
