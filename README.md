@@ -6,6 +6,30 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
+## 📰 今日摘要（2026-09-03）
+
+⚠️ **今日最紧急：B.AI 免费阵容今晚收缩——DeepSeek-V4-Flash 双模型 9/3 17:00 SGT 退出免费档**：平台公告确认 `DeepSeek-V4-Flash` 与 `DeepSeek-V4-Flash-Vision-Exp` 结束免费，改为对齐 DeepSeek 官方峰谷定价——工作日 09:00–12:00、14:00–18:00（SGT）高峰 **5 折**，其余工作日时段与整个周末 **7.5 折**。**同一份公告明确：GLM-5.3-Flash、Qwen3.8-Flash、Hy3、MiMo V2.5 保持 100% 免费。** 挂在这两个模型上的批量任务或定时脚本，今天之内跑完或改路由。
+
+🔎 **Ox Alpha 真身揭晓 = 智谱 GLM-5.3-Flash——当前免费档的能力天花板**：此前在 OpenRouter / OpenCode 匿名刷榜、**6 天狂揽 42 万亿 Token** 调用的神秘模型 `Ox Alpha`，官方确认就是 GLM-5.3-Flash。规格：**320B 总参 / 18B 激活**，GLM-5 系列**首个原生全模态模型**（文本 / 图像 / 视频），**1M 上下文**，稀疏 + 线性混合注意力（注意力计算量降 3 倍、KV 缓存需求降 4.4 倍），引入流形约束超连接（mHC），预训练 30T 多模态 Token，**MIT 协议开源**。AA 智能指数 57、官方口径与 Claude Opus 4.8 持平，Z.ai Code Bench 29.0（Opus 4.8 为 29.5）。最关键的一点：**全部推理流量由约 10 万卡国产 AI 芯片（华为 / 海光 / 摩尔线程）承载**。B.AI 上直接标注 **FREE & UNLIMITED**；BigModel 限时半价 0.4/1.4 元每百万 tokens（9/9 24:00 恢复 0.8/2.8）。
+
+🆕 **Meta Muse Spark 1.3 今日发布，Zen 上免费 ID 同步上架**：已在 Muse Code 与 Meta Model API 上线，主打 agentic 与 coding。相比 1.2：**工具调用减少约 20%、token 消耗降低约 25%**，支持单线程内跑更长周期的多工作流任务，会主动追问澄清、卡住时上报、关键操作前确认。官方称成本 "almost too cheap to meter"，扎克伯格预告开放权重。OpenCode Zen 上 `muse-spark-1.3-contributor-free` 立即可用——⚠️ 但 Contributor 版明码标价是「授权用你的 prompt 与 completion 训练未来 Meta 模型」，且仅对 Meta 允许的地区开放。
+
+🆕 **新平台发现：AIHubMix，56 款免费模型，$1 充值解锁永久日配额**：本期挖到的性价比最高的一站式免费网关。注册无需信用卡，**先送 10 次试用调用且永不过期**；一次性充值任意金额（最低 $1）后，**全部 56 款永久切换为日配额：100 请求/天 · 10 请求/分钟 · 1M tokens/天，每日重置**。三种协议全支持（Chat Completions / Messages / Responses），一个 Key 打通，Cursor / Cline / Cherry Studio / LiteLLM 改 base_url 即用。近 30 天真实跑量 **33.2B tokens / 265K 请求 / 56 款全部在用**，用量 Top4：coding-glm-5.3-free（28.2%）、coding-glm-5.3-flash-free（20.8%）、coding-glm-5.2-free（13.5%）、coding-kimi-k3-free（5.5%）。⚠️ 注意 1M tokens/天是 **56 款共用一个池子**，不是每款各 1M。
+
+🆕 **华为云码道体验版套餐 9/1 正式上线：¥0 / 500 万 Tokens 月 / 50 席位**：个人试用无需付费、无需实名。与「码力续航计划」**每日 1000 万免费 tokens**（当日清零、次日满血重置，总池价值 100 万元发完即止）叠加，8/31 起福利模型池新增 GLM-5.3-Flash。⚠️ 硬限制：只能在码道 IDE / 插件 / CLI 内消费，**不可导出 API Key**。
+
+🆕 **开源三连发，本地部署门槛降到 2–3 张高端卡**：**GLM-5.3 全量开源**——753B 参数、权重约 756GB，社区 1-bit GGUF 压到约 217GB；**Qwen3.8-Flash**——125B 总参 / 仅 6B 激活，Qwen4 架构先导，GDNQSA 混合注意力 + 51B N-gram Embedding 外挂记忆库，训练成本较前代**下降 90%**，1-bit GGUF 约 72.5GB（单张 RTX 6000 可装）；**腾讯 Hy4 Preview**——770B 总参 / 49B 激活，Apache 2.0，1-bit GGUF 约 229GB。
+
+🆕 **两个零门槛免费端点（Qwen3.8-Flash-Next，FP8）**：① Empero 实验室 `https://free.empero.org/v1`，API Key 填 `free`，4×B200 集群、官方称无限 Token；② HuggingFace 公共端点 `https://pnywsahxhac1qjbo.us-east-2.aws.endpoints.huggingface.cloud/v1`，API Key 填 `none`，模型名 `Qwen/Qwen3.8-Flash-Next`，262K 上下文、支持视觉多模态与工具调用、实测 >100 tok/s。⚠️ 这类免费公共端点通常只存活几天，请勿压测。
+
+📉 **OpenRouter 免费池收缩 21 → 18**：424 款模型中 prompt/completion 同时为 0 的 **18 款**，而 9/2 两轮清点均为 21 款，3 天内**净减 3 款**。1M 上下文档位仍在：inkling、inkling-small、minimax-m3、nemotron-3.5-lightning、nemotron-3-ultra-550b。未充值账户仅 50 请求/天。
+
+🏆 **量大能用的先进模型 Top 12（9/3）**：① GLM-5.3-Flash / Ox Alpha（B.AI，96）；② Muse Spark 1.3（Meta / Zen，95）；③ MiniMax M3（1M 上下文 / 943K 输出，9/6 到期，93）；④ Qwen3.8-Flash（125B-A6B，92）；⑤ GLM-5.3（BigModel 限时免费，91）；⑥ DeepSeek-V4-Pro / V4-Flash（华为码道每日 1000 万，90）；⑦ Nemotron 3 Ultra 550B（89）；⑧ Kimi K3（1.05M 上下文，88）；⑨ Hy3 腾讯混元（87）；⑩ MiMo V2.5 小米（86）；⑪ Inkling / Inkling Small（1M 推理型，85）；⑫ Gemini 3.8 Flash（四模态 1M，84）。
+
+⏰ **本周到期红线**：**9/3 17:00 SGT（今天）** B.AI 的 DeepSeek-V4-Flash 与 V4-Flash-Vision-Exp 退出免费档；**9/6** MiniMax × GMI Cloud 14 天不限量窗口结束（M3 / M2.7 / Speech 2.8 / Music 3.0），同日 Vercel AI Gateway `minimax/minimax-m3-free` 预计停用；**9/9 24:00** GLM-5.3-Flash 半价到期（$0.075/$0.25 → $0.15/$0.50）；**9/10 23:59** 腾讯 Hy4 Preview 限免结束；**9/30** 火山方舟 Q3 普惠 500 万/天结束、腾讯 Hy3 限免结束、Dots3-Note Preview `:free`（512K）下线。
+
+⚠️ **风险提醒**：**GMI Cloud 的「免费」只有 4 个模型**——零余额下其余 80+ 模型（含 GLM-5.3-Flash、GPT-5.5、DeepSeek、Kimi K3）全部返回 `402 Insufficient balance`，图像生成与 MiniMax-H3 也不在免费范围，网上「80+ 模型免费」是误读；**四家老牌免费层已确认失效**——GitHub Models 7/30 退役返回 HTTP 410、Cerebras 8 月起需绑卡（$5 / 30 天）、SambaNova 与 Together AI 返回 `PAYMENT_METHOD_REQUIRED`；**火山方舟免费额度没有熔断开关**，超用直接按量出账单，务必自设 Token 熔断（网传「9 月免费额度已结束」经核实是误传）；**Zen 的 8 个免费 ID 全部是「数据换免费」**，涉及客户代码只用 `laguna-s-2.1-free` 或 `deepseek-v4-flash-free`。
+
 ## 📰 今日摘要（2026-09-02）
 
 🔥 **华为码道 CodeArts「码力续航计划」每日白送 1000 万 tokens——单日额度最大的零门槛免费，9/1 上新 GLM-5.3-Flash**：注册华为云账号并开通码道体验版后**登录即每日领 1000 万 tokens**，额度当天有效、0 点清零不累计，**不用绑信用卡、不用邀请裂变**，第一期总池价值 100 万元 tokens 先到先得。福利模型池当前含 `deepseek-v4-pro-0813`、`deepseek-v4-flash-0731`，并于 **9/1 新上 `glm-5.3-flash`**；体验版另含每天可用的 4 个内置免费模型（GLM-5.2 / OpenPangu-2.0-Flash / GLM-4.7-ArkTS-SPARK / OpenPangu-2.0-Pro）。⚠️ **硬限制：tokens 只能在码道 IDE / VS Code 插件 / JetBrains 插件 / CLI 内消费，不能导出成自己的 API Key 接外部系统**——这是它和自购额度最大的区别。同期还送 720 核时免费云开发环境与免费 AI Shell。
