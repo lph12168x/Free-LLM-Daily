@@ -11,3 +11,6 @@ zen_*.json
 gen_*.py
 update_index_*.py
 update_readme_*.py
+
+# Python cache
+__pycache__/
