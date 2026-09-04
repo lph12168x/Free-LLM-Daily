@@ -6,6 +6,28 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
+## 📰 今日摘要（2026-09-04）
+
+🆕 **头号新闻：AMD 入局，Radeon Cloud Token Factory 免费开放 4 款模型 API** —— AMD 中国开发者站（`developer.amd.com.cn`）上线 **Token Factory**（BETA），Public Free Model APIs 专区现有 4 款：`DeepSeek-V4-Flash-0731`（284B MoE、**1,048,576 上下文**、支持流式 / 工具调用 / 思考模式）、`DeepSeek-V4-Flash-Vision-Exp`（1M 上下文视觉版，标注 **Limited Free** 限量免费）、`Qwen3.8-Flash-Next`（256K）、`MiniCPM5-1B`（OpenBMB，128K，首字延迟极低）。它罕见地同时凑齐三件事：**国内直连、免绑信用卡、每天重置额度**——邮箱 / 手机号 / GitHub / CSDN / 魔搭一键登录，不用翻墙。Base URL `https://developer.amd.com.cn/radeon/api/v1`，Key 以 `rc-` 开头，**4 款免费模型共用同一个 Key**，切 `model` 即可。更特别的是**原生双协议**：一套 Key 同时兼容 OpenAI `/chat/completions` 与 Anthropic `/messages`，不用自己搭转换层。**OpenCode 已原生集成**，实测 Claude Code（CC Switch）、Cline、Continue、Cherry Studio、LangChain、Cursor 都能直接填；⚠️ **ZCode 目前会报参数错误，暂不支持**。
+
+💰 **AMD 额度必须自己查，别信教程里的数字** —— 官方 Usage API 文档示例写的是 `daily_cost_limit_usd: 10`，但**近期多个实测反馈新注册账号看到的是每天 1 美元**，官方也明说不同账户额度可能不同、以后可能调整。额度**每天早上 8 点重置**。按官方积分规则（输入 0.14 pts / 百万、输出 0.28、缓存读取 0.0028）折算，1 美元/天约合 **650 万 tokens**，10 美元档约 6500 万，命中 KV Cache 还能更多。限速：单 Key 30 RPM、单 IP 120 RPM、**单 Key 并发 8**、账户网关 20 RPM。查询：`curl "https://radeon-global.anruicloud.com/api/profile/model-usage?include_recent=true" -H "Authorization: Bearer rc-你的Key"`，看 `daily_cost_limit_usd` 与 `daily_cost_remaining_usd`。⚠️ **Daily budget 从早期的 10 美元调到 1 美元，这个信号值得警惕。** 两个短板：首字延迟实测约 **22 秒**、输出 **28–30 tok/s**，明显慢于官方付费接口；并发必须自己控队列并对 429 做退避。
+
+🆕 **智谱「Flash × ZCode」夜间畅用：9/3–9/20，每晚 23:00–09:00 完全免费** —— 智谱 9/3 深夜宣布，GLM Coding Plan 推出夜间畅用活动：**每晚 23:00 至次日 09:00（北京时间 UTC+8，含周末及公共假日）**，付费套餐用户无需手动开启、系统自动生效。规则两条：① 通过官方编程工具 **ZCode** 调用 GLM-5.3-Flash，**额度消耗为 0，等于完全免费畅用**；② 通过套餐支持的其他 Agent 调用，**可用额度翻倍（×2）**。⚠️ 仅限 GLM-5.3-Flash，错峰时段选 GLM-5.3 仍按套餐标准规则扣；且**前提是 GLM Coding Plan 付费套餐用户**——这是给已付费用户的夜间加成，不是面向所有人的白嫖。GLM-5.3-Flash 规格：**320B 总参 / 18B 激活**，GLM-5 系列首个原生多模态（文本 / 图像 / 视频），**1M 上下文**，AA 智能指数 57 分（与 Claude Opus 4.8 持平），定价仅为 GLM-5.2 的 **1/10**（0.4 / 1.4 元每百万，半价至 9/9 24:00）。它此前的匿名身份是 `Ox Alpha`，揭晓后已跃居 OpenRouter 排行榜首位。
+
+🆕 **商汤 Token Plan：把智谱旗舰 GLM-5.2 纳入免费公测** —— 入口 `sensenova.cn/token-plan`，Base URL `https://token.sensenova.cn/v1`，标准 OpenAI 兼容，手机号 + 实名认证后建 Key。额度是 **5 小时滚动刷新**——SenseNova 系列通常 1500 次 / 5 小时，DeepSeek 与 GLM-5.2 也有充足额度。和 AMD「每天一桶」相比，商汤是「每 5 小时一小桶」，**持续高强度使用时更抗造**。⚠️ 隐藏细节：控制台「当前窗口调用余量」页面**可能看不到 GLM-5.2 字样**（只显示 SenseNova 和 DeepSeek），但直接在模型列表里切 `glm-5.2` 是能成功调用的，底层已全量支持，只是前端展示低调。
+
+✅ **B.AI 收缩已落地，但 4 款仍 100% 免费** —— 昨天预告的调整已于 **9 月 3 日 17:00（SGT）** 生效：`DeepSeek-V4-Flash` 与 `DeepSeek-V4-Flash-Vision-Exp` 结束免费档，转为对齐 DeepSeek 官方峰谷定价——工作日 09:00–12:00、14:00–18:00（SGT）高峰 **5 折**，其余工作日时段与整个周末 **7.5 折**。**GLM-5.3-Flash、Qwen3.8-Flash、腾讯 Hy3、小米 MiMo-V2.5 继续保持 100% 免费。** 平台同时披露了这次免费活动的量级：累计 Token 吞吐 **超 10.9 万亿**、**8956 万次 API 调用**、**23.9 万新注册用户**（其中 23.5 万是 API 开发者），单日吞吐一度破 1.33 万亿 Token。
+
+🔎 **数据核对：OpenCode Zen 定价页 Free 行 6 → 7 款** —— 新增 `muse-spark-1.3-contributor-free`。定价页 7 款为：Big Pickle、MiMo-V2.5 Free、Ling 3.0 Flash Fin Free、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Muse Spark 1.3 / 1.2 Contributor Free。接口 `/zen/v1/models` 实拉 66 款，共 **9 个免费 ID**（定价页 7 款 + 接口额外的 `deepseek-v4-flash-free`、`laguna-s-2.1-free`）。⚠️ **全部为「数据换免费」**，涉及客户代码只用后两个。
+
+🔎 **数据校正：OpenRouter 免费池 21 款，与 9/3 快照零增减** —— 9/4 脚本清点 427 款模型中 **21 款** `prompt` 与 `completion` 同时为 0，与 9/3 存档快照一致。⚠️ 昨日日报正文记录的 **18 是当日盘中快照**，现已回补至 21。免费池在 18–21 之间来回波动，别把单一 ID 写死。
+
+🏆 **量大能用的先进模型 Top 12（9/4）**：① GLM-5.3-Flash / Ox Alpha（B.AI / ZCode 夜间免费，96）；② DeepSeek-V4-Flash（🆕 AMD，284B MoE / 1M 上下文 / 国内直连免绑卡，94）；③ GLM-5.2（🆕 商汤 Token Plan，1M 无损上下文 / 5 小时滚动刷新，92）；④ Qwen3.8-Flash-Next（🆕 AMD，262K / 训练成本 -90% / 开源，91）；⑤ MiniMax M3（1M 上下文 / 943K 输出，**9/6 到期**，90）；⑥ Nemotron 3 Ultra 550B（NIM 唯一推荐，89）；⑦ Kimi K3（freellm 89 分 / 62.4 tok/s，88）；⑧ Muse Spark 1.3（Zen 新增免费 ID，87）；⑨ Hy3 腾讯混元（86）；⑩ Inkling / Inkling Small（1M 推理型，85）；⑪ MiMo V2.5 小米（84）；⑫ MiniCPM5-1B（🆕 AMD，1B 轻量 / 高频流水线，82）。
+
+⏰ **本周到期红线**：**9/6（剩 2 天）** MiniMax × GMI Cloud 14 天不限量窗口结束，同日 Vercel AI Gateway `minimax/minimax-m3-free` 预计停用；**9/9 24:00** GLM-5.3-Flash 半价到期（0.4/1.4 → 0.8/2.8 元）；**9/10 23:59** 腾讯 Hy4 Preview 限免结束；**9/20** 智谱夜间畅用窗口结束；**9/24** 百度 Comate 限免第二弹；**9/30** 腾讯 Hy3 限免结束、火山方舟 Q3 普惠 500 万/天结束、Dots3-Note Preview `:free`（512K）下线。
+
+⚠️ **风险提醒**：**AMD 的「免费」有每日预算上限且口径不一**——官方示例 $10/天，实测不少新账号只有 $1/天，Daily budget 从 10 美元调到 1 美元这个信号值得警惕，别照抄教程数字，自己拉 Usage API；**AMD 慢、NIM 更慢**——AMD 首字约 22 秒 / 28–30 tok/s，NIM 上 Kimi K3 62.4、Gemma 4 31B 50.9、DeepSeek V4 Flash 仅 27.3 tok/s（Groq 约 500），别把免费端点当主力链路；**智谱夜间免费是付费套餐的加成，不是白嫖**，且仅限 GLM-5.3-Flash；**GMI Cloud 的「免费」只有 4 个模型**，其余 80+ 全部返回 `402`；**免费午餐正在一张张收走**——美团 LongCat 2.0 免费已停，八月底是个分水岭；**火山方舟免费额度没有熔断开关**，超用直接出账单。
+
 ## 📰 今日摘要（2026-09-03）
 
 ⚠️ **今日最紧急：B.AI 免费阵容今晚收缩——DeepSeek-V4-Flash 双模型 9/3 17:00 SGT 退出免费档**：平台公告确认 `DeepSeek-V4-Flash` 与 `DeepSeek-V4-Flash-Vision-Exp` 结束免费，改为对齐 DeepSeek 官方峰谷定价——工作日 09:00–12:00、14:00–18:00（SGT）高峰 **5 折**，其余工作日时段与整个周末 **7.5 折**。**同一份公告明确：GLM-5.3-Flash、Qwen3.8-Flash、Hy3、MiMo V2.5 保持 100% 免费。** 挂在这两个模型上的批量任务或定时脚本，今天之内跑完或改路由。
