@@ -6,6 +6,26 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
+## 📰 今日摘要（2026-09-07）
+
+🆕 **头号新闻：科大讯飞今日正式发布星火 X2.5（293B）基座模型** —— 9 月 7 日，科大讯飞发布 **星火 X2.5（293B）**，升级重点在**代码生成与智能体能力**，官方定位为「基于全国产算力的全新主力通用大模型」，落地时间比此前流传的 1024 开发者节更早。对免费党真正有意义的是配套动作：**9 月 1 日已开源的 X2.5-4B 与 X2.5-1.7B 端侧模型**，是业界首个原生支持最长 **100 万 token 上下文**的端侧模型，权重 / 代码 / 文档同步上线 Hugging Face 与魔搭，**免费、免授权、可商用**，兼容 llama.cpp / vLLM / SGLang，可用 Ollama、LM Studio 一键部署，对应 API 已在**讯飞星辰 MaaS 平台限时免费**开放。4B 在国产算力平台上运行流畅，1.7B 适合内存受限的嵌入式设备——**隐私数据不出本地，金融 / 政务场景刚需**。⚠️ 4B/1.7B 是端侧、293B 是云端基座，293B 的免费额度官方尚未公布。
+
+🆕 **蚂蚁 inclusionAI Ling 3.0 Flash Sante 医疗版上架 OpenRouter 免费区** —— `inclusionai/ling-3.0-flash-sante:free` 于 9/4 进入 OpenRouter 目录，**输入与输出均标价 $0**。基于 Ling 3.0 Flash 微调的稀疏 MoE：**总参数 124B、激活仅 5.1B**，上下文 262,144、最大输出 32,768，`tools` / `tool_choice` / `reasoning` / `include_reasoning` / `top_k` / `logprobs` / `seed` / `repetition_penalty` 参数齐全，可直接挂函数调用做 Agent。榜单表现：**DiagnosisArena-MCQ（临床诊断）第一**，MedXpertQA-Text（专家级医学知识推理）仅次于 GPT-5.6 Sol 与 Gemini 3.6 Flash，HealthBench Professional 仅次于 GLM-5.3-Flash；安全性 MedEthicAlign 82.06 分。这是 Ling 3.0 Flash 系列**两天内第二个垂直版本**（9/3 金融版 Fin、9/4 医疗版 Sante），同一套 124B/5.1B 底座、同样的免费定价，明显是一条有节奏的垂直开源产品线。⚠️ **唯一硬伤：完全不支持图片输入**——而真实医疗场景里病历、检验报告、影像基本都是图片，另配视觉模型会吃掉它的成本优势。
+
+⏰ **MiniMax × GMI Cloud 免费窗口 9/6 到期 —— 已确认下线** —— 8/24–9/6 的 14 天不限量窗口（M3、M2.7、Speech 2.8、Music 3.0）已于 **9 月 6 日结束**，官方 deals 页与 GMI Cloud 活动页双方确认 9/6 起模型下线，需切回付费版。这条路既不承诺零数据留存、也没有不训练保证，**强制 ZDR 的会话本来就用不了**。替代路径仍在：**OpenRouter 免费池中 `minimax/minimax-m3:free` 与 `minimax/minimax-m2.7:free` 依然在列**（1M 上下文，免费档约 200 req/day），Ollama Cloud 的 minimax-m3 也还在线（freellm.net 评分 86）。
+
+✅ **B.AI 日吞吐 1.33 万亿 Token，4 款仍 100% 免费** —— 平台披露：用户破 **230 万**，15 天累计 **8.19 万亿 token**，新增 **22 万 API 用户**，单日吞吐一度破 1.33 万亿。收缩后仍 100% 免费的四款：**GLM-5.3-Flash（Ox Alpha）、Qwen3.8-Flash、腾讯 Hy3、小米 MiMo-V2.5**；DeepSeek V4 Flash 双模型转折扣——工作日 09:00–12:00、14:00–18:00 高峰 **5 折**，其余时段与周末 **2.5 折**。免费档能撑到这个体量才开始收口，本身说明这波窗口期是真的在一点点关上。
+
+🔎 **数据核对：OpenRouter 免费池 21 款（换血，非增减）** —— 9/7 脚本清点 **430 款**模型中 **21 款** `prompt` 与 `completion` 同时为 0。与 9/4 存档快照比对：**换入** `inclusionai/ling-3.0-flash-sante:free`，**换出** `z-ai/glm-5.2:free`，总数持平。懒人首选 `openrouter/free` 路由器——自动挑当前可用的免费模型，还能按视觉 / 工具调用 / 结构化输出过滤。⚠️ 免费池日内会波动，别把单一 ID 写死。
+
+🔎 **数据核对：OpenCode Zen 目录 66→70 款，免费 ID 8→7** —— 新增 `gpt-6-astra`、`muse-spark-1.3`、`deepseek-v4-flash-vision-exp`、`glm-5.3`、`glm-5.3-flash`；**`laguna-s-2.1-free` 已下架**。当前 7 个 `-free` ID（deepseek-v4-flash-free、muse-spark-1.3-contributor-free、muse-spark-1.2-contributor-free、mimo-v2.5-free、ling-3.0-flash-fin-free、nemotron-3-ultra-free、nemotron-3.5-lightning-free）+ `big-pickle` = 8 款 $0。官方定价页 Free 行仍为 6 款。config 中格式为 `opencode/<model-id>`。
+
+🏆 **量大能用的先进模型 Top 12（9/7）**：① GLM-5.3-Flash / Ox Alpha（B.AI 100% 免费 / ZCode 夜间，96）；② DeepSeek-V4-Flash（NIM 40 RPM / 商汤 / AMD，93）；③ Kimi K3（NIM 免费、freellm 评分 88，91）；④ Gemini 3.8 Flash（AI Studio 永久免费，89）；⑤ 🆕 Ling 3.0 Flash Sante（医疗垂直、262K、$0，88）；⑥ MiniMax M3（GMI 已下线，OpenRouter `:free` 仍在，87）；⑦ Qwen3.8-Flash（B.AI 免费 / 可本地部署，86）；⑧ 腾讯 Hy3（限免至 9/30，85）；⑨ 🆕 星火 X2.5-4B / 1.7B（原生 1M 上下文、免费商用，84）；⑩ Nemotron 3 Ultra 550B（双通道 $0，83）；⑪ MiMo-V2.5 小米（82）；⑫ Muse Spark 1.3（Zen Contributor 版，80）。
+
+⏰ **本周到期红线**：**9/9 24:00（剩 2 天）** GLM-5.3-Flash 半价结束（0.4/1.4 → 0.8/2.8 元每百万）；**9/9–9/10** 中国联通合作伙伴大会在上海世博中心现场派送 **1000 亿词元**（仅限现场、无线上通道，元景 MaaS 已接 200+ 模型）；**9/10 23:59** 腾讯 Hy4 Preview 限免结束（Hy3 已延期至 9/30）；**9/14** Claude Code 周限额下调 17% 生效；**9/20** 智谱夜间畅用窗口结束；**9/24** 百度 Comate 限免第二弹；**9/30** 文小言 / 腾讯 Hy3。
+
+⚠️ **风险提醒**：**免费额度的规律已经很清楚——额度变大、窗口变短、频率变高**，智谱三轮 Weekend Build 从 61 小时缩到 38 小时、ZCode 闪送 12 小时清零，看到能领的当天就点掉；**Ling Sante 有致命缺口**——不支持图片输入，真实医疗场景的病历 / 影像全部是图片；**免费不等于零风险**，NVIDIA 免费端点注明「勿提交机密数据」、Muse Spark Contributor 版以免费换取训练授权、Freebuff 用广告补贴、GMI 那路不承诺 ZDR；**免费端点速度差一个数量级**——NIM 上 DeepSeek V4 Flash 仅 27.3 tok/s、AMD 首字约 22 秒，别拿它跑交互链路；**别信「兑换码」**——主流厂从未发过通用 CDKey，网上那些基本是引流甚至钓鱼。
+
 ## 📰 今日摘要（2026-09-04）
 
 🆕 **头号新闻：AMD 入局，Radeon Cloud Token Factory 免费开放 4 款模型 API** —— AMD 中国开发者站（`developer.amd.com.cn`）上线 **Token Factory**（BETA），Public Free Model APIs 专区现有 4 款：`DeepSeek-V4-Flash-0731`（284B MoE、**1,048,576 上下文**、支持流式 / 工具调用 / 思考模式）、`DeepSeek-V4-Flash-Vision-Exp`（1M 上下文视觉版，标注 **Limited Free** 限量免费）、`Qwen3.8-Flash-Next`（256K）、`MiniCPM5-1B`（OpenBMB，128K，首字延迟极低）。它罕见地同时凑齐三件事：**国内直连、免绑信用卡、每天重置额度**——邮箱 / 手机号 / GitHub / CSDN / 魔搭一键登录，不用翻墙。Base URL `https://developer.amd.com.cn/radeon/api/v1`，Key 以 `rc-` 开头，**4 款免费模型共用同一个 Key**，切 `model` 即可。更特别的是**原生双协议**：一套 Key 同时兼容 OpenAI `/chat/completions` 与 Anthropic `/messages`，不用自己搭转换层。**OpenCode 已原生集成**，实测 Claude Code（CC Switch）、Cline、Continue、Cherry Studio、LangChain、Cursor 都能直接填；⚠️ **ZCode 目前会报参数错误，暂不支持**。
