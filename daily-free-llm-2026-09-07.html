@@ -444,6 +444,19 @@
 
   /* 内联 code：降低存在感，只做轻声标注 */
   .hot p code, .focus p code, .section p code, .tbl-wrap code { background: var(--hl-bg); color: var(--accent-3); }
+
+  /* 头条卡片误用了名次徽章渐变（rank-N 本是角标用的小面积金色/青铜渐变，
+     套到整张内容卡上会变成一整面橙黄）。整卡还原为主题色纸，
+     改用左侧 4px 色条区分优先级，文字颜色一并复位，避免白字落在浅底上。 */
+  .hot-item.rank-1, .hot-item.rank-2, .hot-item.rank-3, .hot-item.rank-other {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border-card);
+  }
+  .hot-item.rank-1 { border-left: 4px solid var(--accent-1); }
+  .hot-item.rank-2 { border-left: 4px solid var(--soft-info); }
+  .hot-item.rank-3 { border-left: 4px solid var(--soft-warn); }
+  .hot-item.rank-1 .hot-link, .hot-item.rank-2 .hot-link, .hot-item.rank-3 .hot-link { color: var(--accent-1); }
 /* === soft-palette:v1 end === */
 </style>
 <script>
