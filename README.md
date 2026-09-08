@@ -6,6 +6,28 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
+## 📰 今日摘要（2026-09-08）
+
+🆕 **头号新闻：Merge Gateway 把 GLM-5.3-Flash 打到 1 折，AA 57 分区间全球最低价** —— 新进视野的聚合网关 **Merge Gateway**（`https://api-gateway.merge.dev/v1/ai-sdk`，托管 **180 款**模型）放出限时促销：**GLM-5.3-Flash 直降 90%**，输入 **$0.012 / 1M**、输出 **$0.04 / 1M**、缓存读取 **$0.003 / 1M**，有效期至 **2026 年 9 月 30 日**。GLM-5.3-Flash 在 Artificial Analysis 智能指数上拿 **57 分**（对标 Claude Opus 4.8、高于 DeepSeek V4 Pro），Merge 这档是**所有 55 分以上模型里的全球最低价**——比 Z.ai 官方 5 折价（$0.075/$0.25）便宜 6 倍，比 9/9 恢复原价后（$0.15/$0.50）便宜 12 倍。同网关 180 款里真正标 **$0** 的只有 1 款：`nvidia/nemotron-3.5-lightning-30b-a3b`，**1M 上下文**。⚠️ 注意：这是**折扣不是免费**，要花钱，只是便宜到接近白送；第三方网关的可用性与限流需自行压测。
+
+🆕 **OrcaRouter 免费档换将（9/7）：Qwen3.8-27B → GLM-5.3 Flash** —— 聚合网关 **OrcaRouter**（117 款模型、免费档 5 款）于 9 月 7 日把免费档主力从 `qwen/qwen3.8-27b-free` 换成 **`z-ai/glm-5.3-flash`**，老用户**必须改模型名**。规格：320B 总参 / 18B 激活 MoE、45 层、**1,048,576 token 上下文**、MIT 许可、30T token 多模态语料、文本 / 图像 / 视频输入。这笔账：质量分 **4 → 8 分**（OrcaRouter 自测）、上下文 **262K → 1M**、付费定价 **$0.33/$2.40 → $0.075/$0.25**。**代价是速度**：7 天实测首字延迟 **1.96s → 7.66s**（3.9 倍）、生成 **196 → 74.2 tok/s**（2.6 倍）。免费档全量 5 款：`deepseek-v4-flash-free`（1M）、GLM-5.3 Flash、`hy3-free`（256K）、`orcarouter/auto`（128K）、`orcarouter/free`（65K）。⚠️ 额度不公开；429 带 `Retry-After` 是分钟 / 日窗口满，不带则是单条 prompt 超长；免费与付费容量隔离，不会静默回落；官方明说是 best-effort，不能当生产容量。
+
+⚠️ **OpenRouter 免费池 18 → 16：MiniMax 双模型免费版下架** —— 9/8 脚本清点 **428 款**模型中 **16 款** `prompt` 与 `completion` 同时为 $0，昨日为 18 款。**换出的是 `minimax/minimax-m3:free` 与 `minimax/minimax-m2.7:free`，换入 0 款。** 这次掉的分量不轻：MiniMax M3 免费版在 9/6 快照里**周吞吐 5.02T token、全站第 6 名、66.5M 次请求**，是免费池里跑量最大的几款之一；第 29 名的 M2.7 同时消失。免费池近期轨迹：9/3 十八款 → 9/4 十八款 → 9/7 十八款 → **9/8 十六款**，稳定四天后第一次净减。**MiniMax 免费通道现状**：GMI Cloud 那条 9/6 已到期，OpenRouter 这两条今天也撤了，还剩 **Ollama Cloud**（freellm.net 核验 86 分、1M 上下文）与 **NVIDIA NIM**（84 分、40 RPM、512K 输出）。
+
+⏰ **明天 9/9：GLM-5.3-Flash 官方 5 折窗口到期** —— Z.ai 发布期折扣由 **$0.075/$0.25** 恢复 **$0.15/$0.50**。想锁低价的今天动手，或干脆转 Merge Gateway 的 1 折（更便宜、还多 20 天窗口）。
+
+🔎 **数据核对：OpenCode Zen 70 款 / 8 个 `-free` ID，连续两日零增减** —— 免费 ID：`big-pickle`、`deepseek-v4-flash-free`、`mimo-v2.5-free`、`ling-3.0-flash-fin-free`、`nemotron-3-ultra-free`、`nemotron-3.5-lightning-free`、`muse-spark-1.3-contributor-free`、`muse-spark-1.2-contributor-free`。⚠️ 官方定价页 Free 行只列 **6 款**，与 API 差 2 款——这类「API 有、文档没有」的通常是灰度或即将回收的产物，以 API 为准但要打折看。
+
+🏆 **freellm.net 今日核验榜：Kimi K3 以 92 分登顶** —— 全站第一，比第二名 Gemini 3.8 Flash（86）高出 6 分。1M 上下文、最大输出 131K、视觉 + 推理，NVIDIA NIM 免费通道 40 RPM。⚠️ 注意 ModelScope 上同名条目评测分只有 65、上下文显示 8K——那是另一条质量差很多的通道，别选错。全站规模：**453+ 模型 / 31 家平台 / 291 款免信用卡**。
+
+✅ **B.AI 日吞吐 1.33 万亿 Token，4 款仍 100% 免费** —— 用户破 **230 万**、15 天累计 8.19 万亿 token、新增 22 万 API 用户。仍 100% 免费的四款：**GLM-5.3-Flash（Ox Alpha）、Qwen3.8-Flash、腾讯 Hy3、小米 MiMo-V2.5**。
+
+🏆 **量大能用的先进模型 Top 12（9/8）**：① GLM-5.3-Flash / Ox Alpha（Merge 1 折 / B.AI / ZCode 夜间 / OrcaRouter 免费，96）；② DeepSeek-V4-Flash（NIM / 商汤 / AMD / OrcaRouter，93）；③ Kimi K3（NIM 免费、今日榜首 92，92）；④ 🆕 Nemotron 3.5 Lightning 30B-A3B（Merge $0 / OpenRouter / Zen 三通道，89）；⑤ Gemini 3.8 Flash（AI Studio 永久免费，88）；⑥ Nemotron 3 Ultra 550B（周吞吐 3.64T，87）；⑦ Qwen3.8-Flash（B.AI 免费 / ModelScope 88 分，86）；⑧ MiniMax M3（OpenRouter 已下架，Ollama Cloud / NIM，85）；⑨ 腾讯 Hy3 / Hy4 preview（84）；⑩ Ling 3.0 Flash Sante / Fin（83）；⑪ MiMo-V2.5 小米（82）；⑫ Muse Spark 1.3（Zen Contributor 版，80）。
+
+⏰ **到期红线**：**9/9（明天）** Z.ai 官方 GLM-5.3-Flash 5 折结束（$0.075/$0.25 → $0.15/$0.50）；**9/10 前后** 腾讯 Hy4 preview 两周免费试用（Hy3 到 9/30）；**9/20** 智谱 ZCode 夜间畅用；**9/30** Merge Gateway 1 折到期（本期性价比最高、窗口最长）与腾讯 Hy3 国内通道限免。**已到期**：MiniMax × GMI Cloud（9/6）；**已下架**：OpenRouter MiniMax 免费版（今日）。
+
+⚠️ **风险提醒**：**免费池开始净减，MiniMax 是最响的一记警钟**——连续四天 18 款后今天第一次净减到 16 款，掉的还是跑量最大的两款，任何单一免费通道都不该成为生产依赖，主力模型至少配两条不同厂商的通道；**官方口径与 API 口径不一致时以 API 为准但要打折看**——Zen 的 API 返回 8 个 `-free` ID 而官价页只列 6 款，反过来第三方聚合站的免费清单普遍滞后甚至虚高；**免费档换强模型几乎必然伴随降速**——OrcaRouter 换将后首字从 1.96s 涨到 7.66s，交互类应用受影响最大；**免费不等于零风险**——NVIDIA 免费端点注明「勿提交机密数据」、Muse Spark Contributor 版以免费换取训练授权、Ox Alpha 匿名期曾出现「不用于训练但会保留 prompt」的条款区分；**别信「兑换码」**——主流厂从未发过通用 CDKey，网上那些基本是引流甚至钓鱼。
+
 ## 📰 今日摘要（2026-09-07）
 
 🆕 **头号新闻：科大讯飞今日正式发布星火 X2.5（293B）基座模型** —— 9 月 7 日，科大讯飞发布 **星火 X2.5（293B）**，升级重点在**代码生成与智能体能力**，官方定位为「基于全国产算力的全新主力通用大模型」，落地时间比此前流传的 1024 开发者节更早。对免费党真正有意义的是配套动作：**9 月 1 日已开源的 X2.5-4B 与 X2.5-1.7B 端侧模型**，是业界首个原生支持最长 **100 万 token 上下文**的端侧模型，权重 / 代码 / 文档同步上线 Hugging Face 与魔搭，**免费、免授权、可商用**，兼容 llama.cpp / vLLM / SGLang，可用 Ollama、LM Studio 一键部署，对应 API 已在**讯飞星辰 MaaS 平台限时免费**开放。4B 在国产算力平台上运行流畅，1.7B 适合内存受限的嵌入式设备——**隐私数据不出本地，金融 / 政务场景刚需**。⚠️ 4B/1.7B 是端侧、293B 是云端基座，293B 的免费额度官方尚未公布。
