@@ -45,7 +45,7 @@ nav_css = '''
 '''
 
 css_marker = "Page navigation bar (prev / home / latest / next)"
-nav_div_re = re.compile(r'<div class="page-nav">.*?</div>\n?', re.S)
+nav_div_re = re.compile(r'<div class="page-nav"(?:\s[^>]*)?>.*?</div>\n?', re.S)
 
 changed = 0
 for i, name in enumerate(names):
