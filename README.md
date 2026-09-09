@@ -6,27 +6,22 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-09-08）
+## 📰 今日摘要（2026-09-09）
 
-🆕 **头号新闻：Merge Gateway 把 GLM-5.3-Flash 打到 1 折，AA 57 分区间全球最低价** —— 新进视野的聚合网关 **Merge Gateway**（`https://api-gateway.merge.dev/v1/ai-sdk`，托管 **180 款**模型）放出限时促销：**GLM-5.3-Flash 直降 90%**，输入 **$0.012 / 1M**、输出 **$0.04 / 1M**、缓存读取 **$0.003 / 1M**，有效期至 **2026 年 9 月 30 日**。GLM-5.3-Flash 在 Artificial Analysis 智能指数上拿 **57 分**（对标 Claude Opus 4.8、高于 DeepSeek V4 Pro），Merge 这档是**所有 55 分以上模型里的全球最低价**——比 Z.ai 官方 5 折价（$0.075/$0.25）便宜 6 倍，比 9/9 恢复原价后（$0.15/$0.50）便宜 12 倍。同网关 180 款里真正标 **$0** 的只有 1 款：`nvidia/nemotron-3.5-lightning-30b-a3b`，**1M 上下文**。⚠️ 注意：这是**折扣不是免费**，要花钱，只是便宜到接近白送；第三方网关的可用性与限流需自行压测。
+🆕 **蚂蚁开源 Ling-3.0-flash-VL：原生多模态 + 视觉反馈闭环，今日头条 #1** —— 蚂蚁集团今日（9/9）正式发布并开源百灵系列首个原生多模态模型 **`Ling-3.0-flash-VL`**：**124B 总参 / 5.5B 激活**的 MoE、**256K 上下文**、原生支持图像 / 文本 / 视频输入，核心创新是「**观察 → 行动 → 验证 → 修正**」的视觉反馈闭环 —— 不再是「看图一次出结果」，而是能拿渲染结果对比自我修正。Artificial Analysis 智能指数 v4.1.1 比纯文本版 +4 分；**Image-to-WebDev Arena 官方评测得分高于 GPT-5.4**。BF16 / FP8 权重已开源到 Hugging Face 与 ModelScope，**Ling Studio 已上线并提供免费体验**。
 
-🆕 **OrcaRouter 免费档换将（9/7）：Qwen3.8-27B → GLM-5.3 Flash** —— 聚合网关 **OrcaRouter**（117 款模型、免费档 5 款）于 9 月 7 日把免费档主力从 `qwen/qwen3.8-27b-free` 换成 **`z-ai/glm-5.3-flash`**，老用户**必须改模型名**。规格：320B 总参 / 18B 激活 MoE、45 层、**1,048,576 token 上下文**、MIT 许可、30T token 多模态语料、文本 / 图像 / 视频输入。这笔账：质量分 **4 → 8 分**（OrcaRouter 自测）、上下文 **262K → 1M**、付费定价 **$0.33/$2.40 → $0.075/$0.25**。**代价是速度**：7 天实测首字延迟 **1.96s → 7.66s**（3.9 倍）、生成 **196 → 74.2 tok/s**（2.6 倍）。免费档全量 5 款：`deepseek-v4-flash-free`（1M）、GLM-5.3 Flash、`hy3-free`（256K）、`orcarouter/auto`（128K）、`orcarouter/free`（65K）。⚠️ 额度不公开；429 带 `Retry-After` 是分钟 / 日窗口满，不带则是单条 prompt 超长；免费与付费容量隔离，不会静默回落；官方明说是 best-effort，不能当生产容量。
+⏰ **GLM-5.3-Flash 官方 5 折今晚 24:00 到期，但 B.AI 承诺继续零成本** —— Z.ai 官方发布期 5 折窗口今晚关闭：`$0.075/$0.25` 恢复 `$0.15/$0.50`。但 **B.AI 9/8 已明确公告**智谱折扣到期后仍向全球开发者**零成本**提供 GLM-5.3-Flash —— 它是 B.AI 平台上用量最大的模型（320B-A18B、1M 上下文，日吞吐 1.33 万亿、用户 230 万）。走 B.AI 的**什么都不用改**；想花几分钱换不限流的改走 Merge Gateway 1 折（`$0.012/$0.04`，至 9/30）。⚠️ 这是**平台补贴**承诺，不是 Z.ai 官方条款，要留备选通道。
 
-⚠️ **OpenRouter 免费池 18 → 16：MiniMax 双模型免费版下架** —— 9/8 脚本清点 **428 款**模型中 **16 款** `prompt` 与 `completion` 同时为 $0，昨日为 18 款。**换出的是 `minimax/minimax-m3:free` 与 `minimax/minimax-m2.7:free`，换入 0 款。** 这次掉的分量不轻：MiniMax M3 免费版在 9/6 快照里**周吞吐 5.02T token、全站第 6 名、66.5M 次请求**，是免费池里跑量最大的几款之一；第 29 名的 M2.7 同时消失。免费池近期轨迹：9/3 十八款 → 9/4 十八款 → 9/7 十八款 → **9/8 十六款**，稳定四天后第一次净减。**MiniMax 免费通道现状**：GMI Cloud 那条 9/6 已到期，OpenRouter 这两条今天也撤了，还剩 **Ollama Cloud**（freellm.net 核验 86 分、1M 上下文）与 **NVIDIA NIM**（84 分、40 RPM、512K 输出）。
+🇨🇳 **商汤 SenseNova Token Plan 升级：6 万积分 / 5 小时，20 款模型进通用积分池** —— Free 公测档 **¥0/月、6 万积分 / 5 小时滚动刷新 + 60 万积分 / 周**，不绑卡、不充值，一个账号最多 20 个 API Key。Free 档原生模型含 SenseNova 6.8 Flash Lite / U1 Fast / U1.5 Lite；**通用积分池可跑 Kimi K3、DeepSeek V4 Pro/Flash、GLM-5.2/5.3、MiniMax M3、Qwen3.8 Max 等 20 款**。Base URL：`https://token.sensenova.cn/v1`——这是目前**国内直连通道里「先进模型覆盖最全 + 滚动额度最大」的一条**。
 
-⏰ **明天 9/9：GLM-5.3-Flash 官方 5 折窗口到期** —— Z.ai 发布期折扣由 **$0.075/$0.25** 恢复 **$0.15/$0.50**。想锁低价的今天动手，或干脆转 Merge Gateway 的 1 折（更便宜、还多 20 天窗口）。
+🎉 **Nex-N2.5 Mini / Pro 双模型免费上线 OpenRouter，免费池 16 → 18** —— Nex AGI 的 N2.5 系列 9/8 晚间登陆 OpenRouter，**Mini 与 Pro 同时 $0**。262K 上下文、工具调用、可调推理强度，Pro 额外支持图像输入。定位是「把目标变成可运行、可验证的结果」，核心是带视觉反馈的 agentic coding。
 
-🔎 **数据核对：OpenCode Zen 70 款 / 8 个 `-free` ID，连续两日零增减** —— 免费 ID：`big-pickle`、`deepseek-v4-flash-free`、`mimo-v2.5-free`、`ling-3.0-flash-fin-free`、`nemotron-3-ultra-free`、`nemotron-3.5-lightning-free`、`muse-spark-1.3-contributor-free`、`muse-spark-1.2-contributor-free`。⚠️ 官方定价页 Free 行只列 **6 款**，与 API 差 2 款——这类「API 有、文档没有」的通常是灰度或即将回收的产物，以 API 为准但要打折看。
+📊 **其他重点动态**：**Inception Mercury 2.5 上线 OpenRouter**（$0.04/M 输入、扩散式 LLM、260K；新号送 1 亿 tokens 一次性额度）；**NVIDIA 129.3 亿美元收购 Hugging Face**，承诺平台保持开放、不强制 NVIDIA 算力，关注 HF Router $0.10/月免费额度与开源权重分发走向；**星火 X2.5-4B 登顶 HF Trending 第一**，端侧唯一 1M 上下文、Apache-2.0 免费商用、昇腾全流程训练，星辰 MaaS 限时免费；**OpenRouter 免费池 18**（NVIDIA 5 / Google 4 / inclusionAI 2 / nex-agi 2 / poolside 2 / Thinking Machines 2）；**Zen 70 款 / 8 个 `-free` ID**；**freellm.net 核验榜 Kimi K3 92 分继续登顶**。
 
-🏆 **freellm.net 今日核验榜：Kimi K3 以 92 分登顶** —— 全站第一，比第二名 Gemini 3.8 Flash（86）高出 6 分。1M 上下文、最大输出 131K、视觉 + 推理，NVIDIA NIM 免费通道 40 RPM。⚠️ 注意 ModelScope 上同名条目评测分只有 65、上下文显示 8K——那是另一条质量差很多的通道，别选错。全站规模：**453+ 模型 / 31 家平台 / 291 款免信用卡**。
+⏰ **今晚到期红线**：**9/9 24:00** Z.ai 官方 GLM-5.3-Flash 5 折结束；**9/10 前后** 腾讯 Hy4 preview 两周免费试用；**9/14** 阿里云百炼 `kimi-k2.7-code`；**9/15** `glm-5.2`；**9/18** Zen GPT-5.6 Sol 5 折；**9/20** 智谱 ZCode 夜间畅用；**9/30** Merge Gateway 1 折与腾讯 Hy3 国内通道限免。
 
-✅ **B.AI 日吞吐 1.33 万亿 Token，4 款仍 100% 免费** —— 用户破 **230 万**、15 天累计 8.19 万亿 token、新增 22 万 API 用户。仍 100% 免费的四款：**GLM-5.3-Flash（Ox Alpha）、Qwen3.8-Flash、腾讯 Hy3、小米 MiMo-V2.5**。
+⚠️ **风险提醒**：**「平台补贴的免费」不等于「官方的免费」**——B.AI「继续零成本」是它自己贴钱，随时可能调整，主力模型务必留一条不同厂商的备选通道；**新模型免费期「不说什么时候结束」**——Nex-N2.5 是标准样本，评测要赶在免费期内，别写进生产依赖；**免费不等于零风险**——NVIDIA 免费端点、Muse Spark Contributor、HF 免费代主体均有不同约定，商业机密数据一律走付费或本地权重；**NVIDIA 收购 Hugging Face 不改变宜免池**——重点看 AMD / Intel 路径是否仍是一等公民，本地 / ModelScope 留份镜像；**别信「兑换码」**，主流厂从未发过通用 CDKey。
 
-🏆 **量大能用的先进模型 Top 12（9/8）**：① GLM-5.3-Flash / Ox Alpha（Merge 1 折 / B.AI / ZCode 夜间 / OrcaRouter 免费，96）；② DeepSeek-V4-Flash（NIM / 商汤 / AMD / OrcaRouter，93）；③ Kimi K3（NIM 免费、今日榜首 92，92）；④ 🆕 Nemotron 3.5 Lightning 30B-A3B（Merge $0 / OpenRouter / Zen 三通道，89）；⑤ Gemini 3.8 Flash（AI Studio 永久免费，88）；⑥ Nemotron 3 Ultra 550B（周吞吐 3.64T，87）；⑦ Qwen3.8-Flash（B.AI 免费 / ModelScope 88 分，86）；⑧ MiniMax M3（OpenRouter 已下架，Ollama Cloud / NIM，85）；⑨ 腾讯 Hy3 / Hy4 preview（84）；⑩ Ling 3.0 Flash Sante / Fin（83）；⑪ MiMo-V2.5 小米（82）；⑫ Muse Spark 1.3（Zen Contributor 版，80）。
-
-⏰ **到期红线**：**9/9（明天）** Z.ai 官方 GLM-5.3-Flash 5 折结束（$0.075/$0.25 → $0.15/$0.50）；**9/10 前后** 腾讯 Hy4 preview 两周免费试用（Hy3 到 9/30）；**9/20** 智谱 ZCode 夜间畅用；**9/30** Merge Gateway 1 折到期（本期性价比最高、窗口最长）与腾讯 Hy3 国内通道限免。**已到期**：MiniMax × GMI Cloud（9/6）；**已下架**：OpenRouter MiniMax 免费版（今日）。
-
-⚠️ **风险提醒**：**免费池开始净减，MiniMax 是最响的一记警钟**——连续四天 18 款后今天第一次净减到 16 款，掉的还是跑量最大的两款，任何单一免费通道都不该成为生产依赖，主力模型至少配两条不同厂商的通道；**官方口径与 API 口径不一致时以 API 为准但要打折看**——Zen 的 API 返回 8 个 `-free` ID 而官价页只列 6 款，反过来第三方聚合站的免费清单普遍滞后甚至虚高；**免费档换强模型几乎必然伴随降速**——OrcaRouter 换将后首字从 1.96s 涨到 7.66s，交互类应用受影响最大；**免费不等于零风险**——NVIDIA 免费端点注明「勿提交机密数据」、Muse Spark Contributor 版以免费换取训练授权、Ox Alpha 匿名期曾出现「不用于训练但会保留 prompt」的条款区分；**别信「兑换码」**——主流厂从未发过通用 CDKey，网上那些基本是引流甚至钓鱼。
 
 ## 📰 今日摘要（2026-09-07）
 
