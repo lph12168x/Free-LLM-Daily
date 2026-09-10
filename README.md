@@ -6,21 +6,25 @@
 
 每天自动搜集并整理可免费使用的国内外大模型信息，生成精美 HTML 报告。
 
-## 📰 今日摘要（2026-09-09）
+## 📰 今日摘要（2026-09-10）
 
-🆕 **蚂蚁开源 Ling-3.0-flash-VL：原生多模态 + 视觉反馈闭环，今日头条 #1** —— 蚂蚁集团今日（9/9）正式发布并开源百灵系列首个原生多模态模型 **`Ling-3.0-flash-VL`**：**124B 总参 / 5.5B 激活**的 MoE、**256K 上下文**、原生支持图像 / 文本 / 视频输入，核心创新是「**观察 → 行动 → 验证 → 修正**」的视觉反馈闭环 —— 不再是「看图一次出结果」，而是能拿渲染结果对比自我修正。Artificial Analysis 智能指数 v4.1.1 比纯文本版 +4 分；**Image-to-WebDev Arena 官方评测得分高于 GPT-5.4**。BF16 / FP8 权重已开源到 Hugging Face 与 ModelScope，**Ling Studio 已上线并提供免费体验**。
+🆕 **DeepSeek V4.1 Flash 今日正式发布：全面超越 V4 Pro，且 V4 Pro 请求自动按 Flash 计费** —— DeepSeek 官网今日（9/10）公告 **V4.1 Flash 于北京时间 9 月 10 日前后正式发布**，官方称「经内部、外部多方测试，V4.1 Flash 在**性能、费用、速度、总用时**等各项指标上已全面超越 V4 Pro」。更关键的是：**V4.1 Flash 上线后、V4.1 Pro 上线前，对 V4 Pro 的请求会全部路由到 V4.1 Flash 并按 V4.1 Flash 单价计费**——不改一行业务代码，Pro 价流量自动按 Flash 价结算，等于一次隐形的全员降价。内测实测：全新模型结构、**原生多模态**、平均输出超 300 tokens/s、**峰值 507 tokens/s**，视觉 Agent Benchmark 接近 Claude Opus 4.8。
 
-⏰ **GLM-5.3-Flash 官方 5 折今晚 24:00 到期，但 B.AI 承诺继续零成本** —— Z.ai 官方发布期 5 折窗口今晚关闭：`$0.075/$0.25` 恢复 `$0.15/$0.50`。但 **B.AI 9/8 已明确公告**智谱折扣到期后仍向全球开发者**零成本**提供 GLM-5.3-Flash —— 它是 B.AI 平台上用量最大的模型（320B-A18B、1M 上下文，日吞吐 1.33 万亿、用户 230 万）。走 B.AI 的**什么都不用改**；想花几分钱换不限流的改走 Merge Gateway 1 折（`$0.012/$0.04`，至 9/30）。⚠️ 这是**平台补贴**承诺，不是 Z.ai 官方条款，要留备选通道。
+💰 **flash 系列今日 12:00 起降价，缓存命中最高降 60%** —— 闲时（每百万 Token）输入缓存命中 **0.05 → 0.02 元（-60%）**、缓存未命中 **1.5 → 1 元（-33%）**、输出 **4.5 → 4 元（-11%）**；高峰为闲时 2 倍（工作日 9:00–12:00、14:00–18:00，周末全天低谷价）。按 Agent 工作流估算综合成本可降约 40%。⚠️ 属部分回调：输出价仍是 8 月涨价前（2 元）的两倍。
 
-🇨🇳 **商汤 SenseNova Token Plan 升级：6 万积分 / 5 小时，20 款模型进通用积分池** —— Free 公测档 **¥0/月、6 万积分 / 5 小时滚动刷新 + 60 万积分 / 周**，不绑卡、不充值，一个账号最多 20 个 API Key。Free 档原生模型含 SenseNova 6.8 Flash Lite / U1 Fast / U1.5 Lite；**通用积分池可跑 Kimi K3、DeepSeek V4 Pro/Flash、GLM-5.2/5.3、MiniMax M3、Qwen3.8 Max 等 20 款**。Base URL：`https://token.sensenova.cn/v1`——这是目前**国内直连通道里「先进模型覆盖最全 + 滚动额度最大」的一条**。
+⏰ **腾讯混元 Hy4 preview 限免今晚 23:59 截止** —— WorkBuddy 9/9 官宣：770B-A49B 的 Hy4 preview 限免 **9/10 23:59 结束**。9/11–10/10：**老用户仅闲时夜间 23:00–08:00 免费**；新用户及未体验过的老用户 **10/10 前首次开启享 14 天每日免费额度**。**Hy3 免费延至 9/30** 无缝衔接。OpenRouter 30 日榜 Hy3 以 29.9T token 排第 3（+77%）、Hy4 preview 24.5T 排第 6。⚠️ 限免是客户端额度非 API 免费，不可用于自动化脚本。
 
-🎉 **Nex-N2.5 Mini / Pro 双模型免费上线 OpenRouter，免费池 16 → 18** —— Nex AGI 的 N2.5 系列 9/8 晚间登陆 OpenRouter，**Mini 与 Pro 同时 $0**。262K 上下文、工具调用、可调推理强度，Pro 额外支持图像输入。定位是「把目标变成可运行、可验证的结果」，核心是带视觉反馈的 agentic coding。
+⏰ **B.AI 延长 GLM-5.3-Flash 免费至 9/12 09:59 SGT** —— Z.ai 官方 5 折已于 9/9 24:00 到期（恢复 $0.15/$0.50），但 B.AI 宣布零成本窗口**延长到 9/12 09:59（SGT）**。GLM-5.3-Flash：320B-A18B、1M 上下文、MIT，B.AI 平台用量第一。**Qwen3.8 Flash、Hy3、MiMo V2.5 在 B.AI 继续 100% 免费**。⚠️ 平台补贴非官方条款，务必留备选。
 
-📊 **其他重点动态**：**Inception Mercury 2.5 上线 OpenRouter**（$0.04/M 输入、扩散式 LLM、260K；新号送 1 亿 tokens 一次性额度）；**NVIDIA 129.3 亿美元收购 Hugging Face**，承诺平台保持开放、不强制 NVIDIA 算力，关注 HF Router $0.10/月免费额度与开源权重分发走向；**星火 X2.5-4B 登顶 HF Trending 第一**，端侧唯一 1M 上下文、Apache-2.0 免费商用、昇腾全流程训练，星辰 MaaS 限时免费；**OpenRouter 免费池 18**（NVIDIA 5 / Google 4 / inclusionAI 2 / nex-agi 2 / poolside 2 / Thinking Machines 2）；**Zen 70 款 / 8 个 `-free` ID**；**freellm.net 核验榜 Kimi K3 92 分继续登顶**。
+🆕 **开源两连发：蚂蚁 Ling-3.0-flash-VL + 面壁 MiniCPM5-2B** —— 蚂蚁 9/9 开源百灵系列首个**原生多模态**模型 **Ling-3.0-flash-VL**（124B-A5.5B、256K、图文视频输入、视觉反馈闭环，AA +4 分、Image-to-WebDev Arena 超 GPT-5.4，**HF 与 ModelScope 已上线 Apache 2.0 权重可商用**）；面壁 9/8 开源 **MiniCPM5-2B**（**AA 23 分 4B 以下开源第一**、Agentic Index 20 分，同步开源训练配方与 RL 框架 Meshy）。
 
-⏰ **今晚到期红线**：**9/9 24:00** Z.ai 官方 GLM-5.3-Flash 5 折结束；**9/10 前后** 腾讯 Hy4 preview 两周免费试用；**9/14** 阿里云百炼 `kimi-k2.7-code`；**9/15** `glm-5.2`；**9/18** Zen GPT-5.6 Sol 5 折；**9/20** 智谱 ZCode 夜间畅用；**9/30** Merge Gateway 1 折与腾讯 Hy3 国内通道限免。
+🎬 **SkyProduction MiniMax H3 768P 限免至 9/14** —— 9/9 当天新老会员生成视频不消耗积分；9/10–9/14 转会员加赠。📉 **阿里云百炼免费额度集中到期**：`kimi-k2.7-code` 与 `qwen3.5-ocr` **9/14**、`glm-5.2` **9/15**，手头额度优先烧掉。
 
-⚠️ **风险提醒**：**「平台补贴的免费」不等于「官方的免费」**——B.AI「继续零成本」是它自己贴钱，随时可能调整，主力模型务必留一条不同厂商的备选通道；**新模型免费期「不说什么时候结束」**——Nex-N2.5 是标准样本，评测要赶在免费期内，别写进生产依赖；**免费不等于零风险**——NVIDIA 免费端点、Muse Spark Contributor、HF 免费代主体均有不同约定，商业机密数据一律走付费或本地权重；**NVIDIA 收购 Hugging Face 不改变宜免池**——重点看 AMD / Intel 路径是否仍是一等公民，本地 / ModelScope 留份镜像；**别信「兑换码」**，主流厂从未发过通用 CDKey。
+📊 **OpenRouter 用量榜**：DeepSeek V4 Flash 0731（50.7T）登顶，Hy3（29.9T）、Ox Alpha（27.2T）、Hy4 preview（24.5T）、GLM 5.3 Flash（22.2T）齐聚前列，免费档 **Nemotron 3 Ultra 16.9T 排第 9**；应用侧 **Hermes Agent（Nous）11.4T 排第一**——MIT 开源 agent runtime，指向 OpenRouter 免费模型即可零成本自建智能体（硬门槛：tool calling + 64K 上下文，当前 18 款免费模型 17 款达标）。🔎 **平台快照**：OpenRouter 免费池 **18 款零增减**（1M 上下文 4 款）；Zen 70 款 / **7 个 `-free` ID**；freellm.net 收录 **475+ 模型 / 31 家平台 / 321 款免信用卡**，核验榜榜首 Ollama Cloud deepseek-v4-pro（95 分）。
+
+⏰ **到期红线**：**今晚 23:59** Hy4 preview；**9/12 09:59 SGT** B.AI GLM-5.3-Flash；**9/14** 百炼 kimi-k2.7-code / qwen3.5-ocr 与 SkyProduction H3；**9/15** 百炼 glm-5.2；**9/18** Zen GPT-5.6 Sol 5 折；**9/20** 智谱 ZCode 夜间畅用；**9/30** Hy3 与 Merge Gateway 1 折。
+
+⚠️ **风险提醒**：**免费通道正在加速「从敞开到窗口化」**——Hy4 从不限量到夜间窗口只用了两周，GLM-5.3-Flash 的免费靠第三方平台补贴续命；主力模型务必配两条不同厂商的通道，生产依赖不要押注任何单一免费口子。
 
 
 ## 📰 今日摘要（2026-09-07）
