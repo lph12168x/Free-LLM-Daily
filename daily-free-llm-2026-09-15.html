@@ -3,7 +3,7 @@
 <head data-page-node-id="2gPd5fi0eylqxzps82778v">
 <meta charset="UTF-8" data-page-node-id="C1zFJO9uLE2SJchwD2EaO9">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="rTgg8rqqGupSIROmKBCCcR">
-<title>免费大模型日报 · 2026-09-10 · Free LLM Daily</title>
+<title>免费大模型日报 · 2026-09-15 · Free LLM Daily</title>
 <meta name="description" content="2026年9月10日免费大模型日报，量大能用的先进模型一网打尽。🆕 DeepSeek V4.1 Flash 今日正式发布，全面超越 V4 Pro，且 V4 Pro 请求自动路由到 V4.1 Flash 按 Flash 单价计费；flash 系列今日 12:00 起降价，缓存命中最高降 60%。⏰ 腾讯混元 Hy4 preview 限免今晚 23:59 结束，9/11–10/10 转新规则（老用户仅夜间免费、新用户 14 天额度），Hy3 免费至 9/30。⏰ B.AI 延长 GLM-5.3-Flash 免费至 9/12 09:59 SGT，Qwen3.8 Flash / Hy3 / MiMo V2.5 仍 100% 免费。🆕 蚂蚁开源 Ling-3.0-flash-VL（124B-A5.5B / 256K / Apache 2.0）、面壁开源 MiniCPM5-2B（AA 4B 以下第一）。🔎 OpenRouter 免费池 18 款零增减，OpenCode Zen 70 款 / 7 个免费 ID，freellm.net 已收录 475+ 模型 / 31 家平台。">
 <style>
   :root {
@@ -601,6 +601,106 @@
     .mini-row .k { flex: none; }
   }
 
+
+  /* ===== 9/11 新增组件 ===== */
+  .hot-item.nebius-box { border-left: 4px solid var(--soft-info, #38bdf8); }
+  .hot-item.cog-box    { border-left: 4px solid var(--soft-ok, #34d399); }
+  html[data-theme="light"] .hot-item.nebius-box { border-left-color: #0284c7; }
+  html[data-theme="light"] .hot-item.cog-box    { border-left-color: #047857; }
+  .combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .combo-card {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px;
+    padding: 20px 22px; transition: all 0.3s;
+  }
+  .combo-card:hover { transform: translateY(-3px); border-color: var(--border-accent); }
+  .combo-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.55; }
+  .combo-body { font-size: 13.2px; color: var(--text-secondary); line-height: 1.82; }
+  .combo-body ul { margin: 0; padding-left: 20px; list-style: disc; }
+  .combo-body li { margin-bottom: 7px; }
+  .combo-body li:last-child { margin-bottom: 0; }
+  @media (max-width: 640px) { .combo-grid { grid-template-columns: 1fr; } }
+
+
+  /* ===== 9/14 新增组件 ===== */
+  .hot-item.ds-box     { border-left: 4px solid var(--soft-purple, #a78bfa); }
+  .hot-item.nv-box     { border-left: 4px solid var(--soft-ok, #34d399); }
+  .hot-item.cn-box     { border-left: 4px solid var(--soft-info, #38bdf8); }
+  html[data-theme="light"] .hot-item.ds-box { border-left-color: #7c3aed; }
+  html[data-theme="light"] .hot-item.nv-box { border-left-color: #047857; }
+  html[data-theme="light"] .hot-item.cn-box { border-left-color: #0284c7; }
+  .combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .combo-card {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px;
+    padding: 20px 22px; transition: all 0.3s;
+  }
+  .combo-card:hover { transform: translateY(-3px); border-color: var(--border-accent); }
+  .combo-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.55; }
+  .combo-body { font-size: 13.2px; color: var(--text-secondary); line-height: 1.82; }
+  .combo-body ul { margin: 0; padding-left: 20px; list-style: disc; }
+  .combo-body li { margin-bottom: 7px; }
+  .combo-body li:last-child { margin-bottom: 0; }
+  .tbl-wrap { overflow-x: auto; margin-top: 12px; }
+  table.free-tbl { width: 100%; border-collapse: collapse; font-size: 12.8px; min-width: 520px; }
+  table.free-tbl th {
+    text-align: left; padding: 8px 10px; font-weight: 700;
+    color: var(--text-primary); background: var(--bg-hover, rgba(127,127,127,0.12));
+    border-bottom: 1px solid var(--border-card); white-space: nowrap;
+  }
+  table.free-tbl td {
+    padding: 8px 10px; border-bottom: 1px solid var(--border-card);
+    color: var(--text-secondary); line-height: 1.6; vertical-align: top;
+  }
+  table.free-tbl tr:last-child td { border-bottom: none; }
+  table.free-tbl td.k { color: var(--text-primary); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 640px) { .combo-grid { grid-template-columns: 1fr; } }
+
+
+  /* ===== 9/15 新增组件 ===== */
+  .hot-item.bf-box     { border-left: 4px solid var(--soft-purple, #a78bfa); }
+  .hot-item.uo-box     { border-left: 4px solid var(--soft-info, #38bdf8); }
+  .hot-item.cost-box   { border-left: 4px solid var(--soft-ok, #34d399); }
+  html[data-theme="light"] .hot-item.bf-box   { border-left-color: #7c3aed; }
+  html[data-theme="light"] .hot-item.uo-box   { border-left-color: #0284c7; }
+  html[data-theme="light"] .hot-item.cost-box { border-left-color: #047857; }
+  .hot-item.ds-box     { border-left: 4px solid var(--soft-purple, #a78bfa); }
+  .hot-item.nv-box     { border-left: 4px solid var(--soft-ok, #34d399); }
+  .hot-item.cn-box     { border-left: 4px solid var(--soft-info, #38bdf8); }
+  html[data-theme="light"] .hot-item.ds-box { border-left-color: #7c3aed; }
+  html[data-theme="light"] .hot-item.nv-box { border-left-color: #047857; }
+  html[data-theme="light"] .hot-item.cn-box { border-left-color: #0284c7; }
+  .combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .combo-card {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px;
+    padding: 20px 22px; transition: all 0.3s;
+  }
+  .combo-card:hover { transform: translateY(-3px); border-color: var(--border-accent); }
+  .combo-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.55; }
+  .combo-body { font-size: 13.2px; color: var(--text-secondary); line-height: 1.82; }
+  .combo-body ul { margin: 0; padding-left: 20px; list-style: disc; }
+  .combo-body li { margin-bottom: 7px; }
+  .combo-body li:last-child { margin-bottom: 0; }
+  .tbl-wrap { overflow-x: auto; margin-top: 12px; }
+  table.free-tbl { width: 100%; border-collapse: collapse; font-size: 12.8px; min-width: 560px; }
+  table.free-tbl th {
+    text-align: left; padding: 8px 10px; font-weight: 700;
+    color: var(--text-primary); background: var(--bg-hover, rgba(127,127,127,0.12));
+    border-bottom: 1px solid var(--border-card); white-space: nowrap;
+  }
+  table.free-tbl td {
+    padding: 8px 10px; border-bottom: 1px solid var(--border-card);
+    color: var(--text-secondary); line-height: 1.6; vertical-align: top;
+  }
+  table.free-tbl tr:last-child td { border-bottom: none; }
+  table.free-tbl td.k { color: var(--text-primary); font-weight: 600; white-space: nowrap; }
+  .route-box {
+    background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px;
+    padding: 20px 22px; margin-top: 14px;
+  }
+  .route-box h3 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin: 0 0 10px; }
+  .tag.new { background: var(--soft-info, #38bdf8); color: #06263a; }
+  html[data-theme="light"] .tag.new { background: #bae6fd; color: #075985; }
+  @media (max-width: 640px) { .combo-grid { grid-template-columns: 1fr; } }
+
 </style>
 <script>
 (function () {
@@ -642,19 +742,19 @@
 <button class="theme-toggle" onclick="toggleTheme()" title="切换亮色/暗色主题" aria-label="主题切换"><span id="theme-icon">☀️</span></button>
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 
-<div class="page-nav"><a href="daily-free-llm-2026-09-09.html" title="上一篇日报">← 上一个</a><a class="nav-home" href="index.html" title="返回首页">🏠 主页</a><a class="nav-latest" href="daily-free-llm-2026-09-15.html" title="最新日报">⭐ 最新</a><a href="daily-free-llm-2026-09-11.html" title="下一篇日报">下一个 →</a></div>
+<div class="page-nav"><a href="daily-free-llm-2026-09-14.html" title="上一篇日报">← 上一个</a><a class="nav-home" href="index.html" title="返回首页">🏠 主页</a><a class="nav-latest" href="daily-free-llm-2026-09-15.html" title="最新日报">⭐ 最新</a><span class="nav-disabled">下一个 →</span></div>
 <div class="container">
   <!-- Hero -->
   <div class="hero">
     <div class="hero-inner">
-      <div class="badge">🤖 AI 每日免费情报 · 9/10 全网挖掘</div>
+      <div class="badge">🤖 AI 每日免费情报 · 9/15 全网挖掘</div>
       <h1>免费大模型日报</h1>
-      <div class="date-chip">📅 2026 年 9 月 10 日 · 周四 · 全网挖掘</div>
+      <div class="date-chip">📅 2026 年 9 月 15 日 · 周二 · 全网挖掘</div>
       <div class="stats">
-        <div class="stat-card"><div class="stat-icon">🆕</div><div class="stat-num">V4.1</div><div class="stat-label">DeepSeek V4.1 Flash 今日正式发布，官方称性能 / 费用 / 速度全面超越 V4 Pro</div></div>
-        <div class="stat-card"><div class="stat-icon">💰</div><div class="stat-num">-60%</div><div class="stat-label">flash 系列今日 12:00 起降价，闲时缓存命中 0.05→0.02 元/百万 Token</div></div>
-        <div class="stat-card"><div class="stat-icon">⏰</div><div class="stat-num">23:59</div><div class="stat-label">腾讯混元 Hy4 preview 限免今晚截止，Hy3 仍免费至 9/30</div></div>
-        <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-num">18</div><div class="stat-label">OpenRouter 实时 :free 模型（430 款中，与 9/9 零增减）</div></div>
+        <div class="stat-card"><div class="stat-icon">🎁</div><div class="stat-num">50×</div><div class="stat-label">Bolt Forge 面向开权重模型（GLM / DeepSeek / Kimi）给 Pro 用户 50 倍用量，免费用到 10/14</div></div>
+        <div class="stat-card"><div class="stat-icon">🆕</div><div class="stat-num">1 亿</div><div class="stat-label">云知声 U2-Flash 今日发布，9/15–9/30 新老用户各领 1 亿 Tokens 体验额度</div></div>
+        <div class="stat-card"><div class="stat-icon">🥇</div><div class="stat-num">64.6</div><div class="stat-label">U2-Flash 在 DeepSWE v1.1 超过 GLM-5.3-Flash 与 DeepSeek-V4-Pro-0813（激活仅 10B）</div></div>
+        <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-num">19</div><div class="stat-label">OpenRouter 实时 :free 模型（445 款中，较 9/14 零增减）</div></div>
       </div>
     </div>
   </div>
@@ -662,51 +762,53 @@
   <div class="section">
     <h2 class="section-title"><span class="ico">🔥</span> 今日头条 · 三条主线</h2>
     <div class="hot-grid">
-      <div class="hot-item ds-box">
-        <div class="hot-link">🆕 DeepSeek V4.1 Flash 今日发布：全面超越 V4 Pro，且 V4 Pro 请求自动按 Flash 计费</div>
+      <div class="hot-item bf-box">
+        <div class="hot-link">🎁 Bolt Forge 上线：开权重模型（GLM / DeepSeek / Kimi）吃到 50 倍用量、免费到 10/14——代价是把 build session 交给 Arcee AI 训练</div>
         <div class="hot-body">
-          <b>DeepSeek 官网今日（9/10）公告：V4.1 Flash 计划于北京时间 9 月 10 日前后正式发布。</b>
-          官方口径是「经内部、外部多方测试，<span class="hl">V4.1 Flash 在性能、费用、速度、总用时等各项指标上已全面超越 V4 Pro</span>」。
-          更关键的一句：<b>V4.1 Flash 上线后、V4.1 Pro 上线前，DeepSeek 会把对 V4 Pro 的请求全部路由到 V4.1 Flash，并按 V4.1 Flash 单价计费</b>——
-          也就是说，你不用改一行业务代码，<span class="hl">原本按 Pro 价付费的流量会自动按更便宜的 Flash 价结算</span>，这是一次<b>隐形的全员降价</b>。
+          9/14 Bolt.new 上线 <b>Bolt Forge</b>，一个<b>只跑开权重模型</b>的第三个 agent（与 Standard / Max 并列）。
+          <span class="hl">每个<b>个人 Bolt Pro 套餐</b>在 Forge 上获得<b>最高 50 倍用量、零额外费用，有效期到 2026-10-14</b>；用量走<b>单一每月额度条、无日限额</b>、100% 硬停。</span>
+          这是本月目前「量大能用」最直接的一次扩容——但它不是无条件免费，代价写在明面上。
           <div class="mini-tbl">
-            <div class="mini-row"><span class="k">内测实测</span><span class="v">V4.1 Flash 中间版本 9/8 开启内测，采用<b>全新模型结构</b>并<b>原生支持多模态</b>。多人实测<b>平均输出超 300 tokens/s、峰值 507 tokens/s</b>，视觉 Agent Benchmark 已接近 Claude Opus 4.8。</span></div>
-            <div class="mini-row"><span class="k">同期降价</span><span class="v"><b>今日 12:00 起</b> flash 系列执行峰谷新价（每百万 Token）：闲时输入缓存命中 <b>0.05 → 0.02 元（-60%）</b>、缓存未命中 <b>1.5 → 1 元（-33%）</b>、输出 <b>4.5 → 4 元（-11%）</b>；高峰时段为闲时 2 倍（0.04 / 2 / 8 元）。适用 <code>deepseek-v4-flash</code> 与 <code>deepseek-v4-flash-vision-exp</code>。</span></div>
-            <div class="mini-row"><span class="k">峰谷时段</span><span class="v">工作日 <b>9:00–12:00、14:00–18:00 为高峰</b>，其余为闲时；<b>周六周日全天按低谷价</b>。开发者按自身 Agent 工作流估算，综合调用成本<b>可能下降约 40%</b>（取决于缓存命中率与输入输出结构）。</span></div>
-            <div class="mini-row"><span class="k">免费/低价路径</span><span class="v">DeepSeek API 本身为付费（<code>api.deepseek.com</code>，支持 OpenAI 与 Anthropic 两种格式，1M 上下文）。<b>真正零成本的口子</b>：① OpenCode Zen 的 <code>deepseek-v4-flash-free</code>（20 RPM / 200 RPD）；② <b>NVIDIA NIM</b> 的 <code>deepseek-ai/deepseek-v4-flash-0731</code>（免费、1.3M 上下文、40 RPM）；③ <b>Ollama Cloud</b> 免费档（freellm.net 核验 94 分）；④ HuggingFace Router / ModelScope 免费额度；⑤ <b>chat.deepseek.com 网页端免费且无公开每日上限</b>。</span></div>
+            <div class="mini-row"><span class="k">模型阵容</span><span class="v">默认 <b>GLM 5.3 Flash</b>；并列可选 <b>GLM 5.3</b>；实验位放 <b>Kimi K3</b> 与 <b>DeepSeek v4 Pro</b>。Bolt 称新开权重模型会<b>先进 Forge 再进别处</b>。注意 <b>Kimi K3 与 DeepSeek v4 Pro 的额度消耗比 GLM 系更快</b>。</span></div>
+            <div class="mini-row"><span class="k">能力差多少</span><span class="v">Bolt 自家 <b>Bolt Build Index</b>：Forge 的开权重堆 <b>92.2</b> vs 顶配付费模型（Claude Opus 5）<b>101.0</b> → 官方口径 <b>91% 能力平价</b>。差 9 分，换 50 倍用量。</span></div>
+            <div class="mini-row"><span class="k">真实对价</span><span class="v">切进 Forge 时<b>每次都弹一次一跳确认</b>：你 opt-in 共享<b>匿名化</b>的 build session，去密钥、去个人信息后交给 <b>Arcee AI</b>（美国开权重实验室，Trinity 系列作者，签了数据处理协议）训练一个<b>万亿参数级</b>开权重模型，训练出的权重<b>公开发布、人人可下载</b>。Standard / Max 永不用你的数据训练；<b>Teams / Enterprise 完全排除在 Forge 与数据采集之外</b>。</span></div>
+            <div class="mini-row"><span class="k">限制（先看再切）</span><span class="v">① 需要<b>个人 Bolt Pro 订阅</b>，不是零门槛；② Forge 在产品内仍是<b>实验特性</b>，官方建议<b>先把正经项目复制一份再切过去</b>；③ <b>暂不支持 PDF 上传</b>；④ 10/14 后 <b>50× 额度结束</b>，Forge 本身继续作为常态化开权重 agent 存在。</span></div>
+            <div class="mini-row"><span class="k">为什么值得记一笔</span><span class="v">这是「<b>免费的真实对价 = 数据</b>」的又一实证（前有 Meta Muse Spark 1.3 Contributor Free）。更值得注意的是：<b>开权重模型第一次被做成产品级 agent 的默认候选</b>，而不是 BYOK 玩票路线。Bolt 顺带给了个论点——AI 推理成本 18 个月降了约 280 倍，才让这种额度在财务上成立。</span></div>
           </div>
-          <div class="warn-line">⚠️ 降价是「部分回调」而非回到 8 月涨价前：涨价前输出 2 元、现为 4 元，输出价仍高一倍。另外 V4.1 Flash 是<b>内测转正</b>，生产环境上线前请自行复现长上下文、工具调用与峰值成本。</div>
+          <div class="warn-line">⚠️ 别只看「50×」：<b>这条要用 Pro 订阅换，且要以匿名 build session 换</b>。有代码保密要求、或工作区属于 Teams / Enterprise 的，直接跳过——Forge 对这两类不开放。另外 Bolt 没有公布 50× 的<b>绝对额度上限</b>（只说是「单一每月额度条」），重度使用前先在自己账号里看一次实际额度数字。</div>
         </div>
       </div>
 
-      <div class="hot-item hy-box">
-        <div class="hot-link">⏰ 腾讯混元 Hy4 preview 限免今晚 23:59 截止，9/11 起转「夜间免费 + 新用户 14 天」</div>
+      <div class="hot-item uo-box">
+        <div class="hot-link">🆕 云知声 U2-Flash 今日（9/15）发布：266B 总参只激活 10B，DeepSWE v1.1 拿 64.6，新老用户各领 1 亿 Tokens</div>
         <div class="hot-body">
-          腾讯 WorkBuddy 9/9 官宣：<span class="hl">Hy4 preview 限免将于 <b>2026 年 9 月 10 日 23:59 结束</b></span>，
-          9 月 11 日至 10 月 10 日执行新规则。这条对「量大能用」的用户影响最直接——<b>770B 总参 / 49B 激活</b>的旗舰级模型，免费窗口从今天起大幅收窄。
+          港股 <b>09678</b> 今日发布自愿公告并同步上线模型：<b>U2-Flash</b>——基于 U2 通用基座强化后训练的「高密度智能」主力模型，<b>盘中一度涨超 9%</b>。
+          <span class="hl">最关键的一条不是跑分，而是额度：<b>2026-09-15 至 09-30，新用户注册与老用户均可领取 1 亿 Tokens 体验额度</b>，同时 API 限时六折。</span>
           <div class="mini-tbl">
-            <div class="mini-row"><span class="k">已体验过的老用户</span><span class="v">仅<b>闲时夜间 23:00–次日 8:00</b> 继续提供免费额度，其余时间正常消耗积分。想继续白嫖就<b>把大任务挪到夜里跑</b>。</span></div>
-            <div class="mini-row"><span class="k">新用户福利</span><span class="v">9/11 及之后注册 WorkBuddy 的新用户、以及<b>此前没体验过 Hy4 preview 的老用户</b>，只要在 <b>10 月 10 日 23:59 前首次开启</b> Hy4 preview 对话，从首次开启当天算起 <b>往后 14 天都有每日免费额度</b>（例：10/10 首开 → 可用到 10/24）。</span></div>
-            <div class="mini-row"><span class="k">无缝衔接方案</span><span class="v"><b>Hy3 免费期延至 9 月 30 日</b>，比 Hy4 多 20 天，排队时直接切 Hy3。两者都是纯语言模型，生图 / 视频会自动切多模态模型并按正常规则扣积分——<b>免费额度只留给文本、代码、分析</b>。</span></div>
-            <div class="mini-row"><span class="k">API 价格</span><span class="v">混元 API 定价<b>输入 6 元、输出 18 元 / 百万 tokens，缓存命中仅 0.3 元</b>，属普惠路线。注意：限免是 <b>WorkBuddy / CodeBuddy 客户端内的额度，不等于 API 限免</b>，别拿去当免费 API 跑脚本（Hy Token Plan 条款明确禁止用于自动化脚本）。</span></div>
-            <div class="mini-row"><span class="k">真实用量</span><span class="v">OpenRouter 30 日榜上 <b>Hy3 以 29.9 万亿 token 排第 3</b>（+77%）、<b>Hy4 preview 以 24.5 万亿排第 6</b>（新上榜），腾讯系周请求份额 3.8%。这两款确实是当下「量大且真在用」的国产模型。</span></div>
+            <div class="mini-row"><span class="k">规格</span><span class="v">稀疏 MoE，<b>总参约 266B、单次推理仅激活约 10B（不足总参数 4%）</b>；<b>TTFT 平均控制在 3 秒以内</b>，峰值输出吞吐最高 <b>300 tokens/s</b>；具备<b>隐式思考与连续状态推理</b>，推理强度封装为<b>四档可控接口</b>（高强度档输出完整可读推理链）。已完成<b>主流国产算力平台</b>系统性适配，部分场景接近 NVIDIA GPU 方案。</span></div>
+            <div class="mini-row"><span class="k">跑分（官方口径）</span><span class="v"><b>DeepSWE v1.1 64.6</b>（较前代 U2 翻倍，超 GLM-5.3-Flash 与 DeepSeek-V4-Pro-0813）；<b>TerminalBench 3.0 24.3</b>（超 K3 等万亿参数级）；<b>SWE-Bench Pro 61.6</b>（+10.5）；知识向 GPQA-Diamond 90.9、IMOAnswerBench 97.1、HMMT Feb 2026 91。</span></div>
+            <div class="mini-row"><span class="k">效率</span><span class="v">Agent 任务<b>迭代步数 −20%~30%</b>、<b>执行周期 −35%</b>、<b>Token 消耗 −20%~30%</b>。以 10B 激活规模去换 266B 的能力，单位成本锚在<b>激活规模而非总参数</b>。</span></div>
+            <div class="mini-row"><span class="k">训练（RSI 第一步）</span><span class="v">模型<b>深度参与自身训练闭环</b>：生成训练数据、分析执行轨迹、巡检并修复训练系统；自主构建<b>近 10 万条</b>高质量 SWE 任务集。配套异步 Agent RL（并行 Worker 沙盒 + GRPO）、多教师在线策略蒸馏、自适应动态任务生成 → <b>有效训练轨迹 +60%、训练步数 −55%</b>。官方强调这是<b>有边界、沙盒内、可回滚</b>的自我改进。</span></div>
+            <div class="mini-row"><span class="k">免费 / 价格</span><span class="v"><b>限时六折</b>：输入 <b>0.6 元</b> / 输出 <b>1.2 元</b> / 缓存命中 <b>0.12 元</b>（每百万 token）。<b>9/15–9/30 新老用户各领 1 亿 Tokens</b>。已上 MaaS：<code>maas.unisound.com/models/u2-flash</code>。</span></div>
           </div>
-          <div class="warn-line">⚠️ 免费额度按天重置、当日用完会提示恢复时间；晚间大任务建议提前排队。想拿它做中转站 / 脚本调用的路子不符合条款，有封号风险。</div>
+          <div class="warn-line">⚠️ 两条要核实：① 官方只写「限时体验活动」，<b>没有公布 1 亿 Tokens 的有效期与是否分模型池</b>，领取后先去控制台确认过期时间；② 公告<b>完全没提开源</b>——目前是纯 API 额度，<b>不要假定有可自部署权重</b>。另外所有跑分都是官方自测同图对比，<b>尚无独立第三方复现</b>。</div>
         </div>
       </div>
 
-      <div class="hot-item bai-box">
-        <div class="hot-link">⏰ B.AI 延长 GLM-5.3-Flash 免费至 9/12 09:59 SGT，另有 3 款继续 100% 免费</div>
+      <div class="hot-item cost-box">
+        <div class="hot-link">💰 GPT-6 Astra 把价格拉到 $10/$50，反而验证了「开权重已经够用」：V4.1 Flash 每任务 $0.07，xAI 又把编码 agent 开源免费</div>
         <div class="hot-body">
-          Z.ai 官方 5 折已在昨天 9/9 24:00 到期（<code>$0.075/$0.25</code> 已恢复 <code>$0.15/$0.50</code>），
-          但 <span class="hl">B.AI 宣布把 GLM-5.3-Flash 的零成本窗口<b>延长到 9 月 12 日 09:59（SGT）</b></span>，给全球开发者留足过渡时间。
+          这一周的价格信号是分裂的，但指向同一个方向。
+          <span class="hl">OpenAI <b>GPT-6 Astra</b> API 定价 <b>$10 / $50 每百万 token</b>（约前代 2.5 倍），1.05M 上下文 / 128K 输出；而同一周 <b>GPT-5.6 Luna 降价 80%，用量直接跳 10 倍</b>（OpenAI 官方口径）。</span>
+          与此同时，开源侧的每任务成本已经落到另一个量级。
           <div class="mini-tbl">
-            <div class="mini-row"><span class="k">模型分量</span><span class="v">GLM-5.3-Flash：<b>320B 总参 / 18B 激活</b>（MoE）、<b>1M 上下文</b>、MIT 许可，是 B.AI 平台上<b>用量最高的模型</b>。匿名期以「Ox Alpha」身份在 OpenRouter 日供约 100 万亿 token，当前 30 日榜 22.2 万亿排第 7。</span></div>
-            <div class="mini-row"><span class="k">同时仍免费</span><span class="v"><b>Qwen3.8 Flash</b>、<b>Hy3</b>、<b>MiMo V2.5</b> 在 B.AI 上继续 <b>100% 免费</b>，不受本次窗口影响。B.AI 日吞吐约 1.33 万亿 token、用户 230 万。</span></div>
-            <div class="mini-row"><span class="k">其他零成本通道</span><span class="v">① <b>OrcaRouter 免费档</b>（1M 上下文 / MIT）；② <b>智谱 ZCode 夜间 23:00–09:00 额度消耗 0</b>（至 9/20，限付费套餐）；③ <b>Merge Gateway 1 折</b>至 9/30（<code>$0.012/$0.04/$0.003</code>，付费但接近免费）；④ <b>开源权重自部署</b>——实测可在低于 1 万美元的 Apple M5 Mac Studio 上跑，约 45 tok/s。</span></div>
-            <div class="mini-row"><span class="k">动作建议</span><span class="v">走 B.AI 的什么都不用改，但<b>9/12 09:59 是硬截止</b>，建议今天就切一条备选：Qwen3.8 Flash（同平台免费）或 DeepSeek V4 Flash（NVIDIA NIM / Ollama Cloud 免费档）。</span></div>
+            <div class="mini-row"><span class="k">Agent Arena 同榜</span><span class="v"><b>DeepSeek V4.1 Flash (Max)</b>：+4.87% 净提升、<b>每任务中位成本 $0.07</b>（开权重第 3、总榜第 12）；<b>Hy4 preview</b>：+4.96% / <b>$0.22</b>；<b>Kimi K3 (Max)</b>：+6.39% / <b>$0.77</b>。</span></div>
+            <div class="mini-row"><span class="k">榜单换血</span><span class="v">Artificial Analysis 用新的私有评测替换 τ³ 后发布 <b>Intelligence Index v4.3</b>，<b>DeepSeek V4.1 Flash 直接第一</b>——正是此前 Astra 用来追近 Fable 的那一类评测。</span></div>
+            <div class="mini-row"><span class="k">独立复测（更扎心）</span><span class="v">Entelligence 用 50 个真实 PR（Cal.com / Sentry / Discourse / Keycloak / Grafana）横评：<b>Astra 确认 92 个 bug vs Luna 69 个</b>；但 <b>Luna 用约 3.6% 的成本抓到了 75% 的已确认 bug</b>。贵 27 倍的模型多找出 33% 的 bug。</span></div>
+            <div class="mini-row"><span class="k">社区口径</span><span class="v">一位创始人称开权重模型已经承担他约 <b>20% 的推理负载，成本约为闭源 API 的 1%</b>。Base-10 的 Charlie O'Neill 在播客里说得更直：<b>Kimi 与 GLM 在编码上「几乎客观地」优于 Opus 5</b>。</span></div>
+            <div class="mini-row"><span class="k">今天新增的两个免费入口</span><span class="v">① 🆓 <b>xAI Grok Build</b>：Grok 4.6 驱动的编码 agent，<b>一条 <code>curl</code> 装好、免费试用且已开源</b>，内置 AGENTS.md、plugins、hooks、MCP 与 <code>/skillify</code>。② 🧰 <b>Cline Desktop</b>：<b>100% 开源</b>工作区，<b>内置免费 DeepSeek-V4.1-Flash</b>，也可 BYOK，支持并行 agent 与定时任务。</span></div>
           </div>
-          <div class="warn-line">⚠️ B.AI 是第三方结算层，「继续免费」属平台补贴承诺、<b>非 Z.ai 官方条款</b>。GLM-5.3-Flash 权重已开源，消融后安全护栏可被移除（Harmbench-320 得分 0%），企业环境自行评估风险。</div>
+          <div class="ok-line">✅ 正确的读法：<b>「免费」的真正来源是开权重的成本曲线，不是厂商的慷慨</b>。今天你能零成本调到的那些入口（OpenCode Zen 的 <code>-free</code>、OpenRouter 的 <code>:free</code>、NVIDIA NIM、Ollama Cloud）本质都建在同一个池子上——所以判断一个「免费」值不值得花时间，要看它是不是<b>先进模型 + 量大</b>，而不是看它写了多少 0。</div>
         </div>
       </div>
     </div>
@@ -714,135 +816,217 @@
 
   <div class="section">
     <h2 class="section-title"><span class="ico">🌤️</span> 次要更新 · 值得记一笔</h2>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-title">🆕 蚂蚁开源 Ling-3.0-flash-VL：124B-A5.5B 原生多模态，Apache 2.0 可商用</div>
-        <div class="card-body">
-          蚂蚁 9/9 发布并开源百灵系列首个<b>原生多模态</b>模型。总参 124B、单次激活约 5.5B，<b>原生支持图像 / 文本 / 视频输入</b>，上下文 256K，
-          <b>Hugging Face 与 ModelScope 已上线 Apache 2.0 权重，可直接商用</b>。核心机制是「视觉反馈闭环」——把一次性看图生成改造成
-          观察 → 行动 → 验证 → 修正的循环，官方称加入视觉后<b>文本智能反而提升</b>（AA v4.1.1 +4 分），Image-to-WebDev Arena 得分高于 GPT-5.4。
-          <div class="mini-tbl">
-            <div class="mini-row"><span class="k">免费通道</span><span class="v">Ling Studio 已免费体验；同系列的 <code>inclusionai/ling-3.0-flash-fin:free</code> 与 <code>ling-3.0-flash-sante:free</code> 现在就在 <b>OpenRouter 免费池</b>，<code>ling-3.0-flash-fin-free</code> 在 <b>Zen 免费档</b>。</span></div>
-          </div>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <div class="combo-title">🆓 xAI 开源 Grok Build：Grok 4.6 驱动的编码 agent，免费试用</div>
+        <div class="combo-body">
+          <ul>
+            <li>安装只要<b>一条 <code>curl</code> 命令</b>，<b>免费可试且代码已开源</b>。</li>
+            <li>内置 <b>AGENTS.md</b>、plugins、hooks、<b>MCP</b>，以及 <code>/skillify</code> 这个把成功流程固化成技能的命令。</li>
+            <li>同时流出的路线图消息（未经证实）：Grok 4.7 ≈ Opus 5.0 档、4.8 是明显的台阶（<b>2.5T 参数</b>、新 C++ 栈、预训练收尾）、4.9「可能是 Astra / Fable 级」；Musk 另称「Grok 5 will be AGI」，无规格无跑分。</li>
+            <li>⚠️ 路线图部分<b>全部未经验证</b>，只当传闻看；但「agent 开源 + 免费试」这条本身是确认的。</li>
+          </ul>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-title">🆕 面壁开源 MiniCPM5-2B：2B 参数拿下 AA 4B 以下第一</div>
-        <div class="card-body">
-          面壁智能联合 OpenBMB 于 9/8 发布 <b>2B 参数端侧语言基座 MiniCPM5-2B</b>，面向手机 / PC / 车机本地部署。
-          Artificial Analysis 综合指数 <b>23 分位列 4B 以下开源第一</b>，<b>Agentic Index 达 20 分</b>（同级普遍低于 10），
-          并同步开源训练配方与 RL 框架 Meshy。对小模型做初筛、大模型做重任务的分层架构来说，是当下最强的免费 2B 拼图。
+      <div class="combo-card">
+        <div class="combo-title">🧰 Cline Desktop：100% 开源工作区，内置免费 DeepSeek-V4.1-Flash</div>
+        <div class="combo-body">
+          <ul>
+            <li>面向<b>开权重模型</b>的桌面工作区，<b>100% 开源</b>。</li>
+            <li>开箱<b>内置免费模型</b>，其中就有 <b>DeepSeek-V4.1-Flash</b>；不想用内置的可以 BYOK。</li>
+            <li>支持<b>并行 agent</b> 与<b>定时任务</b>。</li>
+            <li>对「不想为 coding agent 再付一份订阅」的人来说，这是目前门槛最低的一条：<b>开源客户端 + 免费开权重模型</b>，两边都不花钱。</li>
+          </ul>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-title">🎬 SkyProduction 限免第二期：MiniMax H3 768P 免费用至 9/14</div>
-        <div class="card-body">
-          天工工作台 9/9–9/14 开放 <b>MiniMax H3 768P</b> 限时免费。9/9 当天新老会员用指定 H3 生成视频<b>不消耗积分</b>；
-          9/10–9/14 转为「首开会员按档位赠限免天数 + 老会员买积分赠天数」。H3 是通用多模态生成模型，支持文生视频、
-          参考素材生成，并支持<b>视频与原生立体声联合生成</b>。站点：<code>https://skyproduction.cn</code>（中国大陆版）。
-          <div class="mini-tbl">
-            <div class="mini-row"><span class="k">注意</span><span class="v">这是<b>视频生成模型</b>不是 LLM，且后 5 天要靠开会员 / 充积分换天数，纯白嫖只有 9/9 一天。9/14 后已获赠的限免权益仍可继续使用。</span></div>
-          </div>
+      <div class="combo-card">
+        <div class="combo-title">🔬 NVIDIA 开源 FlashREINFORCE：critic-free、单 rollout 的异步 RL</div>
+        <div class="combo-body">
+          <ul>
+            <li>面向 agentic 语言模型的<b>无 critic、单 rollout、异步</b>强化学习框架，<b>已开源</b>。</li>
+            <li>要解决的问题很具体：长程 rollout <b>时长不规则</b>，而 group-relative 方法（如 GRPO）需要同一 prompt 的<b>兄弟 rollout</b> 才能算相对优势——在长任务上这会互相等待。</li>
+            <li>做法是 <b>One-Batch REINFORCE</b>：每个 prompt 只跑一次 rollout。报告称达成 <b>6000+ 次稳定更新</b>。</li>
+            <li>对自训练开权重模型的团队，这是可以直接拿来省一半显存与调度复杂度的一条路子。</li>
+          </ul>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-title">📉 阿里云百炼免费额度集中到期：9/14 与 9/15 两批</div>
-        <div class="card-body">
-          百炼新用户「每模型 100 万 tokens、20 个模型近 2000 万」的免费额度正在分批到期：<b>kimi-k2.7-code 与 qwen3.5-ocr 9/14 到期</b>、
-          <b>glm-5.2 9/15 到期</b>（另有 qwen3.7-plus 已于 9/1 到期、qwen3.7-max-2026-06-08 于 9/8 到期）。
-          手里还有额度的，<b>这两天优先烧掉</b>。注意免费 Token 仅限中国内地节点，海外节点不享受。
+      <div class="combo-card">
+        <div class="combo-title">🤝 OpenRouter Forge：拉 Arcee、Microsoft、Vercel 一起把开权重推向前沿</div>
+        <div class="combo-body">
+          <ul>
+            <li>OpenRouter 新项目，合作方含 <b>Arcee AI、Microsoft、Vercel</b>，主题是<b>把开权重模型推向能力前沿</b>。</li>
+            <li>与 Bolt Forge 同日出现在视野里，两者指向同一个判断：<b>开权重不再只是「便宜的替代品」，而是被当成产品级默认路线在投入</b>。</li>
+            <li>对使用者的直接影响暂时是间接的（未来会有更多开权重模型进入 <code>:free</code> 池），但值得记进观察名单。</li>
+          </ul>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-title">📊 OpenRouter 用量榜：国产模型占据前列，免费档 Nemotron 3 Ultra 排第 9</div>
-        <div class="card-body">
-          30 日 token 榜前 10：<b>DeepSeek V4 Flash 0731（50.7T，+400%）</b>、GPT-5.6 Luna（35.5T）、
-          <b>Hy3（29.9T，+77%）</b>、MiMo-V2.5（27.3T）、Ox Alpha（27.2T）、<b>Hy4 preview（24.5T）</b>、
-          <b>GLM 5.3 Flash（22.2T）</b>、DeepSeek V4 Flash 0423（22T）、<b>Nemotron 3 Ultra（free，16.9T，+49%）</b>、GLM 5.2（13.8T）。
-          应用侧 <b>Hermes Agent（Nous Research）以 11.4T 排第一</b>，压过 Claude Code（5.19T）。
-          <div class="mini-tbl">
-            <div class="mini-row"><span class="k">可抄的作业</span><span class="v">Nous 的 Hermes Agent v0.21.0 是 MIT 许可的开源 agent runtime，官方教程就是「指向 OpenRouter 免费模型跑」，硬性要求只有两条：<b>支持 tool calling + 上下文 ≥ 64K</b>。当前 18 款免费模型里有 <b>17 款支持工具调用</b>，等于零成本自建智能体。限制在<b>请求数</b>不在 token：免费档 20 RPM / 50 RPD，累计充值过 $10 后升到 1000 RPD。</span></div>
-          </div>
+      <div class="combo-card">
+        <div class="combo-title">🇨🇳 国内免费额度速记（9/15 核实）</div>
+        <div class="combo-body">
+          <ul>
+            <li><b>阿里云百炼</b>：<b>Night Plan 每日 22:00–次日 08:00 折扣，Qwen3.8-Max / Flash 低至 4 折</b>（权益自动生效）；<b>AI 焕新季满减券 9/30 截止</b>（满 20 减 10 / 满 99 减 15 / 满 199 减 35，领后 14 天有效）；<b>OPC 创新助力计划</b>面向独立开发者与「一人公司」，<b>1000 元–100 万元 Token 补贴、先用后返</b>；新客 1 亿 Tokens（90 天）+ 每模型各 100 万。</li>
+            <li><b>智谱</b>：ZCode 夜间免费 <b>23:00–09:00，到 9/20</b>；开放平台 GLM 系 8 款 Flash 模型仍标免费。</li>
+            <li><b>讯飞</b>：Spark-X2.5-1.7B 长期免费、<b>X2.5-4B 限时免费</b>（原生 1M 上下文）；星辰 MaaS 同款 0 元。</li>
+            <li><b>商汤 SenseNova</b>：Free 公测档，通用积分池 <b>6 万 / 5 小时滚动 + 60 万 / 周</b>，不绑卡。</li>
+            <li><b>腾讯云 TokenHub</b>：语言与多模态理解模型<b>各 100 万 Tokens，有效期 1 年</b>（活动至 12/31）。</li>
+            <li><b>华为</b>：ModelArts 首次开通<b>每模型 200 万 tokens</b>；码道签到活动到 12/31。</li>
+            <li><b>书生 Intern AI</b>：<b>每月 9000 万输入 + 9000 万输出 tokens</b>（按自然月刷新，默认 30 RPM）——单看月度额度，这是目前国内公开口径里天花板最高的一档。</li>
+            <li><b>快手万擎 StreamLake</b>：KAT-Coder-Air-V1 与 KAT-Coder-Exp-72B-1010 输入输出全免费（新版 Air-V2.5 已转收费）。</li>
+          </ul>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-title">🔎 平台盘点：OpenRouter / Zen / freellm.net 三处快照</div>
-        <div class="card-body">
-          <div class="mini-tbl">
-            <div class="mini-row"><span class="k">OpenRouter</span><span class="v">430 款模型中 <b>18 款 <code>:free</code></b>（9/9 同为 18，<b>零增减</b>）。分布：NVIDIA 5、Google 2、nex-agi 2、inclusionAI 2、poolside 2、Thinking Machines 2、cohere 1、dots-studio 1、liquid 1。<b>1M 上下文的有 4 款</b>：nemotron-3-ultra-550b-a55b、nemotron-3.5-lightning、thinkingmachines/inkling 与 inkling-small。</span></div>
-            <div class="mini-row"><span class="k">OpenCode Zen</span><span class="v">70 款模型，<b>7 个 <code>-free</code> ID</b>：<code>deepseek-v4-flash-free</code>、<code>mimo-v2.5-free</code>、<code>ling-3.0-flash-fin-free</code>、<code>nemotron-3-ultra-free</code>、<code>nemotron-3.5-lightning-free</code>、<code>muse-spark-1.3-contributor-free</code>、<code>muse-spark-1.2-contributor-free</code>。官方定价页 Free 行 <b>6 款</b>（多一个 stealth 模型 <code>big-pickle</code>）。零增减。</span></div>
-            <div class="mini-row"><span class="k">freellm.net</span><span class="v">收录从 453+ 增至 <b>475+ 模型 / 31 家平台 / 321 款免信用卡</b>，239 款经实时 API 核验。核验榜榜首易主给 <b>Ollama Cloud 的 deepseek-v4-pro（95 分）</b>，其后 deepseek-v4-flash 94 分、NVIDIA NIM deepseek-v4-pro-0813 93 分、<b>Kimi K3 92 分</b>。</span></div>
-          </div>
+      <div class="combo-card">
+        <div class="combo-title">💰 智谱夜免的成本真相：免费的代价是速度只有 DeepSeek 的 1/3</div>
+        <div class="combo-body">
+          <ul>
+            <li>独立博主在 9 月初做过一次同任务横评（同一个真实 Agent 任务：控浏览器爬 YouTube 后台数据并出分析报告）：<b>DeepSeek V4 Flash 用 4 分钟跑完，GLM 5.3 Flash 用了 14 分钟</b>（3.5 倍）。</li>
+            <li>推理速度：<b>DeepSeek V4 Flash 约 150 tok/s，GLM 5.3 Flash 不到 50 tok/s</b>。反观 DeepSeek V4.1 Flash 发布后多方实测 <b>420–507 tok/s</b>。</li>
+            <li>智谱披露的口径是「单位 Token 推理成本较年初下降 80%」「10 万级国产芯片规模化推理、端到端服务性能对比初始基线提升 3 倍」——<b>都是跟自己比，不是跟竞品比</b>。GLM-5.3-Flash 官方从未公开承诺输出速度。</li>
+            <li>同期智谱把 Coding Plan <b>Pro 版从 149 元涨到 538 元（3.6 倍）</b>。读法：<b>免费额度跑闲时低成本算力，付费套餐才是正价高优先级资源</b>——免费窗口适合批量离线任务，<b>别排交互式/长链 Agent</b>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">📌 顺手记两条：Claude Fable 5.1 与「芯片/模型封锁」传闻</div>
+        <div class="combo-body">
+          <ul>
+            <li><b>Claude Fable 5.1</b> 在无人干预的循环里，用 44 分钟 / 176k tokens 破解了 370 年的 Urquhart 密码；并领跑 AA Capability Index 全部 6 个领域。Anthropic 连续第二个季度盈利（FT）。</li>
+            <li>另有报道称 <b>Fable 5.1 发布后 OpenAI/Anthropic/xAI 侧出现「放缓即抽梯子」的舆论</b>，北京方面有官方文章称「Anthropic 放缓」是冷战手段——<b>跨境调用请注意静默降级与合规风险</b>。</li>
+            <li>⚠️ 上述第二条包含<b>未经证实的传闻</b>（含「NVIDIA / Palantir 隔离 Anthropic 模型」），仅作背景，不作为选型依据。</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title"><span class="ico">🎯</span> 今日可用通道清单 · 量大且先进</h2>
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr><th>平台 / 通道</th><th>可白嫖的先进模型</th><th>额度与限制</th><th>状态</th></tr>
-        </thead>
-        <tbody>
-          <tr class="new-row"><td><b>NVIDIA NIM</b><br><span class="sub">build.nvidia.com</span></td><td>DeepSeek V4 Flash 0731（1.3M）、<b>Kimi K3</b>（1M）、DeepSeek V4 Pro、MiniMax M3、GLM-5.2、Kimi K2.6、Nemotron 3 Ultra、Qwen3-Coder 480B 等 <b>99 款 $0</b></td><td>最高 40 RPM，TPD 不设上限；需手机号验证（+86 可收），<b>无需信用卡</b></td><td><span class="tag ok">长期稳定</span></td></tr>
-          <tr class="new-row"><td><b>Ollama Cloud</b><br><span class="sub">ollama.com</span></td><td>deepseek-v4-pro（1M，核验 95 分）、deepseek-v4-flash（1M）、Kimi K3、GLM-5.3 / 5.3-Flash、MiniMax M3</td><td>1 实例 / 5 小时会话 / 7 天周额度；实测 GPT-OSS 120B 免费档 317 tok/s</td><td><span class="tag ok">榜首</span></td></tr>
-          <tr><td><b>B.AI</b><br><span class="sub">智能结算层</span></td><td><b>GLM-5.3-Flash</b>（320B-A18B / 1M）、Qwen3.8 Flash、Hy3、MiMo V2.5</td><td>GLM-5.3-Flash 免费至 <b>9/12 09:59 SGT</b>；其余 3 款 100% 免费</td><td><span class="tag warn">2 天后到期</span></td></tr>
-          <tr class="urgent-row"><td><b>WorkBuddy / CodeBuddy</b></td><td>Hy4 preview（770B-A49B）、Hy3</td><td>Hy4 限免<b>今晚 23:59 结束</b>，之后老用户仅 23:00–08:00 免费 / 新用户 14 天；Hy3 免费至 9/30</td><td><span class="tag bad">今日截止</span></td></tr>
-          <tr><td><b>OpenCode Zen</b></td><td>7 个 <code>-free</code> ID：DeepSeek V4 Flash、MiMo-V2.5、Ling 3.0 Flash Fin、Nemotron 3 Ultra、Nemotron 3.5 Lightning、Muse Spark 1.3/1.2</td><td>30 RPM / 500 RPD / 100 万 TPD；免费期数据可用于改进模型</td><td><span class="tag ok">零增减</span></td></tr>
-          <tr><td><b>OpenRouter :free</b></td><td>18 款：nemotron-3-ultra-550b-a55b（1M）、inkling（1M）、nemotron-3.5-lightning（1M）、nex-n2.5-pro/mini、ling-3.0-flash-fin/sante、gemma-4-31b、north-mini-code 等</td><td>免费档 20 RPM / 50 RPD；累计充值 $10 后升 1000 RPD</td><td><span class="tag ok">18 款</span></td></tr>
-          <tr><td><b>Google AI Studio</b></td><td>Gemini 3.8 / 3.7 / 3.6 / 3.5 Flash（均 1M）、Gemma 4 31B / 26B</td><td>15 RPM、1,500 RPD；<b>无需信用卡</b>，免费档数据可能用于产品改进</td><td><span class="tag ok">长期稳定</span></td></tr>
-          <tr><td><b>商汤 Token Plan</b><br><span class="sub">token.sensenova.cn</span></td><td>Kimi K3、DeepSeek V4 Pro/Flash、GLM-5.2/5.3/5.3-Flash、MiniMax M3、Qwen3.8 Max 等 <b>20 款</b>通用积分池</td><td>Free 档 ¥0/月：<b>6 万积分 / 5 小时滚动 + 60 万 / 周</b>，不绑卡</td><td><span class="tag ok">国内直连</span></td></tr>
-          <tr><td><b>智谱 ZCode / BigModel</b></td><td>GLM-5.3-Flash、GLM-4.7-Flash（200K）等 8 款</td><td>ZCode 夜间 <b>23:00–09:00 额度消耗 0</b>（至 9/20，限付费套餐）；BigModel 免费档 1 并发</td><td><span class="tag warn">限时</span></td></tr>
-          <tr><td><b>ModelScope / HF Router</b></td><td>DeepSeek V4 Pro / Flash、Kimi K3 / K2.6 / K2.7-Code、Qwen3-Coder-Next、GLM-5.2</td><td>ModelScope 100–200 RPD；HF Router 免费账户 $0.10/月额度</td><td><span class="tag ok">稳定</span></td></tr>
-          <tr class="urgent-row"><td><b>阿里云百炼</b></td><td>kimi-k2.7-code、qwen3.5-ocr、glm-5.2 等（每模型 100 万 tokens）</td><td><b>kimi-k2.7-code / qwen3.5-ocr 9/14 到期</b>、<b>glm-5.2 9/15 到期</b>；限中国内地节点</td><td><span class="tag bad">即将到期</span></td></tr>
-          <tr><td><b>DeepSeek 官方</b></td><td>V4 Pro（1M）、V4 Flash（1M，今日起降价）</td><td><b>付费</b>：闲时缓存命中 0.02 元 / 未命中 1 元 / 输出 4 元；网页端 chat.deepseek.com 免费无公开上限</td><td><span class="tag warn">降价但付费</span></td></tr>
-        </tbody>
-      </table>
+    <h2 class="section-title"><span class="ico">🧾</span> 今日免费入口速查 · 先进 + 量大优先</h2>
+    <div class="route-box">
+      <h3>按「能直接调、模型够先进、额度够大」三条筛过一遍，今天最值得先试的是这几条：</h3>
+      <div class="tbl-wrap">
+        <table class="free-tbl">
+          <thead>
+            <tr><th>入口</th><th>能调到的先进模型</th><th>额度 / 价格</th><th>门槛</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="k">OpenCode Zen<br><span class="tag ok">开权重</span></td>
+              <td><code>nemotron-3-ultra-free</code>（1M）、<code>nemotron-3.5-lightning-free</code>（1M）、<code>mimo-v2.5-free</code>、<code>ling-3.0-flash-fin-free</code>、<code>muse-spark-1.3-contributor-free</code>、<code>big-pickle</code>（隐身模型）</td>
+              <td><b>$0</b>；官方定价页 Free 行共 6 款，全部标注 <b>limited time</b></td>
+              <td>登录拿 Key，客户端内直接选</td>
+            </tr>
+            <tr>
+              <td class="k">OpenRouter<br><span class="tag ok">聚合</span></td>
+              <td>免费池 19 款，含 <code>nemotron-3-ultra-550b-a55b:free</code>（1M）、<code>thinkingmachines/inkling:free</code>（1M）、<code>nemotron-3.5-lightning:free</code>（1M）、<code>ling-3.0-flash-vl:free</code>（视觉/视频）、<code>nex-n2.5-pro:free</code></td>
+              <td><b>$0</b>；<code>:free</code> 约 20 RPM / 50 RPD，<b>累计充值满 $10 后升到 1000 RPD</b></td>
+              <td>注册即可，免信用卡</td>
+            </tr>
+            <tr>
+              <td class="k">NVIDIA NIM</td>
+              <td><code>z-ai/glm-5.3-flash</code>（1.3M，freellm.net 榜首 96 分）、<code>moonshotai/kimi-k3</code>（1M）、<code>deepseek-ai/deepseek-v4-pro-0813</code>（1M，384K 输出）</td>
+              <td>免费档 <b>最高 40 RPM</b>，部分模型 TPD 不设限</td>
+              <td>需邮箱 + <b>手机号验证</b></td>
+            </tr>
+            <tr>
+              <td class="k">Ollama Cloud</td>
+              <td><code>deepseek-v4-pro</code>（1M，榜分 93）、<code>deepseek-v4-flash</code>（1M，92）</td>
+              <td>免费层 starter 用量，<b>按 token 计量、月重置</b></td>
+              <td>注册即可；本地跑完全免费</td>
+            </tr>
+            <tr>
+              <td class="k">云知声 MaaS<br><span class="tag new">今日新增</span></td>
+              <td><b>U2-Flash</b>（266B-A10B，DeepSWE v1.1 64.6）</td>
+              <td><b>9/15–9/30 新老用户各领 1 亿 Tokens</b>；限时六折 输入 0.6 / 输出 1.2 元</td>
+              <td>注册 + 实名（MaaS 平台）</td>
+            </tr>
+            <tr>
+              <td class="k">Google AI Studio<br><span class="tag warn">额度收紧</span></td>
+              <td>Gemini 3.8 / 3.7 / 3.6 / 3.5 Flash（1M，多模态）</td>
+              <td>Flash 系<b>每天仅约 20 RPD</b>；<b>Flash-Lite 500 RPD</b>；15 RPM</td>
+              <td>Google 账号，免信用卡</td>
+            </tr>
+            <tr>
+              <td class="k">书生 Intern AI</td>
+              <td>Intern 全系（含科学多模态线）</td>
+              <td><b>每月 9000 万输入 + 9000 万输出 tokens</b>，默认 30 RPM</td>
+              <td>注册；按自然月刷新</td>
+            </tr>
+            <tr>
+              <td class="k">Bolt Forge<br><span class="tag warn">需 Pro</span></td>
+              <td><b>GLM 5.3 Flash</b> / GLM 5.3 / Kimi K3 / DeepSeek v4 Pro</td>
+              <td><b>最高 50× 用量、零额外费用，至 10/14</b></td>
+              <td>个人 Bolt Pro 订阅 + <b>opt-in 共享匿名数据</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">排序原则：<b>先进模型 &gt; 额度大小 &gt; 门槛</b>。同一档里优先选「1M 上下文 + $0 + 免绑卡」的组合——今天的免费池里，<code>nemotron-3-ultra-free</code> / <code>:free</code>、<code>thinkingmachines/inkling:free</code>、<code>nemotron-3.5-lightning</code> 是仅有的四款「1M 上下文 + $0」，其中两款在 OpenRouter 与 Zen <b>双通道都免费</b>，值得优先接进 fallback 链。</p>
     </div>
-    <div class="note">💡 <b>组合建议</b>：主力用 <b>NVIDIA NIM 的 DeepSeek V4 Flash / Kimi K3</b>（40 RPM、TPD 不限、免信用卡）；
-    长上下文与国产需求挂 <b>商汤 Token Plan</b>（5 小时一刷、20 款旗舰同池）；
-    夜间大任务走 <b>WorkBuddy Hy3 至 9/30</b> 或 <b>智谱 ZCode 23:00–09:00</b>；
-    自建智能体用 <b>Hermes Agent + OpenRouter 17 款支持工具调用的免费模型</b>。</div>
   </div>
 
   <div class="section">
-    <h2 class="section-title"><span class="ico">📌</span> 到期与风险日历</h2>
+    <h2 class="section-title"><span class="ico">🔎</span> 平台盘点 · 今日快照</h2>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <div class="combo-title">📊 OpenRouter：445 款中 19 款 $0，零增减</div>
+        <div class="combo-body">
+          <ul>
+            <li>脚本清点 <code>pricing.prompt == '0'</code> 且 id 以 <code>:free</code> 结尾：<b>19 款</b>，与 9/14 <b>完全一致</b>（无新增、无下架）。</li>
+            <li>目录总数 <b>445</b>，与 9/14 相同；但新增两个别名条目 <code>~deepseek/deepseek-flash-latest</code>、<code>~deepseek/deepseek-pro-latest</code>（均为导向型，<b>不是免费项</b>），下架 <code>google/gemini-2.5-pro-preview-05-06</code> 与 <code>openai/gpt-4-turbo-preview</code>。</li>
+            <li>免费池 1M 上下文共 <b>4 款</b>：<code>nemotron-3-ultra-550b-a55b:free</code>、<code>nemotron-3.5-lightning:free</code>、<code>thinkingmachines/inkling:free</code>、<code>thinkingmachines/inkling-small:free</code>。</li>
+            <li>⚠️ 免费池<b>日内会波动</b>，19 是脚本清点时刻的快照，不代表全天稳定值。已留 <code>or_models_0915.json</code> 供次日 diff。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">🔧 OpenCode Zen：70 款 / 8 个免费 ID，零增减</div>
+        <div class="combo-body">
+          <ul>
+            <li><code>/zen/v1/models</code> 返回 <b>70 款</b>，与 9/14 一致。</li>
+            <li>带免费标记的 ID 共 <b>8 个</b>：<code>big-pickle</code>、<code>deepseek-v4-flash-free</code>、<code>mimo-v2.5-free</code>、<code>ling-3.0-flash-fin-free</code>、<code>nemotron-3-ultra-free</code>、<code>nemotron-3.5-lightning-free</code>、<code>muse-spark-1.3-contributor-free</code>、<code>muse-spark-1.2-contributor-free</code>。</li>
+            <li>官方<b>定价页</b>的 Free 行是 <b>6 款</b>（Big Pickle / MiMo-V2.5 / Ling 3.0 Flash Fin / Nemotron 3 Ultra / Nemotron 3.5 Lightning / Muse Spark 1.3 Contributor），<b>全部写 limited time 且无到期日</b>。</li>
+            <li>⚠️ 官方<b>两个文档页名单不一致</b>（models 端点 8 个 vs 定价页 6 个）——以定价页为准做预算、以端点为准做可用性探测。</li>
+            <li>⏰ 顺带：<b>Zen 的 GPT-5.6 Sol 50% 折扣 9/18 到期</b>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">🌐 freellm.net：479+ 模型 / 31 平台 / 332 款免信用卡</div>
+        <div class="combo-body">
+          <ul>
+            <li>较 9/14 的 <b>476+ / 31 / 318</b> 全线上涨：模型 <b>479+</b>、平台 <b>31</b>（持平）、免信用卡 <b>332</b>。</li>
+            <li>其中 <b>237 款经 live API 核验</b>，最近更新 <b>2026-09-14</b>。</li>
+            <li>榜首仍是 <b>NVIDIA NIM 的 z-ai/glm-5.3-flash（96 分，1.3M 上下文，40 RPM，周用量 597.1M）</b>；其后 Ollama Cloud <code>deepseek-v4-pro</code>（93）、<code>deepseek-v4-flash</code>（92）、NIM <code>Kimi K3</code>（92）、NIM <code>deepseek-v4-pro-0813</code>（92）。</li>
+            <li>OpenRouter 侧榜分最高的是 <code>ling-3.0-flash-vl:free</code>（86 分，周用量 184.4B）。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="ico">📅</span> 到期日历 · 别踩空</h2>
     <div class="card-grid">
       <div class="card risk-card">
-        <div class="risk-title">⏰ 今天 · 9/10</div>
+        <div class="risk-title">📅 眼前这一周</div>
         <div class="risk-body">
           <ul>
-            <li><b>23:59</b> — 腾讯 <b>Hy4 preview</b> 限免结束（WorkBuddy / CodeBuddy），之后转夜间 + 新用户 14 天规则</li>
-            <li><b>12:00</b> — DeepSeek flash 系列降价生效，缓存命中 -60%</li>
-            <li><b>今日前后</b> — DeepSeek <b>V4.1 Flash</b> 正式发布，V4 Pro 流量自动按 Flash 计费</li>
+            <li><b>9/15（今天）</b> — 云知声 U2-Flash <b>1 亿 Tokens 活动开始</b>（到 9/30）；阿里云百炼 <b>glm-5.2</b> 免费额度今天到期</li>
+            <li><b>9/15 22:00</b> — 通义灵码 6 项商品<b>停止新购</b></li>
+            <li><b>9/17</b> — GPT-6 Astra Challenge 投稿截止（前五名各 1 万美元额度）</li>
+            <li><b>9/18</b> — OpenCode Zen <b>GPT-5.6 Sol 50% 折扣到期</b></li>
+            <li><b>9/20</b> — 智谱「Flash × ZCode」夜间畅用（23:00–09:00）结束</li>
           </ul>
         </div>
       </div>
       <div class="card risk-card">
-        <div class="risk-title">⚠️ 本周内</div>
+        <div class="risk-title">📅 9 月下旬及以后</div>
         <div class="risk-body">
           <ul>
-            <li><b>9/12 09:59 SGT</b> — B.AI <b>GLM-5.3-Flash</b> 免费窗口结束（Qwen3.8 Flash / Hy3 / MiMo V2.5 不受影响）</li>
-            <li><b>9/14</b> — 阿里云百炼 <b>kimi-k2.7-code</b>、<b>qwen3.5-ocr</b> 免费额度到期</li>
-            <li><b>9/14</b> — SkyProduction MiniMax H3 768P 限免活动结束（已获赠权益可续用）</li>
-            <li><b>9/15</b> — 阿里云百炼 <b>glm-5.2</b> 免费额度到期</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card risk-card">
-        <div class="risk-title">📅 9 月下旬</div>
-        <div class="risk-body">
-          <ul>
-            <li><b>9/18</b> — OpenCode Zen GPT-5.6 Sol 50% 折扣到期</li>
-            <li><b>9/20</b> — 智谱「Flash × ZCode」夜间畅用活动结束</li>
-            <li><b>9/30</b> — 腾讯 <b>Hy3</b> 免费期结束；<b>Merge Gateway GLM-5.3-Flash 1 折</b>结束</li>
+            <li><b>9/30</b> — 云知声 U2-Flash <b>1 亿 Tokens 活动 + 六折价</b>结束；腾讯 <b>Hy3 免费期</b>结束；<b>Merge Gateway GLM-5.3-Flash 1 折</b>结束；阿里云 <b>AI 焕新季满减券</b>截止</li>
+            <li><b>10/10</b> — WorkBuddy Hy4 preview 新用户「首开享 14 天」的最后首开日</li>
+            <li><b>10/14</b> — <b>Bolt Forge 50× 用量预览期结束</b>（Forge 本身继续保留）</li>
+            <li><b>12/31</b> — 腾讯云 TokenHub / 华为云码道「码力续航计划」/ 移动云 MoMA 活动截止</li>
           </ul>
         </div>
       </div>
@@ -853,24 +1037,27 @@
     <h2 class="section-title"><span class="ico">🧭</span> 今天该怎么动</h2>
     <div class="card-grid">
       <div class="card">
-        <div class="card-title">① 现在就做（30 分钟内）</div>
+        <div class="card-title">① 现在就做（5 分钟内）</div>
         <div class="card-body">
-          把 <b>Hy4 preview</b> 的大任务挪到今晚 23:59 前跑完，或改到 23:00–08:00 夜间窗口；确认自己的账号属于「已体验」还是「未体验」，
-          未体验的可以<b>攒到 10/10 前再首开</b>，白拿 14 天每日额度。
+          去<b>云知声 MaaS 把 1 亿 Tokens 领了</b>（<code>maas.unisound.com/models/u2-flash</code>，9/15–9/30 窗口，新老用户都能领）。
+          领完先在控制台确认<b>额度有效期与是否分模型池</b>——官方公告只写了「限时体验活动」，没有给过期时间。
+          另外<b>今天就把百炼的 <code>glm-5.2</code> 额度烧掉</b>，明天就过期了。
         </div>
       </div>
       <div class="card">
         <div class="card-title">② 今天之内</div>
         <div class="card-body">
-          走 B.AI 的用户<b>立刻准备一条备选通道</b>（Qwen3.8 Flash 同平台免费，或 NVIDIA NIM 的 DeepSeek V4 Flash）；
-          走 DeepSeek 官方 API 的确认业务已切到闲时，缓存命中策略打开——这次降幅 60% 主要就吃在缓存上。
+          <b>想扩量的</b>：如果是个人 Bolt Pro 用户且能接受匿名数据共享，切一次 <b>Bolt Forge</b>（先复制项目再切，实测一下 50× 在你账号上的绝对额度）。
+          <b>不想花钱的</b>：直接上 <b>OpenCode Zen 的 <code>nemotron-3-ultra-free</code></b> 或 <b>OpenRouter 的 <code>nvidia/nemotron-3-ultra-550b-a55b:free</code></b>——1M 上下文 + $0，是目前免费池里最先进的一档。
+          <b>写代码的</b>：装 <b>Grok Build</b>（一条 curl）或 <b>Cline Desktop</b>（内置免费 V4.1-Flash），两条都不用再买订阅。
         </div>
       </div>
       <div class="card">
         <div class="card-title">③ 本周之内</div>
         <div class="card-body">
-          烧掉阿里云百炼 9/14、9/15 到期的额度；把 <b>Hermes Agent</b> 指向 OpenRouter 免费模型试跑一次，
-          验证 tool calling + 64K 上下文两条硬门槛，建立零成本智能体的基线。
+          ① 把 <b>Zen 的 6 款 Free</b> 接进 fallback 链的第二位（第一位给 NIM 的 <code>glm-5.3-flash</code>），它们全部是 <b>limited time 且无到期日</b>——随机会消失，别当长期依赖；
+          ② 长上下文批处理放<b>智谱夜间 23:00–09:00</b>（免费到 9/20）或<b>阿里云百炼 22:00–08:00</b>（4 折），但<b>都别排交互式任务</b>——智谱实测不到 50 tok/s；
+          ③ 如果周额度吃紧，重算一次成本：<b>GPT-5.6 Luna 降价 80% 后，3.6% 的成本能抓到 75% 的已确认 bug</b>，多数场景继续堆 Astra 未必划算。
         </div>
       </div>
     </div>
@@ -878,19 +1065,26 @@
 
   <div class="footer">
     <p>
-      <b>数据来源</b>：OpenRouter <code>/api/v1/models</code> 与 <code>/rankings</code>（9/10 脚本清点，430 款中 18 款 $0）·
-      OpenCode Zen <code>/zen/v1/models</code>（70 款，7 个 <code>-free</code> ID）与官方定价页 ·
-      DeepSeek 开放平台公告与官网（V4.1 Flash 发布、flash 系列调价）· TechWeb / 凤凰网科技 / 新浪科技（DeepSeek 降价）·
-      凤凰网科技 / IT 之家（WorkBuddy 调整 Hy4 preview 限免权益）· KuCoin / ChainCatcher（B.AI 延长 GLM-5.3-Flash 免费）·
-      腾讯新闻 AI 行业日报（蚂蚁 Ling-3.0-flash-VL、面壁 MiniCPM5-2B）· 网易 / 今日头条（SkyProduction MiniMax H3 限免）·
-      freellm.net 核验榜（475+ 模型 / 31 平台 / 321 免信用卡）· llmpricing.dev（NVIDIA 99 款 $0）·
-      pinggy.io（Hermes Agent + OpenRouter 免费模型）· ollamatps.com 实时吞吐 · 凤凰网科技（混元动态 / Hy 定价）。
+      <b>数据来源</b>：OpenRouter <code>/api/v1/models</code>（9/15 脚本清点，445 款中 19 款 $0，已留 <code>or_models_0915.json</code>）·
+      OpenCode Zen <code>/zen/v1/models</code>（70 款 / 8 个免费 ID）与官方定价页（Free 行 6 款，全部 limited time）·
+      Bolt.new 官方博客《What is Bolt Forge?》与 BusinessWire 新闻稿（9/14）· yet-another-changelog.ai / AGI Hunt（Bolt Forge 规格与 50× 条款）·
+      云知声港交所自愿公告（<code>2026091500089</code>）与官方发布稿、MaaS 平台页（U2-Flash 规格 / 跑分 / 1 亿 Tokens 活动 / 六折价）·
+      AGI Hunt 日报 2026-09-15（Grok Build、Cline Desktop、FlashREINFORCE、OpenRouter Forge、Agent Arena 每任务成本、Entelligence 复测）·
+      Artificial Analysis Intelligence Index v4.3（DeepSeek V4.1 Flash 登顶）· freellm.net 核验榜（479+ 模型 / 31 平台 / 332 免信用卡）·
+      阿里云开发者社区百炼文档与优惠页（Night Plan / AI 焕新季 / OPC 计划）· 今日头条《智谱夜免活动送额度，速度只有竞品三分之一》·
+      讯飞开放平台 / 商汤 SenseNova / 腾讯云 TokenHub / 华为 ModelArts / 书生 Intern AI / 快手万擎 官方额度页 ·
+      costgoat.com 与 aimcp.info 的 OpenRouter 免费模型追踪（交叉核对 19-20 款口径差）· 9/13 AI 中文社区日报（Muse Spark 1.3 Contributor Free 与 OpenCode Go）·
+      综合「AI 免费额度地图」社区维护版（国内各平台额度对照）。
     </p>
     <p class="sub">⚠️ 免费额度可能随时调整，请以各平台官网最新政策为准。本页所有「免费」判定均以官方接口或官方定价页为准；
-    涉及额度的具体数字请自行调用官方 Usage API 或查看控制台确认。OpenRouter 免费池日内会波动，18 款是<b>脚本清点时刻的快照</b>，不代表全天稳定值。
-    B.AI 的「继续免费」为平台补贴承诺、非 Z.ai 官方条款；WorkBuddy 的 Hy4/Hy3 限免是<b>客户端额度而非 API 免费</b>，不可用于自动化脚本；
-    DeepSeek 降价后输出价仍高于 8 月涨价前水平，属部分回调。</p>
-    <p class="sub">© <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank" rel="noopener">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成 · 2026-09-10</p>
+    涉及额度的具体数字请自行调用官方 Usage API 或查看控制台确认。OpenRouter 免费池日内会波动，19 款是<b>脚本清点时刻的快照</b>，不代表全天稳定值。
+    <b>Bolt Forge 的「免费」需个人 Pro 订阅且需 opt-in 共享匿名 build session</b>，不是无条件免费；其 50× 的绝对额度上限官方未公布。
+    <b>云知声 U2-Flash 的 1 亿 Tokens 活动</b>官方未公布有效期细节，且公告未提开源（目前为纯 API 额度）；
+    U2-Flash 全部跑分为官方自测同图对比，<b>尚无独立第三方复现</b>。
+    Zen 的 6 款 Free 模型<b>全部标注「limited time」但无具体到期日</b>，且官方两个文档页名单不一致；
+    智谱夜间免费<b>限付费套餐且仅限 ZCode 客户端内</b>；Google Gemini Flash 系免费额度已收紧至约 <b>20 RPD</b>；
+    Grok 4.7/4.8/4.9 与 Grok 5 的参数与档位描述<b>均未获官方证实</b>。</p>
+    <p class="sub">© <a href="https://github.com/lph12168x/Free-LLM-Daily" target="_blank" rel="noopener">lph12168x/Free-LLM-Daily</a> · 🤖 由 WorkBuddy 自动化生成 · 2026-09-15</p>
   </div>
 </div>
 </body>
