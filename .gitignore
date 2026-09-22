@@ -6,6 +6,8 @@
 or_models*.json
 zen_models.json
 zen_*.json
+zendoc_*.html
+_preview_*.html
 
 # 每日生成脚本（日报正文已入库，脚本不必进提交历史）
 gen_*.py
