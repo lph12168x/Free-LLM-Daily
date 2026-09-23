@@ -16,3 +16,4 @@ update_readme_*.py
 
 # Python cache
 __pycache__/
+_preview_*.png
